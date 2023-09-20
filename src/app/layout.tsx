@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang='en'>
       <body className={inter.className}>
         <header>ヘッダー</header>
-        {children}
+        <div className='site-wrapper grow'>{children}</div>
         <footer>フッター</footer>
       </body>
     </html>
