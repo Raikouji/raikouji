@@ -1,11 +1,11 @@
 import Logo from '@/components/Logo'
-import styles from './Header.module.css'
+import MainNavigation from '@/components/MainNavigation'
 
 function Header() {
   return (
-    <header className={styles.wrapper}>
+    <header className='${styles.wrapper} flex flex-row items-center justify-between bg-white'>
       <Logo tagline='タグラインです' />
-      <p>ヘッダーです</p>
+      <MainNavigation />
     </header>
   )
 }
