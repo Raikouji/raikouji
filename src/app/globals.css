@@ -1,79 +1,76 @@
+/**
+ *
+ * app/layout.tsx で読み込まれるグローバルスタイル
+ *
+ * PostCSS で Tailwind やその他プラグインを使用
+ * package.json の "browserslist" で、対応ブラウザを設定
+ * @see https://nextjs.org/docs/advanced-features/customizing-postcss-config
+ *
+ */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/*
-  Josh's Custom CSS Reset
-  https://www.joshwcomeau.com/css/custom-css-reset/
-*/
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-* {
-  margin: 0;
-}
-html,
-body {
-  height: 100%;
-}
-body {
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-}
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-}
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  overflow-wrap: break-word;
-}
-#root,
-#__next {
-  isolation: isolate;
+:root {
+  /* Custom Properties */
 }
 
-/* Minimal styles */
+@layer base {
+  /* font-family は、tailwind.config.js の fontFamily で設定 */
+}
+
+@layer components {
+  :root {
+    --btn-padding-x: 1.25em;
+    --btn-padding-y: 0.5em;
+  }
+  .btn-small {
+    --btn-padding-x: 0.6em;
+    --btn-padding-y: 0.25em;
+  }
+  .btn {
+    @apply inline-block px-[var(--btn-padding-x)] py-[var(--btn-padding-y)] transition hover:scale-105;
+  }
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-300 focus:ring-primary-400 text-white transition focus:ring-2 focus:ring-opacity-75;
+  }
+  .btn-outline-primary {
+    @apply border-primary text-primary hover:bg-primary-100 focus:ring-primary-400 border transition focus:ring-2 focus:ring-opacity-75;
+  }
+  .btn-secondary {
+    @apply bg-orange-500 text-white transition hover:bg-orange-700 focus:ring-2 focus:ring-orange-400 focus:ring-opacity-75;
+  }
+  .btn-icon {
+    @apply inline-flex items-center justify-center gap-x-3.5;
+  }
+  .box-alert {
+    @apply rounded-md border border-red-200 bg-red-50 p-4 text-sm text-red-600;
+  }
+}
+
+@layer utilities {
+  /* ユーティリティ */
+}
+
 body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  padding: 16px;
-  min-height: 100%;
-  font-family: sans-serif;
-  background: hsl(0deg 0% 95%);
-  color: hsl(0deg 0% 10%);
+  min-height: 100dvh;
 }
-main {
+
+header {
+}
+
+.site-wrapper {
+  flex-grow: 1;
   width: 100%;
-  max-width: 800px;
-  padding: 16px 24px;
-  margin: 0px auto;
-  border: 1px solid hsl(0deg 0% 50% / 0.3);
-  border-radius: 2px;
-  background: white;
+  max-width: 1140px;
+  margin-inline: auto;
 }
+
 footer {
-  width: 100%;
-  font-size: 0.875rem;
-  color: hsl(0deg 0% 30%);
-  text-align: center;
-  padding: 32px 0px;
+}
+
+.container {
 }

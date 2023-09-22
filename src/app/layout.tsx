@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang='en'>
       <body className={inter.className}>
         <Header />
-        <div className='site-wrapper grow'>{children}</div>
+        <div className='site-wrapper bg-white'>{children}</div>
         <Footer />
       </body>
     </html>
