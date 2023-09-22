@@ -8,6 +8,12 @@
     "start": "next start",
     "lint": "next lint --dir src"
   },
+  "browserslist": [
+    ">0.3%",
+    "not ie 11",
+    "not dead",
+    "not op_mini all"
+  ],
   "dependencies": {
     "@types/node": "20.6.2",
     "@types/react": "18.2.21",
