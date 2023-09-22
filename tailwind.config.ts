@@ -8,8 +8,15 @@ const config: Config = {
   ],
   theme: {
     fontFamily: {
-      sans: ['Inter', 'sans-serif'],
-      serif: ['Merriweather', 'serif'],
+      sans: ['var(--font-notoSansJP)'],
+      serif: [
+        'Times New Roman',
+        'YuMincho',
+        'Hiragino Mincho ProN',
+        'Yu Mincho',
+        'MS PMincho',
+        'serif',
+      ],
     },
     extend: {
       // extend は、デフォルト値を保持しつつ、新しい値を追加
