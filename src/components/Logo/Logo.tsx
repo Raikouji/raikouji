@@ -5,7 +5,7 @@ import styles from './Logo.module.css'
 function Logo({ tagline }: { tagline: string | undefined }) {
   return (
     <div>
-      <h1 className='text-2xl font-bold'>
+      <h1 className='text-xl font-bold'>
         <Link href='/' className={styles.wrapper}>
           Logo コンポーネント
         </Link>

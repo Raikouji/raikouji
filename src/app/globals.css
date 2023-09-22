@@ -15,6 +15,23 @@
   /* Custom Properties */
 }
 
+/* THEME VARIABLES */
+html {
+  --content-width: 55rem;
+  --outer-content-width: 80rem;
+  --viewport-padding: 16px;
+  --header-height: 5rem;
+  --trimmed-content-width: calc(
+    var(--content-width) - var(--viewport-padding) * 2
+  );
+}
+
+@media (min-width: 35rem) {
+  html {
+    --viewport-padding: 24px;
+  }
+}
+
 @layer base {
   /* font-family は、tailwind.config.js の fontFamily で設定 */
 }
@@ -32,10 +49,10 @@
     @apply inline-block px-[var(--btn-padding-x)] py-[var(--btn-padding-y)] transition hover:scale-105;
   }
   .btn-primary {
-    @apply bg-primary hover:bg-primary-300 focus:ring-primary-400 text-white transition focus:ring-2 focus:ring-opacity-75;
+    @apply bg-primary text-white transition hover:bg-primary-300 focus:ring-2 focus:ring-primary-400 focus:ring-opacity-75;
   }
   .btn-outline-primary {
-    @apply border-primary text-primary hover:bg-primary-100 focus:ring-primary-400 border transition focus:ring-2 focus:ring-opacity-75;
+    @apply border border-primary text-primary transition hover:bg-primary-100 focus:ring-2 focus:ring-primary-400 focus:ring-opacity-75;
   }
   .btn-secondary {
     @apply bg-orange-500 text-white transition hover:bg-orange-700 focus:ring-2 focus:ring-orange-400 focus:ring-opacity-75;

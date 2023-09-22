@@ -3,10 +3,12 @@ import MainNavigation from '@/components/MainNavigation'
 
 function Header() {
   return (
-    <header className='${styles.wrapper} flex flex-row items-center justify-between bg-white'>
-      <Logo tagline='タグラインです' />
-      <MainNavigation />
-    </header>
+    <div className='header-wrapper bg-white'>
+      <header className='${styles.wrapper} mx-auto my-3 flex w-full max-w-[1140px] flex-row items-center justify-between'>
+        <Logo tagline='タグラインです' />
+        <MainNavigation />
+      </header>
+    </div>
   )
 }
 
