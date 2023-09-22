@@ -22,8 +22,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang='ja'>
-      <body className={`bg-dots ${notoSansJP.variable} font-sans`}>
+    <html lang='ja' className={`${notoSansJP.variable} font-sans`}>
+      <body className='bg-dots'>
         <Header />
         <div className='site-wrapper bg-white'>{children}</div>
         <Footer />
