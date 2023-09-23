@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "analyze": "ANALYZE=true npm run build",
     "lint": "next lint --dir src"
   },
   "browserslist": [
@@ -15,6 +16,7 @@
     "not op_mini all"
   ],
   "dependencies": {
+    "@next/bundle-analyzer": "^13.5.2",
     "@types/node": "20.6.2",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
