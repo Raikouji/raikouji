@@ -9,6 +9,11 @@ const config: Config = {
   theme: {
     container: {
       center: true,
+      padding: {
+        DEFAULT: '8px',
+        md: '16px',
+        lg: '32px',
+      },
     },
     fontFamily: {
       sans: ['var(--font-notoSansJP)'],
