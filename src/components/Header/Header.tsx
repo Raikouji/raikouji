@@ -1,4 +1,4 @@
-import Breadcrumbs from '@/components/Breadcrumbs'
+import Breadcrumb from '@/components/Breadcrumbs'
 import Logo from '@/components/Logo'
 import MainNavigation from '@/components/MainNavigation'
 
@@ -9,7 +9,7 @@ function Header() {
         <Logo tagline='タグラインです' />
         <MainNavigation />
       </header>
-      <Breadcrumbs />
+      <Breadcrumb />
     </div>
   )
 }
