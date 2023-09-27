@@ -1,6 +1,6 @@
-import styles from './Footer.module.css'
+import styles from './SiteFooter.module.css'
 
-function Footer() {
+function SiteFooter() {
   return (
     <footer className={styles.wrapper}>
       <p>フッターです</p>
@@ -9,4 +9,4 @@ function Footer() {
   )
 }
 
-export default Footer
+export default SiteFooter

@@ -1,7 +1,7 @@
-import Footer from '@/components/Footer'
-import Header from '@/components/Header'
 import type { Metadata } from 'next'
 import { Noto_Sans_JP } from 'next/font/google'
+import SiteFooter from '../components/SiteFooter'
+import SiteHeader from '../components/SiteHeader'
 import './globals.css'
 
 const notoSansJP = Noto_Sans_JP({
@@ -24,9 +24,9 @@ export default function RootLayout({
   return (
     <html lang='ja' className={`${notoSansJP.variable} font-sans`}>
       <body className='bg-dots'>
-        <Header />
+        <SiteHeader />
         <div className='site-wrapper bg-white'>{children}</div>
-        <Footer />
+        <SiteFooter />
       </body>
     </html>
   )
