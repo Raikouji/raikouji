@@ -7,6 +7,9 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    container: {
+      center: true,
+    },
     fontFamily: {
       sans: ['var(--font-notoSansJP)'],
       serif: [
