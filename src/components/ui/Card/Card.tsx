@@ -12,7 +12,10 @@ function Card({
   className?: string
 }) {
   return (
-    <div className={clsx(styles.wrapper, className)} {...delegated}>
+    <div
+      className={clsx(styles.wrapper, 'border', 'border-amber-600')}
+      {...delegated}
+    >
       {children}
     </div>
   )

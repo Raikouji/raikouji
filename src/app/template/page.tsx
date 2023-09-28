@@ -1,9 +1,11 @@
-import Card from '@/components/Card'
+import Link from 'next/link'
+
+import Card from '@/components/ui/Card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+
 import { ChevronRightIcon } from 'lucide-react'
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import styles from './template.module.css'
 
 export const metadata: Metadata = {
@@ -58,7 +60,7 @@ export default function Page() {
         <Badge variant='destructive'>Destructive</Badge>
       </section>
 
-      <Card>
+      <Card className='shadow'>
         <p>
           ★★ダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。
           それから思わ口まし勝た(50)しはでまた箱のダミーコピーです上手どもっさと俄たますて
