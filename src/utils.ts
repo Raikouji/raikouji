@@ -1,5 +1,14 @@
 // utils.ts
 // 抽象的なタスクを実行する汎用関数
+import { clsx, type ClassValue } from 'clsx'
+import { twMerge } from 'tailwind-merge'
+
+/**
+ * クラス名生成関数 (chadcn/ui が使用)
+ */
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
 
 /**
  * 範囲関数: 開始値と終了値の間の連続した数値の配列を返す

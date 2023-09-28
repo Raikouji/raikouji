@@ -1,5 +1,8 @@
 import Card from '@/components/Card'
+import { Button } from '@/components/ui/button'
+import { ChevronRightIcon } from 'lucide-react'
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import styles from './template.module.css'
 
 export const metadata: Metadata = {
@@ -28,6 +31,25 @@ export default function Page() {
         <div className='col bg-gray-200'>col</div>
         <div className='col bg-gray-200'>col</div>
       </div>
+
+      <section className='buttons'>
+        <Button>Primary(default)</Button>
+        <Button variant='secondary'>Secondary</Button>
+        <Button variant='destructive'>Destructive</Button>
+        <Button variant='outline'>Outline</Button>
+        <Button variant='ghost'>Ghost</Button>
+        <Button variant='link'>Link</Button>
+        <Button variant='outline' size='icon'>
+          <ChevronRightIcon className='h-4 w-4' />
+        </Button>
+        <Button>
+          <ChevronRightIcon className='mr-2 h-4 w-4' /> Login with Email
+        </Button>
+        <Button asChild>
+          <Link href='/'>As Child (Link)</Link>
+        </Button>
+      </section>
+
       <Card>
         <p>
           ★★ダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。
