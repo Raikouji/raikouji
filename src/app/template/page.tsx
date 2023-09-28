@@ -1,4 +1,5 @@
 import Card from '@/components/Card'
+import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { ChevronRightIcon } from 'lucide-react'
 import type { Metadata } from 'next'
@@ -48,6 +49,13 @@ export default function Page() {
         <Button asChild>
           <Link href='/'>As Child (Link)</Link>
         </Button>
+      </section>
+
+      <section className='badges'>
+        <Badge>Default</Badge>
+        <Badge variant='outline'>outline</Badge>
+        <Badge variant='secondary'>Secondary</Badge>
+        <Badge variant='destructive'>Destructive</Badge>
       </section>
 
       <Card>
