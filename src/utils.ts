@@ -4,7 +4,8 @@ import { clsx, type ClassValue } from 'clsx'
 import { twMerge } from 'tailwind-merge'
 
 /**
- * クラス名生成関数 (chadcn/ui が使用)
+ * Tailwind CSS クラスを効率的にマージ
+ * (スタイルの競合を解決、chadcn/ui が使用)
  */
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
