@@ -55,9 +55,9 @@ export default function Page() {
 
       <section className='badges'>
         <Badge>Default</Badge>
-        <Badge variant='outline'>outline</Badge>
         <Badge variant='secondary'>Secondary</Badge>
         <Badge variant='destructive'>Destructive</Badge>
+        <Badge variant='outline'>outline</Badge>
       </section>
 
       <Card className='shadow'>
