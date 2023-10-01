@@ -138,6 +138,12 @@ html {
   /* ユーティリティ */
 }
 
+html {
+  /*color: var(--color-text);*/
+  font-family: var(--font-noto-sans-jp), sans-serif;
+  /*background: var(--color-backdrop-highlight);*/
+}
+
 body {
   display: flex;
   flex-direction: column;

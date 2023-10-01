@@ -1,7 +1,12 @@
 import type { Metadata } from 'next'
 import { Noto_Sans_JP } from 'next/font/google'
+
+import { LIGHT_TOKENS } from '@/constants'
+import clsx from 'clsx'
+
 import SiteFooter from '../components/SiteFooter'
 import SiteHeader from '../components/SiteHeader'
+
 import './globals.css'
 
 const notoSansJP = Noto_Sans_JP({
@@ -21,8 +26,16 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const theme = 'light'
+
   return (
-    <html lang='ja' className={`${notoSansJP.variable} font-sans`}>
+    <html
+      lang='ja'
+      className={clsx(notoSansJP.variable, 'font-sans')}
+      data-color-theme={theme}
+      style={LIGHT_TOKENS}
+      // style={theme === 'light' ? LIGHT_TOKENS : DARK_TOKENS}
+    >
       <body className='bg-dots'>
         <SiteHeader />
         <div className='site-wrapper bg-white'>{children}</div>
