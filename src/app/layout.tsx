@@ -5,10 +5,10 @@ import SiteHeader from '../components/SiteHeader'
 import './globals.css'
 
 const notoSansJP = Noto_Sans_JP({
-  weight: ['400', '700'],
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-notoSansJP',
+  weight: ['400', '700'],
+  variable: '--font-noto-sans-jp',
 })
 
 export const metadata: Metadata = {
