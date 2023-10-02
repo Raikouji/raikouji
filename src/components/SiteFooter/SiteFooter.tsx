@@ -5,7 +5,7 @@ import Link from 'next/link'
 function SiteFooter() {
   return (
     <footer>
-      <div className=' border border-amber-600 py-8'>
+      <div className='bg-gray-50 py-12'>
         <div className='container flex flex-col-reverse justify-between gap-12 text-center md:flex-row md:text-left'>
           <div>
             <Logo tagline='タグラインです' taglinePosition='top'>
