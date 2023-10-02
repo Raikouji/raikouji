@@ -1,8 +1,8 @@
-import React from 'react'
 import type { Metadata } from 'next'
 import { Noto_Sans_JP } from 'next/font/google'
+import React from 'react'
 
-import { LIGHT_TOKENS } from '@/constants'
+import { DARK_TOKENS, LIGHT_TOKENS } from '@/constants'
 import clsx from 'clsx'
 
 import SiteFooter from '../components/SiteFooter'
@@ -23,8 +23,8 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({
-                                     children,
-                                   }: {
+  children,
+}: {
   children: React.ReactNode
 }) {
   const theme = 'light'
@@ -34,14 +34,14 @@ export default function RootLayout({
       lang='ja'
       className={clsx(notoSansJP.variable, 'font-sans')}
       data-color-theme={theme}
-      style={LIGHT_TOKENS}
-      // style={theme === 'light' ? LIGHT_TOKENS : DARK_TOKENS}
+      // @ts-ignore
+      style={theme === 'light' ? LIGHT_TOKENS : DARK_TOKENS}
     >
-    <body className='bg-dots'>
-      <SiteHeader />
-      <div className='site-wrapper bg-white'>{children}</div>
-      <SiteFooter />
-    </body>
+      <body className='bg-dots'>
+        <SiteHeader />
+        <div className='site-wrapper bg-white'>{children}</div>
+        <SiteFooter />
+      </body>
     </html>
   )
 }
