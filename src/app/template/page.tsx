@@ -6,7 +6,6 @@ import { Button } from '@/components/ui/button'
 
 import { ChevronRightIcon } from 'lucide-react'
 import type { Metadata } from 'next'
-import styles from './template.module.css'
 
 export const metadata: Metadata = {
   title: '子ページのタイトルです',
@@ -15,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <div className={styles.wrapper}>
+    <div className='container'>
       <h1>Hello, Next! template/page.tsx</h1>
       {/*Tailwind css Grid 12columns*/}
       <div className='grid grid-cols-3 gap-4 md:grid-cols-6 lg:grid-cols-12'>
