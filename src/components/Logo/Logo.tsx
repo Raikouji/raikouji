@@ -1,18 +1,39 @@
 import Link from 'next/link'
+import React from 'react'
 
 import styles from './Logo.module.css'
 
-function Logo({ tagline }: { tagline: string | undefined }) {
+function Logo({
+  tagline,
+  taglinePosition = 'bottom',
+  children,
+}: {
+  tagline?: string
+  taglinePosition?: 'top' | 'bottom' | 'right'
+  children: React.ReactNode
+}) {
+  let flexClass
+
+  if (tagline) {
+    flexClass = 'flex flex-col'
+    taglinePosition === 'right' && (flexClass = 'flex flex-row gap-3')
+  }
+
   return (
-    <div>
+    <div className={flexClass}>
+      {tagline && taglinePosition === 'top' && <Tagline tagline={tagline} />}
       <h1 className='text-xl font-bold'>
         <Link href='/' className={styles.wrapper}>
-          Logo コンポーネント
+          {children}
         </Link>
       </h1>
-      {tagline ? <p className='mt-2 text-xs'>{tagline}</p> : null}
+      {tagline && taglinePosition !== 'top' && <Tagline tagline={tagline} />}
     </div>
   )
+}
+
+function Tagline({ tagline }: { tagline: string }) {
+  return <p className='text-xs'>{tagline}</p>
 }
 
 export default Logo
