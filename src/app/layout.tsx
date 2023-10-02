@@ -1,3 +1,4 @@
+import React from 'react'
 import type { Metadata } from 'next'
 import { Noto_Sans_JP } from 'next/font/google'
 
@@ -22,8 +23,8 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({
-  children,
-}: {
+                                     children,
+                                   }: {
   children: React.ReactNode
 }) {
   const theme = 'light'
@@ -36,11 +37,11 @@ export default function RootLayout({
       style={LIGHT_TOKENS}
       // style={theme === 'light' ? LIGHT_TOKENS : DARK_TOKENS}
     >
-      <body className='bg-dots'>
-        <SiteHeader />
-        <div className='site-wrapper bg-white'>{children}</div>
-        <SiteFooter />
-      </body>
+    <body className='bg-dots'>
+      <SiteHeader />
+      <div className='site-wrapper bg-white'>{children}</div>
+      <SiteFooter />
+    </body>
     </html>
   )
 }
