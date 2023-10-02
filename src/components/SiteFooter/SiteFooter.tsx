@@ -1,4 +1,5 @@
 import Logo from '@/components/Logo'
+import { SITE_TITLE } from '@/constants'
 import Link from 'next/link'
 
 function SiteFooter() {
@@ -8,7 +9,7 @@ function SiteFooter() {
         <div className='container flex flex-col-reverse justify-between gap-12 text-center md:flex-row md:text-left'>
           <div>
             <Logo tagline='タグラインです' taglinePosition='top'>
-              サイトタイトルです
+              {SITE_TITLE}
             </Logo>
             <p className='mt-3'>
               Blog template created by{' '}

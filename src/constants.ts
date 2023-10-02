@@ -1,7 +1,7 @@
 // アプリ全体で使う定数
 
-export const BLOG_TITLE = 'Bits & Bytes'
-export const BLOG_DESCRIPTION = 'A wonderful blog about JavaScript'
+export const SITE_TITLE = 'サイトタイトルです'
+export const SITE_DESCRIPTION = 'サイトのディスクリプションです。'
 
 export const COLOR_THEME_COOKIE_NAME = 'color-theme'
 
