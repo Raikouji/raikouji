@@ -20,7 +20,6 @@ html {
   --content-width: 55rem;
   --outer-content-width: 80rem;
   --viewport-padding: 16px;
-  --header-height: 5rem;
   --trimmed-content-width: calc(
     var(--content-width) - var(--viewport-padding) * 2
   );
