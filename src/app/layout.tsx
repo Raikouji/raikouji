@@ -10,6 +10,7 @@ import SiteHeader from '../components/SiteHeader'
 
 import './globals.css'
 
+// TODO: フォントが適用できない問題
 const notoSansJP = Noto_Sans_JP({
   subsets: ['latin'],
   display: 'swap',
