@@ -17,11 +17,13 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <div className='container max-w-screen-xl'>
-      <h1 className='text-3xl font-bold'>Hello, Next! template/page.tsx</h1>
+      <h1 className='text-3xl font-bold'>template/page.tsx</h1>
 
       <div className='mt-12 flex flex-col gap-12'>
         <section>
-          <h2 className='text-2xl font-bold'>Tailwind css Grid 12columns</h2>
+          <h2 className='mb-4 text-2xl font-bold'>
+            Tailwind css Grid 12columns
+          </h2>
           <div className='grid grid-cols-3 gap-4 md:grid-cols-6 lg:grid-cols-12'>
             <div className='col bg-gray-200'>col</div>
             <div className='col bg-gray-200'>col</div>
@@ -41,34 +43,38 @@ export default function Page() {
         </section>
 
         <section>
-          <h2 className='text-2xl font-bold'>Buttons</h2>
-          <Button>Primary(default)</Button>
-          <Button variant='secondary'>Secondary</Button>
-          <Button variant='destructive'>Destructive</Button>
-          <Button variant='outline'>Outline</Button>
-          <Button variant='ghost'>Ghost</Button>
-          <Button variant='link'>Link</Button>
-          <Button variant='outline' size='icon'>
-            <ChevronRightIcon className='h-4 w-4' />
-          </Button>
-          <Button>
-            <ChevronRightIcon className='mr-2 h-4 w-4' /> Login with Email
-          </Button>
-          <Button asChild>
-            <Link href='/'>As Child (Link)</Link>
-          </Button>
+          <h2 className='mb-4 text-2xl font-bold'>Buttons</h2>
+          <div className='flex flex-wrap gap-4'>
+            <Button>Primary(default)</Button>
+            <Button variant='secondary'>Secondary</Button>
+            <Button variant='destructive'>Destructive</Button>
+            <Button variant='outline'>Outline</Button>
+            <Button variant='ghost'>Ghost</Button>
+            <Button variant='link'>Link</Button>
+            <Button variant='outline' size='icon'>
+              <ChevronRightIcon className='h-4 w-4' />
+            </Button>
+            <Button>
+              <ChevronRightIcon className='mr-2 h-4 w-4' /> Login with Email
+            </Button>
+            <Button asChild>
+              <Link href='/'>As Child (Link)</Link>
+            </Button>
+          </div>
         </section>
 
         <section>
-          <h2 className='text-2xl font-bold'>Badges</h2>
-          <Badge>Default</Badge>
-          <Badge variant='secondary'>Secondary</Badge>
-          <Badge variant='destructive'>Destructive</Badge>
-          <Badge variant='outline'>outline</Badge>
+          <h2 className='mb-4 text-2xl font-bold'>Badges</h2>
+          <div className='flex flex-wrap gap-4'>
+            <Badge>Default</Badge>
+            <Badge variant='secondary'>Secondary</Badge>
+            <Badge variant='destructive'>Destructive</Badge>
+            <Badge variant='outline'>outline</Badge>
+          </div>
         </section>
 
         <section>
-          <h2 className='text-2xl font-bold'>Aspect ratio</h2>
+          <h2 className='mb-4 text-2xl font-bold'>Aspect ratio</h2>
           <div className='grid grid-cols-5 gap-8'>
             <div>
               <AspectRatio ratio={1618 / 1000}>
@@ -139,7 +145,7 @@ export default function Page() {
         </section>
 
         <section>
-          <h2 className='text-2xl font-bold'>Screens</h2>
+          <h2 className='mb-4 text-2xl font-bold'>Screens</h2>
           <div className='container max-w-screen-sm border'>
             <p>
               max-w-screen-sm /
@@ -199,7 +205,7 @@ export default function Page() {
         </section>
 
         <section>
-          <h2 className='text-2xl font-bold'>Card</h2>
+          <h2 className='mb-4 text-2xl font-bold'>Card</h2>
           <Card className='shadow'>
             <p>
               ★★ダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。
