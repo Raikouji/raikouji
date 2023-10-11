@@ -6,7 +6,7 @@ function SiteFooter() {
   return (
     <footer>
       <div className='bg-gray-50 py-12'>
-        <div className='container flex flex-col-reverse justify-between gap-12 text-center md:flex-row md:text-left'>
+        <div className='container flex max-w-screen-xl flex-col-reverse justify-between gap-12 text-center md:flex-row md:text-left'>
           <div>
             <Logo tagline='タグラインです' taglinePosition='top'>
               {SITE_TITLE}
@@ -71,7 +71,7 @@ function SiteFooter() {
           </nav>
         </div>
       </div>
-      <div className='bg-gray-800 py-3 text-gray-300'>
+      <div className='bg-gray-400 py-3 text-gray-300'>
         <p className='container text-center'>©︎name</p>
       </div>
     </footer>
