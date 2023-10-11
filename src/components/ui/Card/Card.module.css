@@ -1,12 +1,10 @@
 .wrapper {
-  padding: 16px;
   background: white;
   border: 1px solid #e7e7e7;
 }
 
 @media (min-width: 56rem) {
   .wrapper {
-    padding: 32px;
   }
 }
 

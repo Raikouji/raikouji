@@ -257,6 +257,74 @@ export default function Page() {
             </p>
           </Card>
         </section>
+
+        <section>
+          <h2 className='mb-4 text-2xl font-bold'>Layout</h2>
+          <div className='flex gap-8'>
+            <div className='w-1/4'>
+              <AspectRatio ratio={2 / 3}>
+                <Image
+                  src='/lorem.jpg'
+                  alt='Lorem'
+                  width={2100}
+                  height={1400}
+                  className='h-full w-full object-cover'
+                  priority
+                />
+              </AspectRatio>
+            </div>
+            <div className='w-3/4'>
+              <h2 className='text-2xl font-bold'>タイトル</h2>
+              <p className='mt-4'>
+                ★★ダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝た(50)しはでまた箱のダミーコピーです上手どもっさと俄たますて、みんなまでぶんを弾いとだまし(100文字)。
+              </p>
+            </div>
+          </div>
+          <Card className='mx-auto my-8 max-w-screen-md p-12'>
+            <div className='flex gap-8'>
+              <div className='w-1/4'>
+                <AspectRatio ratio={2 / 3}>
+                  <Image
+                    src='/lorem.jpg'
+                    alt='Lorem'
+                    width={2100}
+                    height={1400}
+                    className='h-full w-full object-cover'
+                    priority
+                  />
+                </AspectRatio>
+              </div>
+              <div className='w-3/4'>
+                <h2 className='text-2xl font-bold'>タイトル</h2>
+                <p className='mt-4'>
+                  ★★ダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝た(50)しはでまた箱のダミーコピーです上手どもっさと俄たますて、みんなまでぶんを弾いとだまし(100文字)。
+                </p>
+              </div>
+            </div>
+          </Card>
+          <Card className='mx-auto my-8 max-w-screen-sm'>
+            <div className='flex gap-8'>
+              <div className='w-1/4'>
+                <AspectRatio ratio={2 / 3}>
+                  <Image
+                    src='/lorem.jpg'
+                    alt='Lorem'
+                    width={2100}
+                    height={1400}
+                    className='h-full w-full object-cover'
+                    priority
+                  />
+                </AspectRatio>
+              </div>
+              <div className='w-3/4 py-8 pr-8'>
+                <h2 className='text-2xl font-bold'>タイトル</h2>
+                <p className='mt-4'>
+                  ★★ダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝た(50)しはでまた箱のダミーコピーです上手どもっさと俄たますて、みんなまでぶんを弾いとだまし(100文字)。
+                </p>
+              </div>
+            </div>
+          </Card>
+        </section>
       </div>
     </div>
   )
