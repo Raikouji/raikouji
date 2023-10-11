@@ -75,9 +75,9 @@ export default function Page() {
 
         <section>
           <h2 className='mb-4 text-2xl font-bold'>Aspect ratio</h2>
-          <div className='grid grid-cols-5 gap-8'>
+          <div className='grid grid-cols-7 gap-8'>
             <div>
-              <AspectRatio ratio={1618 / 1000}>
+              <AspectRatio ratio={3303 / 1000}>
                 <Image
                   src='/lorem.jpg'
                   alt='Lorem'
@@ -87,20 +87,7 @@ export default function Page() {
                   priority
                 />
               </AspectRatio>
-              Golden ratio
-            </div>
-            <div>
-              <AspectRatio ratio={3 / 2}>
-                <Image
-                  src='/lorem.jpg'
-                  alt='Lorem'
-                  width={2100}
-                  height={1400}
-                  className='h-full w-full object-cover'
-                  priority
-                />
-              </AspectRatio>
-              3:2
+              Bronze ratio (3.303:1)
             </div>
             <div>
               <AspectRatio ratio={16 / 9}>
@@ -116,6 +103,45 @@ export default function Page() {
               16:9
             </div>
             <div>
+              <AspectRatio ratio={1618 / 1000}>
+                <Image
+                  src='/lorem.jpg'
+                  alt='Lorem'
+                  width={2100}
+                  height={1400}
+                  className='h-full w-full object-cover'
+                  priority
+                />
+              </AspectRatio>
+              Golden ratio (1.618/1)
+            </div>
+            <div>
+              <AspectRatio ratio={3 / 2}>
+                <Image
+                  src='/lorem.jpg'
+                  alt='Lorem'
+                  width={2100}
+                  height={1400}
+                  className='h-full w-full object-cover'
+                  priority
+                />
+              </AspectRatio>
+              3:2
+            </div>
+            <div>
+              <AspectRatio ratio={1414 / 1000}>
+                <Image
+                  src='/lorem.jpg'
+                  alt='Lorem'
+                  width={2100}
+                  height={1400}
+                  className='h-full w-full object-cover'
+                  priority
+                />
+              </AspectRatio>
+              Silver ratio (1.414:1)
+            </div>
+            <div>
               <AspectRatio ratio={1}>
                 <Image
                   src='/lorem.jpg'
@@ -129,7 +155,7 @@ export default function Page() {
               Square
             </div>
             <div>
-              <AspectRatio ratio={9 / 16}>
+              <AspectRatio ratio={2 / 3}>
                 <Image
                   src='/lorem.jpg'
                   alt='Lorem'
@@ -139,7 +165,7 @@ export default function Page() {
                   priority
                 />
               </AspectRatio>
-              9:16
+              2:3
             </div>
           </div>
         </section>
