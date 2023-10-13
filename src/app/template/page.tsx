@@ -42,6 +42,63 @@ export default function Page() {
           </div>
         </section>
 
+        <section className='full-width bg-amber-200 py-8'>
+          <h2 className='mb-4 text-2xl font-bold'>Full Width</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut 500 labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+            ut aliquip ex ea commodo consequat.
+          </p>
+          <div className='container mt-8 max-w-screen-lg'>
+            <h3 className='font-bold'>指定幅で</h3>
+            <p className='mt-3'>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut 500 labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </div>
+        </section>
+
+        <section className='full-width-md bg-amber-200 py-8'>
+          <h2 className='mb-4 text-2xl font-bold'>Full Width (md)</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut 500 labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+            ut aliquip ex ea commodo consequat.
+          </p>
+          <div className='container mt-8 max-w-screen-lg'>
+            <h3 className='font-bold'>指定幅で</h3>
+            <p className='mt-3'>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut 500 labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </div>
+        </section>
+
+        <section className='full-width-sm bg-amber-200 py-8'>
+          <h2 className='mb-4 text-2xl font-bold'>Full Width (sm)</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut 500 labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+            ut aliquip ex ea commodo consequat.
+          </p>
+          <div className='container mt-8 max-w-screen-lg'>
+            <h3 className='font-bold'>指定幅で</h3>
+            <p className='mt-3'>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut 500 labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </div>
+        </section>
+
         <section>
           <h2 className='mb-4 text-2xl font-bold'>Buttons</h2>
           <div className='flex flex-wrap gap-4'>
