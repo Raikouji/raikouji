@@ -150,7 +150,6 @@ body {
   justify-content: flex-start;
   min-height: 100vh;
   min-height: 100svh;
-  overflow-x: hidden; /* vw の計算でスクロールバーの幅を含めてしまう問題への対応  */
 }
 
 header {
@@ -169,19 +168,35 @@ footer {
 
 /* 子要素を親要素の幅からはみ出して画面幅いっぱいにする */
 .full-width {
-  margin-right: calc(50% - 50vw);
-  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw + var(--scroll-bar-width) / 2);
+  margin-left: calc(50% - 50vw + var(--scroll-bar-width) / 2);
 }
-/* ★★TODO: スクロールバーを含めてしまう問題、sm,md でうまくいかない */
-@include media-breakpoint-down(sm) {
-  .full-width-sm {
-    margin-right: calc(50% - 50vw);
-    margin-left: calc(50% - 50vw);
+/* ★★TODO: メディアクエリの書き方直す */
+/*@include media-breakpoint-down(xl) {*/
+@media screen and (max-width: 1279px) {
+  .full-width-md {
+    margin-right: calc(50% - 50vw + var(--scroll-bar-width) / 2);
+    margin-left: calc(50% - 50vw + var(--scroll-bar-width) / 2);
   }
 }
-@include media-breakpoint-down(md) {
+/*@include media-breakpoint-down(lg) {*/
+@media screen and (max-width: 1023px) {
   .full-width-md {
-    margin-right: calc(50% - 50vw);
-    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw + var(--scroll-bar-width) / 2);
+    margin-left: calc(50% - 50vw + var(--scroll-bar-width) / 2);
+  }
+}
+/*@include media-breakpoint-down(md) {*/
+@media screen and (max-width: 767px) {
+  .full-width-md {
+    margin-right: calc(50% - 50vw + var(--scroll-bar-width) / 2);
+    margin-left: calc(50% - 50vw + var(--scroll-bar-width) / 2);
+  }
+}
+/*@include media-breakpoint-down(sm) {*/
+@media screen and (max-width: 639px) {
+  .full-width-sm {
+    margin-right: calc(50% - 50vw + var(--scroll-bar-width) / 2);
+    margin-left: calc(50% - 50vw + var(--scroll-bar-width) / 2);
   }
 }

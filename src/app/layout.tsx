@@ -8,6 +8,7 @@ import clsx from 'clsx'
 import SiteFooter from '../components/SiteFooter'
 import SiteHeader from '../components/SiteHeader'
 
+import GetScrollBarWidth from '@/components/GetScrollBarWidth'
 import './globals.css'
 
 // TODO: フォントが適用できない問題
@@ -42,6 +43,7 @@ export default function RootLayout({
         <SiteHeader />
         <div className='site-wrapper bg-white'>{children}</div>
         <SiteFooter />
+        <GetScrollBarWidth />
       </body>
     </html>
   )
