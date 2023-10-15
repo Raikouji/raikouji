@@ -40,6 +40,30 @@ export default function Page() {
             <div className='col bg-gray-200'>col</div>
             <div className='col bg-gray-200'>col</div>
           </div>
+          <div className='mt-12 grid grid-cols-2 justify-center gap-4 md:grid-cols-3 lg:grid-cols-4'>
+            <div className='col bg-gray-200'>col</div>
+            <div className='col bg-gray-200'>col</div>
+            <div className='col bg-gray-200'>col</div>
+            <div className='col bg-gray-200'>col</div>
+            <div className='col bg-gray-200'>col</div>
+            <div className='col bg-gray-200'>col</div>
+            <div className='col bg-gray-200'>col</div>
+            <div className='col bg-gray-200'>col</div>
+          </div>
+        </section>
+
+        <section>
+          <h3 className='font-bold'>.grid.gap-4.lg:grid-cols-3</h3>
+          <div className='grid gap-8 lg:grid-cols-3 [&>*]:bg-gray-200'>
+            <div>
+              .col 指定なし:
+              ダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝た(50)しはでまた箱のダミーコピーです上手どもっさと俄たますて、みんなまでぶんを弾いとだまし(100文字)。
+            </div>
+            <div className='col-span-2'>
+              .col-span-2:
+              ダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝た(50)しはでまた箱のダミーコピーです上手どもっさと俄たますて、みんなまでぶんを弾いとだまし(100文字)。
+            </div>
+          </div>
         </section>
 
         <section>
@@ -302,7 +326,7 @@ export default function Page() {
           </p>
         </section>
 
-        <section>
+        <section className='flex flex-col gap-4'>
           <h2 className='mb-4 text-2xl font-bold'>Card</h2>
           <Card className='shadow'>
             <p>
@@ -316,8 +340,9 @@ export default function Page() {
               みんなまでぶんを弾いとだまし(100文字)。
             </p>
           </Card>
-          <Card className='mx-auto max-w-screen-sm shadow'>
-            <p>
+          <Card className='mx-auto max-w-screen-sm rounded-lg p-8 shadow'>
+            <h3 className='text-xl font-bold text-primary'>見出し</h3>
+            <p className='mt-4'>
               ★★ダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。
               それから思わ口まし勝た(50)しはでまた箱のダミーコピーです上手どもっさと俄たますて
               みんなまでぶんを弾いとだまし(100文字)。
