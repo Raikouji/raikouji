@@ -7,7 +7,7 @@ function Hero() {
       <div className='relative'>
         <div className='aspect-h-3 aspect-w-2 relative md:aspect-h-9 md:aspect-w-16'>
           <Image
-            src='/lorem.jpg'
+            src='/images/lorem.jpg'
             alt='Lorem'
             width={2100}
             height={1400}
