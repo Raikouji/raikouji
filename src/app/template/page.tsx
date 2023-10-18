@@ -9,6 +9,19 @@ import { Button } from '@/components/ui/button'
 import { ChevronRightIcon } from 'lucide-react'
 import type { Metadata } from 'next'
 
+import PhotoAlbum from 'react-photo-album'
+
+const photos = [
+  { src: '/images/lorem.jpg', width: 900, height: 600 },
+  { src: '/images/dummy-01.jpg', width: 900, height: 600 },
+  { src: '/images/dummy-02.jpg', width: 600, height: 900 },
+  { src: '/images/dummy-03.jpg', width: 900, height: 600 },
+  { src: '/images/dummy-02.jpg', width: 600, height: 900 },
+  { src: '/images/lorem.jpg', width: 900, height: 600 },
+  { src: '/images/dummy-01.jpg', width: 900, height: 600 },
+  { src: '/images/dummy-03.jpg', width: 900, height: 600 },
+]
+
 export const metadata: Metadata = {
   title: '子ページのタイトルです',
   description: '子ページのディスクリプションです',
@@ -192,6 +205,11 @@ export default function Page() {
               2:3
             </div>
           </div>
+        </section>
+
+        <section>
+          <h2 className='mb-4 text-2xl font-bold'>Gallery</h2>
+          <PhotoAlbum layout='masonry' photos={photos} />
         </section>
 
         <section className='flex flex-col gap-4'>
