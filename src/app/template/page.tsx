@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+import Gallery from '@/components/Gallery'
 import Card from '@/components/ui/Card'
 import { AspectRatio } from '@/components/ui/aspect-ratio'
 import { Badge } from '@/components/ui/badge'
@@ -9,17 +10,45 @@ import { Button } from '@/components/ui/button'
 import { ChevronRightIcon } from 'lucide-react'
 import type { Metadata } from 'next'
 
-import PhotoAlbum from 'react-photo-album'
-
 const photos = [
-  { src: '/images/lorem.jpg', width: 900, height: 600 },
-  { src: '/images/dummy-01.jpg', width: 900, height: 600 },
+  {
+    src: '/images/lorem.jpg',
+    width: 900,
+    height: 600,
+    alt: '代替テキスト1',
+  },
+  {
+    src: '/images/dummy-01.jpg',
+    width: 900,
+    height: 600,
+    alt: '代替テキスト2',
+  },
   { src: '/images/dummy-02.jpg', width: 600, height: 900 },
-  { src: '/images/dummy-03.jpg', width: 900, height: 600 },
-  { src: '/images/dummy-02.jpg', width: 600, height: 900 },
+  {
+    src: '/images/dummy-03.jpg',
+    width: 900,
+    height: 600,
+    alt: '代替テキスト4',
+  },
+  {
+    src: '/images/dummy-02.jpg',
+    width: 600,
+    height: 900,
+    alt: '代替テキスト5',
+  },
   { src: '/images/lorem.jpg', width: 900, height: 600 },
-  { src: '/images/dummy-01.jpg', width: 900, height: 600 },
-  { src: '/images/dummy-03.jpg', width: 900, height: 600 },
+  {
+    src: '/images/dummy-01.jpg',
+    width: 900,
+    height: 600,
+    alt: '代替テキスト7',
+  },
+  {
+    src: '/images/dummy-03.jpg',
+    width: 900,
+    height: 600,
+    alt: '代替テキスト8',
+  },
 ]
 
 export const metadata: Metadata = {
@@ -209,7 +238,7 @@ export default function Page() {
 
         <section>
           <h2 className='mb-4 text-2xl font-bold'>Gallery</h2>
-          <PhotoAlbum layout='masonry' photos={photos} />
+          <Gallery photos={photos} />
         </section>
 
         <section className='flex flex-col gap-4'>
