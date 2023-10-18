@@ -1,3 +1,4 @@
+/** @ref: https://react-photo-album.com/documentation */
 'use client'
 import NextJsImage from '@/components/NextJsImage'
 import PhotoAlbum from 'react-photo-album'
