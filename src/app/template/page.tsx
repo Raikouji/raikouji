@@ -351,6 +351,15 @@ export default function Page() {
               nisi ut aliquip ex ea commodo consequat.
             </p>
           </div>
+          <div className='container mt-8 max-w-[300px]'>
+            <h3 className='font-bold'>指定幅 .max-w-[300px]</h3>
+            <p className='mt-3'>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut 500 labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </div>
         </section>
 
         <section className='full-width-md bg-amber-200 py-8'>
