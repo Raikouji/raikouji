@@ -238,7 +238,7 @@ export default function Page() {
 
         <section>
           <h2 className='mb-4 text-2xl font-bold'>Gallery</h2>
-          <Gallery photos={photos} />
+          <Gallery photos={photos} col={1} colMd={2} colLg={3} />
         </section>
 
         <section className='flex flex-col gap-4'>

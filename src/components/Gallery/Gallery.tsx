@@ -4,6 +4,9 @@ import PhotoAlbum from 'react-photo-album'
 
 function Gallery({
   photos,
+  col = 2,
+  colMd = 3,
+  colLg = 4,
 }: {
   photos: {
     src: string
@@ -11,21 +14,24 @@ function Gallery({
     height: number
     alt?: string
   }[]
+  col?: number
+  colMd?: number
+  colLg?: number
 }) {
   return (
     <PhotoAlbum
       layout='masonry'
       photos={photos}
       renderPhoto={NextJsImage}
-      defaultContainerWidth={1200}
+      defaultContainerWidth={1140}
       sizes={{
         size: 'calc(100vw - 240px)',
         sizes: [{ viewport: '(max-width: 640px)', size: '100vw' }],
       }}
       columns={(containerWidth) => {
-        if (containerWidth < 640) return 2
-        if (containerWidth < 1024) return 3
-        return 4
+        if (containerWidth < 640) return col
+        if (containerWidth < 1024) return colMd
+        return colLg
       }}
     />
   )
