@@ -236,11 +236,6 @@ export default function Page() {
           </div>
         </section>
 
-        <section>
-          <h2 className='mb-4 text-2xl font-bold'>Gallery</h2>
-          <Gallery photos={photos} col={1} colMd={2} colLg={3} />
-        </section>
-
         <section className='flex flex-col gap-4'>
           <h2 className='mb-4 text-2xl font-bold'>Container</h2>
           <div className='container max-w-screen-sm border'>
@@ -477,6 +472,13 @@ export default function Page() {
               </div>
             </div>
           </Card>
+        </section>
+
+        <section>
+          <h2 className='mb-4 text-2xl font-bold'>Gallery</h2>
+          <Gallery photos={photos} />
+          <hr className='my-8' />
+          <Gallery photos={photos} col={1} colMd={2} colLg={3} />
         </section>
       </div>
     </div>
