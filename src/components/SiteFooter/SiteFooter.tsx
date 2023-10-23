@@ -11,14 +11,14 @@ function SiteFooter() {
             <Logo tagline='タグラインです' taglinePosition='top'>
               {SITE_TITLE}
             </Logo>
-            <p className='mt-3'>
+            <p className='mt-3 text-sm'>
               Blog template created by{' '}
               <a href='https://www.joshwcomeau.com/'>Josh W. Comeau</a>. Check
               out <a href='https://www.joyofreact.com/'>The Joy of React</a> to
               learn how to build dynamic React apps like this one!
             </p>
           </div>
-          <nav>
+          <nav className='text-sm'>
             <h2 className='font-bold'>Links 1</h2>
             <ul className='mt-4 flex flex-col gap-3'>
               <li>
@@ -35,7 +35,7 @@ function SiteFooter() {
               </li>
             </ul>
           </nav>
-          <nav>
+          <nav className='text-sm'>
             <h2 className='font-bold'>Links 2</h2>
             <ul className='mt-4 flex flex-col gap-3'>
               <li>
@@ -52,7 +52,7 @@ function SiteFooter() {
               </li>
             </ul>
           </nav>
-          <nav>
+          <nav className='text-sm'>
             <h2 className='font-bold'>Links 3</h2>
             <ul className='mt-4 flex flex-col gap-3'>
               <li>
