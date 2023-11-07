@@ -480,6 +480,13 @@ export default function Page() {
           <hr className='my-8' />
           <Gallery photos={photos} col={1} colMd={2} colLg={3} />
         </section>
+
+        <section className='full-width bg-amber-200 py-8'>
+          <div className='container mt-8 max-w-screen-xl'>
+            <h2 className='mb-4 text-2xl font-bold'>Gallery with Background</h2>
+            <Gallery photos={photos} />
+          </div>
+        </section>
       </div>
     </div>
   )
