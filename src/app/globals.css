@@ -13,6 +13,7 @@
 
 :root {
   /* Custom Properties */
+  --scroll-bar-width: 0px; /* use for full-width layout */
 }
 
 /* THEME VARIABLES */
@@ -166,7 +167,8 @@ footer {
 .container {
 }
 
-/* 子要素を親要素の幅からはみ出して画面幅いっぱいにする */
+/* 子要素を親要素の幅からはみ出して画面幅いっぱいにする
+  https://lopan.jp/breaking-out */
 .full-width {
   margin-right: calc(50% - 50vw + var(--scroll-bar-width) / 2);
   margin-left: calc(50% - 50vw + var(--scroll-bar-width) / 2);

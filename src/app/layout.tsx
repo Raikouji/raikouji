@@ -32,19 +32,20 @@ export default function RootLayout({
   const theme = 'light'
 
   return (
-    <html
-      lang='ja'
-      className={clsx(notoSansJP.variable, 'font-sans')}
-      data-color-theme={theme}
-      // @ts-ignore
-      style={theme === 'light' ? LIGHT_TOKENS : DARK_TOKENS}
-    >
-      <body className='bg-dots'>
-        <SiteHeader />
-        <div className='site-wrapper bg-white'>{children}</div>
-        <SiteFooter />
-        <GetScrollBarWidth />
-      </body>
-    </html>
+    <GetScrollBarWidth>
+      <html
+        lang='ja'
+        className={clsx(notoSansJP.variable, 'font-sans')}
+        data-color-theme={theme}
+        // @ts-ignore
+        style={theme === 'light' ? LIGHT_TOKENS : DARK_TOKENS}
+      >
+        <body className='bg-dots'>
+          <SiteHeader />
+          <div className='site-wrapper bg-white'>{children}</div>
+          <SiteFooter />
+        </body>
+      </html>
+    </GetScrollBarWidth>
   )
 }

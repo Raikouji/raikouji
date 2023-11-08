@@ -3,7 +3,7 @@ import styles from './Hero.module.css'
 
 function Hero() {
   return (
-    <div className={styles.wrapper}>
+    <div className={`full-width ${styles.wrapper}`}>
       <div className='relative'>
         <div className='aspect-h-3 aspect-w-2 relative md:aspect-h-9 md:aspect-w-16'>
           <Image
