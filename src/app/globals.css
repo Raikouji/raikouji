@@ -176,14 +176,14 @@ footer {
 /* ★★TODO: メディアクエリの書き方直す */
 /*@include media-breakpoint-down(xl) {*/
 @media screen and (max-width: 1279px) {
-  .full-width-md {
+  .full-width-xl {
     margin-right: calc(50% - 50vw + var(--scroll-bar-width) / 2);
     margin-left: calc(50% - 50vw + var(--scroll-bar-width) / 2);
   }
 }
 /*@include media-breakpoint-down(lg) {*/
 @media screen and (max-width: 1023px) {
-  .full-width-md {
+  .full-width-lg {
     margin-right: calc(50% - 50vw + var(--scroll-bar-width) / 2);
     margin-left: calc(50% - 50vw + var(--scroll-bar-width) / 2);
   }
