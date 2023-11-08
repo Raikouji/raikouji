@@ -377,6 +377,16 @@ export default function Page() {
           </p>
         </section>
 
+        <section className='bg-amber-200 py-8'>
+          <h2 className='mb-4 text-2xl font-bold'>Not Full Width</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut 500 labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+            ut aliquip ex ea commodo consequat.
+          </p>
+        </section>
+
         <section className='flex flex-col gap-4'>
           <h2 className='mb-4 text-2xl font-bold'>Card</h2>
           <Card className='shadow'>
@@ -484,6 +494,15 @@ export default function Page() {
         <section className='full-width bg-amber-200 py-8'>
           <div className='container mt-8 max-w-screen-xl'>
             <h2 className='mb-4 text-2xl font-bold'>Gallery with Background</h2>
+            <Gallery photos={photos} />
+          </div>
+        </section>
+
+        <section className='full-width bg-amber-200 py-8'>
+          <div className='container mt-8'>
+            <h2 className='mb-4 text-2xl font-bold'>
+              Gallery with Background (No max-width)
+            </h2>
             <Gallery photos={photos} />
           </div>
         </section>
