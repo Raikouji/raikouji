@@ -2,8 +2,9 @@
 import React from 'react'
 
 function GetScrollBarWidth({ children }: { children: React.ReactNode }) {
-  const [windowHeight, setWindowHeight] = React.useState(window.innerHeight)
+  const [windowHeight, setWindowHeight] = React.useState(0)
   React.useEffect(() => {
+    setWindowHeight(window.innerHeight)
     const doc = document.documentElement // html tag
     if (window.innerWidth !== doc.clientWidth) {
       doc.style.setProperty(
