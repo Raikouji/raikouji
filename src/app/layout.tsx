@@ -40,9 +40,9 @@ export default function RootLayout({
         // @ts-ignore
         style={theme === 'light' ? LIGHT_TOKENS : DARK_TOKENS}
       >
-        <body className='bg-dots'>
+        <body>
           <SiteHeader />
-          <div className='site-wrapper bg-white'>{children}</div>
+          <div className='site-wrapper'>{children}</div>
           <SiteFooter />
         </body>
       </html>

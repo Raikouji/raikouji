@@ -11,31 +11,22 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  /* Custom Properties */
-  --scroll-bar-width: 0px; /* use for full-width layout */
-}
-
-/* THEME VARIABLES */
-html {
-  --content-width: 55rem;
-  --outer-content-width: 80rem;
-  --viewport-padding: 16px;
-  --trimmed-content-width: calc(
-    var(--content-width) - var(--viewport-padding) * 2
-  );
-}
-
-@media (min-width: 35rem) {
-  html {
-    --viewport-padding: 24px;
-  }
-}
-
 @layer base {
   /* font-family は、tailwind.config.js の fontFamily で設定 */
   /* chadcn/ui */
   :root {
+    /* use for full-width layout */
+    --scroll-bar-width: 0px;
+
+    /* THEME VARIABLES */
+    --content-width: 55rem;
+    --outer-content-width: 80rem;
+    --viewport-padding: 16px;
+    --trimmed-content-width: calc(
+      var(--content-width) - var(--viewport-padding) * 2
+    );
+
+    /* Color */
     --background: 0 0% 100%;
     --foreground: 20 14.3% 4.1%;
 
@@ -65,6 +56,12 @@ html {
     --ring: 20 14.3% 4.1%;
 
     --radius: 0.5rem;
+  }
+
+  @media (min-width: 35rem) {
+    :root {
+      --viewport-padding: 24px;
+    }
   }
 
   .dark {
@@ -194,6 +191,10 @@ footer {
 }
 
 .container {
+}
+
+p {
+  @apply leading-relaxed tracking-wide;
 }
 
 /* 子要素を親要素の幅からはみ出して画面幅いっぱいにする
