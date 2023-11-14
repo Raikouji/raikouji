@@ -34,7 +34,6 @@ const config: Config = {
         // Theme 関数の使用：theme('colors.primary')
         transparent: 'transparent',
         current: 'currentColor',
-        base: '#f0f0ec',
         // // ここから chadcn/ui の色設定
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
