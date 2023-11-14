@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { Noto_Sans_JP } from 'next/font/google'
 import React from 'react'
 
-import { DARK_TOKENS, LIGHT_TOKENS } from '@/constants'
 import clsx from 'clsx'
 
 import SiteFooter from '../components/SiteFooter'
@@ -29,17 +28,9 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const theme = 'light'
-
   return (
     <GetScrollBarWidth>
-      <html
-        lang='ja'
-        className={clsx(notoSansJP.variable, 'font-sans')}
-        data-color-theme={theme}
-        // @ts-ignore
-        style={theme === 'light' ? LIGHT_TOKENS : DARK_TOKENS}
-      >
+      <html lang='ja' className={clsx(notoSansJP.variable, 'font-sans')}>
         <body>
           <SiteHeader />
           <div className='site-wrapper'>{children}</div>

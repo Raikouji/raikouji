@@ -1,11 +1,9 @@
 /**
- *
  * app/layout.tsx で読み込まれるグローバルスタイル
  *
  * PostCSS で Tailwind やその他プラグインを使用
  * package.json の "browserslist" で、対応ブラウザを設定
  * @see https://nextjs.org/docs/advanced-features/customizing-postcss-config
- *
  */
 @tailwind base;
 @tailwind components;
@@ -13,18 +11,9 @@
 
 @layer base {
   /* font-family は、tailwind.config.js の fontFamily で設定 */
-  /* chadcn/ui */
   :root {
-    /* use for full-width layout */
+    /* Use for full-width layout */
     --scroll-bar-width: 0px;
-
-    /* THEME VARIABLES */
-    --content-width: 55rem;
-    --outer-content-width: 80rem;
-    --viewport-padding: 16px;
-    --trimmed-content-width: calc(
-      var(--content-width) - var(--viewport-padding) * 2
-    );
 
     /* Color (https://ui.shadcn.com/docs/theming) */
     --background: 0 0% 100%;
@@ -167,18 +156,6 @@
   p {
     @apply leading-relaxed tracking-wide;
   }
-}
-
-@layer components {
-  /* Variables */
-  :root {
-    --btn-padding-x: 1.25em;
-    --btn-padding-y: 0.5em;
-  }
-  .btn-small {
-    --btn-padding-x: 0.6em;
-    --btn-padding-y: 0.25em;
-  }
 
   .site-wrapper {
     @apply mx-auto grow;
@@ -215,25 +192,6 @@
     }
   }
 
-  /*.btn {*/
-  /*  @apply inline-block px-[var(--btn-padding-x)] py-[var(--btn-padding-y)] transition hover:scale-105;*/
-  /*}*/
-  /*.btn-primary {*/
-  /*  @apply hover:bg-primary-300 focus:ring-primary-400 bg-primary text-white transition focus:ring-2 focus:ring-opacity-75;*/
-  /*}*/
-  /*.btn-outline-primary {*/
-  /*  @apply hover:bg-primary-100 focus:ring-primary-400 border border-primary text-primary transition focus:ring-2 focus:ring-opacity-75;*/
-  /*}*/
-  /*.btn-secondary {*/
-  /*  @apply bg-orange-500 text-white transition hover:bg-orange-700 focus:ring-2 focus:ring-orange-400 focus:ring-opacity-75;*/
-  /*}*/
-  /*.btn-icon {*/
-  /*  @apply inline-flex items-center justify-center gap-x-3.5;*/
-  /*}*/
-  /*.box-alert {*/
-  /*  @apply rounded-md border border-red-200 bg-red-50 p-4 text-sm text-red-600;*/
-  /*}*/
-
   hr.line-with-three-dots {
     /* --dot-color: orange; */
     --dot-size: 8px;
@@ -246,7 +204,6 @@
       hsla(0, 0%, 50%, 0) 100%
     );
   }
-
   hr.line-with-three-dots:after {
     position: absolute;
     top: 50%;
@@ -262,6 +219,18 @@
       calc(var(--dot-size) * -1) var(--dot-size) 0 hsla(266, 35%, 23%, 0.3),
       var(--dot-size) calc(var(--dot-size) * -1) 0 hsla(266, 35%, 23%, 0.3);
     transform: rotate(45deg);
+  }
+}
+
+@layer components {
+  /* Variables */
+  :root {
+    --btn-padding-x: 1.25em;
+    --btn-padding-y: 0.5em;
+  }
+  .btn-small {
+    --btn-padding-x: 0.6em;
+    --btn-padding-y: 0.25em;
   }
 }
 
