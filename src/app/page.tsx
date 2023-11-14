@@ -62,7 +62,9 @@ export default function Home() {
           />
         </div>
         <div className='absolute left-auto top-1/2 mx-auto block w-screen max-w-screen-xl bg-amber-200'>
-          <p>頼光寺について</p>
+          <p className='bg-secondary-dark text-secondary-light'>
+            頼光寺について
+          </p>
         </div>
       </div>
       <p className='text-center font-bold'>
