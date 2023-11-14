@@ -136,6 +136,34 @@
     @apply flex min-h-screen flex-col justify-start bg-background text-foreground;
   }
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold;
+  }
+
+  main h1 {
+    @apply text-4xl;
+  }
+  main h2 {
+    @apply text-3xl;
+  }
+  main h3 {
+    @apply text-2xl;
+  }
+  main h4 {
+    @apply text-xl;
+  }
+  main h5 {
+    @apply text-lg;
+  }
+  main h6 {
+    @apply text-base;
+  }
+
   p {
     @apply leading-relaxed tracking-wide;
   }

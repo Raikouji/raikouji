@@ -286,11 +286,13 @@ export default function Page() {
               みんなまでぶんを弾いとだまし(100文字)。
             </p>
           </div>
-
-          <p className='text-red-500'>
-            ※ `.container.w-screen` は使わない。代わりにスクロール幅を考慮した
-            `.full-width` を使う(下記参照)
-          </p>
+          <div className='container w-screen border'>
+            <p className='text-red-500'>
+              .container.w-screen / ※ `.container.w-screen`
+              は使わない。ブラウザ全幅はスクロール幅を考慮した `.full-width`
+              を使う(下記参照)
+            </p>
+          </div>
         </section>
 
         <section className='full-width bg-amber-200 py-8'>
