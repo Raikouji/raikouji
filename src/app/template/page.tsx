@@ -357,6 +357,26 @@ export default function Page() {
           </div>
         </section>
 
+        <section className='full-width-xl bg-amber-200 py-8'>
+          <h2 className='mb-4 text-2xl font-bold'>Full Width (xl)</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut 500 labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+            ut aliquip ex ea commodo consequat.
+          </p>
+        </section>
+
+        <section className='full-width-lg bg-amber-200 py-8'>
+          <h2 className='mb-4 text-2xl font-bold'>Full Width (lg)</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut 500 labore et dolore magna aliqua. Ut
+            enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+            ut aliquip ex ea commodo consequat.
+          </p>
+        </section>
+
         <section className='full-width-md bg-amber-200 py-8'>
           <h2 className='mb-4 text-2xl font-bold'>Full Width (md)</h2>
           <p>

@@ -162,30 +162,25 @@
     margin-right: calc(50% - 50vw + var(--scroll-bar-width) / 2);
     margin-left: calc(50% - 50vw + var(--scroll-bar-width) / 2);
   }
-  /* ★★TODO: メディアクエリの書き方直す */
-  /*@include media-breakpoint-down(xl) {*/
-  @media screen and (max-width: 1279px) {
+  @media (max-width: theme('screens.xl')) {
     .full-width-xl {
       margin-right: calc(50% - 50vw + var(--scroll-bar-width) / 2);
       margin-left: calc(50% - 50vw + var(--scroll-bar-width) / 2);
     }
   }
-  /*@include media-breakpoint-down(lg) {*/
-  @media screen and (max-width: 1023px) {
+  @media (max-width: theme('screens.lg')) {
     .full-width-lg {
       margin-right: calc(50% - 50vw + var(--scroll-bar-width) / 2);
       margin-left: calc(50% - 50vw + var(--scroll-bar-width) / 2);
     }
   }
-  /*@include media-breakpoint-down(md) {*/
-  @media screen and (max-width: 767px) {
+  @media (max-width: theme('screens.md')) {
     .full-width-md {
       margin-right: calc(50% - 50vw + var(--scroll-bar-width) / 2);
       margin-left: calc(50% - 50vw + var(--scroll-bar-width) / 2);
     }
   }
-  /*@include media-breakpoint-down(sm) {*/
-  @media screen and (max-width: 639px) {
+  @media (max-width: theme('screens.sm')) {
     .full-width-sm {
       margin-right: calc(50% - 50vw + var(--scroll-bar-width) / 2);
       margin-left: calc(50% - 50vw + var(--scroll-bar-width) / 2);
