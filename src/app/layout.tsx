@@ -1,22 +1,11 @@
 import type { Metadata } from 'next'
-import { Noto_Sans_JP } from 'next/font/google'
 import React from 'react'
-
-import clsx from 'clsx'
 
 import SiteFooter from '../components/SiteFooter'
 import SiteHeader from '../components/SiteHeader'
 
 import GetScrollBarWidth from '@/components/GetScrollBarWidth'
 import './globals.css'
-
-// TODO: フォントが適用できない問題
-const notoSansJP = Noto_Sans_JP({
-  subsets: ['latin'],
-  display: 'swap',
-  weight: ['400', '700'],
-  variable: '--font-noto-sans-jp',
-})
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -30,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <GetScrollBarWidth>
-      <html lang='ja' className={clsx(notoSansJP.variable, 'font-sans')}>
+      <html lang='ja' className='font-sans'>
         <body>
           <SiteHeader />
           <div className='site-wrapper'>{children}</div>

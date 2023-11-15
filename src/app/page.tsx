@@ -78,7 +78,7 @@ export default function Home() {
           </p>
 
           <section>
-            <h2 className='text-center'>住職 ごあいさつ</h2>
+            <h2 className='text-center font-serif'>住職 ごあいさつ</h2>
             <div className='mx-auto mt-8 flex max-w-screen-md flex-col items-center gap-4 md:flex-row md:gap-8'>
               <p>
                 <img
@@ -87,6 +87,9 @@ export default function Home() {
                 />
               </p>
               <div className='md:w-3/4'>
+                <p className='font-notoSans'>
+                  現代の急激な都市化にともない、核家族の増加、未婚者の増加、出生率の低下等、様々な要因により、祭祀後継者の絶えるご家族が増えてゆく傾向にある今日、すでにこの問題に当面して悩んでおられる方も多いかと思います。
+                </p>
                 <p>
                   現代の急激な都市化にともない、核家族の増加、未婚者の増加、出生率の低下等、様々な要因により、祭祀後継者の絶えるご家族が増えてゆく傾向にある今日、すでにこの問題に当面して悩んでおられる方も多いかと思います。
                 </p>

@@ -18,13 +18,22 @@ const config: Config = {
       },
     },
     fontFamily: {
-      sans: ['var(--font-notoSansJP)'],
+      sans: [
+        'Helvetica Neue',
+        'Arial',
+        'Hiragino Kaku Gothic ProN',
+        'Hiragino Sans',
+        'Yu Gothic', // Windows
+        'Meiryo',
+        'ui-serif',
+        'sans-serif',
+      ],
       serif: [
         'Times New Roman',
-        'YuMincho',
         'Hiragino Mincho ProN',
-        'Yu Mincho',
+        'Yu Mincho', // Windows
         'MS PMincho',
+        'ui-sans-serif',
         'serif',
       ],
     },
