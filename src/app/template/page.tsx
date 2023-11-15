@@ -89,48 +89,110 @@ export default function Page() {
         <h1 className='text-3xl font-bold'>template/page.tsx</h1>
 
         <div className='mt-12 flex flex-col gap-12'>
-          <section>
-            <h2>Tailwind css Grid 12columns</h2>
-            <div className='mt-4 grid grid-cols-3 gap-4 md:grid-cols-6 lg:grid-cols-12'>
-              <div className='col bg-gray-200'>col</div>
-              <div className='col bg-gray-200'>col</div>
-              <div className='col bg-gray-200'>col</div>
-              <div className='col bg-gray-200'>col</div>
-              <div className='col bg-gray-200'>col</div>
-              <div className='col bg-gray-200'>col</div>
-              <div className='col bg-gray-200'>col</div>
-              <div className='col bg-gray-200'>col</div>
-              <div className='col bg-gray-200'>col</div>
-              <div className='col bg-gray-200'>col</div>
-              <div className='col bg-gray-200'>col</div>
-              <div className='col bg-gray-200'>col</div>
-              <div className='col bg-gray-200'>col</div>
-              <div className='col bg-gray-200'>col</div>
+          <section className='flex flex-col gap-4'>
+            <h2>Colors</h2>
+            <h3>Semantic Color</h3>
+            <div>
+              <h4>primary</h4>
+              <div className='grid grid-cols-3 gap-1 text-center md:grid-cols-6 lg:grid-cols-12'>
+                <div className='bg-primary text-primary-foreground'>(600)</div>
+                <div className='bg-primary-50'>50</div>
+                <div className='bg-primary-100'>100</div>
+                <div className='bg-primary-200'>200</div>
+                <div className='bg-primary-300'>300</div>
+                <div className='bg-primary-400'>400</div>
+                <div className='bg-primary-500 text-primary-foreground'>
+                  500
+                </div>
+                <div className='bg-primary-600 text-primary-foreground'>
+                  600
+                </div>
+                <div className='bg-primary-700 text-primary-foreground'>
+                  700
+                </div>
+                <div className='bg-primary-800 text-primary-foreground'>
+                  800
+                </div>
+                <div className='bg-primary-900 text-primary-foreground'>
+                  900
+                </div>
+                <div className='bg-primary-950 text-primary-foreground'>
+                  950
+                </div>
+              </div>
             </div>
-            <div className='mt-12 grid grid-cols-2 justify-center gap-4 md:grid-cols-3 lg:grid-cols-4'>
-              <div className='col bg-gray-200'>col</div>
-              <div className='col bg-gray-200'>col</div>
-              <div className='col bg-gray-200'>col</div>
-              <div className='col bg-gray-200'>col</div>
-              <div className='col bg-gray-200'>col</div>
-              <div className='col bg-gray-200'>col</div>
-              <div className='col bg-gray-200'>col</div>
-              <div className='col bg-gray-200'>col</div>
+            <div>
+              <h4>secondary</h4>
+              <div className='grid grid-cols-3 gap-1 text-center md:grid-cols-6 lg:grid-cols-12'>
+                <div className='bg-secondary text-secondary-foreground'>
+                  (600)
+                </div>
+                <div className='bg-secondary-50'>50</div>
+                <div className='bg-secondary-100'>100</div>
+                <div className='bg-secondary-200'>200</div>
+                <div className='bg-secondary-300'>300</div>
+                <div className='bg-secondary-400'>400</div>
+                <div className='bg-secondary-500 text-secondary-foreground'>
+                  500
+                </div>
+                <div className='bg-secondary-600 text-secondary-foreground'>
+                  600
+                </div>
+                <div className='bg-secondary-700 text-secondary-foreground'>
+                  700
+                </div>
+                <div className='bg-secondary-800 text-secondary-foreground'>
+                  800
+                </div>
+                <div className='bg-secondary-900 text-secondary-foreground'>
+                  900
+                </div>
+                <div className='bg-secondary-950 text-secondary-foreground'>
+                  950
+                </div>
+              </div>
             </div>
+            <div>
+              <h4>tertiary</h4>
+              <div className='grid grid-cols-3 gap-1 text-center md:grid-cols-6 lg:grid-cols-12'>
+                <div className='bg-tertiary text-tertiary-foreground'>
+                  (500)
+                </div>
+                <div className='bg-tertiary-50'>50</div>
+                <div className='bg-tertiary-100'>100</div>
+                <div className='bg-tertiary-200'>200</div>
+                <div className='bg-tertiary-300'>300</div>
+                <div className='bg-tertiary-400'>400</div>
+                <div className='bg-tertiary-500 text-tertiary-foreground'>
+                  500
+                </div>
+                <div className='bg-tertiary-600 text-tertiary-foreground'>
+                  600
+                </div>
+                <div className='bg-tertiary-700 text-tertiary-foreground'>
+                  700
+                </div>
+                <div className='bg-tertiary-800 text-tertiary-foreground'>
+                  800
+                </div>
+                <div className='bg-tertiary-900 text-tertiary-foreground'>
+                  900
+                </div>
+                <div className='bg-tertiary-950 text-tertiary-foreground'>
+                  950
+                </div>
+              </div>
+            </div>
+            <h3>Color Tokens</h3>
           </section>
 
-          <section>
-            <h3>.grid.gap-4.lg:grid-cols-3</h3>
-            <div className='grid gap-8 lg:grid-cols-3 [&>*]:bg-gray-200'>
-              <div>
-                .col 指定なし:
-                ダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝た(50)しはでまた箱のダミーコピーです上手どもっさと俄たますて、みんなまでぶんを弾いとだまし(100文字)。
-              </div>
-              <div className='col-span-2'>
-                .col-span-2:
-                ダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝た(50)しはでまた箱のダミーコピーです上手どもっさと俄たますて、みんなまでぶんを弾いとだまし(100文字)。
-              </div>
-            </div>
+          <section className='flex flex-col gap-4'>
+            <h2>Header 1</h2>
+            <h3>Header 2</h3>
+            <h3>Header 3</h3>
+            <h4>Header 4</h4>
+            <h5>Header 5</h5>
+            <h6>Header 6</h6>
           </section>
 
           <section>
@@ -167,109 +229,77 @@ export default function Page() {
           </section>
 
           <section>
-            <h2>Aspect ratio</h2>
-            <div className='mt-4 grid grid-cols-7 gap-8'>
+            <h2>Grid</h2>
+            <h3 className='mt-4'>
+              grid grid-cols-3 md:grid-cols-6 lg:grid-cols-12 gap-4
+            </h3>
+            <div className='mt-4 grid grid-cols-3 gap-4 md:grid-cols-6 lg:grid-cols-12 [&>*]:bg-gray-200'>
+              <div>col</div>
+              <div>col</div>
+              <div>col</div>
+              <div>col</div>
+              <div>col</div>
+              <div>col</div>
+              <div>col</div>
+              <div>col</div>
+              <div>col</div>
+              <div>col</div>
+              <div>col</div>
+              <div>col</div>
+              <div>col</div>
+              <div>col</div>
+            </div>
+
+            <h3 className='mt-8'>
+              grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4
+            </h3>
+            <div className='mt-4 grid grid-cols-2 justify-center gap-4 md:grid-cols-3 lg:grid-cols-4 [&>*]:bg-gray-200'>
+              <div>col</div>
+              <div>col</div>
+              <div>col</div>
+              <div>col</div>
+              <div>col</div>
+              <div>col</div>
+              <div>col</div>
+            </div>
+
+            <h3 className='mt-8'>.grid.gap-4.lg:grid-cols-3</h3>
+            <div className='mt-4 grid gap-8 lg:grid-cols-3 [&>*]:bg-gray-200'>
               <div>
-                <AspectRatio ratio={3303 / 1000}>
-                  <Image
-                    src='/lorem.jpg'
-                    alt='Lorem'
-                    width={2100}
-                    height={1400}
-                    className='h-full w-full object-cover'
-                    priority
-                  />
-                </AspectRatio>
-                Bronze ratio (3.303:1)
+                .col 指定なし:
+                ダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝た(50)しはでまた箱のダミーコピーです上手どもっさと俄たますて、みんなまでぶんを弾いとだまし(100文字)。
               </div>
-              <div>
-                <AspectRatio ratio={16 / 9}>
-                  <Image
-                    src='/lorem.jpg'
-                    alt='Lorem'
-                    width={2100}
-                    height={1400}
-                    className='h-full w-full object-cover'
-                    priority
-                  />
-                </AspectRatio>
-                16:9
-              </div>
-              <div>
-                <AspectRatio ratio={1618 / 1000}>
-                  <Image
-                    src='/lorem.jpg'
-                    alt='Lorem'
-                    width={2100}
-                    height={1400}
-                    className='h-full w-full object-cover'
-                    priority
-                  />
-                </AspectRatio>
-                Golden ratio (1.618/1)
-              </div>
-              <div>
-                <AspectRatio ratio={3 / 2}>
-                  <Image
-                    src='/lorem.jpg'
-                    alt='Lorem'
-                    width={2100}
-                    height={1400}
-                    className='h-full w-full object-cover'
-                    priority
-                  />
-                </AspectRatio>
-                3:2
-              </div>
-              <div>
-                <AspectRatio ratio={1414 / 1000}>
-                  <Image
-                    src='/lorem.jpg'
-                    alt='Lorem'
-                    width={2100}
-                    height={1400}
-                    className='h-full w-full object-cover'
-                    priority
-                  />
-                </AspectRatio>
-                Silver ratio (1.414:1)
-              </div>
-              <div>
-                <AspectRatio ratio={1}>
-                  <Image
-                    src='/lorem.jpg'
-                    alt='Lorem'
-                    width={2100}
-                    height={1400}
-                    className='h-full w-full object-cover'
-                    priority
-                  />
-                </AspectRatio>
-                Square
-              </div>
-              <div>
-                <AspectRatio ratio={2 / 3}>
-                  <Image
-                    src='/lorem.jpg'
-                    alt='Lorem'
-                    width={2100}
-                    height={1400}
-                    className='h-full w-full object-cover'
-                    priority
-                  />
-                </AspectRatio>
-                2:3
+              <div className='col-span-2'>
+                .col-span-2:
+                ダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝た(50)しはでまた箱のダミーコピーです上手どもっさと俄たますて、みんなまでぶんを弾いとだまし(100文字)。
               </div>
             </div>
           </section>
 
-          <section className='flex flex-col gap-4'>
-            <h2>Header 1</h2>
-            <h3>Header 2</h3>
-            <h3>Header 3</h3>
-            <h4>Header 4</h4>
-            <h5>Header 5</h5>
-            <h6>Header 6</h6>
+          <section>
+            <h2>Flexbox</h2>
+            <h3 className='mt-4'>flex w-fit items-center gap-4</h3>
+            <div className='mt-4 flex w-fit items-center gap-4 rounded border p-2'>
+              <img src='/images/lorem.jpg' className='h-12 w-12 rounded-full' />
+              <div>
+                <p className='leading-tight'>
+                  <strong>Andrew Alfred</strong>
+                  <br />
+                  Technical advisor
+                </p>
+              </div>
+            </div>
+
+            <h3 className='mt-8'>flex flex-wrap gap-4 [&amp;&gt;*]:grow</h3>
+            <div className='mt-4 flex flex-wrap gap-4 [&>*]:grow [&>*]:bg-gray-200'>
+              <div>column column column column column column</div>
+              <div>column column column</div>
+              <div>column column column</div>
+              <div>column column column</div>
+              <div>column column column</div>
+              <div>column column column</div>
+              <div>column column column</div>
+            </div>
           </section>
 
           <section className='flex flex-col gap-4'>
@@ -474,8 +504,107 @@ export default function Page() {
             </Card>
           </section>
 
+          <hr />
+
           <section>
-            <h2>Layout</h2>
+            <h2>Aspect ratio</h2>
+            <div className='mt-4 grid grid-cols-7 gap-8'>
+              <div>
+                <AspectRatio ratio={3303 / 1000}>
+                  <Image
+                    src='/lorem.jpg'
+                    alt='Lorem'
+                    width={2100}
+                    height={1400}
+                    className='h-full w-full object-cover'
+                    priority
+                  />
+                </AspectRatio>
+                Bronze ratio (3.303:1)
+              </div>
+              <div>
+                <AspectRatio ratio={16 / 9}>
+                  <Image
+                    src='/lorem.jpg'
+                    alt='Lorem'
+                    width={2100}
+                    height={1400}
+                    className='h-full w-full object-cover'
+                    priority
+                  />
+                </AspectRatio>
+                16:9
+              </div>
+              <div>
+                <AspectRatio ratio={1618 / 1000}>
+                  <Image
+                    src='/lorem.jpg'
+                    alt='Lorem'
+                    width={2100}
+                    height={1400}
+                    className='h-full w-full object-cover'
+                    priority
+                  />
+                </AspectRatio>
+                Golden ratio (1.618/1)
+              </div>
+              <div>
+                <AspectRatio ratio={3 / 2}>
+                  <Image
+                    src='/lorem.jpg'
+                    alt='Lorem'
+                    width={2100}
+                    height={1400}
+                    className='h-full w-full object-cover'
+                    priority
+                  />
+                </AspectRatio>
+                3:2
+              </div>
+              <div>
+                <AspectRatio ratio={1414 / 1000}>
+                  <Image
+                    src='/lorem.jpg'
+                    alt='Lorem'
+                    width={2100}
+                    height={1400}
+                    className='h-full w-full object-cover'
+                    priority
+                  />
+                </AspectRatio>
+                Silver ratio (1.414:1)
+              </div>
+              <div>
+                <AspectRatio ratio={1}>
+                  <Image
+                    src='/lorem.jpg'
+                    alt='Lorem'
+                    width={2100}
+                    height={1400}
+                    className='h-full w-full object-cover'
+                    priority
+                  />
+                </AspectRatio>
+                Square
+              </div>
+              <div>
+                <AspectRatio ratio={2 / 3}>
+                  <Image
+                    src='/lorem.jpg'
+                    alt='Lorem'
+                    width={2100}
+                    height={1400}
+                    className='h-full w-full object-cover'
+                    priority
+                  />
+                </AspectRatio>
+                2:3
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2>Media</h2>
             <div className='mt-4 flex gap-8'>
               <div className='w-1/4'>
                 <AspectRatio ratio={2 / 3}>

@@ -50,7 +50,7 @@ const config: Config = {
         background: 'hsl(var(--background))', // body の背景色
         foreground: 'hsl(var(--foreground))', // body の背景色
         primary: {
-          DEFAULT: 'hsl(var(--primary))', // 背景色
+          DEFAULT: 'hsl(var(--primary-600))', // 背景色
           foreground: 'hsl(var(--primary-foreground))', // 背景色
           light: 'hsl(var(--primary-200))',
           dark: 'hsl(var(--primary-700))',
@@ -59,7 +59,7 @@ const config: Config = {
           200: 'hsl(var(--primary-200))',
           300: 'hsl(var(--primary-300))',
           400: 'hsl(var(--primary-400))',
-          500: 'hsl(var(--primary))',
+          500: 'hsl(var(--primary-500))',
           600: 'hsl(var(--primary-600))',
           700: 'hsl(var(--primary-700))',
           800: 'hsl(var(--primary-800))',
@@ -67,7 +67,7 @@ const config: Config = {
           950: 'hsl(var(--primary-950))',
         },
         secondary: {
-          DEFAULT: 'hsl(var(--secondary))',
+          DEFAULT: 'hsl(var(--secondary-600))',
           foreground: 'hsl(var(--secondary-foreground))',
           light: 'hsl(var(--secondary-200))',
           dark: 'hsl(var(--secondary-800))',
@@ -76,12 +76,29 @@ const config: Config = {
           200: 'hsl(var(--secondary-200))',
           300: 'hsl(var(--secondary-300))',
           400: 'hsl(var(--secondary-400))',
-          500: 'hsl(var(--secondary))',
+          500: 'hsl(var(--secondary-500))',
           600: 'hsl(var(--secondary-600))',
           700: 'hsl(var(--secondary-700))',
           800: 'hsl(var(--secondary-800))',
           900: 'hsl(var(--secondary-900))',
           950: 'hsl(var(--secondary-950))',
+        },
+        tertiary: {
+          DEFAULT: 'hsl(var(--tertiary-500))',
+          foreground: 'hsl(var(--tertiary-foreground))',
+          light: 'hsl(var(--tertiary-200))',
+          dark: 'hsl(var(--tertiary-800))',
+          50: 'hsl(var(--tertiary-50))',
+          100: 'hsl(var(--tertiary-100))',
+          200: 'hsl(var(--tertiary-200))',
+          300: 'hsl(var(--tertiary-300))',
+          400: 'hsl(var(--tertiary-400))',
+          500: 'hsl(var(--tertiary-500))',
+          600: 'hsl(var(--tertiary-600))',
+          700: 'hsl(var(--tertiary-700))',
+          800: 'hsl(var(--tertiary-800))',
+          900: 'hsl(var(--tertiary-900))',
+          950: 'hsl(var(--tertiary-950))',
         },
         destructive: {
           DEFAULT: 'hsl(var(--destructive))',
