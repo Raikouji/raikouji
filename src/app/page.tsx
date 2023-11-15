@@ -1,5 +1,6 @@
 import Gallery from '@/components/Gallery'
 import Hero from '@/components/Hero'
+import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import styles from './homepage.module.css'
 
@@ -396,9 +397,7 @@ export default function Home() {
               <div className='flex-grow'>
                 <Gallery photos={photos} />
                 <p className='mt-8 text-center'>
-                  <a href='#' className='btn btn-primary'>
-                    ボタン
-                  </a>
+                  <Button>ギャラリーを見る</Button>
                 </p>
               </div>
             </section>

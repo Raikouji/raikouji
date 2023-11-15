@@ -142,11 +142,13 @@ export default function Page() {
               <Button variant='outline'>Outline</Button>
               <Button variant='ghost'>Ghost</Button>
               <Button variant='link'>Link</Button>
+              <Button size='sm'>size: sm</Button>
+              <Button size='lg'>size: lg</Button>
               <Button variant='outline' size='icon'>
                 <ChevronRightIcon className='h-4 w-4' />
               </Button>
               <Button>
-                <ChevronRightIcon className='mr-2 h-4 w-4' /> Login with Email
+                <ChevronRightIcon className='mr-2 h-4 w-4' /> Icon and Text
               </Button>
               <Button asChild>
                 <Link href='/'>As Child (Link)</Link>
