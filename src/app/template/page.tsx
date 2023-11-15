@@ -7,6 +7,7 @@ import { AspectRatio } from '@/components/ui/aspect-ratio'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 
+import { SITE_TITLE, SITE_URL } from '@/constants'
 import { ChevronRightIcon } from 'lucide-react'
 import type { Metadata } from 'next'
 
@@ -51,9 +52,34 @@ const photos = [
   },
 ]
 
+// for metadata
+const pageTitle = '子ページのタイトルです'
+const pageDescription = '子ページのディスクリプションです'
+
 export const metadata: Metadata = {
-  title: '子ページのタイトルです',
-  description: '子ページのディスクリプションです',
+  title: pageTitle,
+  description: pageDescription,
+  openGraph: {
+    title: pageTitle,
+    description: pageDescription,
+    url: SITE_URL,
+    siteName: SITE_TITLE,
+    images: [
+      {
+        url: `${SITE_URL}/og.png`,
+        width: 800,
+        height: 600,
+      },
+      {
+        url: `${SITE_URL}/og-alt.png`,
+        width: 1800,
+        height: 1600,
+        alt: 'My custom alt',
+      },
+    ],
+    locale: 'ja_JP',
+    type: 'website',
+  },
 }
 
 export default function Page() {
