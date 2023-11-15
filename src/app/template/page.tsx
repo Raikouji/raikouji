@@ -674,6 +674,51 @@ export default function Page() {
           </section>
 
           <section>
+            <h2>Background Images</h2>
+            <p className='mt-4'>tailwind.config.ts で設定</p>
+            <div className='mt-4 grid grid-cols-3 gap-4'>
+              <div className='h-40 border bg-dots bg-repeat'>.bg-dots</div>
+            </div>
+            <h3 className='mt-6'>Background Attachment</h3>
+            <div className='mt-4 grid grid-cols-3 gap-4'>
+              <div className='h-40 border bg-dots bg-fixed bg-repeat'>
+                .bg-fixed
+              </div>
+              <div className='h-40 overflow-auto border bg-dots bg-local bg-repeat'>
+                <div className='bg-black/40 p-6 sm:px-16 sm:py-12'>
+                  <p className='text-center font-serif text-base italic leading-6 text-white sm:text-2xl sm:leading-8'>
+                    .bg-local / "Because the mail never stops. It just keeps
+                    coming and coming and coming, there's never a let-up. It's
+                    relentless. Every day it piles up more and more and more.
+                    And you gotta get it out but the more you get it out the
+                    more it keeps coming in. And then the barcode reader breaks
+                    and it's Publisher's Clearing House day."
+                  </p>
+                </div>
+              </div>
+              <div className='h-40 overflow-auto border bg-dots bg-scroll bg-repeat'>
+                <div className='bg-black/40 p-6 sm:px-16 sm:py-12'>
+                  <p className='text-center font-serif text-base italic leading-6 text-white sm:text-2xl sm:leading-8'>
+                    .bg-scroll / "Because the mail never stops. It just keeps
+                    coming and coming and coming, there's never a let-up. It's
+                    relentless. Every day it piles up more and more and more.
+                    And you gotta get it out but the more you get it out the
+                    more it keeps coming in. And then the barcode reader breaks
+                    and it's Publisher's Clearing House day."
+                  </p>
+                </div>
+              </div>
+            </div>
+            <h3 className='mt-6'>Background Clip</h3>
+            <p>テキストの形状に合わせて要素の背景をトリミング</p>
+            <div className='text-5xl font-extrabold'>
+              <span className='bg-gradient-to-r from-pink-500 to-violet-500 bg-clip-text text-transparent'>
+                Hello world
+              </span>
+            </div>
+          </section>
+
+          <section>
             <h2>Gallery</h2>
             <h3 className='my-4'>No Prop</h3>
             <Gallery photos={photos} />
