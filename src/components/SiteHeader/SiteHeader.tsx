@@ -1,4 +1,3 @@
-import Breadcrumb from '@/components/Breadcrumbs'
 import Logo from '@/components/Logo'
 import MainNavigation from '@/components/MainNavigation'
 import { SITE_TITLE } from '@/constants'
@@ -12,7 +11,6 @@ function SiteHeader() {
         </Logo>
         <MainNavigation />
       </header>
-      <Breadcrumb />
     </>
   )
 }

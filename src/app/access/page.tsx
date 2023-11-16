@@ -1,5 +1,6 @@
 import Image from 'next/image'
 
+import Breadcrumbs from '@/components/Breadcrumbs'
 import ImageAboveHeading from '@/components/ImageAboveHeading'
 import { Button } from '@/components/ui/button'
 import { SITE_TITLE, SITE_URL } from '@/constants'
@@ -57,6 +58,8 @@ export default function Page() {
         </div>
 
         <div className='my-12 flex flex-col gap-12'>
+          <Breadcrumbs />
+
           <section>
             <div className='mx-auto flex max-w-screen-md flex-col gap-10'>
               <h2 className='text-center'>電車でのアクセス</h2>

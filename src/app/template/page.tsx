@@ -7,6 +7,7 @@ import { AspectRatio } from '@/components/ui/aspect-ratio'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 
+import Breadcrumbs from '@/components/Breadcrumbs'
 import { SITE_TITLE, SITE_URL } from '@/constants'
 import { ChevronRightIcon } from 'lucide-react'
 import type { Metadata } from 'next'
@@ -85,6 +86,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <div className='container max-w-screen-xl'>
+      <Breadcrumbs />
       <main>
         <h1 className='text-3xl font-bold'>template/page.tsx</h1>
 

@@ -19,15 +19,34 @@ function Breadcrumbs() {
   console.table(pathname)
 
   return (
-    <>
-      <p>Current pathname: {pathname}</p>
-      <ul className='flex gap-4'>
-        <li>Home</li>
-        {segments.map((segment, index) => (
-          <li key={index}>{segment}</li>
+    <div>
+      <p>
+        Current pathname: {pathname}, segments: {segments.length}
+      </p>
+      <ol className='flex list-none'>
+        <li>
+          <a
+            href='/'
+            className='text-primary transition duration-150 ease-in-out hover:text-primary-600 focus:text-primary-600 active:text-primary-700 dark:text-primary-400 dark:hover:text-primary-500 dark:focus:text-primary-500 dark:active:text-primary-600'
+          >
+            Home
+          </a>
+        </li>
+        {segments.map((segment) => (
+          <li
+            key={crypto.randomUUID()}
+            className='before:mx-2 before:text-neutral-500 before:content-["/"] before:dark:text-neutral-400'
+          >
+            <a
+              href='#'
+              className='text-primary transition duration-150 ease-in-out hover:text-primary-600 focus:text-primary-600 active:text-primary-700 dark:text-primary-400 dark:hover:text-primary-500 dark:focus:text-primary-500 dark:active:text-primary-600'
+            >
+              {segment}
+            </a>
+          </li>
         ))}
-      </ul>
-    </>
+      </ol>
+    </div>
   )
 }
 
