@@ -1,5 +1,6 @@
 import Gallery from '@/components/Gallery'
 import Hero from '@/components/Hero'
+import ImageAboveHeading from '@/components/ImageAboveHeading'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import styles from './homepage.module.css'
@@ -79,7 +80,10 @@ export default function Home() {
           </p>
 
           <section>
-            <h2 className='text-center font-serif'>住職 ごあいさつ</h2>
+            <p className='text-center'>
+              <ImageAboveHeading />
+            </p>
+            <h2 className='mt-4 text-center font-serif'>住職 ごあいさつ</h2>
             <div className='mx-auto mt-8 flex max-w-screen-md flex-col items-center gap-4 md:flex-row md:gap-8'>
               <p>
                 <img
@@ -111,7 +115,10 @@ export default function Home() {
           <hr className='line-with-three-dots' />
 
           <section>
-            <h2 className='text-center'>頼光寺の沿革</h2>
+            <p className='text-center'>
+              <ImageAboveHeading />
+            </p>
+            <h2 className='mt-4 text-center'>頼光寺の沿革</h2>
             <div className='aspect-h-3 aspect-w-2 relative mt-3 w-full md:aspect-h-4 md:aspect-w-16'>
               <Image
                 src='/images/lorem.jpg'
@@ -181,22 +188,27 @@ export default function Home() {
 
           <section>
             <div className='mx-auto max-w-screen-md'>
-              <div className='rounded-xl bg-fuchsia-100 p-6 shadow-lg lg:p-8'>
-                <p className='text-center'>🌷</p>
-                <h2 className='text-center'>駐車場について</h2>
+              <div className='bg-tertiary-100 rounded-xl p-6 shadow-lg lg:p-8'>
+                <p className='text-center'>
+                  <ImageAboveHeading imageName='frog' />
+                </p>
+                <h2 className='text-tertiary-dark mt-2 text-center'>
+                  駐車場について
+                </h2>
                 <p className='mt-3 text-center'>
                   表の駐車場には★★台、裏の駐車場には★★台が駐車していただけます。
                 </p>
-                <div className='mt-3 flex flex-col items-center justify-center gap-4 md:flex-row md:gap-8'>
-                  <p className=''>
+                <div className='mt-3 flex flex-col items-center justify-center gap-4 text-center md:flex-row md:gap-8'>
+                  <figure>
                     <img src='https://picsum.photos/id/2/384/256.webp' alt='' />
-                  </p>
-                  <p className=''>
+                    <figcaption className='mt-2'>下の駐車場</figcaption>
+                  </figure>
+                  <figure>
                     <img src='https://picsum.photos/id/3/384/256.webp' alt='' />
-                  </p>
+                    <figcaption className='mt-2'>上の駐車場</figcaption>
+                  </figure>
                 </div>
                 <div className='mt-6'>
-                  <h3>駐車場について</h3>
                   <p className='mt-3'>
                     カーナビで頼光寺やその住所を目的地に設定すると、若干遠回りで道順もわかりづらい裏駐車場に案内されてしまうことがあります。下記の地図などで、近場の道順をご確認されておくことをおすすめします。
                   </p>
