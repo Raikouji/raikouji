@@ -80,34 +80,36 @@ export default function Home() {
           </p>
 
           <section>
-            <p className='text-center'>
-              <ImageAboveHeading />
-            </p>
-            <h2 className='mt-4 text-center font-serif'>住職 ごあいさつ</h2>
-            <div className='mx-auto mt-8 flex max-w-screen-md flex-col items-center gap-4 md:flex-row md:gap-8'>
-              <p>
-                <img
-                  src='https://picsum.photos/id/2/400/600.webp'
-                  alt='頼光寺 住職の近影'
-                />
+            <div className='mx-auto max-w-screen-lg'>
+              <p className='text-center'>
+                <ImageAboveHeading />
               </p>
-              <div className='md:w-3/4'>
-                <p className='font-notoSans'>
-                  現代の急激な都市化にともない、核家族の増加、未婚者の増加、出生率の低下等、様々な要因により、祭祀後継者の絶えるご家族が増えてゆく傾向にある今日、すでにこの問題に当面して悩んでおられる方も多いかと思います。
-                </p>
+              <h2 className='mt-4 text-center font-serif'>住職 ごあいさつ</h2>
+              <div className='mt-8 flex flex-col items-center gap-4 md:flex-row md:gap-8 lg:gap-12'>
                 <p>
-                  現代の急激な都市化にともない、核家族の増加、未婚者の増加、出生率の低下等、様々な要因により、祭祀後継者の絶えるご家族が増えてゆく傾向にある今日、すでにこの問題に当面して悩んでおられる方も多いかと思います。
+                  <img
+                    src='https://picsum.photos/id/2/400/600.webp'
+                    alt='頼光寺 住職の近影'
+                  />
                 </p>
-                <p className='mt-2'>
-                  そういった方々のご要望にお応えして、当頼光寺では当寺境内にある頼光寺園内に永代供養共同墓を建立いたしました。祭祀後継者のない方が生前にご契約され、やがて永代供養共同墓にご遺骨を埋葬された後は、当寺が責任を持ってこれを管理すると共に、御盆、春秋両彼岸には永代に亘ってご供養を行いますので、安心して老後を送って頂けることと思います。
-                </p>
-                <p className='mt-2'>
-                  静かな環境、そして交通至便なこの土地、緑豊かなやすらぎにみちたこの浄域こそ自らの寂光浄土と観じ、永遠の憩いの場所として定められるのには最もふさわしい墓所です。
-                </p>
-                <p className='mt-4 text-right'>
-                  (禅)曹洞宗 祥雲山 頼光寺 <br />
-                  住職 <span className='text-lg font-bold'>橋本 宏道</span>
-                </p>
+                <div className='md:w-3/4'>
+                  <p className='font-notoSans'>
+                    現代の急激な都市化にともない、核家族の増加、未婚者の増加、出生率の低下等、様々な要因により、祭祀後継者の絶えるご家族が増えてゆく傾向にある今日、すでにこの問題に当面して悩んでおられる方も多いかと思います。
+                  </p>
+                  <p>
+                    現代の急激な都市化にともない、核家族の増加、未婚者の増加、出生率の低下等、様々な要因により、祭祀後継者の絶えるご家族が増えてゆく傾向にある今日、すでにこの問題に当面して悩んでおられる方も多いかと思います。
+                  </p>
+                  <p className='mt-2'>
+                    そういった方々のご要望にお応えして、当頼光寺では当寺境内にある頼光寺園内に永代供養共同墓を建立いたしました。祭祀後継者のない方が生前にご契約され、やがて永代供養共同墓にご遺骨を埋葬された後は、当寺が責任を持ってこれを管理すると共に、御盆、春秋両彼岸には永代に亘ってご供養を行いますので、安心して老後を送って頂けることと思います。
+                  </p>
+                  <p className='mt-2'>
+                    静かな環境、そして交通至便なこの土地、緑豊かなやすらぎにみちたこの浄域こそ自らの寂光浄土と観じ、永遠の憩いの場所として定められるのには最もふさわしい墓所です。
+                  </p>
+                  <p className='mt-4 text-right'>
+                    (禅)曹洞宗 祥雲山 頼光寺 <br />
+                    住職 <span className='text-lg font-bold'>橋本 宏道</span>
+                  </p>
+                </div>
               </div>
             </div>
           </section>
