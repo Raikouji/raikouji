@@ -16,18 +16,28 @@ function MainNavigation() {
           </Link>
         </li>
         <li>
-          <Link className='hover:bg-amber-200' href='#'>
-            Feature
+          <Link className='hover:bg-amber-200' href='/events'>
+            行事案内
           </Link>
         </li>
         <li>
-          <Link className='hover:bg-amber-200' href='#'>
-            Access
+          <Link className='hover:bg-amber-200' href='/cemetery'>
+            墓地の案内
           </Link>
         </li>
         <li>
-          <Link className='hover:bg-amber-200' href='#'>
-            Contact
+          <Link className='hover:bg-amber-200' href='/access'>
+            アクセス
+          </Link>
+        </li>
+        <li>
+          <Link className='hover:bg-amber-200' href='/gallery'>
+            ギャラリー
+          </Link>
+        </li>
+        <li>
+          <Link className='hover:bg-amber-200' href='/contact'>
+            お問合せ
           </Link>
         </li>
       </ul>
