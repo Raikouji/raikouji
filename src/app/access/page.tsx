@@ -65,10 +65,10 @@ export default function Page() {
               <h2 className='text-center'>電車でのアクセス</h2>
               <p className='text-center'>能勢電鉄「畦野駅」より徒歩5分です。</p>
               <h3 className='text-center'>畦野駅からの道順</h3>
-              <ol className='flex flex-col gap-6'>
+              <ol className='lg:columns-2 lg:gap-8'>
                 <li className='text-center after:text-2xl after:text-primary-400 after:content-["▼"]'>
-                  <div className='flex gap-3 md:gap-4 lg:gap-8'>
-                    <p className='order-1 w-1/2 text-left md:w-2/3'>
+                  <div className='flex gap-3 md:gap-4'>
+                    <p className='order-1 w-1/2 text-left leading-snug tracking-normal md:w-2/3'>
                       1.
                       ★★ダミーコピーです。改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。
                     </p>
@@ -80,9 +80,9 @@ export default function Page() {
                   </div>
                 </li>
                 <li className='text-center after:text-2xl after:text-primary-400 after:content-["▼"]'>
-                  <div className='flex gap-3 md:gap-4 lg:gap-8'>
-                    <p className='order-1 w-1/2 text-left md:w-2/3'>
-                      1.
+                  <div className='flex gap-3 md:gap-4'>
+                    <p className='order-1 w-1/2 text-left leading-snug tracking-normal md:w-2/3'>
+                      2.
                       ★★ダミーコピーです。改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。
                     </p>
                     <img
@@ -93,9 +93,9 @@ export default function Page() {
                   </div>
                 </li>
                 <li className='text-center after:text-2xl after:text-primary-400 after:content-["▼"]'>
-                  <div className='flex gap-3 md:gap-4 lg:gap-8'>
-                    <p className='order-1 w-1/2 text-left md:w-2/3'>
-                      1.
+                  <div className='flex gap-3 md:gap-4'>
+                    <p className='order-1 w-1/2 text-left leading-snug tracking-normal md:w-2/3'>
+                      3.
                       ★★ダミーコピーです。改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。
                     </p>
                     <img
@@ -105,10 +105,10 @@ export default function Page() {
                     />
                   </div>
                 </li>
-                <li className='text-center after:text-2xl after:text-primary-400 after:content-["▼"]'>
-                  <div className='flex gap-3 md:gap-4 lg:gap-8'>
-                    <p className='order-1 w-1/2 text-left md:w-2/3'>
-                      1.
+                <li className='text-center after:text-2xl after:text-primary-400'>
+                  <div className='flex gap-3 md:gap-4'>
+                    <p className='order-1 w-1/2 text-left leading-snug tracking-normal md:w-2/3'>
+                      4.
                       ★★ダミーコピーです。改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。
                     </p>
                     <img
