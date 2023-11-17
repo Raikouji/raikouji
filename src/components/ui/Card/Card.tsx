@@ -1,4 +1,4 @@
-import clsx from 'clsx'
+import { cn } from '@/utils'
 import React from 'react'
 
 import styles from './Card.module.css'
@@ -12,7 +12,7 @@ function Card({
   className?: string
 }) {
   return (
-    <div className={clsx(styles.wrapper, className)} {...delegated}>
+    <div className={cn(styles.wrapper, className)} {...delegated}>
       {children}
     </div>
   )
