@@ -8,6 +8,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 
 import Breadcrumbs from '@/components/Breadcrumbs'
+import PageHeader from '@/components/PageHeader'
 import { SITE_TITLE, SITE_URL } from '@/constants'
 import { ChevronRightIcon } from 'lucide-react'
 import type { Metadata } from 'next'
@@ -88,7 +89,8 @@ export default function Page() {
     <div className='container max-w-screen-xl'>
       <Breadcrumbs />
       <main>
-        <h1 className='text-3xl font-bold'>template/page.tsx</h1>
+        <h1 className='text-3xl font-bold'></h1>
+        <PageHeader fullWidth>template/page.tsx</PageHeader>
 
         <div className='mt-12 flex flex-col gap-12'>
           <section className='flex flex-col gap-4'>

@@ -1,6 +1,7 @@
 import Gallery from '@/components/Gallery'
 import Hero from '@/components/Hero'
 import ImageAboveHeading from '@/components/ImageAboveHeading'
+import PageHeader from '@/components/PageHeader'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import styles from './homepage.module.css'
@@ -52,25 +53,8 @@ export default function Home() {
       className={`${styles.wrapper} container flex max-w-screen-xl flex-col gap-12`}
     >
       <main>
-        <div className='flex flex-col gap-12'>
-          <div className='full-width relative'>
-            <div className='aspect-h-3 aspect-w-2 relative md:aspect-h-2 md:aspect-w-16'>
-              <Image
-                src='/images/lorem.jpg'
-                alt='Lorem'
-                width={2100}
-                height={1400}
-                sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                style={{ objectFit: 'cover' }}
-                priority
-              />
-            </div>
-            <div className='absolute left-auto top-1/2 mx-auto block w-screen max-w-screen-xl bg-amber-200'>
-              <p className='bg-secondary-dark text-secondary-light'>
-                頼光寺について
-              </p>
-            </div>
-          </div>
+        <PageHeader fullWidth>頼光寺について</PageHeader>
+        <div className='flex flex-col gap-12 py-12'>
           <p className='text-center font-bold'>
             祥雲山 頼光寺※ は、紀元1000年頃に源氏一族によって創立されました。
             <br />
@@ -189,6 +173,7 @@ export default function Home() {
           <hr className='line-with-three-dots' />
 
           <Hero />
+
           <div className='text-center'>
             <p className='font-bold'>
               祥雲山 頼光寺※ は、紀元1000年頃に源氏一族によって創立されました。

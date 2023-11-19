@@ -2,6 +2,7 @@ import Image from 'next/image'
 
 import Breadcrumbs from '@/components/Breadcrumbs'
 import ImageAboveHeading from '@/components/ImageAboveHeading'
+import PageHeader from '@/components/PageHeader'
 import Card from '@/components/ui/Card'
 import { Button } from '@/components/ui/button'
 import { SITE_TITLE, SITE_URL } from '@/constants'
@@ -42,26 +43,7 @@ export default function Page() {
   return (
     <div className='container max-w-screen-xl'>
       <main>
-        <div className='full-width relative'>
-          <div className='aspect-h-3 aspect-w-2 relative md:aspect-h-2 md:aspect-w-16'>
-            <Image
-              src='/images/lorem.jpg'
-              alt='Lorem'
-              width={2100}
-              height={1400}
-              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-              style={{ objectFit: 'cover' }}
-              priority
-            />
-          </div>
-          <div className='absolute inset-0'>
-            <div className='container mx-auto flex h-full max-w-screen-xl items-center'>
-              <h1 className='bg-black/30 px-3 py-1 text-xl tracking-widest text-white'>
-                墓地の案内
-              </h1>
-            </div>
-          </div>
-        </div>
+        <PageHeader fullWidth>墓地の案内</PageHeader>
 
         <div className='my-12 flex flex-col gap-12'>
           <Breadcrumbs />

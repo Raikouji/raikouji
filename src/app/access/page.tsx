@@ -1,7 +1,6 @@
-import Image from 'next/image'
-
 import Breadcrumbs from '@/components/Breadcrumbs'
 import ImageAboveHeading from '@/components/ImageAboveHeading'
+import PageHeader from '@/components/PageHeader'
 import { Button } from '@/components/ui/button'
 import { SITE_TITLE, SITE_URL } from '@/constants'
 import type { Metadata } from 'next'
@@ -40,23 +39,7 @@ export default function Page() {
   return (
     <div className='container max-w-screen-xl'>
       <main>
-        <div className='full-width relative'>
-          <div className='aspect-h-3 aspect-w-2 relative md:aspect-h-2 md:aspect-w-16'>
-            <Image
-              src='/images/lorem.jpg'
-              alt='Lorem'
-              width={2100}
-              height={1400}
-              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-              style={{ objectFit: 'cover' }}
-              priority
-            />
-          </div>
-          <div className='absolute left-auto top-1/2 mx-auto block w-screen max-w-screen-xl bg-amber-200'>
-            <h1 className='bg-secondary-dark text-secondary-light'>アクセス</h1>
-          </div>
-        </div>
-
+        <PageHeader fullWidth>アクセス</PageHeader>
         <div className='my-12 flex flex-col gap-12'>
           <Breadcrumbs />
 
