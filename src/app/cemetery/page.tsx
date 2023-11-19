@@ -5,7 +5,7 @@ import ImageAboveHeading from '@/components/ImageAboveHeading'
 import PageHeader from '@/components/PageHeader'
 import Card from '@/components/ui/Card'
 import { Button } from '@/components/ui/button'
-import { SITE_TITLE, SITE_URL } from '@/constants'
+import { outputMetadata } from '@/utils'
 import type { Metadata } from 'next'
 
 // for metadata
@@ -13,31 +13,10 @@ const pageTitle = '墓地の案内'
 const pageDescription =
   '頼光寺のお墓は、静かで緑豊かな心安らぐ空間です。永代供養共同墓、水子供養塔もあります。能勢電鉄「畦野駅」から徒歩５分とアクセスもしやすい立地です。'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = outputMetadata({
   title: pageTitle,
   description: pageDescription,
-  openGraph: {
-    title: pageTitle,
-    description: pageDescription,
-    url: SITE_URL,
-    siteName: SITE_TITLE,
-    images: [
-      {
-        url: `${SITE_URL}/og.png`,
-        width: 800,
-        height: 600,
-      },
-      {
-        url: `${SITE_URL}/og-alt.png`,
-        width: 1800,
-        height: 1600,
-        alt: 'My custom alt',
-      },
-    ],
-    locale: 'ja_JP',
-    type: 'website',
-  },
-}
+})
 
 export default function Page() {
   return (

@@ -3,38 +3,17 @@ import { cn } from '@/utils'
 
 import Breadcrumbs from '@/components/Breadcrumbs'
 import PageHeader from '@/components/PageHeader'
-import { SITE_TITLE, SITE_URL } from '@/constants'
+import { outputMetadata } from '@/utils'
 import type { Metadata } from 'next'
 
 // for metadata
 const pageTitle = '年中行事 / 月例行事'
 const pageDescription = '頼光寺の行事の紹介です。'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = outputMetadata({
   title: pageTitle,
   description: pageDescription,
-  openGraph: {
-    title: pageTitle,
-    description: pageDescription,
-    url: SITE_URL,
-    siteName: SITE_TITLE,
-    images: [
-      {
-        url: `${SITE_URL}/og.png`,
-        width: 800,
-        height: 600,
-      },
-      {
-        url: `${SITE_URL}/og-alt.png`,
-        width: 1800,
-        height: 1600,
-        alt: 'My custom alt',
-      },
-    ],
-    locale: 'ja_JP',
-    type: 'website',
-  },
-}
+})
 
 type Event = {
   title: string
