@@ -131,11 +131,11 @@ export default function Page() {
                 国道173号線
                 「東畦野」交差点を東に折れ(池田方面から来られる方は右折)、５分以内の場所にあります。表駐車場をご利用の方は東に折れてすぐの高架に乗らず側道へ進んでください。
               </p>
-              <div className='bg-tertiary-100 mt-6 rounded-xl p-6 shadow-lg lg:p-8'>
+              <div className='mt-6 rounded-xl bg-tertiary-100 p-6 shadow-lg lg:p-8'>
                 <p className='text-center'>
                   <ImageAboveHeading imageName='frog' />
                 </p>
-                <h3 className='text-tertiary-dark mt-2 text-center'>
+                <h3 className='mt-2 text-center text-tertiary-dark'>
                   駐車場について
                 </h3>
                 <p className='mt-3 text-center'>
