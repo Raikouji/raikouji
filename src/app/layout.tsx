@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <GetScrollBarWidth>
       <html lang='ja' className='font-sans'>
-        <body>
+        <body className='relative'>
           <SiteHeader />
           <div className='site-wrapper'>{children}</div>
           <SiteFooter />

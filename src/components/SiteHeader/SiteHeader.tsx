@@ -5,7 +5,7 @@ import { SITE_TITLE } from '@/constants'
 function SiteHeader() {
   return (
     <>
-      <header className='container flex max-w-screen-xl flex-row justify-between py-8'>
+      <header className='container flex max-w-screen-xl justify-between py-4 lg:items-center'>
         <Logo tagline='タグラインです' taglinePosition='bottom'>
           {SITE_TITLE}
         </Logo>
