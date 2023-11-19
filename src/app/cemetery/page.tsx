@@ -54,10 +54,12 @@ export default function Page() {
               priority
             />
           </div>
-          <div className='absolute left-auto top-1/2 mx-auto block w-screen max-w-screen-xl bg-amber-200'>
-            <h1 className='bg-secondary-dark text-secondary-light'>
-              墓地の案内
-            </h1>
+          <div className='absolute inset-0'>
+            <div className='container mx-auto flex h-full max-w-screen-xl items-center'>
+              <h1 className='bg-black/30 px-3 py-1 text-xl tracking-widest text-white'>
+                墓地の案内
+              </h1>
+            </div>
           </div>
         </div>
 
@@ -96,7 +98,7 @@ export default function Page() {
               </p>
               <Card className='bg-amber-50 p-4 md:p-6 lg:p-8'>
                 <h3 className='text-center'>永代供養共同墓の特徴</h3>
-                <ul className='marker:text-tertiary-300 mt-4 list-inside list-disc'>
+                <ul className='mt-4 list-inside list-disc marker:text-tertiary-300'>
                   <li>墓石はありません。</li>
                   <li>お墓の管理は頼光寺が行います。</li>
                   <li>お墓の場所は、墓地内で選ぶことができます。</li>
@@ -114,11 +116,11 @@ export default function Page() {
                 国道173号線
                 「東畦野」交差点を東に折れ(池田方面から来られる方は右折)、５分以内の場所にあります。表駐車場をご利用の方は東に折れてすぐの高架に乗らず側道へ進んでください。
               </p>
-              <div className='bg-tertiary-100 mt-6 rounded-xl p-6 shadow-lg lg:p-8'>
+              <div className='mt-6 rounded-xl bg-tertiary-100 p-6 shadow-lg lg:p-8'>
                 <p className='text-center'>
                   <ImageAboveHeading imageName='frog' />
                 </p>
-                <h3 className='text-tertiary-dark mt-2 text-center'>
+                <h3 className='mt-2 text-center text-tertiary-dark'>
                   駐車場について
                 </h3>
                 <p className='mt-3 text-center'>

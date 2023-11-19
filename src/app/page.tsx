@@ -49,7 +49,7 @@ const photos = [
 export default function Home() {
   return (
     <div
-      className={`${styles.wrapper} container flex max-w-screen-xl flex-col gap-12 pb-12 outline outline-2 outline-blue-500`}
+      className={`${styles.wrapper} container flex max-w-screen-xl flex-col gap-12`}
     >
       <main>
         <div className='flex flex-col gap-12'>

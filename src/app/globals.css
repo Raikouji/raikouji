@@ -171,7 +171,7 @@
   }
 
   .site-wrapper {
-    @apply mx-auto grow;
+    @apply grow;
   }
 
   /* 子要素を親要素の幅からはみ出して画面幅いっぱいにする
