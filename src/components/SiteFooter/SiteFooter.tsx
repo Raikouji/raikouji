@@ -70,6 +70,10 @@ function SiteFooter() {
             </ul>
           </nav>
         </div>
+
+        <p className='mt-12 text-center text-sm'>
+          Copyright ©︎ {new Date().getFullYear()} name
+        </p>
       </div>
       <div className='bg-gray-400 py-3 text-gray-300'>
         <p className='container text-center'>©︎name</p>
