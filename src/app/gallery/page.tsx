@@ -59,10 +59,9 @@ export default function Page() {
     <div className='container max-w-screen-xl'>
       <main>
         <PageHeader fullWidth>{pageTitle}</PageHeader>
+        <Breadcrumbs className='mt-2' />
 
         <div className='my-12 flex flex-col gap-12'>
-          <Breadcrumbs />
-
           <div className='mx-auto max-w-screen-md'>
             <ul
               className={cn(

@@ -23,10 +23,9 @@ export default function Page() {
     <div className='container max-w-screen-xl'>
       <main>
         <PageHeader fullWidth>{pageTitle}</PageHeader>
+        <Breadcrumbs className='mt-2' />
 
         <div className='my-12 flex flex-col gap-12'>
-          <Breadcrumbs />
-
           <div className='mx-auto max-w-screen-md'>
             <p className='font-bold'>
               頼光寺のお墓は、静かで緑豊かな心安らぐ空間です。能勢電鉄「畦野駅」から徒歩５分とアクセスもしやすい立地。

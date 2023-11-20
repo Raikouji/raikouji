@@ -68,7 +68,7 @@ export default function Page() {
     <div className='container max-w-screen-xl'>
       <main>
         <PageHeader fullWidth>{pageTitle}</PageHeader>
-        <Breadcrumbs />
+        <Breadcrumbs className='mt-2' />
 
         <div className='mt-12 flex flex-col gap-12'>
           <section className='flex flex-col gap-4'>
@@ -256,6 +256,14 @@ export default function Page() {
                 ダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝た(50)しはでまた箱のダミーコピーです上手どもっさと俄たますて、みんなまでぶんを弾いとだまし(100文字)。
               </div>
             </div>
+          </section>
+
+          <section>
+            <h2>hr</h2>
+            <h3 className='my-4'>No class</h3>
+            <hr />
+            <h3 className='my-4'>hr.line-with-three-dots</h3>
+            <hr className='line-with-three-dots' />
           </section>
 
           <section>

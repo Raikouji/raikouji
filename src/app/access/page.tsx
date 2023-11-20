@@ -19,9 +19,9 @@ export default function Page() {
     <div className='container max-w-screen-xl'>
       <main>
         <PageHeader fullWidth>{pageTitle}</PageHeader>
-        <div className='my-12 flex flex-col gap-12'>
-          <Breadcrumbs />
+        <Breadcrumbs className='mt-2' />
 
+        <div className='my-12 flex flex-col gap-12'>
           <section>
             <div className='mx-auto flex max-w-screen-md flex-col gap-10'>
               <h2 className='text-center'>電車でのアクセス</h2>
