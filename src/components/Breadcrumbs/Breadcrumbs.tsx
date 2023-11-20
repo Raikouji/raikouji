@@ -1,17 +1,18 @@
 'use client'
+import { cn } from '@/utils'
 import { usePathname, useSelectedLayoutSegments } from 'next/navigation'
-import { ReactNode } from 'react'
+import styles from './Breadcrumbs.module.css'
 
-export type CrumbItem = {
-  label: ReactNode // e.g., Python
-  path: string // e.g., /development/programming-languages/python
-}
+// export type CrumbItem = {
+//   label: ReactNode // e.g., Python
+//   path: string // e.g., /development/programming-languages/python
+// }
 
-export type BreadcrumbsProps = {
-  items: CrumbItem[]
-}
+// export type BreadcrumbsProps = {
+//   items: CrumbItem[]
+// }
 
-function Breadcrumbs() {
+function Breadcrumbs({ className, ...delegated }: { className?: string }) {
   const segments = useSelectedLayoutSegments()
   const pathname = usePathname()
 
@@ -19,7 +20,7 @@ function Breadcrumbs() {
   console.table(pathname)
 
   return (
-    <div>
+    <div className={cn(styles.wrapper, className)} {...delegated}>
       <p>
         Current pathname: {pathname}, segments: {segments.length}
       </p>
