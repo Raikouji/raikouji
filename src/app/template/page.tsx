@@ -67,8 +67,7 @@ export default function Page() {
   return (
     <div className='container max-w-screen-xl'>
       <main>
-        <h1 className='text-3xl font-bold'></h1>
-        <PageHeader fullWidth>template/page.tsx</PageHeader>
+        <PageHeader fullWidth>{pageTitle}</PageHeader>
         <Breadcrumbs />
 
         <div className='mt-12 flex flex-col gap-12'>

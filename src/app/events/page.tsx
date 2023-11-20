@@ -93,7 +93,7 @@ export default function Page() {
   return (
     <div className='container max-w-screen-xl'>
       <main>
-        <PageHeader fullWidth>行事案内</PageHeader>
+        <PageHeader fullWidth>{pageTitle}</PageHeader>
         <Breadcrumbs />
 
         <div className='mt-12 flex flex-col gap-12'>

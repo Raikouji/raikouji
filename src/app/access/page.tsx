@@ -18,7 +18,7 @@ export default function Page() {
   return (
     <div className='container max-w-screen-xl'>
       <main>
-        <PageHeader fullWidth>アクセス</PageHeader>
+        <PageHeader fullWidth>{pageTitle}</PageHeader>
         <div className='my-12 flex flex-col gap-12'>
           <Breadcrumbs />
 
