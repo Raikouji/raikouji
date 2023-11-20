@@ -38,12 +38,13 @@ function MainNavigation() {
       >
         <ul className='flex flex-col gap-4 lg:flex-row [&>li>a]:p-2'>
           <MenuItem href='/'>Home</MenuItem>
-          <MenuItem href='/template'>Template</MenuItem>
           <MenuItem href='/events'>行事案内</MenuItem>
+          <MenuItem href='/about'>頼光寺について</MenuItem>
           <MenuItem href='/cemetery'>墓地の案内</MenuItem>
           <MenuItem href='/access'>アクセス</MenuItem>
           <MenuItem href='/gallery'>ギャラリー</MenuItem>
           <MenuItem href='/contact'>お問合せ</MenuItem>
+          <MenuItem href='/template'>Template</MenuItem>
         </ul>
       </nav>
 
