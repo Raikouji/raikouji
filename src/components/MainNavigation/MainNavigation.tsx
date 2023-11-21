@@ -2,24 +2,29 @@
 
 import { cn } from '@/utils'
 import Link from 'next/link'
+import { useSelectedLayoutSegment } from 'next/navigation'
 import React from 'react'
 import styles from './MainNavigation.module.css'
 
-function MenuItem({ href, children }: { href: string; children: string }) {
-  return (
-    <li>
-      <Link
-        className='border-b-primary-400 text-foreground/80 transition-all hover:border-b hover:text-foreground lg:ease-out'
-        href={href}
-      >
-        {children}
-      </Link>
-    </li>
-  )
-}
-
 function MainNavigation() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
+
+  const segment = useSelectedLayoutSegment()
+
+  const items = [
+    { path: '/', name: 'Home' },
+    { path: 'about', name: '頼光寺について' },
+    { path: 'events', name: '行事案内' },
+    { path: 'cemetery', name: '墓地の案内' },
+    { path: 'access', name: 'アクセス' },
+    { path: 'gallery', name: 'ギャラリー' },
+    { path: 'scarlet-seal', name: '御朱印、仏前結婚式' },
+    { path: 'multi-purpose-hall', name: '紫陽閣の貸し出し' },
+    { path: 'links', name: 'リンク' },
+    { path: 'contact', name: 'お問合せ' },
+    { path: 'privacy-policy', name: 'プライバシーポリシー' },
+    { path: 'template', name: 'Template' },
+  ]
 
   return (
     <>
@@ -37,18 +42,24 @@ function MainNavigation() {
         )}
       >
         <ul className='flex flex-col gap-4 lg:flex-row [&>li>a]:p-2'>
-          <MenuItem href='/'>Home</MenuItem>
-          <MenuItem href='/about'>頼光寺について</MenuItem>
-          <MenuItem href='/events'>行事案内</MenuItem>
-          <MenuItem href='/cemetery'>墓地の案内</MenuItem>
-          <MenuItem href='/access'>アクセス</MenuItem>
-          <MenuItem href='/gallery'>ギャラリー</MenuItem>
-          <MenuItem href='/scarlet-seal'>御朱印、仏前結婚式</MenuItem>
-          <MenuItem href='/multi-purpose-hall'>紫陽閣の貸し出し</MenuItem>
-          <MenuItem href='/links'>リンク</MenuItem>
-          <MenuItem href='/contact'>お問合せ</MenuItem>
-          <MenuItem href='/privacy-policy'>プライバシーポリシー</MenuItem>
-          <MenuItem href='/template'>Template</MenuItem>
+          {items.map((item) => {
+            const isActive = item.path === segment
+
+            return (
+              <li key={item.path} className={isActive ? 'font-bold' : ''}>
+                <Link
+                  href={`/${item.path}`}
+                  className={cn(
+                    'text-foreground/80 hover:text-foreground',
+                    'hover:border-b hover:border-b-primary-400',
+                    'transition-all lg:ease-out',
+                  )}
+                >
+                  {item.name}
+                </Link>
+              </li>
+            )
+          })}
         </ul>
       </nav>
 
