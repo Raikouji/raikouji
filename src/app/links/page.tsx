@@ -16,56 +16,66 @@ export const metadata: Metadata = outputMetadata({
 type Link = {
   title: string
   url: string
+  kind: string
 }
 
-const events1: Link[] = [
+const events: Link[] = [
   {
     title: '全日本仏教会',
     url: 'https://www.jbf.ne.jp/',
+    kind: 'attribution',
   },
   {
     title: '曹洞宗 曹洞禅ネット 公式',
     url: 'https://www.sotozen-net.or.jp/',
+    kind: 'attribution',
   },
   {
     title: '曹洞宗近畿管区教化センター',
     url: 'https://www.soto-kinki.net/',
+    kind: 'attribution',
   },
-]
-
-const events2: Link[] = [
   {
     title: '頼光寺（あじさい寺）- 能勢電鉄',
     url: 'https://noseden.hankyu.co.jp/guide/spot/ypcvp8g2j1/',
+    kind: 'media',
   },
   {
     title: '頼光寺 清和源氏ゆかりの社寺 - 川西市',
     url: 'https://www.city.kawanishi.hyogo.jp/shiseijoho/shokai/kankouannai/1003058/kankou_raiko.html',
+    kind: 'media',
   },
   {
     title: '頼光寺(川西市) - ウィキペディア',
     url: 'https://ja.wikipedia.org/wiki/%E9%A0%BC%E5%85%89%E5%AF%BA_(%E5%B7%9D%E8%A5%BF%E5%B8%82)',
+    kind: 'media',
   },
 ]
 
 function LinkList({
   events,
+  kind,
   className,
 }: {
   events: Link[]
+  kind: 'attribution' | 'media'
   className?: string
 }) {
+  const filteredEvents = events.filter((event) => {
+    return event.kind === kind
+  })
+
   return (
     <ul
       className={cn(
-        'border-t-1 list-inside list-disc border-t border-dotted border-t-blue-400 marker:text-blue-400',
+        'border-t-1 list-inside list-disc border-t border-dotted border-t-gray-300 marker:text-primary-200',
         className,
       )}
     >
-      {events.map(({ title, url }) => (
+      {filteredEvents.map(({ title, url }) => (
         <li
           key={crypto.randomUUID()}
-          className='border-b-1 border-b border-dotted border-b-blue-400 px-4 py-2'
+          className='border-b-1 border-b border-dotted border-b-gray-300 px-4 py-2'
         >
           <a
             href={url}
@@ -95,7 +105,7 @@ export default function Page() {
               <h2 id='scarlet-seal' className='mt-4 text-center font-serif'>
                 関連リンク
               </h2>
-              <LinkList events={events1} className='my-6' />
+              <LinkList events={events} kind='attribution' className='my-6' />
             </div>
             <hr className='line-with-three-dots lg:hidden' />
           </section>
@@ -108,7 +118,7 @@ export default function Page() {
               <h2 id='scarlet-seal' className='mt-4 text-center font-serif'>
                 頼光寺を紹介いただいているサイト
               </h2>
-              <LinkList events={events2} className='my-6' />
+              <LinkList events={events} kind='media' className='my-6' />
             </div>
           </section>
         </div>
