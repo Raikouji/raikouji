@@ -26,7 +26,7 @@ export default function RootLayout({
       <html lang='ja' className='font-sans'>
         <body className='relative'>
           <SiteHeader />
-          <div className='site-wrapper'>{children}</div>
+          {children}
           <SiteFooter />
         </body>
       </html>

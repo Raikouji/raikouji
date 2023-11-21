@@ -52,8 +52,7 @@ export default function Home() {
       className={`${styles.wrapper} container flex max-w-screen-xl flex-col gap-12`}
     >
       <main>
-        <PageHeader fullWidth>頼光寺について</PageHeader>
-        <div className='flex flex-col gap-12 py-12'>
+        <div className='flex flex-col gap-12 pb-12'>
           <Hero />
 
           <div className='text-center'>
