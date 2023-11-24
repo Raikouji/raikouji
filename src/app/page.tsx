@@ -2,7 +2,9 @@
 
 import Gallery from '@/components/Gallery'
 import Hero from '@/components/Hero'
+import ImageAboveHeading from '@/components/ImageAboveHeading'
 import { Button } from '@/components/ui/button'
+import { cn } from '@/utils'
 import { motion, useScroll } from 'framer-motion'
 import Image from 'next/image'
 import { useRef } from 'react'
@@ -104,27 +106,59 @@ export default function Home() {
             </div>
           </div>
 
-          <section className='lg:flex lg:items-center lg:gap-8'>
-            <div>
-              <Image
-                src='/images/lorem.jpg'
-                alt='Lorem'
-                width={2100}
-                height={1400}
-                sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                priority
-              />
-            </div>
-            <div className='border bg-white/50 p-8'>
-              <h2 className='text-center'>頼光寺について</h2>
-              <p className='mt-4'>
-                祥雲山
-                頼光寺は紀元1000年頃に源氏の一族によって創立、真言律宗の寺院として始まりました。
-                その後数々の戦火により衰退したものの二度の再興を経て、1804年に尼寺となりました。
-                尼僧たちの坐禅道場として活用されたりしましたが、1875年には維持が困難となり、法常寺に合併しました。
-                その後、旧信徒たちの支援により建物や什物は引き継がれ、現在では曹洞宗に属し、
-                地域の人々に「あじさい寺」として親しまれています。
-              </p>
+          <section className='pb-16'>
+            <div
+              className={cn(
+                'full-width relative pr-4',
+                'bg-[length:329px_269px] bg-left bg-no-repeat',
+                'bg-[url("/images/illust-ajisai-blue.png")]',
+                styles.wrapper,
+              )}
+            >
+              <div className={cn('relative')}>
+                <div className='w-3/4'>
+                  <div className='aspect-h-3 aspect-w-2 md:aspect-h-9 md:aspect-w-16'>
+                    <Image
+                      src='/images/ajisai.jpg'
+                      alt='Lorem'
+                      width={2100}
+                      height={1400}
+                      sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                      style={{ objectFit: 'cover' }}
+                      priority
+                    />
+                  </div>
+                </div>
+                <div className='absolute -bottom-8 w-full'>
+                  <div className='mx-auto max-w-screen-xl'>
+                    <div
+                      className={cn(
+                        'grid place-content-center p-4 lg:p-8',
+                        'ml-auto w-1/2',
+                        'bg-white/90 text-center shadow-lg',
+                      )}
+                    >
+                      <div className='flex flex-col gap-3'>
+                        <p className='text-center'>
+                          <ImageAboveHeading />
+                        </p>
+                        <h2>頼光寺について</h2>
+                        <p>
+                          祥雲山
+                          頼光寺は紀元1000年頃に源氏の一族によって創立、真言律宗の寺院として始まりました。
+                          その後数々の戦火により衰退したものの二度の再興を経て、1804年に尼寺となりました。
+                          尼僧たちの坐禅道場として活用されたりしましたが、1875年には維持が困難となり、
+                          法常寺に合併しました。その後、旧信徒たちの支援により建物や什物は引き継がれ、
+                          現在では曹洞宗に属し、地域の人々に「あじさい寺」として親しまれています。
+                        </p>
+                        <p>
+                          <Button>住職ご挨拶・頼光寺の沿革</Button>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
 
