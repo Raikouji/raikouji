@@ -326,25 +326,33 @@ export default function Home() {
             </section>
           </div>
 
-          <section>
+          <section className='py-12'>
             <div className='mx-auto max-w-screen-md'>
-              <h2 className='text-center'>アクセス</h2>
+              <p className='text-center'>
+                <ImageAboveHeading />
+              </p>
+              <h2 className='mt-3 text-center'>アクセス</h2>
               <p className='mt-3'>
                 能勢電鉄「畦野駅」から徒歩５分。お車なら国道173号線
                 「東畦野」交差点から５分以内の場所にあります。
                 駐車場も完備。大阪や神戸からでもアクセスしやすい立地です。
               </p>
 
-              <p className='mt-8 text-center'>
-                <a href='#' className='btn btn-primary'>
-                  お車でのアクセス
-                </a>
-                <a href='#' className='btn btn-primary'>
-                  最寄駅からの道順
-                </a>
+              <p className='mt-4 text-center'>
+                <Button asChild>
+                  <Link href='access'>アクセス</Link>
+                </Button>
               </p>
             </div>
-            <div className='mx-auto mt-6 h-[400px] w-[600px] bg-gray-100'></div>
+            <div className='relative mt-12 h-0 overflow-hidden pb-[61.804697%]'>
+              <iframe
+                src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6545.583216547808!2d135.41242965476988!3d34.88657891179472!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000f7d363fc0129%3A0x931d2d3f56786ea7!2z6LO05YWJ5a-6!5e0!3m2!1sja!2sjp!4v1700881280115!5m2!1sja!2sjp'
+                allowFullScreen={false}
+                loading='lazy'
+                referrerPolicy='no-referrer-when-downgrade'
+                className='absolute left-0 top-0 h-full w-full border-none'
+              ></iframe>
+            </div>
           </section>
         </div>
       </main>
