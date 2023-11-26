@@ -296,18 +296,31 @@ export default function Home() {
             </div>
           </section>
 
-          <div className='full-width bg-gray-800 px-8 py-12 text-white'>
+          <div
+            className={cn(
+              'full-width bg-gray-800 px-8 py-12 text-white',
+              'bg-contain bg-bottom bg-no-repeat',
+              'bg-[url("/images/bg-lotus-pale.png")]',
+            )}
+          >
             <section className='mx-auto flex max-w-screen-xl flex-col gap-12 lg:flex-row lg:items-center'>
-              <div className='text-center lg:w-72'>
-                <h2>頼光寺の風景</h2>
-                <p className='mt-3'>
+              <div className='flex flex-col gap-12 text-center lg:w-72'>
+                <h2
+                  className='mx-auto border-t-4 border-primary pt-3 tracking-[0.35em]'
+                  style={{ writingMode: 'vertical-rl' }}
+                >
+                  頼光寺の風景
+                </h2>
+                <p>
                   境内にはゆかりある墓地が点在し、300株以上のあじさいをはじめ様々な植物が植っています。初夏のあじさいの季節が見どころで、毎年多くの方にご参拝いただいております。
                 </p>
               </div>
               <div className='flex-grow'>
                 <Gallery photos={photos} />
                 <p className='mt-8 text-center'>
-                  <Button>ギャラリーを見る</Button>
+                  <Button asChild>
+                    <Link href='gallery'>ギャラリーを見る</Link>
+                  </Button>
                 </p>
               </div>
             </section>
