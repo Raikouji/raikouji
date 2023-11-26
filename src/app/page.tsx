@@ -132,8 +132,8 @@ export default function Home() {
             <div
               className={cn(
                 'full-width relative pr-4',
-                'bg-[length:329px_269px] bg-left bg-no-repeat',
-                'bg-[url("/images/illust-ajisai-blue.png")]',
+                'bg-[length:396.5px_178px] bg-right-top bg-no-repeat',
+                'bg-[url("/images/illust-2-color-ajisai.png")]',
                 styles.wrapper,
               )}
             >
@@ -174,7 +174,9 @@ export default function Home() {
                           現在では曹洞宗に属し、地域の人々に「あじさい寺」として親しまれています。
                         </p>
                         <p>
-                          <Button>住職ご挨拶・頼光寺の沿革</Button>
+                          <Button asChild>
+                            <Link href='about'>住職ご挨拶・頼光寺の沿革</Link>
+                          </Button>
                         </p>
                       </div>
                     </div>
