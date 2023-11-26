@@ -37,7 +37,15 @@ function Hero() {
               )}
             >
               <div className='flex flex-col gap-3'>
-                <p className='text-5xl'>■</p>
+                <p className='text-5xl'>
+                  <Image
+                    src='/images/genji-emblem-white.png'
+                    alt='源氏の家紋 笹竜胆'
+                    className='mx-auto'
+                    width={84}
+                    height={79}
+                  />
+                </p>
                 <p className='font-serif text-3xl'>曹洞宗 | 祥雲山</p>
                 <p className='ml-[0.5em] font-serif text-6xl font-bold tracking-[0.5em]'>
                   頼光寺
