@@ -1,14 +1,21 @@
 import Logo from '@/components/Logo'
 import { SITE_TITLE } from '@/constants'
 import { cn } from '@/utils'
+import Image from 'next/image'
 import Link from 'next/link'
 import { FaFacebook, FaSquareInstagram } from 'react-icons/fa6'
 
 function SiteFooter() {
   return (
     <footer>
-      <div className='bg-gray-50 px-8 py-16 text-foreground/80 lg:px-0'>
-        <div className='container flex max-w-screen-xl flex-col-reverse justify-between gap-12 md:flex-row'>
+      <div
+        className={cn(
+          'bg-gray-100 px-8 py-16 text-foreground/80 lg:px-0 ',
+          'bg-cover bg-top bg-no-repeat',
+          'bg-[url("/images/bg-lotus.png")]',
+        )}
+      >
+        <div className='container flex max-w-screen-xl flex-col-reverse justify-between gap-12 md:flex-row md:items-center'>
           <div className='max-w-xl text-center md:text-left'>
             <address className='flex flex-col gap-2 text-center not-italic'>
               <Logo tagline='タグラインです' taglinePosition='top'>
@@ -40,7 +47,22 @@ function SiteFooter() {
                   </a>
                 </li>
               </ul>
-              <p>バナー</p>
+              <p>
+                <a
+                  href='https://sotozen-net.or.jp/'
+                  target='_blank'
+                  rel='noreferrer'
+                >
+                  <Image
+                    className='mx-auto hover:opacity-80'
+                    src='/images/banner-sotozennet.png'
+                    alt='曹洞宗 Sotozen-net'
+                    width={180}
+                    height={48}
+                    priority
+                  />
+                </a>
+              </p>
             </address>
           </div>
           <nav className='flex flex-col gap-8 lg:flex-row lg:gap-12'>
