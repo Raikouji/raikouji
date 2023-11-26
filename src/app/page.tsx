@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { cn } from '@/utils'
 import { motion, useScroll } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useRef } from 'react'
 import styles from './homepage.module.css'
 
@@ -163,10 +164,20 @@ export default function Home() {
           </section>
 
           <section className='py-4'>
-            <div className='flex flex-wrap justify-center  gap-6'>
-              <figure className='relative shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)]'>
+            <div className='flex flex-wrap justify-center gap-6'>
+              <figure className='relative w-48 shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)]'>
                 <a href='#' className='hover:opacity-90'>
-                  <img src='https://picsum.photos/id/1/160/240.webp' alt='' />
+                  <div className='aspect-h-3 aspect-w-2'>
+                    <Image
+                      className={'h-full w-full object-cover object-center'}
+                      src='/images/light-up.jpg'
+                      alt='Lorem'
+                      width={2100}
+                      height={1400}
+                      sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                      priority
+                    />
+                  </div>
                   <figcaption
                     className='absolute -top-2 left-1 border-t-4 border-primary bg-white px-2 py-3 tracking-widest shadow-lg'
                     style={{ writingMode: 'vertical-rl' }}
@@ -175,9 +186,19 @@ export default function Home() {
                   </figcaption>
                 </a>
               </figure>
-              <figure className='relative shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)]'>
+              <figure className='relative w-48 shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)]'>
                 <a href='#' className='hover:opacity-90'>
-                  <img src='https://picsum.photos/id/2/160/240.webp' alt='' />
+                  <div className='aspect-h-3 aspect-w-2'>
+                    <Image
+                      className={'h-full w-full object-cover object-center'}
+                      src='/images/zazen.jpg'
+                      alt='Lorem'
+                      width={2100}
+                      height={1400}
+                      sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                      priority
+                    />
+                  </div>
                   <figcaption
                     className='absolute -top-2 left-1 border-t-4 border-primary bg-white px-2 py-3 tracking-widest shadow-lg'
                     style={{ writingMode: 'vertical-rl' }}
@@ -186,9 +207,19 @@ export default function Home() {
                   </figcaption>
                 </a>
               </figure>
-              <figure className='relative shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)]'>
+              <figure className='relative w-48 shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)]'>
                 <a href='#' className='hover:opacity-90'>
-                  <img src='https://picsum.photos/id/3/160/240.webp' alt='' />
+                  <div className='aspect-h-3 aspect-w-2'>
+                    <Image
+                      className={'h-full w-full object-cover object-center'}
+                      src='/images/ajisai.jpg'
+                      alt='Lorem'
+                      width={2100}
+                      height={1400}
+                      sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                      priority
+                    />
+                  </div>
                   <figcaption
                     className='absolute -top-2 left-1 border-t-4 border-primary bg-white px-2 py-3 tracking-widest shadow-lg'
                     style={{ writingMode: 'vertical-rl' }}
@@ -197,9 +228,19 @@ export default function Home() {
                   </figcaption>
                 </a>
               </figure>
-              <figure className='relative shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)]'>
+              <figure className='relative w-48 shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)]'>
                 <a href='#' className='hover:opacity-90'>
-                  <img src='https://picsum.photos/id/4/160/240.webp' alt='' />
+                  <div className='aspect-h-3 aspect-w-2'>
+                    <Image
+                      className={'h-full w-full object-cover object-center'}
+                      src='/images/ajisai.jpg'
+                      alt='Lorem'
+                      width={2100}
+                      height={1400}
+                      sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                      priority
+                    />
+                  </div>
                   <figcaption
                     className='absolute -top-2 left-1 border-t-4 border-primary bg-white px-2 py-3 tracking-widest shadow-lg'
                     style={{ writingMode: 'vertical-rl' }}
@@ -208,9 +249,19 @@ export default function Home() {
                   </figcaption>
                 </a>
               </figure>
-              <figure className='relative shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)]'>
+              <figure className='relative w-48 shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)]'>
                 <a href='#' className='hover:opacity-90'>
-                  <img src='https://picsum.photos/id/5/160/240.webp' alt='' />
+                  <div className='aspect-h-3 aspect-w-2'>
+                    <Image
+                      className={'h-full w-full object-cover object-center'}
+                      src='/images/bridal.jpg'
+                      alt='Lorem'
+                      width={2100}
+                      height={1400}
+                      sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                      priority
+                    />
+                  </div>
                   <figcaption
                     className='absolute -top-2 left-1 border-t-4 border-primary bg-white px-2 py-3 tracking-widest shadow-lg'
                     style={{ writingMode: 'vertical-rl' }}
