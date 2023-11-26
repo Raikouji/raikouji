@@ -1,10 +1,10 @@
-import Gallery from '@/components/Gallery'
-import { cn } from '@/utils'
-
 import Breadcrumbs from '@/components/Breadcrumbs'
+import Gallery from '@/components/Gallery'
+import ImageAboveHeading from '@/components/ImageAboveHeading'
 import PageHeader from '@/components/PageHeader'
-import { outputMetadata } from '@/utils'
+import { cn, outputMetadata } from '@/utils'
 import type { Metadata } from 'next'
+import Image from 'next/image'
 
 // for metadata
 const pageTitle = '年中行事 / 月例行事'
@@ -96,11 +96,16 @@ export default function Page() {
         <PageHeader fullWidth>{pageTitle}</PageHeader>
         <Breadcrumbs className='mt-2' />
 
-        <div className='mt-12 flex flex-col gap-12'>
+        <div className='mt-12 flex flex-col gap-12 py-12'>
           <section>
-            <div className='mx-auto max-w-screen-md'>
-              <h2>年中行事</h2>
-              <EventList events={events} className='my-6' />
+            <div className='mx-auto max-w-screen-lg'>
+              <p className='text-center'>
+                <ImageAboveHeading />
+              </p>
+              <h2 className='mt-3 text-center'>年中行事</h2>
+              <div className='mt-8 flex flex-col items-center gap-4 lg:flex-row lg:gap-12'>
+                <EventList events={events} className='my-6' />
+              </div>
               <Gallery photos={photos} col={1} colMd={3} />
             </div>
           </section>
@@ -108,9 +113,14 @@ export default function Page() {
           <hr className='line-with-three-dots' />
 
           <section>
-            <div className='mx-auto flex max-w-screen-md flex-col gap-10'>
-              <h2 className='text-center'>月例行事</h2>
+            <div className='mx-auto flex max-w-screen-md flex-col gap-8'>
               <div>
+                <p className='text-center'>
+                  <ImageAboveHeading imageName='frog' />
+                </p>
+                <h2 className='mt-3 text-center'>月例行事</h2>
+              </div>
+              <div className='py-12'>
                 <h3 className='text-center'>早朝坐禅会</h3>
                 <p className='mt-2 text-center'>
                   毎月第１日曜日 午前６時半〜
@@ -121,14 +131,16 @@ export default function Page() {
                   ★★ダミーコピーですダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝たしはでまた箱のダミーコピーです上手どもっさと俄たますて、みんなまでぶ弾いとだまし。
                 </p>
                 <p className='mt-4'>
-                  <img
-                    src='https://picsum.photos/id/2/600/400.webp'
-                    alt=''
-                    className='mx-auto w-fit'
+                  <Image
+                    src='/images/zazen1.jpg'
+                    alt='早朝坐禅会'
+                    width={2000}
+                    height={1333}
                   />
                 </p>
               </div>
-              <div>
+              <hr className='line-with-three-dots' />
+              <div className='py-12'>
                 <h3 className='text-center'>写経会</h3>
                 <p className='mt-2 text-center'>
                   毎月８日 午後１時〜(※１月、８月は除く)
@@ -139,14 +151,16 @@ export default function Page() {
                   ★★ダミーコピーですダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝たしはでまた箱のダミーコピーです上手どもっさと俄たますて、みんなまでぶ弾いとだまし。
                 </p>
                 <p className='mt-4'>
-                  <img
-                    src='https://picsum.photos/id/2/600/400.webp'
-                    alt=''
-                    className='mx-auto w-fit'
+                  <Image
+                    src='/images/zazen1.jpg'
+                    alt='早朝坐禅会'
+                    width={2000}
+                    height={1333}
                   />
                 </p>
               </div>
-              <div>
+              <hr className='line-with-three-dots' />
+              <div className='py-12'>
                 <h3 className='text-center'>月例会</h3>
                 <p className='mt-2 text-center'>
                   毎月★★日 午後★★時〜
@@ -157,10 +171,11 @@ export default function Page() {
                   ★★ダミーコピーですダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝たしはでまた箱のダミーコピーです上手どもっさと俄たますて、みんなまでぶ弾いとだまし。
                 </p>
                 <p className='mt-4'>
-                  <img
-                    src='https://picsum.photos/id/2/600/400.webp'
-                    alt=''
-                    className='mx-auto w-fit'
+                  <Image
+                    src='/images/zazen1.jpg'
+                    alt='早朝坐禅会'
+                    width={2000}
+                    height={1333}
                   />
                 </p>
               </div>
