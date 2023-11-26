@@ -83,26 +83,47 @@ export default function Home() {
             </p>
           </div>
 
-          <div className='mx-auto max-w-screen-md bg-amber-50 p-8'>
-            <h2>お知らせ</h2>
-            <div className='flex flex-col gap-6 lg:flex-row'>
-              <div className='lg:order-1'>
-                <h3>
-                  <a href='#' className='text-blue-500 underline'>
+          <div
+            className={cn(
+              'relative mx-auto max-w-screen-md p-8',
+              'bg-[url("/images/bg-paper.png")] bg-cover bg-top',
+              'rounded-xl shadow-lg',
+            )}
+          >
+            <h2
+              className={cn(
+                'absolute -left-6 top-3',
+                'border-t-4 border-gray-800 bg-primary-dark px-2 py-3 shadow-lg',
+                'text-lg tracking-widest text-white ',
+              )}
+              style={{ writingMode: 'vertical-rl' }}
+            >
+              お知らせ
+            </h2>
+            <div className='flex flex-col gap-8 lg:flex-row'>
+              <div className='lg:order-1 lg:w-2/3'>
+                <h3 className='text-xl'>
+                  <a href='#' className='text-primary-dark underline'>
                     0月00日に「●●●●●●●●●●」を開催します
                   </a>
                 </h3>
                 <p className='mt-2'>
                   ここに開花情報等を載せます。ダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝た。
                 </p>
-                <hr className='my-3' />
-                <h3>あじさいの開花状況 (2023-06-17)</h3>
-                <p className='mt-2'>
-                  ここに開花情報等を載せます。ダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝た。
-                </p>
+                <div className='mt-4 border border-primary p-4'>
+                  <h3 className='text-xl'>あじさいの開花状況 (2023-06-17)</h3>
+                  <p className='mt-2'>
+                    ここに開花情報等を載せます。ダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝た。
+                  </p>
+                </div>
               </div>
-              <div>
-                <img src='https://picsum.photos/id/2/360/240.webp' alt='' />
+              <div className='lg:w-1/3'>
+                <Image
+                  src='/images/ajisai2.jpg'
+                  width={900}
+                  height={600}
+                  alt='あじさい'
+                />
               </div>
             </div>
           </div>
