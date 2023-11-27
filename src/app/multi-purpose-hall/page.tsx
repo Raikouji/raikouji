@@ -18,19 +18,19 @@ export const metadata: Metadata = outputMetadata({
 
 const photos = [
   {
-    src: '/images/lorem.jpg',
+    src: '/images/zazen1.jpg',
     width: 900,
     height: 600,
     alt: '代替テキスト1',
   },
   {
-    src: '/images/dummy-01.jpg',
+    src: '/images/multi-purpose-hall-2.jpg',
     width: 900,
     height: 600,
     alt: '代替テキスト2',
   },
   {
-    src: '/images/dummy-03.jpg',
+    src: '/images/multi-purpose-hall-3.jpg',
     width: 900,
     height: 600,
     alt: '代替テキスト4',
@@ -48,17 +48,18 @@ export default function Page() {
           <section className='flex flex-col gap-12'>
             <div className='full-width-md mx-auto max-w-screen-md'>
               <Image
-                src='/images/lorem.jpg'
+                src='/images/zen-hall.jpg'
                 alt='Lorem'
                 width={2100}
-                height={1400}
+                height={1333}
                 sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                 style={{ objectFit: 'cover' }}
                 priority
               />
               <p className='mt-6 text-center font-bold'>
-                ★★ダミーコピーですダミーコピーです手はおっかさんの演奏硝子屋をセロだた。
-                それから思わ口まし勝たしはでまた箱のダミーコピーです上手どもっさと俄た。
+                多目的ホール「紫陽閣（しようかく）」を予約制でお貸ししています。
+                これまで、ヨガ教室や音楽演奏会などにご利用いただいたことがあります。
+                月例の早朝座禅会も、この紫陽閣で行っています。
               </p>
             </div>
 
