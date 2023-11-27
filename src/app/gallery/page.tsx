@@ -61,8 +61,13 @@ export default function Page() {
         <PageHeader fullWidth>{pageTitle}</PageHeader>
         <Breadcrumbs className='mt-2' />
 
-        <div className='my-12 flex flex-col gap-12'>
-          <div className='mx-auto max-w-screen-md'>
+        <div className='my-12 flex flex-col'>
+          <p className='text-center font-bold'>
+            頼光寺の風景やイベントなどの写真です。
+            <br />
+            秋には紅葉をお楽しみいただけます。
+          </p>
+          <div className='mx-auto mt-4 max-w-screen-md'>
             <ul
               className={cn(
                 'flex text-sm',
