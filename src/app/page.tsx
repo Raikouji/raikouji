@@ -189,7 +189,7 @@ export default function Home() {
           <section className='py-4'>
             <div className='flex flex-wrap justify-center gap-6'>
               <figure className='relative w-48 shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)]'>
-                <a href='#' className='hover:opacity-90'>
+                <Link href='/events' className='hover:opacity-90'>
                   <div className='aspect-h-3 aspect-w-2'>
                     <Image
                       className={'h-full w-full object-cover object-center'}
@@ -207,10 +207,10 @@ export default function Home() {
                   >
                     年間行事
                   </figcaption>
-                </a>
+                </Link>
               </figure>
               <figure className='relative w-48 shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)]'>
-                <a href='#' className='hover:opacity-90'>
+                <Link href='/events' className='hover:opacity-90'>
                   <div className='aspect-h-3 aspect-w-2'>
                     <Image
                       className={'h-full w-full object-cover object-center'}
@@ -228,14 +228,14 @@ export default function Home() {
                   >
                     座禅会・写経会
                   </figcaption>
-                </a>
+                </Link>
               </figure>
               <figure className='relative w-48 shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)]'>
-                <a href='#' className='hover:opacity-90'>
+                <Link href='/cemetery' className='hover:opacity-90'>
                   <div className='aspect-h-3 aspect-w-2'>
                     <Image
                       className={'h-full w-full object-cover object-center'}
-                      src='/images/ajisai.jpg'
+                      src='/images/cemetery.jpg'
                       alt='Lorem'
                       width={2100}
                       height={1400}
@@ -249,10 +249,10 @@ export default function Home() {
                   >
                     墓地のご案内
                   </figcaption>
-                </a>
+                </Link>
               </figure>
               <figure className='relative w-48 shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)]'>
-                <a href='#' className='hover:opacity-90'>
+                <Link href='scarlet-seal' className='hover:opacity-90'>
                   <div className='aspect-h-3 aspect-w-2'>
                     <Image
                       className={'h-full w-full object-cover object-center'}
@@ -270,10 +270,10 @@ export default function Home() {
                   >
                     御朱印
                   </figcaption>
-                </a>
+                </Link>
               </figure>
               <figure className='relative w-48 shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)]'>
-                <a href='#' className='hover:opacity-90'>
+                <Link href='scarlet-seal' className='hover:opacity-90'>
                   <div className='aspect-h-3 aspect-w-2'>
                     <Image
                       className={'h-full w-full object-cover object-center'}
@@ -291,7 +291,7 @@ export default function Home() {
                   >
                     仏前結婚式
                   </figcaption>
-                </a>
+                </Link>
               </figure>
             </div>
           </section>
