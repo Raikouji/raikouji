@@ -60,6 +60,30 @@ const photos = [
     height: 600,
     alt: '代替テキスト2',
   },
+  {
+    src: '/images/dummy-01.jpg',
+    width: 900,
+    height: 600,
+    alt: '代替テキスト1',
+  },
+  {
+    src: '/images/dummy-03.jpg',
+    width: 900,
+    height: 600,
+    alt: '代替テキスト2',
+  },
+  {
+    src: '/images/dummy-01.jpg',
+    width: 900,
+    height: 600,
+    alt: '代替テキスト1',
+  },
+  {
+    src: '/images/dummy-03.jpg',
+    width: 900,
+    height: 600,
+    alt: '代替テキスト2',
+  },
 ]
 
 function EventList({
@@ -96,29 +120,56 @@ export default function Page() {
         <PageHeader fullWidth>{pageTitle}</PageHeader>
         <Breadcrumbs className='mt-2' />
 
-        <div className='mt-12 flex flex-col gap-12 py-12'>
-          <section>
+        <div className='mt-12 flex flex-col'>
+          <div className='mx-auto max-w-screen-sm'>
+            <p className='text-center font-bold'>
+              頼光寺では季節ごとの仏事、また、毎月の行事（早朝坐禅会、写経会、檀家様向け月例会）を開催しています。皆様の参加をお待ちしております。
+            </p>
+            <ul
+              className={cn(
+                'mt-8 flex justify-center text-sm',
+                '[&>li>a]:text-foreground/70',
+                '[&>li:after]:text-foreground/30',
+                '[&>li:not(:last-child):after]:mx-3 [&>li:not(:last-child):after]:content-["|"] ',
+              )}
+            >
+              <li>
+                <a className='hover:text-primary-400' href='#annual-events'>
+                  年中行事
+                </a>
+              </li>
+              <li>
+                <a className='hover:text-primary-400' href='#monthly-events'>
+                  月例行事
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <section className='id="annual-events" py-16'>
             <div className='mx-auto max-w-screen-lg'>
               <p className='text-center'>
                 <ImageAboveHeading />
               </p>
-              <h2 className='mt-3 text-center'>年中行事</h2>
+              <h2 className='mt-4 text-center'>年中行事</h2>
               <div className='mt-8 flex flex-col items-center gap-4 lg:flex-row lg:gap-12'>
                 <EventList events={events} className='my-6' />
+                <div className='flex-grow'>
+                  <Gallery photos={photos} col={1} colMd={3} />
+                </div>
               </div>
-              <Gallery photos={photos} col={1} colMd={3} />
             </div>
           </section>
 
           <hr className='line-with-three-dots' />
 
-          <section>
+          <section id='monthly-events' className='py-16'>
             <div className='mx-auto flex max-w-screen-md flex-col gap-8'>
               <div>
                 <p className='text-center'>
                   <ImageAboveHeading imageName='frog' />
                 </p>
-                <h2 className='mt-3 text-center'>月例行事</h2>
+                <h2 className='mt-4 text-center'>月例行事</h2>
               </div>
               <div className='py-12'>
                 <h3 className='text-center'>早朝坐禅会</h3>
