@@ -1,12 +1,14 @@
 import Image from 'next/image'
 
 import Breadcrumbs from '@/components/Breadcrumbs'
+import Gallery from '@/components/Gallery'
 import ImageAboveHeading from '@/components/ImageAboveHeading'
 import PageHeader from '@/components/PageHeader'
 import Card from '@/components/ui/Card'
 import { Button } from '@/components/ui/button'
-import { outputMetadata } from '@/utils'
+import { cn, outputMetadata } from '@/utils'
 import type { Metadata } from 'next'
+import Link from 'next/link'
 
 // for metadata
 const pageTitle = '墓地の案内'
@@ -18,6 +20,33 @@ export const metadata: Metadata = outputMetadata({
   description: pageDescription,
 })
 
+const photos = [
+  {
+    src: '/images/genji.jpg',
+    width: 900,
+    height: 600,
+    alt: '源頼光',
+  },
+  {
+    src: '/images/grave1.jpg',
+    width: 900,
+    height: 600,
+    alt: '代替テキスト2',
+  },
+  {
+    src: '/images/grave3.jpg',
+    width: 900,
+    height: 600,
+    alt: '代替テキスト1',
+  },
+  {
+    src: '/images/grave2.jpg',
+    width: 900,
+    height: 600,
+    alt: '代替テキスト1',
+  },
+]
+
 export default function Page() {
   return (
     <div className='container max-w-screen-xl'>
@@ -25,40 +54,89 @@ export default function Page() {
         <PageHeader fullWidth>{pageTitle}</PageHeader>
         <Breadcrumbs className='mt-2' />
 
-        <div className='my-12 flex flex-col gap-12'>
+        <div className='my-12 flex flex-col'>
           <div className='mx-auto max-w-screen-md'>
-            <p className='font-bold'>
-              頼光寺のお墓は、静かで緑豊かな心安らぐ空間です。能勢電鉄「畦野駅」から徒歩５分とアクセスもしやすい立地。
-              永遠の憩いの場所としてふさわしい場所です。
+            <p className='font-bold lg:text-center'>
+              頼光寺のお墓は、静かで緑豊かな心安らぐ空間で、永遠の憩いの場所としてふさわしい場所。
+              <br />
+              能勢電鉄「畦野駅」から徒歩５分とアクセスもしやすい立地です。
             </p>
+            <ul
+              className={cn(
+                'mt-8 flex justify-center text-sm',
+                '[&>li>a]:text-foreground/70',
+                '[&>li:after]:text-foreground/30',
+                '[&>li:not(:last-child):after]:mx-3 [&>li:not(:last-child):after]:content-["|"] ',
+              )}
+            >
+              <li>
+                <a className='hover:text-primary-400' href='#public-grave'>
+                  永代供養共同墓
+                </a>
+              </li>
+              <li>
+                <a className='hover:text-primary-400' href='#mizuko-kuyou'>
+                  水子供養
+                </a>
+              </li>
+              <li>
+                <a className='hover:text-primary-400' href='#general-cemetery'>
+                  一般墓地（檀家様）
+                </a>
+              </li>
+              <li>
+                <a className='hover:text-primary-400' href='#historic-graves'>
+                  歴史にまつわるお墓
+                </a>
+              </li>
+            </ul>
           </div>
 
-          <section>
-            <div className='mx-auto flex max-w-screen-md flex-col gap-8'>
-              <h2 className='text-center'>永代供養共同墓</h2>
-              <div className='full-width'>
+          <section className='mx-auto max-w-screen-lg py-12'>
+            <div
+              id='public-grave'
+              className='mt-8 flex flex-col items-center gap-4 md:flex-row md:gap-8 lg:gap-12'
+            >
+              <p>
                 <Image
-                  src='/images/lorem.jpg'
-                  alt='Lorem'
-                  width={2100}
-                  height={1400}
-                  sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                  style={{ objectFit: 'cover' }}
-                  priority
+                  src='/images/cemetery.jpg'
+                  alt='永代供養共同墓'
+                  width={384}
+                  height={256}
                 />
+              </p>
+              <div className='md:w-3/5'>
+                <p className='text-center'>
+                  <ImageAboveHeading />
+                </p>
+                <h2 className='mt-4 text-center tracking-widest'>
+                  永代供養共同墓
+                </h2>
+                <p className='mt-8'>
+                  都市化、核家族化、未婚率の増加、出生率の低下などの原因で、祭祀の後継者がいない家庭が増え続けています。多くの方々がこの問題に直面し、悩まれていることでしょう。
+                </p>
+                <p className='mt-4'>
+                  そのような方々のご要望にお応えして、賴光寺では、境内に「永代供養共同墓」を設けました。生前にご契約いただくことで、祭祀の後継者がいない方々のために、永代供養共同墓に遺骨を埋葬された後、私たちは責任を持ってこれを管理します。
+                </p>
+                <p className='mt-4'>
+                  永代にわり、お盆や春秋の彼岸には供養を行います。安心して晩年をお過ごしいただくことができるでしょう。
+                </p>
               </div>
-              <p className='mt-4'>
-                都市化、核家族化、未婚率の増加、出生率の低下などの原因で、祭祀の後継者がいない家庭が増え続けています。多くの方々がこの問題に直面し、悩まれていることでしょう。
-              </p>
-              <p className='mt-4'>
-                そのような方々のご要望にお応えして、賴光寺では、境内に「永代供養共同墓」を設けました。生前にご契約いただくことで、祭祀の後継者がいない方々のために、永代供養共同墓に遺骨を埋葬された後、私たちは責任を持ってこれを管理します。
-              </p>
-              <p className='mt-4'>
-                永代にわり、お盆や春秋の彼岸には供養を行います。安心して晩年をお過ごしいただくことができるでしょう。
-              </p>
-              <Card className='bg-amber-50 p-4 md:p-6 lg:p-8'>
-                <h3 className='text-center'>永代供養共同墓の特徴</h3>
-                <ul className='mt-4 list-inside list-disc marker:text-tertiary-300'>
+            </div>
+
+            <div className='mx-auto mt-12 max-w-screen-md'>
+              <Card
+                className={cn(
+                  'relative mx-auto p-8',
+                  'bg-[url("/images/bg-paper.png")] bg-cover',
+                  'rounded-xl shadow-lg',
+                )}
+              >
+                <h3 className='text-center text-secondary-dark'>
+                  永代供養納骨塔のご案内
+                </h3>
+                <p className='mt-4'>★★内容、志納金など</p>
+                <ul className='mt-4 list-inside list-disc marker:text-tertiary'>
                   <li>墓石はありません。</li>
                   <li>お墓の管理は頼光寺が行います。</li>
                   <li>お墓の場所は、墓地内で選ぶことができます。</li>
@@ -69,65 +147,131 @@ export default function Page() {
 
           <hr className='line-with-three-dots' />
 
-          <section>
-            <div className='mx-auto max-w-screen-md'>
-              <h2 className='text-center'>車でのアクセス</h2>
-              <p className='mt-4'>
-                国道173号線
-                「東畦野」交差点を東に折れ(池田方面から来られる方は右折)、５分以内の場所にあります。表駐車場をご利用の方は東に折れてすぐの高架に乗らず側道へ進んでください。
-              </p>
-              <div className='mt-6 rounded-xl bg-tertiary-100 p-6 shadow-lg lg:p-8'>
-                <p className='text-center'>
-                  <ImageAboveHeading imageName='frog' />
-                </p>
-                <h3 className='mt-2 text-center text-tertiary-dark'>
-                  駐車場について
-                </h3>
-                <p className='mt-3 text-center'>
-                  表の駐車場には★★台、裏の駐車場には★★台が駐車していただけます。
-                </p>
-                <div className='mt-3 flex flex-col items-center justify-center gap-4 text-center md:flex-row md:gap-8'>
-                  <figure>
-                    <img src='https://picsum.photos/id/2/384/256.webp' alt='' />
-                    <figcaption className='mt-2'>下の駐車場</figcaption>
-                  </figure>
-                  <figure>
-                    <img src='https://picsum.photos/id/3/384/256.webp' alt='' />
-                    <figcaption className='mt-2'>上の駐車場</figcaption>
-                  </figure>
-                </div>
-                <div className='mt-6'>
-                  <h4>カーナビで来られる方へ</h4>
-                  <p className='mt-3'>
-                    カーナビで頼光寺やその住所を目的地に設定すると、若干遠回りで道順もわかりづらい裏駐車場に案内されてしまうことがあります。下記の地図などで、近場の道順をご確認されておくことをおすすめします。
-                  </p>
-                  <p className='mt-3'>
-                    Google
-                    マップの場合は「賴光寺参拝者駐車場」を目的地にセットしていただくと、表の駐車場に案内されます。
-                  </p>
-                </div>
-                <div className='mt-6'>
-                  <h4>
-                    足の不自由な方がおられる場合は、裏の駐車場をご利用ください
-                  </h4>
-                  <p className='mt-3'>
-                    表の駐車場に停められた場合、境内に入るまでに急斜面の階段がございます。なので、車椅子の方、足の不自由な方は、段差なく境内に入れる裏の駐車場をご利用ください。
-                  </p>
-                </div>
-              </div>
-
-              <h3 className='mt-8 text-center'>近場の詳細地図</h3>
-              <p className='mt-4'>
-                <img
-                  src='https://picsum.photos/id/2/600/400.webp'
-                  alt=''
-                  className='mx-auto w-fit'
+          <section className='mx-auto max-w-screen-lg py-12'>
+            <div id='mizuko-kuyou' className='mt-8'>
+              <p className='mx-auto max-w-screen-sm'>
+                <Image
+                  src='/images/statue-and-ajisai.jpg'
+                  alt='水子供養'
+                  width={2000}
+                  height={1333}
                 />
               </p>
-              <p className='mt-4 text-center'>
-                <Button>近場の詳細地図 印刷用 (PDF)</Button>
+              <p className='mt-12 text-center'>
+                <ImageAboveHeading />
               </p>
+              <h2 className='mt-4 text-center tracking-widest'>水子供養</h2>
+              <div className='mt-12 flex flex-col gap-4 lg:flex-row lg:gap-12'>
+                <div className='lg:w-1/2'>
+                  <p>
+                    ★★ダミーコピーですダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝たしはでまた箱のダミーコピーです上手どもっさと俄たますて、みんなまでぶ弾いとだまし。
+                  </p>
+                  <p className='mt-4'>
+                    ★★ダミーコピーですダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝たしはでまた箱のダミーコピーです上手どもっさと俄たますて、みんなまでぶ弾いとだまし。
+                  </p>
+                </div>
+                <div className='lg:w-1/2'>
+                  <Card
+                    className={cn(
+                      'relative mx-auto p-8',
+                      'bg-[url("/images/bg-paper.png")] bg-cover',
+                      'rounded-xl shadow-lg',
+                    )}
+                  >
+                    <h3 className='text-center text-secondary-dark'>
+                      水子供養のご案内
+                    </h3>
+                    <p className='mt-4'>★★内容、志納金など</p>
+                    <ul className='mt-4 list-inside list-disc marker:text-tertiary'>
+                      <li>墓石はありません。</li>
+                      <li>お墓の管理は頼光寺が行います。</li>
+                      <li>お墓の場所は、墓地内で選ぶことができます。</li>
+                    </ul>
+                  </Card>
+                </div>
+              </div>
             </div>
+          </section>
+
+          <hr className='line-with-three-dots' />
+
+          <section className='mx-auto max-w-screen-lg py-12'>
+            <div
+              id='general-cemetery'
+              className='mt-8 flex flex-col items-center gap-4 md:flex-row md:gap-8 lg:gap-12'
+            >
+              <p className='md:w-2/5'>
+                <Image
+                  src='/images/cemetery.jpg'
+                  alt='一般墓地 (檀家)'
+                  width={2000}
+                  height={1333}
+                />
+              </p>
+              <div className='md:w-3/5'>
+                <p className='text-center'>
+                  <ImageAboveHeading />
+                </p>
+                <h2 className='mt-4 text-center tracking-widest'>
+                  一般墓地 (檀家様)
+                </h2>
+                <p className='mt-4'>
+                  ★★ダミーコピーですダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝たしはでまた箱のダミーコピーです上手どもっさと俄たますて、みんなまでぶ弾いとだまし。
+                </p>
+                <p className='mt-4'>
+                  ★★ダミーコピーですダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝たしはでまた箱のダミーコピーです上手どもっさと俄たますて、みんなまでぶ弾いとだまし。
+                </p>
+              </div>
+            </div>
+
+            <div className='mx-auto mt-12 max-w-screen-md'>
+              <Card
+                className={cn(
+                  'relative mx-auto p-8',
+                  'bg-[url("/images/bg-paper.png")] bg-cover',
+                  'rounded-xl shadow-lg',
+                )}
+              >
+                <h3 className='text-center text-secondary-dark'>
+                  檀家様のご案内
+                </h3>
+                <p className='mt-4'>★★説明など</p>
+              </Card>
+            </div>
+          </section>
+
+          <hr className='line-with-three-dots' />
+
+          <section
+            id='historic-graves'
+            className='mx-auto w-full max-w-screen-lg py-12'
+          >
+            <p className='text-center'>
+              <ImageAboveHeading imageName='frog' />
+            </p>
+            <h2 className='mt-3 text-center'>歴史にまつわるお墓</h2>
+            <p className='mx-auto mt-8 max-w-screen-sm lg:text-center'>
+              境内には、本寺の設立者や源氏ゆかりの歴史にちなんだ古いお墓があります。
+              <br />
+              詳しくは
+              <Link
+                href='about'
+                className='text-primary underline hover:no-underline'
+              >
+                「頼光寺の沿革」
+              </Link>
+              をご覧ください。
+            </p>
+
+            <div className='mt-8'>
+              <Gallery photos={photos} col={1} colMd={2} colLg={2} />
+            </div>
+
+            <p className='mt-8 text-center'>
+              <Button asChild>
+                <Link href='about'>ご挨拶・頼光寺の沿革</Link>
+              </Button>
+            </p>
           </section>
         </div>
       </main>
