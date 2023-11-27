@@ -203,7 +203,7 @@ export default function Page() {
                 </p>
                 <p className='mt-4'>
                   <Image
-                    src='/images/zazen1.jpg'
+                    src='/images/copy-sutras.jpg'
                     alt='早朝坐禅会'
                     width={2000}
                     height={1333}
@@ -224,7 +224,7 @@ export default function Page() {
                 <p className='mt-4'>
                   <Image
                     src='/images/zazen1.jpg'
-                    alt='早朝坐禅会'
+                    alt='月例会'
                     width={2000}
                     height={1333}
                   />
