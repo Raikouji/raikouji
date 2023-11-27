@@ -15,18 +15,17 @@ export const metadata: Metadata = outputMetadata({
 
 const photos = [
   {
-    src: '/images/lorem.jpg',
-    width: 900,
-    height: 600,
-    alt: '代替テキスト1',
-  },
-  {
-    src: '/images/dummy-01.jpg',
-    width: 900,
-    height: 600,
+    src: '/images/dried-persimmons.jpg',
+    width: 600,
+    height: 900,
     alt: '代替テキスト2',
   },
-  { src: '/images/dummy-02.jpg', width: 600, height: 900 },
+  {
+    src: '/images/rain-drop.jpg',
+    width: 900,
+    height: 600,
+    alt: '代替テキスト3',
+  },
   {
     src: '/images/dummy-03.jpg',
     width: 900,
@@ -34,23 +33,84 @@ const photos = [
     alt: '代替テキスト4',
   },
   {
-    src: '/images/dummy-02.jpg',
+    src: '/images/narcissus.jpg',
     width: 600,
     height: 900,
     alt: '代替テキスト5',
   },
-  { src: '/images/lorem.jpg', width: 900, height: 600 },
   {
-    src: '/images/dummy-01.jpg',
+    src: '/images/ume-blossoms.jpg',
+    width: 600,
+    height: 900,
+    alt: '代替テキスト7',
+  },
+  {
+    src: '/images/lotus.jpg',
+    width: 900,
+    height: 600,
+    alt: '代替テキスト8',
+  },
+]
+
+const photosAjisai = [
+  {
+    src: '/images/ajisai6.jpg',
+    width: 900,
+    height: 600,
+    alt: '代替テキスト1',
+  },
+  {
+    src: '/images/ajisai2.jpg',
+    width: 900,
+    height: 600,
+    alt: '代替テキスト2',
+  },
+  {
+    src: '/images/ajisai7.jpg',
+    width: 900,
+    height: 600,
+    alt: '代替テキスト3',
+  },
+  {
+    src: '/images/ajisai4.jpg',
+    width: 900,
+    height: 600,
+    alt: '代替テキスト4',
+  },
+  {
+    src: '/images/ajisai3.jpg',
+    width: 900,
+    height: 600,
+    alt: '代替テキスト5',
+  },
+  { src: '/images/spider.jpg', width: 900, height: 600, alt: '代替テキスト6' },
+  {
+    src: '/images/ajisai-garden3.jpg',
     width: 900,
     height: 600,
     alt: '代替テキスト7',
   },
   {
-    src: '/images/dummy-03.jpg',
+    src: '/images/ajisai-garden2.jpg',
     width: 900,
     height: 600,
     alt: '代替テキスト8',
+  },
+]
+
+const photosEvent = [
+  {
+    src: '/images/light-up.jpg',
+    width: 900,
+    height: 600,
+    alt: '代替テキスト1',
+  },
+  { src: '/images/zazen.jpg', width: 600, height: 900, alt: '座禅会' },
+  {
+    src: '/images/ajisai-bouquet.jpg',
+    width: 600,
+    height: 900,
+    alt: 'あじさい札',
   },
 ]
 
@@ -94,30 +154,30 @@ export default function Page() {
             </ul>
           </div>
 
-          <section className='full-width py-16'>
+          <section className='full-width px-4 py-16'>
             <h2 id='temple' className='text-center'>
               境内の風景
             </h2>
-            <div className='mx-auto mt-8 max-w-screen-xl'>
+            <div className='mx-auto mt-8 max-w-screen-2xl'>
               <Gellary photos={photos} col={1} colMd={3} />
             </div>
           </section>
 
-          <section className='full-width bg-secondary-50 py-16'>
+          <section className='full-width bg-secondary-50 px-2 px-4 py-16'>
             <h2 id='ajisai' className='text-center'>
               あじさい
             </h2>
-            <div className='mx-auto mt-8 max-w-screen-xl'>
-              <Gellary photos={photos} col={1} colMd={3} />
+            <div className='mx-auto mt-8 max-w-screen-2xl'>
+              <Gellary photos={photosAjisai} col={1} colMd={3} />
             </div>
           </section>
 
-          <section className='full-width py-16'>
+          <section className='full-width px-2 px-4 py-16'>
             <h2 id='events' className='text-center'>
               イベント
             </h2>
-            <div className='mx-auto mt-8 max-w-screen-xl'>
-              <Gellary photos={photos} col={1} colMd={3} />
+            <div className='mx-auto mt-8 max-w-screen-2xl'>
+              <Gellary photos={photosEvent} col={1} colMd={3} />
             </div>
           </section>
         </div>
