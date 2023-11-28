@@ -172,16 +172,36 @@ export default function Page() {
                 <h2 className='mt-4 text-center'>月例行事</h2>
               </div>
               <div className='py-12'>
-                <h3 className='text-center'>早朝坐禅会</h3>
+                <h3 className='text-center tracking-widest'>早朝坐禅会</h3>
                 <p className='mt-2 text-center'>
                   毎月第１日曜日 午前６時半〜
                   <br />
+                  （１月、８月は除く）
+                  <br />
                   参加費なし
                 </p>
-                <p className='mt-4'>
-                  ★★ダミーコピーですダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝たしはでまた箱のダミーコピーです上手どもっさと俄たますて、みんなまでぶ弾いとだまし。
-                </p>
-                <p className='mt-4'>
+                <div className='mx-auto max-w-screen-sm'>
+                  <p className='mt-4 md:text-center'>
+                    初めての方でも気軽にご参加いただけます。
+                    <br className='hidden md:inline' />
+                    坐禅や読経、食事の作法につきましてはその都度ご説明いたします。
+                  </p>
+                  <p className='mt-6 text-center font-bold md:text-left'>
+                    【座禅会の流れ】
+                  </p>
+                  <ol className='list-inside list-decimal font-bold leading-7'>
+                    <li>
+                      本堂内で受付を済ませ、坐禅堂に移動し約30分すわります
+                    </li>
+                    <li>その後、本堂にて朝のお勤め（読経）</li>
+                    <li>
+                      再度坐禅堂にて坐禅をしながら朝ご飯（おかゆ）を召し上がっていただきます
+                    </li>
+                    <li>8時頃解散となります </li>
+                  </ol>
+                </div>
+
+                <p className='mt-6'>
                   <Image
                     src='/images/zazen1.jpg'
                     alt='早朝坐禅会'
@@ -192,16 +212,26 @@ export default function Page() {
               </div>
               <hr className='line-with-three-dots' />
               <div className='py-12'>
-                <h3 className='text-center'>写経会</h3>
+                <h3 className='text-center tracking-widest'>写経会</h3>
                 <p className='mt-2 text-center'>
-                  毎月８日 午後１時〜(※１月、８月は除く)
+                  毎月８日 午後１時〜
                   <br />
-                  参加費：★★
+                  （１月、８月は除く）
+                  <br />
+                  参加費(納経料)：1,000円
                 </p>
-                <p className='mt-4'>
-                  ★★ダミーコピーですダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝たしはでまた箱のダミーコピーです上手どもっさと俄たますて、みんなまでぶ弾いとだまし。
-                </p>
-                <p className='mt-4'>
+                <div className='mx-auto mt-6 max-w-screen-sm'>
+                  <p className='md:text-center'>
+                    当寺では写経会を月一で開催しています。
+                    <br />
+                    すべて椅子席で、写経用具は全てご用意（筆ペン派の方はご持参ください）。
+                    <br />
+                    午後3時頃に解散となります。
+                    <br />
+                    功徳を得られ、無心になり心が落ち着く写経の魅力を体感しませんか？
+                  </p>
+                </div>
+                <p className='mt-6'>
                   <Image
                     src='/images/copy-sutras.jpg'
                     alt='早朝坐禅会'
