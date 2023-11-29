@@ -215,7 +215,7 @@ export default function Page() {
                 <h2 className='mt-4 text-center tracking-widest'>
                   一般墓地 (檀家様)
                 </h2>
-                <p className='mt-4'>
+                <p className='mt-12'>
                   ★★ダミーコピーですダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝たしはでまた箱のダミーコピーです上手どもっさと俄たますて、みんなまでぶ弾いとだまし。
                 </p>
                 <p className='mt-4'>
