@@ -1,15 +1,18 @@
+import { cn } from '@/utils'
 import Link from 'next/link'
 import React from 'react'
-
 import styles from './Logo.module.css'
 
 function Logo({
   tagline,
   taglinePosition = 'bottom',
+  className,
   children,
+  ...delegated
 }: {
   tagline?: string
   taglinePosition?: 'top' | 'bottom' | 'right'
+  className?: string
   children: React.ReactNode
 }) {
   let flexClass
@@ -20,7 +23,10 @@ function Logo({
   }
 
   return (
-    <div className={flexClass}>
+    <div
+      className={cn('site-logo', styles.wrapper, flexClass, className)}
+      {...delegated}
+    >
       {tagline && taglinePosition === 'top' && <Tagline tagline={tagline} />}
       <h1 className='text-xl font-bold'>
         <Link href='/' className={styles.wrapper}>
