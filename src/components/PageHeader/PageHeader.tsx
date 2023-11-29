@@ -1,15 +1,17 @@
 import { cn } from '@/utils'
 import Image from 'next/image'
-import React from 'react'
+import React, { createElement } from 'react'
 
 function PageHeader({
   fullWidth = false,
+  headerLevel = 1,
   className,
   image = '/images/lorem.jpg',
   children,
   ...delegated
 }: {
   fullWidth?: boolean
+  headerLevel?: 1 | 2 | 3 | 4 | 5 | 6
   className?: string
   image?: string
   children: React.ReactNode
@@ -32,9 +34,14 @@ function PageHeader({
       </div>
       <div className='absolute inset-0'>
         <div className='container mx-auto flex h-full max-w-screen-xl items-center'>
-          <h1 className='bg-black/30 px-3 py-1 text-xl tracking-widest text-white'>
-            {children}
-          </h1>
+          {createElement(
+            `h${headerLevel}`,
+            {
+              className:
+                'bg-black/30 px-3 py-1 text-xl tracking-widest text-white',
+            },
+            children,
+          )}
         </div>
       </div>
     </div>
