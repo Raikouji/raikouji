@@ -1,6 +1,7 @@
 import Breadcrumbs from '@/components/Breadcrumbs'
 import ImageAboveHeading from '@/components/ImageAboveHeading'
 import PageHeader from '@/components/PageHeader'
+import Card from '@/components/ui/Card'
 import { Button } from '@/components/ui/button'
 import { cn, outputMetadata } from '@/utils'
 import type { Metadata } from 'next'
@@ -50,62 +51,85 @@ export default function Page() {
           </div>
 
           <section>
-            <div className='mx-auto flex max-w-screen-md flex-col gap-8 border p-4 lg:p-8'>
-              <h2 id='ajisai' className='mt-4 text-center font-serif'>
-                あじさいの開花状況
-                <br />
-                のお問合せについて
-              </h2>
-              <p>
-                ★★ダミーコピーですダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝たしはでまた箱のダミすて、みんなまでぶ弾いとだまし。
-              </p>
-              <p className='text-center'>
-                <Button>あじさいの開花状況を見る</Button>
-              </p>
-            </div>
-          </section>
-
-          <section>
-            <div className='mx-auto flex max-w-screen-lg flex-col gap-8'>
-              <div>
-                <p className='text-center'>
-                  <ImageAboveHeading />
-                </p>
-                <h2 id='tel' className='mt-4 text-center font-serif'>
-                  電話でのお問合せ
+            <div className='mx-auto max-w-screen-md'>
+              <Card
+                className={cn(
+                  'relative mx-auto p-8',
+                  'bg-red-50',
+                  'rounded-xl',
+                )}
+              >
+                <h2 id='ajisai' className='text-center text-xl text-red-500'>
+                  あじさいの開花状況の
+                  <br className='lg:hidden' />
+                  お問合せについて
                 </h2>
+                <p className='mt-4'>
+                  ★★ダミーコピーですダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝たしはでまた箱のダミすて、みんなまでぶ弾いとだまし。
+                </p>
+                <p className='mt-4 text-center'>
+                  <Button>あじさいの開花状況を見る</Button>
+                </p>
+              </Card>
+            </div>
+          </section>
+
+          <div className='flex flex-col gap-4 md:flex-row md:gap-8 lg:gap-20'>
+            <section className='lg:w-2/5'>
+              <div className='flex flex-col gap-8'>
+                <div>
+                  <p className='text-center'>
+                    <ImageAboveHeading />
+                  </p>
+                  <h2 id='tel' className='mt-4 text-center font-serif'>
+                    電話でのお問合せ
+                  </h2>
+                </div>
+                <div>
+                  <p>
+                    電話でのお問合せの説明。★★ダミーコピーですダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝た
+                  </p>
+                  <p className='mt-3 text-sm font-bold text-red-500'>
+                    ※
+                    電話をおかけの際は今一度番号をお確かめの上、お掛け間違いには十分ご注意いただくようお願いします。
+                  </p>
+                </div>
+                <p className='text-center font-bold'>
+                  Tel. <span className='text-3xl'>072-794-1165</span>
+                </p>
               </div>
-              <div>
+            </section>
+
+            <hr className='line-with-three-dots lg:hidden' />
+
+            <section className='lg:w-3/5'>
+              <div className='flex flex-col gap-8'>
+                <div>
+                  <p className='text-center'>
+                    <ImageAboveHeading />
+                  </p>
+                  <h2 id='form' className='mt-4 text-center font-serif'>
+                    フォームでのお問合せ
+                  </h2>
+                </div>
                 <p>
-                  電話でのお問合せの説明。★★ダミーコピーですダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝た
+                  フォームでのお問合せの説明。★★ダミーコピーですダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝た
                 </p>
-                <p className='text-sm font-bold text-red-500'>
-                  ※
-                  電話をおかけの際は今一度番号をお確かめの上、お掛け間違いには十分ご注意いただくようお願いします。
-                </p>
+                <div>
+                  <iframe
+                    src='https://docs.google.com/forms/d/e/1FAIpQLSehno7mm4V8lPWX1toSMtIP4TJ59f6RhlFReuwQWWtw-gfltw/viewform?embedded=true'
+                    width='100%'
+                    height='1000'
+                    frameBorder={0}
+                    marginHeight={0}
+                    marginWidth={0}
+                  >
+                    読み込んでいます…
+                  </iframe>
+                </div>
               </div>
-              <p className='text-center font-bold'>
-                Tel. <span className='text-3xl'>072-794-1165</span>
-              </p>
-            </div>
-          </section>
-
-          <hr className='line-with-three-dots' />
-
-          <section>
-            <div className='mx-auto max-w-screen-lg'>
-              <p className='text-center'>
-                <ImageAboveHeading />
-              </p>
-              <h2 id='form' className='mt-4 text-center font-serif'>
-                フォームでのお問合せ
-              </h2>
-              <p>
-                フォームでのお問合せの説明。★★ダミーコピーですダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝た
-              </p>
-              <div>フォーム</div>
-            </div>
-          </section>
+            </section>
+          </div>
         </div>
       </main>
     </div>
