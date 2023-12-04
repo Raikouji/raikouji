@@ -180,6 +180,12 @@
     margin-right: calc(50% - 50vw + var(--scroll-bar-width) / 2);
     margin-left: calc(50% - 50vw + var(--scroll-bar-width) / 2);
   }
+  @media (max-width: theme('screens.2xl')) {
+    .full-width-2xl {
+      margin-right: calc(50% - 50vw + var(--scroll-bar-width) / 2);
+      margin-left: calc(50% - 50vw + var(--scroll-bar-width) / 2);
+    }
+  }
   @media (max-width: theme('screens.xl')) {
     .full-width-xl {
       margin-right: calc(50% - 50vw + var(--scroll-bar-width) / 2);
