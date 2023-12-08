@@ -1,6 +1,23 @@
 import { cn } from '@/utils'
+import Autoplay from 'embla-carousel-autoplay'
+import useEmblaCarousel, { EmblaOptionsType } from 'embla-carousel-react'
 import Image from 'next/image'
 import styles from './Hero.module.css'
+
+const carouselImages = [
+  {
+    src: '/images/main-temple.jpg',
+    alt: '本堂',
+  },
+  {
+    src: '/images/light-up.jpg',
+    alt: 'ライトアップ',
+  },
+  {
+    src: '/images/statue-priest.jpg',
+    alt: '住職像',
+  },
+]
 
 function Hero() {
   return (
@@ -14,17 +31,7 @@ function Hero() {
     >
       <div className={cn('relative')}>
         <div className='ml-auto mr-0 w-3/4'>
-          <div className='aspect-h-3 aspect-w-2 md:aspect-h-9 md:aspect-w-16'>
-            <Image
-              src='/images/main-temple.jpg'
-              alt='Lorem'
-              width={2100}
-              height={1400}
-              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-              style={{ objectFit: 'cover' }}
-              priority
-            />
-          </div>
+          <Carousel />
         </div>
         <div className='absolute -bottom-8 w-full'>
           <div className='mx-auto max-w-screen-xl'>
@@ -59,6 +66,39 @@ function Hero() {
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  )
+}
+
+function Carousel() {
+  const emblaOptions: EmblaOptionsType = { loop: true }
+  const autoplayOptions = {
+    delay: 8000,
+    stopOnMouseEnter: true,
+  }
+
+  const [emblaRef] = useEmblaCarousel(emblaOptions, [Autoplay(autoplayOptions)])
+
+  return (
+    <div
+      className='embla aspect-h-3 aspect-w-2 overflow-hidden md:aspect-h-9 md:aspect-w-16'
+      ref={emblaRef}
+    >
+      <div className='embla__container flex'>
+        {carouselImages.map(({ src, alt }, index) => (
+          <div className='embla__slide min-w-0 flex-[0_0_100%]' key={index}>
+            <Image
+              src={src}
+              alt={alt}
+              width={2100}
+              height={1400}
+              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+              style={{ objectFit: 'cover' }}
+              priority
+            />
+          </div>
+        ))}
       </div>
     </div>
   )
