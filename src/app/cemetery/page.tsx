@@ -54,7 +54,7 @@ export default function Page() {
         <PageHeader fullWidth>{pageTitle}</PageHeader>
         <Breadcrumbs className='mt-2' />
 
-        <div className='my-12 flex flex-col'>
+        <div className='mt-12 flex flex-col'>
           <div className='mx-auto max-w-screen-md'>
             <p className='font-bold lg:text-center'>
               頼光寺のお墓は、静かで緑豊かな心安らぐ空間で、永遠の憩いの場所としてふさわしい場所。
@@ -147,51 +147,53 @@ export default function Page() {
 
           <hr className='line-with-three-dots' />
 
-          <section className='mx-auto max-w-screen-lg py-12'>
-            <div id='mizuko-kuyou' className='mt-8'>
-              <p className='mx-auto max-w-screen-sm'>
-                <Image
-                  src='/images/statue-and-ajisai.jpg'
-                  alt='水子供養'
-                  width={2000}
-                  height={1333}
-                />
-              </p>
-              <p className='mt-12 text-center'>
-                <ImageAboveHeading imageName='momiji' />
-              </p>
-              <h2 className='mt-3 text-center tracking-widest'>水子供養</h2>
-              <div className='mt-12 flex flex-col gap-4 lg:flex-row lg:gap-12'>
-                <div className='lg:w-1/2'>
-                  <p>
-                    ★★ダミーコピーですダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝たしはでまた箱のダミーコピーです上手どもっさと俄たますて、みんなまでぶ弾いとだまし。
-                  </p>
-                  <p className='mt-4'>
-                    ★★ダミーコピーですダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝たしはでまた箱のダミーコピーです上手どもっさと俄たますて、みんなまでぶ弾いとだまし。
-                  </p>
-                </div>
-                <div className='lg:w-1/2'>
-                  <Card
-                    className={cn(
-                      'relative mx-auto p-8',
-                      'bg-[url("/images/bg-paper.png")] bg-cover',
-                      'rounded-xl shadow-lg',
-                    )}
-                  >
-                    <h3 className='text-center text-secondary-dark'>
-                      水子供養のご案内
-                    </h3>
-                    <p className='mt-4'>★★内容、志納金など</p>
-                    <ul className='mt-4 list-inside list-disc marker:text-tertiary'>
-                      <li>墓石はありません。</li>
-                      <li>お墓の管理は頼光寺が行います。</li>
-                      <li>お墓の場所は、墓地内で選ぶことができます。</li>
-                    </ul>
-                  </Card>
+          <div className='full-width bg-secondary-50'>
+            <section className='mx-auto max-w-screen-lg py-12'>
+              <div id='mizuko-kuyou' className='mt-8'>
+                <p className='mx-auto max-w-screen-sm'>
+                  <Image
+                    src='/images/statue-and-ajisai.jpg'
+                    alt='水子供養'
+                    width={2000}
+                    height={1333}
+                  />
+                </p>
+                <p className='mt-12 text-center'>
+                  <ImageAboveHeading imageName='momiji' />
+                </p>
+                <h2 className='mt-3 text-center tracking-widest'>水子供養</h2>
+                <div className='mt-12 flex flex-col gap-4 lg:flex-row lg:gap-12'>
+                  <div className='lg:w-1/2'>
+                    <p>
+                      心を込めて水子供養を行います。手厚く供養し、大切に管理しております。緑に囲まれ、初夏には庭を彩る紫陽花が心の安らぎを与えてくれます。
+                    </p>
+                    <p className='mt-4'>
+                      都会の喧騒からは遠く、しかし大阪からは１時間以内とアクセスも良好。心静かな環境で故人を偲び、供養することができます。
+                    </p>
+                  </div>
+                  <div className='lg:w-1/2'>
+                    <Card
+                      className={cn(
+                        'relative mx-auto p-8',
+                        'bg-[url("/images/bg-paper.png")] bg-cover',
+                        'rounded-xl shadow-lg',
+                      )}
+                    >
+                      <h3 className='text-center text-secondary-dark'>
+                        水子供養のご案内
+                      </h3>
+                      <p className='mt-4'>★★内容、志納金など</p>
+                      <ul className='mt-4 list-inside list-disc marker:text-tertiary'>
+                        <li>墓石はありません。</li>
+                        <li>お墓の管理は頼光寺が行います。</li>
+                        <li>お墓の場所は、墓地内で選ぶことができます。</li>
+                      </ul>
+                    </Card>
+                  </div>
                 </div>
               </div>
-            </div>
-          </section>
+            </section>
+          </div>
 
           <hr className='line-with-three-dots' />
 
@@ -200,15 +202,15 @@ export default function Page() {
               id='general-cemetery'
               className='mt-8 flex flex-col items-center gap-4 md:flex-row md:gap-8 lg:gap-12'
             >
-              <p className='md:w-2/5'>
+              <p className='md:w-1/2'>
                 <Image
-                  src='/images/cemetery.jpg'
+                  src='/images/altar.jpg'
                   alt='一般墓地 (檀家)'
                   width={2000}
                   height={1333}
                 />
               </p>
-              <div className='md:w-3/5'>
+              <div className='md:w-1/2'>
                 <p className='text-center'>
                   <ImageAboveHeading imageName='chime' />
                 </p>
@@ -216,10 +218,11 @@ export default function Page() {
                   一般墓地 (檀家様)
                 </h2>
                 <p className='mt-12'>
-                  ★★ダミーコピーですダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝たしはでまた箱のダミーコピーです上手どもっさと俄たますて、みんなまでぶ弾いとだまし。
+                  当寺の一般墓地は緑豊かな環境に囲まれた静かな環境にあり、故人の供養と管理を丁寧に行っております。
+                  大阪から１時間以内のアクセスが可能な、お参りにしやすい便利な立地です。
                 </p>
                 <p className='mt-4'>
-                  ★★ダミーコピーですダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝たしはでまた箱のダミーコピーです上手どもっさと俄たますて、みんなまでぶ弾いとだまし。
+                  毎月法要（月例会）を行っており、檀家様は故人のご供養に参加いただけます。
                 </p>
               </div>
             </div>
@@ -242,37 +245,39 @@ export default function Page() {
 
           <hr className='line-with-three-dots' />
 
-          <section
-            id='historic-graves'
-            className='mx-auto w-full max-w-screen-lg py-12'
-          >
-            <p className='text-center'>
-              <ImageAboveHeading imageName='uguisu' />
-            </p>
-            <h2 className='mt-3 text-center'>歴史にまつわるお墓</h2>
-            <p className='mx-auto mt-8 max-w-screen-sm lg:text-center'>
-              境内には、本寺の設立者や源氏ゆかりの歴史にちなんだ古いお墓があります。
-              <br />
-              詳しくは
-              <Link
-                href='about'
-                className='text-primary underline hover:no-underline'
-              >
-                「頼光寺の沿革」
-              </Link>
-              をご覧ください。
-            </p>
+          <div className='full-width bg-secondary-50'>
+            <section
+              id='historic-graves'
+              className='mx-auto w-full max-w-screen-lg py-12'
+            >
+              <p className='text-center'>
+                <ImageAboveHeading imageName='uguisu' />
+              </p>
+              <h2 className='mt-3 text-center'>歴史にまつわるお墓</h2>
+              <p className='mx-auto mt-8 max-w-screen-sm lg:text-center'>
+                境内には、本寺の設立者や源氏ゆかりの歴史にちなんだ古いお墓があります。
+                <br />
+                詳しくは
+                <Link
+                  href='about'
+                  className='text-primary underline hover:no-underline'
+                >
+                  「頼光寺の沿革」
+                </Link>
+                をご覧ください。
+              </p>
 
-            <div className='mt-8'>
-              <Gallery photos={photos} col={1} colMd={2} colLg={2} />
-            </div>
+              <div className='mt-8'>
+                <Gallery photos={photos} col={1} colMd={2} colLg={2} />
+              </div>
 
-            <p className='mt-8 text-center'>
-              <Button asChild>
-                <Link href='about'>ご挨拶・頼光寺の沿革</Link>
-              </Button>
-            </p>
-          </section>
+              <p className='mt-8 text-center'>
+                <Button asChild>
+                  <Link href='about'>ご挨拶・頼光寺の沿革</Link>
+                </Button>
+              </p>
+            </section>
+          </div>
         </div>
       </main>
     </div>
