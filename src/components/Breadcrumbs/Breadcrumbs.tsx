@@ -1,54 +1,63 @@
 'use client'
+
 import { cn } from '@/utils'
-import { usePathname, useSelectedLayoutSegments } from 'next/navigation'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { FaHome } from 'react-icons/fa'
 import styles from './Breadcrumbs.module.css'
 
-// export type CrumbItem = {
-//   label: ReactNode // e.g., Python
-//   path: string // e.g., /development/programming-languages/python
-// }
+const items = [
+  { path: '/', name: 'Home' },
+  { path: '/about', name: '頼光寺について' },
+  { path: '/events', name: '行事案内' },
+  { path: '/cemetery', name: '墓地の案内' },
+  { path: '/access', name: 'アクセス' },
+  { path: '/gallery', name: 'ギャラリー' },
+  { path: '/scarlet-seal', name: '御朱印、仏前結婚式' },
+  { path: '/multi-purpose-hall', name: '紫陽閣の貸し出し' },
+  { path: '/links', name: 'リンク' },
+  { path: '/contact', name: 'お問合せ' },
+  { path: '/privacy-policy', name: 'プライバシーポリシー' },
+  { path: '/template', name: 'Template' },
+]
 
-// export type BreadcrumbsProps = {
-//   items: CrumbItem[]
-// }
-
-function Breadcrumbs({ className, ...delegated }: { className?: string }) {
-  const segments = useSelectedLayoutSegments()
-  const pathname = usePathname()
-
-  console.table(segments)
-  console.table(pathname)
+export default function Breadcrumbs({
+  className,
+  ...delegated
+}: {
+  className?: string
+}) {
+  const pathString = usePathname()
+  const pathNames = pathString.split('/').filter((name) => name)
 
   return (
     <div className={cn(styles.wrapper, className)} {...delegated}>
-      <p>
-        Current pathname: {pathname}, segments: {segments.length}
-      </p>
-      <ol className='flex list-none'>
+      <ul
+        className={cn(
+          'flex text-gray-600',
+          '[&>li:not(:last-child)]:after:mx-2',
+          '[&>li:not(:last-child)]:after:content-["/"]',
+          '[&>li:not(:last-child)]:after:text-gray-300',
+        )}
+      >
         <li>
-          <a
-            href='/'
-            className='text-primary transition duration-150 ease-in-out hover:text-primary-600 focus:text-primary-600 active:text-primary-700 dark:text-primary-400 dark:hover:text-primary-500 dark:focus:text-primary-500 dark:active:text-primary-600'
-          >
-            Home
-          </a>
+          <Link href='/' className='hover:text-primary'>
+            <FaHome className='inline-block' />
+          </Link>
         </li>
-        {segments.map((segment) => (
-          <li
-            key={crypto.randomUUID()}
-            className='before:mx-2 before:text-neutral-500 before:content-["/"] before:dark:text-neutral-400'
-          >
-            <a
-              href='#'
-              className='text-primary transition duration-150 ease-in-out hover:text-primary-600 focus:text-primary-600 active:text-primary-700 dark:text-primary-400 dark:hover:text-primary-500 dark:focus:text-primary-500 dark:active:text-primary-600'
-            >
-              {segment}
-            </a>
-          </li>
-        ))}
-      </ol>
+        {pathNames.map((name: string, index: number) => {
+          const path = `/${pathNames.slice(0, index + 1).join('/')}`
+          const item = items.find((item) => item.path === path)
+
+          return (
+            <li key={path}>
+              <Link href={path} className='underline hover:text-primary'>
+                {item ? item.name : name}
+              </Link>
+            </li>
+          )
+        })}
+      </ul>
     </div>
   )
 }
-
-export default Breadcrumbs
