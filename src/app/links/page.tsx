@@ -100,9 +100,9 @@ export default function Page() {
           <section className='lg:w-1/2'>
             <div className='mx-auto max-w-screen-lg'>
               <p className='text-center'>
-                <ImageAboveHeading />
+                <ImageAboveHeading imageName='momiji' />
               </p>
-              <h2 id='scarlet-seal' className='mt-4 text-center font-serif'>
+              <h2 id='scarlet-seal' className='mt-2 text-center font-serif'>
                 関連リンク
               </h2>
               <LinkList events={events} kind='attribution' className='my-6' />
@@ -113,9 +113,9 @@ export default function Page() {
           <section className='lg:w-1/2'>
             <div className='mx-auto max-w-screen-lg'>
               <p className='text-center'>
-                <ImageAboveHeading imageName='frog' />
+                <ImageAboveHeading imageName='uguisu' />
               </p>
-              <h2 id='scarlet-seal' className='mt-4 text-center font-serif'>
+              <h2 id='scarlet-seal' className='mt-3 text-center font-serif'>
                 頼光寺を紹介いただいているサイト
               </h2>
               <LinkList events={events} kind='media' className='my-6' />

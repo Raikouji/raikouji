@@ -1,5 +1,6 @@
 import Breadcrumbs from '@/components/Breadcrumbs'
 import Gellary from '@/components/Gallery'
+import ImageAboveHeading from '@/components/ImageAboveHeading'
 import PageHeader from '@/components/PageHeader'
 import { cn, outputMetadata } from '@/utils'
 import type { Metadata } from 'next'
@@ -155,7 +156,10 @@ export default function Page() {
           </div>
 
           <section className='full-width px-4 py-16'>
-            <h2 id='temple' className='text-center'>
+            <p className='text-center'>
+              <ImageAboveHeading imageName='bell' />
+            </p>
+            <h2 id='temple' className='mt-3 text-center'>
               境内の風景
             </h2>
             <div className='mx-auto mt-8 max-w-screen-2xl'>
@@ -163,8 +167,11 @@ export default function Page() {
             </div>
           </section>
 
-          <section className='full-width bg-secondary-50 px-2 px-4 py-16'>
-            <h2 id='ajisai' className='text-center'>
+          <section className='full-width bg-secondary-50 px-4 py-16'>
+            <p className='text-center'>
+              <ImageAboveHeading imageName='statue' />
+            </p>
+            <h2 id='ajisai' className='mt-2 text-center'>
               あじさい
             </h2>
             <div className='mx-auto mt-8 max-w-screen-2xl'>
@@ -172,8 +179,11 @@ export default function Page() {
             </div>
           </section>
 
-          <section className='full-width px-2 px-4 py-16'>
-            <h2 id='events' className='text-center'>
+          <section className='full-width px-4 py-16'>
+            <p className='text-center'>
+              <ImageAboveHeading imageName='asagao' />
+            </p>
+            <h2 id='events' className='mt-2 text-center'>
               イベント
             </h2>
             <div className='mx-auto mt-8 max-w-screen-2xl'>

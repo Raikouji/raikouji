@@ -329,9 +329,9 @@ export default function Home() {
           <section className='py-12'>
             <div className='mx-auto max-w-screen-md'>
               <p className='text-center'>
-                <ImageAboveHeading />
+                <ImageAboveHeading imageName='uguisu' />
               </p>
-              <h2 className='mt-3 text-center'>アクセス</h2>
+              <h2 className='mt-2 text-center'>アクセス</h2>
               <p className='mt-3'>
                 能勢電鉄「畦野駅」から徒歩５分。お車なら国道173号線
                 「東畦野」交差点から５分以内の場所にあります。

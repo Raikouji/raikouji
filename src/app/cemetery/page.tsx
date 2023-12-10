@@ -107,9 +107,9 @@ export default function Page() {
               </p>
               <div className='md:w-3/5'>
                 <p className='text-center'>
-                  <ImageAboveHeading />
+                  <ImageAboveHeading imageName='asagao' />
                 </p>
-                <h2 className='mt-4 text-center tracking-widest'>
+                <h2 className='mt-3 text-center tracking-widest'>
                   永代供養共同墓
                 </h2>
                 <p className='mt-8'>
@@ -158,9 +158,9 @@ export default function Page() {
                 />
               </p>
               <p className='mt-12 text-center'>
-                <ImageAboveHeading />
+                <ImageAboveHeading imageName='momiji' />
               </p>
-              <h2 className='mt-4 text-center tracking-widest'>水子供養</h2>
+              <h2 className='mt-3 text-center tracking-widest'>水子供養</h2>
               <div className='mt-12 flex flex-col gap-4 lg:flex-row lg:gap-12'>
                 <div className='lg:w-1/2'>
                   <p>
@@ -210,9 +210,9 @@ export default function Page() {
               </p>
               <div className='md:w-3/5'>
                 <p className='text-center'>
-                  <ImageAboveHeading />
+                  <ImageAboveHeading imageName='chime' />
                 </p>
-                <h2 className='mt-4 text-center tracking-widest'>
+                <h2 className='mt-3 text-center tracking-widest'>
                   一般墓地 (檀家様)
                 </h2>
                 <p className='mt-12'>
@@ -247,7 +247,7 @@ export default function Page() {
             className='mx-auto w-full max-w-screen-lg py-12'
           >
             <p className='text-center'>
-              <ImageAboveHeading imageName='frog' />
+              <ImageAboveHeading imageName='uguisu' />
             </p>
             <h2 className='mt-3 text-center'>歴史にまつわるお墓</h2>
             <p className='mx-auto mt-8 max-w-screen-sm lg:text-center'>

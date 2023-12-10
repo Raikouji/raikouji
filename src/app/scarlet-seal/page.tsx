@@ -60,9 +60,9 @@ export default function Page() {
               </p>
               <div className='md:w-3/5'>
                 <p className='text-center'>
-                  <ImageAboveHeading />
+                  <ImageAboveHeading imageName='priest' />
                 </p>
-                <h2 className='mt-4 text-center tracking-widest'>御朱印</h2>
+                <h2 className='mt-3 text-center tracking-widest'>御朱印</h2>
                 <p className='mt-8'>
                   御朱印の説明。★★ダミーコピーですダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝たしはでまた箱のダミーコピーです上手どもっさと俄たますて、みんなまでぶ弾いとだまし。
                 </p>
@@ -106,11 +106,11 @@ export default function Page() {
               </p>
               <div className='md:w-3/5'>
                 <p className='text-center'>
-                  <ImageAboveHeading />
+                  <ImageAboveHeading imageName='bell' />
                 </p>
                 <h2
                   id='scarlet-seal'
-                  className='mt-4 text-center tracking-widest'
+                  className='mt-3 text-center tracking-widest'
                 >
                   仏前結婚式
                 </h2>

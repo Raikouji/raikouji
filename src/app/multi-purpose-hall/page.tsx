@@ -65,9 +65,9 @@ export default function Page() {
 
             <div className='mx-auto max-w-screen-lg'>
               <p className='text-center'>
-                <ImageAboveHeading />
+                <ImageAboveHeading imageName='priest2' />
               </p>
-              <h2 className='mt-4 text-center font-serif'>貸し出しのご案内</h2>
+              <h2 className='mt-2 text-center font-serif'>貸し出しのご案内</h2>
               <p className='mt-6'>内容、志納金など</p>
             </div>
             <Gellary photos={photos} col={1} colMd={3} colLg={3} />

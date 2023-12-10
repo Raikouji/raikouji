@@ -36,7 +36,7 @@ export default function Page() {
               <p className='text-center'>
                 <ImageAboveHeading />
               </p>
-              <h2 className='mt-4 text-center font-serif'>住職 ごあいさつ</h2>
+              <h2 className='mt-3 text-center font-serif'>住職 ごあいさつ</h2>
               <div className='mt-8 flex flex-col items-center gap-4 md:flex-row md:gap-8 lg:gap-12'>
                 <p>
                   <Image
@@ -76,9 +76,9 @@ export default function Page() {
 
           <section>
             <p className='text-center'>
-              <ImageAboveHeading />
+              <ImageAboveHeading imageName='statue' />
             </p>
-            <h2 className='mt-4 text-center'>頼光寺の沿革</h2>
+            <h2 className='mt-3 text-center'>頼光寺の沿革</h2>
             <div className='aspect-h-3 aspect-w-2 relative mt-4 w-full md:aspect-h-4 md:aspect-w-16'>
               <Image
                 src='/images/spider.jpg'

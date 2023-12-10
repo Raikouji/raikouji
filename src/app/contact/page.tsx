@@ -79,9 +79,9 @@ export default function Page() {
               <div className='flex flex-col gap-8'>
                 <div>
                   <p className='text-center'>
-                    <ImageAboveHeading />
+                    <ImageAboveHeading imageName='uguisu' />
                   </p>
-                  <h2 id='tel' className='mt-4 text-center font-serif'>
+                  <h2 id='tel' className='mt-3 text-center font-serif'>
                     電話でのお問合せ
                   </h2>
                 </div>
@@ -106,9 +106,9 @@ export default function Page() {
               <div className='flex flex-col gap-8'>
                 <div>
                   <p className='text-center'>
-                    <ImageAboveHeading />
+                    <ImageAboveHeading imageName='statue' />
                   </p>
-                  <h2 id='form' className='mt-4 text-center font-serif'>
+                  <h2 id='form' className='mt-3 text-center font-serif'>
                     フォームでのお問合せ
                   </h2>
                 </div>

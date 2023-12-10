@@ -27,9 +27,9 @@ export default function Page() {
           <section className='py-16'>
             <div className='mx-auto max-w-screen-lg'>
               <p className='text-center'>
-                <ImageAboveHeading />
+                <ImageAboveHeading imageName='asagao' />
               </p>
-              <h2 className='mt-4 text-center'>電車でのアクセス</h2>
+              <h2 className='mt-3 text-center'>電車でのアクセス</h2>
               <p className='mt-6 text-center'>
                 能勢電鉄「畦野駅」より徒歩5分です。
               </p>
@@ -114,9 +114,9 @@ export default function Page() {
           <section className='my-16'>
             <div className='mx-auto max-w-screen-lg'>
               <p className='text-center'>
-                <ImageAboveHeading imageName='frog' />
+                <ImageAboveHeading />
               </p>
-              <h2 className='mt-4 text-center'>車でのアクセス</h2>
+              <h2 className='mt-3 text-center'>車でのアクセス</h2>
               <p className='mx-auto mt-4 max-w-screen-md'>
                 国道173号線
                 「東畦野」交差点を東に折れ(池田方面から来られる方は右折)、５分以内の場所にあります。表駐車場をご利用の方は東に折れてすぐの高架に乗らず側道へ進んでください。
@@ -246,9 +246,9 @@ export default function Page() {
           <section className='my-16'>
             <div className='mx-auto max-w-screen-lg'>
               <p className='text-center'>
-                <ImageAboveHeading />
+                <ImageAboveHeading imageName='frog' />
               </p>
-              <h2 className='mt-4 text-center'>Google マップ</h2>
+              <h2 className='mt-2 text-center'>Google マップ</h2>
               <p className='mx-auto mt-4 max-w-screen-md'>
                 Google マップのナビの案内に従うと「裏の駐車場」に案内されます。
                 表の駐車場をご利用の方は、上記の地図をご参照ください。
