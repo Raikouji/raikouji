@@ -1,11 +1,13 @@
 import Breadcrumbs from '@/components/Breadcrumbs'
 import ImageAboveHeading from '@/components/ImageAboveHeading'
 import PageHeader from '@/components/PageHeader'
+import Card from '@/components/ui/Card'
 import { Button } from '@/components/ui/button'
 import { cn, outputMetadata } from '@/utils'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import { FaExclamationTriangle } from 'react-icons/fa'
 
 // for metadata
 const pageTitle = 'アクセス'
@@ -16,6 +18,135 @@ export const metadata: Metadata = outputMetadata({
   description: pageDescription,
 })
 
+const routeDataByTrain = [
+  {
+    description:
+      '改札（１つしかありません）を出たら、突き当たりを右側に進みます。',
+    image: '/images/route-train-01.jpg',
+  },
+  {
+    description: '左右に階段がありますので、右側の階段を降りてください。',
+    image: '/images/route-train-02.jpg',
+  },
+  {
+    description:
+      '勾配を降り、道路に出て突き当たり（郵便局が見えます）まで進み左に曲ます。',
+    image: '/images/route-train-03.jpg',
+  },
+  {
+    description: '郵便局を右手に直進し、郵便局のある角を右に曲がります。',
+    image: '/images/route-train-04.jpg',
+  },
+  {
+    description: '郵便局を右手に見ながらそのまままっすぐ進みます。',
+    image: '/images/route-train-05.jpg',
+  },
+  {
+    description: '大きい矢印の付いた「頼光寺」の看板のある三叉路を右折します。',
+    image: '/images/route-train-06.jpg',
+  },
+  {
+    description:
+      'まっすぐ進むと、電車の高架下にトンネルが見えますので、くぐって入ってください。',
+    image: '/images/route-train-07.jpg',
+  },
+  {
+    description: '高架をくぐれば、頼光寺の境内。階段を登ると本堂の前に出ます。',
+    image: '/images/route-train-08.jpg',
+  },
+]
+
+// 下の駐車場
+const routeDataByCar = [
+  {
+    description:
+      '改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。',
+    image: '/images/route-train-08.jpg',
+  },
+  {
+    description:
+      '改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。',
+    image: '/images/route-train-08.jpg',
+  },
+  {
+    description:
+      '改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。',
+    image: '/images/route-train-08.jpg',
+  },
+  {
+    description:
+      '改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。',
+    image: '/images/route-train-08.jpg',
+  },
+  {
+    description:
+      '改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。',
+    image: '/images/route-train-08.jpg',
+  },
+  {
+    description:
+      '改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。',
+    image: '/images/route-train-08.jpg',
+  },
+]
+
+// 上の駐車場
+const routeDataByCar2 = [
+  {
+    description:
+      '改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。',
+    image: '/images/route-train-08.jpg',
+  },
+  {
+    description:
+      '改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。',
+    image: '/images/route-train-08.jpg',
+  },
+  {
+    description:
+      '改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。',
+    image: '/images/route-train-08.jpg',
+  },
+  {
+    description:
+      '改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。',
+    image: '/images/route-train-08.jpg',
+  },
+  {
+    description:
+      '改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。',
+    image: '/images/route-train-08.jpg',
+  },
+  {
+    description:
+      '改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。',
+    image: '/images/route-train-08.jpg',
+  },
+  {
+    description:
+      '改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。',
+    image: '/images/route-train-08.jpg',
+  },
+  {
+    description:
+      '改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。',
+    image: '/images/route-train-08.jpg',
+  },
+  {
+    description:
+      '改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。',
+    image: '/images/route-train-08.jpg',
+  },
+]
+
+type RouteDataItem = {
+  description: string
+  image: string
+}
+
+type RouteData = {
+  routeData: RouteDataItem[]
+}
 export default function Page() {
   return (
     <div className='container max-w-screen-xl'>
@@ -24,226 +155,31 @@ export default function Page() {
         <Breadcrumbs className='mt-2' />
 
         <div className='flex flex-col'>
-          <section className='py-16'>
-            <div className='mx-auto max-w-screen-lg'>
-              <p className='text-center'>
-                <ImageAboveHeading imageName='asagao' />
-              </p>
-              <h2 className='mt-3 text-center'>電車でのアクセス</h2>
-              <p className='mt-6 text-center'>
-                能勢電鉄「畦野駅」より徒歩5分です。
-              </p>
-              <h3 className='mt-8 text-center'>能勢電鉄「畦野駅」からの道順</h3>
-              <div className='mt-8 flex flex-col lg:flex-row-reverse lg:gap-8'>
-                <div className='w-2/5'>
-                  <ol>
-                    <li className='text-center after:text-2xl after:text-primary-400 after:content-["▼"]'>
-                      <div className='flex gap-3 md:gap-4'>
-                        <p className='order-1 w-1/2 text-left leading-snug tracking-normal md:w-3/5'>
-                          1.
-                          ★★ダミーコピーです。改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。
-                        </p>
-                        <img
-                          className='w-1/2 md:w-2/5'
-                          src='https://picsum.photos/id/2/384/256.webp'
-                          alt=''
-                        />
-                      </div>
-                    </li>
-                    <li className='text-center after:text-2xl after:text-primary-400 after:content-["▼"]'>
-                      <div className='flex gap-3 md:gap-4'>
-                        <p className='order-1 w-1/2 text-left leading-snug tracking-normal md:w-3/5'>
-                          2.
-                          ★★ダミーコピーです。改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。
-                        </p>
-                        <img
-                          className='w-1/2 md:w-2/5'
-                          src='https://picsum.photos/id/2/384/256.webp'
-                          alt=''
-                        />
-                      </div>
-                    </li>
-                    <li className='text-center after:text-2xl after:text-primary-400 after:content-["▼"]'>
-                      <div className='flex gap-3 md:gap-4'>
-                        <p className='order-1 w-1/2 text-left leading-snug tracking-normal md:w-3/5'>
-                          3.
-                          ★★ダミーコピーです。改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。
-                        </p>
-                        <img
-                          className='w-1/2 md:w-2/5'
-                          src='https://picsum.photos/id/2/384/256.webp'
-                          alt=''
-                        />
-                      </div>
-                    </li>
-                    <li className='text-center after:text-2xl after:text-primary-400'>
-                      <div className='flex gap-3 md:gap-4'>
-                        <p className='order-1 w-1/2 text-left leading-snug tracking-normal md:w-3/5'>
-                          4.
-                          ★★ダミーコピーです。改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。
-                        </p>
-                        <img
-                          className='w-1/2 md:w-2/5'
-                          src='https://picsum.photos/id/2/384/256.webp'
-                          alt=''
-                        />
-                      </div>
-                    </li>
-                  </ol>
-                </div>
-
-                <div className='w-3/5'>
-                  <Image
-                    src='/images/lotus.jpg'
-                    alt=''
-                    width={2000}
-                    height={1333}
-                  />
-                  <p className='mt-6 text-center'>
-                    <Button asChild>
-                      <Link href='#'>地図を拡大する</Link>
-                    </Button>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <hr className='line-with-three-dots' />
-
-          <section className='my-16'>
-            <div className='mx-auto max-w-screen-lg'>
-              <p className='text-center'>
-                <ImageAboveHeading />
-              </p>
-              <h2 className='mt-3 text-center'>車でのアクセス</h2>
-              <p className='mx-auto mt-4 max-w-screen-md'>
-                国道173号線
-                「東畦野」交差点を東に折れ(池田方面から来られる方は右折)、５分以内の場所にあります。表駐車場をご利用の方は東に折れてすぐの高架に乗らず側道へ進んでください。
-              </p>
-
-              <h3 className='mt-8 text-center'>国道173号線からの道順</h3>
-              <div className='mt-8 flex flex-col lg:flex-row-reverse lg:gap-8'>
-                <div className='w-2/5'>
-                  <ol>
-                    <li className='text-center after:text-2xl after:text-primary-400 after:content-["▼"]'>
-                      <div className='flex gap-3 md:gap-4'>
-                        <p className='order-1 w-1/2 text-left leading-snug tracking-normal md:w-3/5'>
-                          1.
-                          ★★ダミーコピーです。改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。
-                        </p>
-                        <img
-                          className='w-1/2 md:w-2/5'
-                          src='https://picsum.photos/id/2/384/256.webp'
-                          alt=''
-                        />
-                      </div>
-                    </li>
-                    <li className='text-center after:text-2xl after:text-primary-400 after:content-["▼"]'>
-                      <div className='flex gap-3 md:gap-4'>
-                        <p className='order-1 w-1/2 text-left leading-snug tracking-normal md:w-3/5'>
-                          2.
-                          ★★ダミーコピーです。改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。
-                        </p>
-                        <img
-                          className='w-1/2 md:w-2/5'
-                          src='https://picsum.photos/id/2/384/256.webp'
-                          alt=''
-                        />
-                      </div>
-                    </li>
-                    <li className='text-center after:text-2xl after:text-primary-400 after:content-["▼"]'>
-                      <div className='flex gap-3 md:gap-4'>
-                        <p className='order-1 w-1/2 text-left leading-snug tracking-normal md:w-3/5'>
-                          3.
-                          ★★ダミーコピーです。改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。
-                        </p>
-                        <img
-                          className='w-1/2 md:w-2/5'
-                          src='https://picsum.photos/id/2/384/256.webp'
-                          alt=''
-                        />
-                      </div>
-                    </li>
-                    <li className='text-center after:text-2xl after:text-primary-400'>
-                      <div className='flex gap-3 md:gap-4'>
-                        <p className='order-1 w-1/2 text-left leading-snug tracking-normal md:w-3/5'>
-                          4.
-                          ★★ダミーコピーです。改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。
-                        </p>
-                        <img
-                          className='w-1/2 md:w-2/5'
-                          src='https://picsum.photos/id/2/384/256.webp'
-                          alt=''
-                        />
-                      </div>
-                    </li>
-                  </ol>
-                </div>
-
-                <div className='w-3/5'>
-                  <Image
-                    src='/images/lotus.jpg'
-                    alt=''
-                    width={2000}
-                    height={1333}
-                  />
-                  <p className='mt-6 text-center'>
-                    <Button asChild>
-                      <Link href='#'>近場の詳細地図 印刷用 (PDF)</Link>
-                    </Button>
-                  </p>
-                </div>
-              </div>
-
-              <div
-                className={cn(
-                  'relative mt-10 p-8 lg:p-12',
-                  'bg-[url("/images/bg-paper.png")] bg-cover',
-                  'rounded-xl shadow-lg',
-                )}
-              >
-                <h3 className='mt-2 text-center text-secondary-dark'>
-                  駐車場について
-                </h3>
-                <p className='mt-3 text-center'>
-                  表の駐車場には★★台、裏の駐車場には★★台が駐車していただけます。
-                </p>
-                <div className='mt-3 flex flex-col items-center justify-center gap-4 text-center md:flex-row md:gap-8'>
-                  <figure>
-                    <img src='https://picsum.photos/id/2/384/256.webp' alt='' />
-                    <figcaption className='mt-2'>下の駐車場</figcaption>
-                  </figure>
-                  <figure>
-                    <img src='https://picsum.photos/id/3/384/256.webp' alt='' />
-                    <figcaption className='mt-2'>上の駐車場</figcaption>
-                  </figure>
-                </div>
-                <div className='mt-6'>
-                  <h4>カーナビで来られる方へ</h4>
-                  <p className='mt-3'>
-                    カーナビで頼光寺やその住所を目的地に設定すると、若干遠回りで道順もわかりづらい裏駐車場に案内されてしまうことがあります。下記の地図などで、近場の道順をご確認されておくことをおすすめします。
-                  </p>
-                  <p className='mt-3'>
-                    Google
-                    マップの場合は「賴光寺参拝者駐車場」を目的地にセットしていただくと、表の駐車場に案内されます。
-                  </p>
-                </div>
-                <div className='mt-6'>
-                  <h4>
-                    足の不自由な方がおられる場合は、裏の駐車場をご利用ください
-                  </h4>
-                  <p className='mt-3'>
-                    表の駐車場に停められた場合、境内に入るまでに急斜面の階段がございます。なので、車椅子の方、足の不自由な方は、段差なく境内に入れる裏の駐車場をご利用ください。
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <hr className='line-with-three-dots' />
-
-          <section className='my-16'>
+          <ul
+            className={cn(
+              'mt-8 flex justify-center text-sm',
+              '[&>li>a]:text-foreground/70',
+              '[&>li:after]:text-foreground/30',
+              '[&>li:not(:last-child):after]:mx-3 [&>li:not(:last-child):after]:content-["|"] ',
+            )}
+          >
+            <li>
+              <a className='hover:text-primary-400' href='#google-map'>
+                Google マップ
+              </a>
+            </li>
+            <li>
+              <a className='hover:text-primary-400' href='#access-by-train'>
+                電車でのアクセス
+              </a>
+            </li>
+            <li>
+              <a className='hover:text-primary-400' href='#access-by-car'>
+                車でのアクセス
+              </a>
+            </li>
+          </ul>
+          <section id='google-map' className='my-16'>
             <div className='mx-auto max-w-screen-lg'>
               <p className='text-center'>
                 <ImageAboveHeading imageName='frog' />
@@ -274,8 +210,162 @@ export default function Page() {
               </p>
             </div>
           </section>
+          <hr className='line-with-three-dots' />
+          <div className='full-width bg-secondary-50'>
+            <section
+              id='access-by-train'
+              className='mx-auto max-w-screen-xl py-16'
+            >
+              <p className='text-center'>
+                <ImageAboveHeading imageName='asagao' />
+              </p>
+              <h2 className='mt-3 text-center'>電車でのアクセス</h2>
+              <p className='mx-auto mt-6 max-w-lg text-center'>
+                能勢電鉄「畦野駅」より徒歩5分です。
+                <br />
+                大阪からなら、阪急電車宝塚線「梅田駅」から「川西能勢口駅」まで約20分、能勢電鉄に乗り換え「畦野駅」まで約10分です。
+              </p>
+              <h3 className='mt-8 text-center'>能勢電鉄「畦野駅」からの道順</h3>
+              <DirectionsFlow routeData={routeDataByTrain} />
+            </section>
+          </div>
+
+          <hr className='line-with-three-dots' />
+
+          <section id='access-by-car' className='my-16'>
+            <div className='mx-auto max-w-screen-xl'>
+              <div className='mx-auto mt-4 max-w-screen-md text-center'>
+                <p className='text-center'>
+                  <ImageAboveHeading />
+                </p>
+                <h2 className='mt-3 text-center'>車でのアクセス</h2>
+                <p className='mt-4'>
+                  国道173号線
+                  「東畦野」交差点を東に折れ、５分以内の場所にあります。
+                </p>
+              </div>
+              <div className='mx-auto max-w-screen-lg'>
+                <div
+                  className={cn(
+                    'relative mt-10 p-8 lg:p-12',
+                    'bg-[url("/images/bg-paper.png")] bg-cover',
+                    'rounded-xl shadow-lg',
+                  )}
+                >
+                  <h3 className='mt-2 text-center text-secondary-dark'>
+                    2つの駐車場があります
+                  </h3>
+                  <p className='mt-3 text-center'>
+                    「下の駐車場」と「上の駐車場」の２つがございます。
+                    <br />
+                    下の駐車場の方が国道から近くて行きやすく、また十分な収容台数があります。
+                    <br />
+                    Google
+                    マップの場合、「賴光寺参拝者駐車場」を目的地にセットしていただくと、下の駐車場に案内されます。
+                  </p>
+                  <div className='mt-4 rounded bg-white px-4 py-2'>
+                    <h4 className='text-lg text-red-500'>
+                      ※
+                      足の不自由な方がおられる場合は、上の駐車場をご利用ください
+                    </h4>
+                    <p className='mt-2'>
+                      下の駐車場に停められた場合、境内に入るまでに急斜面の階段がございます。なので、車椅子の方、足の不自由な方は、段差なく境内に入れる上の駐車場をご利用ください。
+                    </p>
+                  </div>
+                  <div className='mt-8 flex flex-col items-center justify-center gap-4 text-center md:flex-row md:gap-8 lg:gap-12'>
+                    <figure>
+                      <Image
+                        src='/images/parking-1.jpg'
+                        alt='下の駐車場'
+                        width={900}
+                        height={600}
+                      />
+
+                      <figcaption className='mt-2'>
+                        下の駐車場（★★台）
+                      </figcaption>
+                    </figure>
+                    <figure>
+                      <Image
+                        src='/images/parking-2-2.jpg'
+                        alt='上の駐車場'
+                        width={900}
+                        height={600}
+                      />
+                      <figcaption className='mt-2'>
+                        上の駐車場（★★台）
+                      </figcaption>
+                    </figure>
+                  </div>
+                </div>
+              </div>
+              <div className='mx-auto mt-8 max-w-screen-md'>
+                <Card
+                  className={cn(
+                    'relative mx-auto p-8',
+                    'bg-red-50',
+                    'rounded-xl',
+                  )}
+                >
+                  <h3 className='flex text-xl text-red-500'>
+                    <FaExclamationTriangle className='mr-2 text-2xl' />
+                    カーナビで来られる方へ
+                  </h3>
+                  <p className='mt-3'>
+                    カーナビで頼光寺やその住所を目的地に設定すると、若干遠回りで道順もわかりづらい上の駐車場に案内されてしまうことがあります。事前に下記の地図などで道順をご確認されておくことをおすすめします。
+                  </p>
+                </Card>
+              </div>
+
+              <h3 className='mt-12 text-center'>
+                国道173号線から下の駐車場への道順
+              </h3>
+              <p className='mt-3 text-center'>
+                下の駐車場をご利用の方は、東に折れてすぐの高架には乗らず側道へ進んでください。
+              </p>
+              <DirectionsFlow routeData={routeDataByCar} />
+
+              <hr className='line-with-three-dots my-16' />
+
+              <h3 className='mt-12 text-center'>
+                国道173号線から上の駐車場への道順
+              </h3>
+              <p className='mt-3 text-center'>
+                上の駐車場をご利用の方は、東に折れてすぐの高架に乗って進んでください。
+              </p>
+              <DirectionsFlow routeData={routeDataByCar2} />
+            </div>
+          </section>
         </div>
       </main>
     </div>
+  )
+}
+
+function DirectionsFlow({ routeData }: RouteData) {
+  return (
+    <ol className='mt-8 grid grid-flow-col gap-x-8 gap-y-4 md:grid-rows-2 lg:grid-rows-3'>
+      {routeData.map(({ description, image }, index) => (
+        <li
+          key={index}
+          className='text-center after:mt-4 after:block after:text-2xl after:text-primary-400 after:content-["▼"]'
+        >
+          <div className='flex gap-3 md:gap-4'>
+            <p className='order-1 text-left leading-snug tracking-normal'>
+              <span className='text-2xl font-bold text-primary'>
+                {index + 1}.
+              </span>{' '}
+              {description}
+            </p>
+            <Image
+              src={image}
+              alt={`Step ${index + 1}`}
+              width={180}
+              height={120}
+            />
+          </div>
+        </li>
+      ))}
+    </ol>
   )
 }
