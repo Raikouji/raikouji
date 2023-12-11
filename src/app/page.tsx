@@ -340,7 +340,7 @@ export default function Home() {
 
               <p className='mt-4 text-center'>
                 <Button asChild>
-                  <Link href='access'>アクセス</Link>
+                  <Link href='access'>電車・お車でのアクセス</Link>
                 </Button>
               </p>
             </div>
