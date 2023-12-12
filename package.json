@@ -32,6 +32,7 @@
     "eslint-config-next": "13.5.5",
     "framer-motion": "^10.16.5",
     "lucide-react": "^0.288.0",
+    "microcms-js-sdk": "^2.7.0",
     "next": "13.5.5",
     "postcss": "8.4.31",
     "react": "18.2.0",
