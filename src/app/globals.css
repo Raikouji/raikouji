@@ -170,6 +170,10 @@
     @apply leading-relaxed tracking-wide;
   }
 
+  img {
+    object-fit: contain;
+  }
+
   .site-wrapper {
     @apply grow;
   }
