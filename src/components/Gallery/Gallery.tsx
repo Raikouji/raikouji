@@ -25,6 +25,7 @@ function Gallery({
       photos={photos}
       renderPhoto={NextJsImage}
       defaultContainerWidth={1140}
+      key={crypto.randomUUID()} // Default: photos.src 同じ画像あるとエラーになるので
       sizes={{
         size: 'calc(100vw - 240px)',
         sizes: [{ viewport: '(max-width: 640px)', size: '100vw' }],
