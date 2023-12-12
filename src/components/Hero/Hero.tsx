@@ -15,7 +15,7 @@ const carouselImages = [
   },
   {
     src: '/images/statue-priest.jpg',
-    alt: '住職像',
+    alt: '僧侶の像',
   },
 ]
 
