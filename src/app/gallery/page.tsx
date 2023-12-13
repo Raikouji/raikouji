@@ -2,8 +2,11 @@ import Breadcrumbs from '@/components/Breadcrumbs'
 import Gellary from '@/components/Gallery'
 import ImageAboveHeading from '@/components/ImageAboveHeading'
 import PageHeader from '@/components/PageHeader'
+import { getGalleryPhotos } from '@/helpers/microcms'
 import { cn, outputMetadata } from '@/utils'
 import type { Metadata } from 'next'
+import Image from 'next/image'
+
 // for metadata
 const pageTitle = 'ギャラリー'
 const pageDescription =
@@ -115,13 +118,29 @@ const photosEvent = [
   },
 ]
 
-export default function Page() {
+export default async function Page() {
+  const { contents } = await getGalleryPhotos()
+
   return (
     <div className='container max-w-screen-xl'>
       <main>
         <PageHeader fullWidth>{pageTitle}</PageHeader>
         <Breadcrumbs className='mt-2' />
-
+        <ul>
+          {contents.map(({ id, photo, category, caption, isDisplayOnHome }) => {
+            return (
+              <li key={id}>
+                <Image
+                  src={photo.url}
+                  width={photo.width}
+                  height={photo.height}
+                  alt={caption ? caption : ''}
+                />
+                {caption}/{category[0]}/{isDisplayOnHome}
+              </li>
+            )
+          })}
+        </ul>
         <div className='my-12 flex flex-col'>
           <p className='text-center font-bold'>
             頼光寺の風景やイベントなどの写真です。
