@@ -119,28 +119,101 @@ const photosEvent = [
 ]
 
 export default async function Page() {
-  const { contents } = await getGalleryPhotos()
+  const { contents, totalCount, offset, limit } = await getGalleryPhotos({
+    limit: 100,
+  })
+
+  const filteredByCategory = (categoryName: string) =>
+    contents.filter((content) => {
+      return content.category[0] === categoryName
+    })
+  const contentsTemple = filteredByCategory('境内の風景')
+  const contentsAjisai = filteredByCategory('あじさい')
+  const contentsEvents = filteredByCategory('行事・イベント')
 
   return (
     <div className='container max-w-screen-xl'>
       <main>
         <PageHeader fullWidth>{pageTitle}</PageHeader>
         <Breadcrumbs className='mt-2' />
-        <ul>
-          {contents.map(({ id, photo, category, caption, isDisplayOnHome }) => {
-            return (
-              <li key={id}>
-                <Image
-                  src={photo.url}
-                  width={photo.width}
-                  height={photo.height}
-                  alt={caption ? caption : ''}
-                />
-                {caption}/{category[0]}/{isDisplayOnHome}
-              </li>
-            )
-          })}
-        </ul>
+        <div className='border p-4'>
+          <h2 className='text-center'>サンプル: MicroCMS から取得</h2>
+          <p>
+            totalCount: {totalCount}, offset: {offset}, limit: {limit}
+          </p>
+          <ul className='flex gap-4'>
+            {contentsTemple.map(
+              ({ id, photo, category, caption, isDisplayOnHome }) => {
+                return (
+                  <li key={id}>
+                    <figure>
+                      <Image
+                        src={photo.url}
+                        width={photo.width}
+                        height={photo.height}
+                        alt={caption ? caption : ''}
+                      />
+                      <figcaption className='mt-2'>
+                        {caption}/{category[0]}/
+                        {isDisplayOnHome
+                          ? 'トップページに表示'
+                          : 'トップページに非表示'}
+                      </figcaption>
+                    </figure>
+                  </li>
+                )
+              },
+            )}
+          </ul>
+          <ul className='flex gap-4'>
+            {contentsAjisai.map(
+              ({ id, photo, category, caption, isDisplayOnHome }) => {
+                return (
+                  <li key={id}>
+                    <figure>
+                      <Image
+                        src={photo.url}
+                        width={photo.width}
+                        height={photo.height}
+                        alt={caption ? caption : ''}
+                      />
+                      <figcaption className='mt-2'>
+                        {caption}/{category[0]}/
+                        {isDisplayOnHome
+                          ? 'トップページに表示'
+                          : 'トップページに非表示'}
+                      </figcaption>
+                    </figure>
+                  </li>
+                )
+              },
+            )}
+          </ul>
+          <ul className='flex gap-4'>
+            {contentsEvents.map(
+              ({ id, photo, category, caption, isDisplayOnHome }) => {
+                return (
+                  <li key={id}>
+                    <figure>
+                      <Image
+                        src={photo.url}
+                        width={photo.width}
+                        height={photo.height}
+                        alt={caption ? caption : ''}
+                      />
+                      <figcaption className='mt-2'>
+                        {caption}/{category[0]}/
+                        {isDisplayOnHome
+                          ? 'トップページに表示'
+                          : 'トップページに非表示'}
+                      </figcaption>
+                    </figure>
+                  </li>
+                )
+              },
+            )}
+          </ul>
+        </div>
         <div className='my-12 flex flex-col'>
           <p className='text-center font-bold'>
             頼光寺の風景やイベントなどの写真です。
