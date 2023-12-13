@@ -1,14 +1,10 @@
-'use client'
-
 import Gallery from '@/components/Gallery'
 import Hero from '@/components/Hero'
 import ImageAboveHeading from '@/components/ImageAboveHeading'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/utils'
-import { motion, useScroll } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRef } from 'react'
 import styles from './homepage.module.css'
 
 const photos = [
@@ -53,19 +49,10 @@ const photos = [
 ]
 
 export default function Home() {
-  const motionContainerRef = useRef(null)
-  const { scrollYProgress } = useScroll()
-
   return (
     <div
       className={`${styles.wrapper} container flex max-w-screen-xl flex-col gap-12`}
     >
-      <motion.div
-        className='full-width sticky left-0 top-0 z-50 h-1 bg-primary'
-        style={{
-          scaleX: scrollYProgress,
-        }}
-      />
       <main>
         <div className='flex flex-col gap-12 pb-12'>
           <Hero />
@@ -356,32 +343,6 @@ export default function Home() {
           </section>
         </div>
       </main>
-      <div ref={motionContainerRef}>
-        <p>
-          Framer Motion スクロールで表示テスト：この親要素に ref
-          を設定しており、これが画面内に入った時にアニメーションが発火
-        </p>
-        <motion.div
-          className='translate-y-24 text-4xl font-bold text-tertiary'
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{
-            root: motionContainerRef,
-            // once: true,
-          }}
-          animate={{ y: 0 }}
-          transition={{ duration: 2 }}
-          // margin={'0px -20px 0px 100px'}
-          // amount={100} // 交差量
-        >
-          祥雲山。
-          頼光寺は紀元1000年頃に源氏の一族によって創立、真言律宗の寺院として始まりました
-          その後数々の戦火により衰退したものの二度の再興を経て、1804年に尼寺となりました。
-          尼僧たちの坐禅道場として活用されたりしましたが、1875年には維持が困難となり、法常寺に合併しました。
-          その後、旧信徒たちの支援により建物や什物は引き継がれ、現在では曹洞宗に属し、
-          地域の人々に「あじさい寺」として親しまれています
-        </motion.div>
-      </div>
     </div>
   )
 }
