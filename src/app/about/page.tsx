@@ -102,7 +102,7 @@ export default function Page() {
             <div className='mx-auto max-w-screen-lg'>
               <div className='mt-12 flex flex-col gap-16'>
                 <div className='mx-auto flex flex-col items-center lg:flex-row lg:gap-12'>
-                  <Fadein className='order-1 lg:w-5/12'>
+                  <Fadein tag='p' className='order-1 lg:w-5/12'>
                     <Image
                       src='/images/toumbs.jpg'
                       alt=''
@@ -126,14 +126,14 @@ export default function Page() {
                 </div>
 
                 <div className='mx-auto flex flex-col items-center lg:flex-row lg:gap-12'>
-                  <p className='lg:w-5/12'>
+                  <Fadein tag='p' className='lg:w-5/12'>
                     <Image
                       src='/images/lotus.jpg'
                       alt=''
                       width={2000}
                       height={1333}
                     />
-                  </p>
+                  </Fadein>
                   <div className='lg:w-7/12'>
                     <h3 className='text-center text-primary'>衰退と復興</h3>
                     <p className='mt-3 leading-loose'>
@@ -146,14 +146,14 @@ export default function Page() {
                 </div>
 
                 <div className='mx-auto flex flex-col items-center lg:flex-row lg:gap-12'>
-                  <p className='order-1 lg:w-5/12'>
+                  <Fadein tag='p' className='order-1 lg:w-5/12'>
                     <Image
                       src='/images/altar.jpg'
                       alt=''
                       width={2000}
                       height={1333}
                     />
-                  </p>
+                  </Fadein>
                   <div className='lg:w-7/12'>
                     <h3 className='text-center text-primary'>
                       継承・お寺の維持
@@ -170,14 +170,14 @@ export default function Page() {
                 </div>
 
                 <div className='mx-auto flex flex-col items-center lg:flex-row lg:gap-8'>
-                  <p className='lg:w-5/12'>
+                  <Fadein tag='p' className='lg:w-5/12'>
                     <Image
                       src='/images/temple-and-ajisai.jpg'
                       alt=''
                       width={2000}
                       height={1333}
                     />
-                  </p>
+                  </Fadein>
                   <div className='lg:w-7/12'>
                     <h3 className='text-center text-primary'>現在</h3>
                     <p className='mt-3 leading-loose'>

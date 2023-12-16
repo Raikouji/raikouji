@@ -2,22 +2,23 @@
 
 import { cn } from '@/utils'
 import { motion } from 'framer-motion'
-import React from 'react'
+import { ElementType, ReactElement } from 'react'
 
 function FadeIn({
-  children,
+  tag = 'div',
   className,
+  children,
   ...delegated
 }: {
-  children: React.ReactNode
+  tag?: ElementType
   className?: string
+  children: ReactElement
 }) {
+  const MotionTag = motion[tag as keyof typeof motion]
+
   return (
-    <motion.p
-      className={cn(
-        'translate-y-24 text-4xl font-bold text-tertiary',
-        className,
-      )}
+    <MotionTag
+      className={cn('translate-y-24', className)}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{
@@ -25,13 +26,13 @@ function FadeIn({
         once: true,
       }}
       animate={{ y: 0 }}
-      transition={{ duration: 3 }}
+      transition={{ duration: 2 }}
       // margin={'0px -20px 0px 100px'}
       // amount={100} // 交差量
       {...delegated}
     >
       {children}
-    </motion.p>
+    </MotionTag>
   )
 }
 
