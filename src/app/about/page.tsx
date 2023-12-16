@@ -1,4 +1,5 @@
 import Breadcrumbs from '@/components/Breadcrumbs'
+import Fadein from '@/components/FadeIn'
 import ImageAboveHeading from '@/components/ImageAboveHeading'
 import PageHeader from '@/components/PageHeader'
 import { outputMetadata } from '@/utils'
@@ -101,14 +102,14 @@ export default function Page() {
             <div className='mx-auto max-w-screen-lg'>
               <div className='mt-12 flex flex-col gap-16'>
                 <div className='mx-auto flex flex-col items-center lg:flex-row lg:gap-12'>
-                  <p className='order-1 lg:w-5/12'>
+                  <Fadein className='order-1 lg:w-5/12'>
                     <Image
                       src='/images/toumbs.jpg'
                       alt=''
                       width={2000}
                       height={1333}
                     />
-                  </p>
+                  </Fadein>
                   <div className='lg:w-7/12'>
                     <h3 className='text-center text-primary'>頼光寺の設立</h3>
                     <p className='mt-3 leading-loose'>
