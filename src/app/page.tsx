@@ -1,3 +1,4 @@
+import Fadein from '@/components/FadeIn'
 import Gallery from '@/components/Gallery'
 import Hero from '@/components/Hero'
 import ImageAboveHeading from '@/components/ImageAboveHeading'
@@ -126,17 +127,20 @@ export default function Home() {
             >
               <div className={cn('relative')}>
                 <div className='w-3/4'>
-                  <div className='aspect-h-3 aspect-w-2 md:aspect-h-9 md:aspect-w-16'>
+                  <Fadein
+                    tag='div'
+                    className='aspect-h-3 aspect-w-2 md:aspect-h-9 md:aspect-w-16'
+                  >
                     <Image
                       src='/images/ajisai.jpg'
-                      alt='Lorem'
+                      alt='あじさい寺'
                       width={2100}
                       height={1400}
                       sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                       style={{ objectFit: 'cover' }}
                       priority
                     />
-                  </div>
+                  </Fadein>
                 </div>
                 <div className='absolute -bottom-8 w-full'>
                   <div className='mx-auto max-w-screen-xl'>
@@ -175,7 +179,10 @@ export default function Home() {
 
           <section className='py-4'>
             <div className='flex flex-wrap justify-center gap-6'>
-              <figure className='relative w-48 shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)]'>
+              <Fadein
+                tag='figure'
+                className='relative w-48 shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)]'
+              >
                 <Link href='events' className='hover:opacity-90'>
                   <div className='aspect-h-3 aspect-w-2'>
                     <Image
@@ -195,8 +202,11 @@ export default function Home() {
                     年間行事
                   </figcaption>
                 </Link>
-              </figure>
-              <figure className='relative w-48 shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)]'>
+              </Fadein>
+              <Fadein
+                tag='figure'
+                className='relative w-48 shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)]'
+              >
                 <Link href='events' className='hover:opacity-90'>
                   <div className='aspect-h-3 aspect-w-2'>
                     <Image
@@ -216,8 +226,11 @@ export default function Home() {
                     座禅会・写経会
                   </figcaption>
                 </Link>
-              </figure>
-              <figure className='relative w-48 shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)]'>
+              </Fadein>
+              <Fadein
+                tag='figure'
+                className='relative w-48 shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)]'
+              >
                 <Link href='cemetery' className='hover:opacity-90'>
                   <div className='aspect-h-3 aspect-w-2'>
                     <Image
@@ -237,8 +250,11 @@ export default function Home() {
                     墓地のご案内
                   </figcaption>
                 </Link>
-              </figure>
-              <figure className='relative w-48 shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)]'>
+              </Fadein>
+              <Fadein
+                tag='figure'
+                className='relative w-48 shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)]'
+              >
                 <Link href='scarlet-seal' className='hover:opacity-90'>
                   <div className='aspect-h-3 aspect-w-2'>
                     <Image
@@ -258,8 +274,11 @@ export default function Home() {
                     御朱印
                   </figcaption>
                 </Link>
-              </figure>
-              <figure className='relative w-48 shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)]'>
+              </Fadein>
+              <Fadein
+                tag='figure'
+                className='relative w-48 shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)]'
+              >
                 <Link href='scarlet-seal' className='hover:opacity-90'>
                   <div className='aspect-h-3 aspect-w-2'>
                     <Image
@@ -279,7 +298,7 @@ export default function Home() {
                     仏前結婚式
                   </figcaption>
                 </Link>
-              </figure>
+              </Fadein>
             </div>
           </section>
 
