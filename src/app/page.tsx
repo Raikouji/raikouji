@@ -11,6 +11,10 @@ import styles from './homepage.module.css'
 const photos = [
   {
     src: '/images/lorem.jpg',
+    srcSet: [
+      { src: '/images/image1_400x300.jpg', width: 400, height: 300 },
+      { src: '/images/image1_200x150.jpg', width: 200, height: 150 },
+    ],
     width: 900,
     height: 600,
     alt: '代替テキスト1',
@@ -19,32 +23,68 @@ const photos = [
     src: '/images/dummy-01.jpg',
     width: 900,
     height: 600,
+    srcSet: [
+      { src: '/images/image1_400x300.jpg', width: 400, height: 300 },
+      { src: '/images/image1_200x150.jpg', width: 200, height: 150 },
+    ],
     alt: '代替テキスト2',
   },
-  { src: '/images/dummy-02.jpg', width: 600, height: 900 },
+  {
+    src: '/images/dummy-02.jpg',
+    srcSet: [
+      { src: '/images/image1_400x300.jpg', width: 400, height: 300 },
+      { src: '/images/image1_200x150.jpg', width: 200, height: 150 },
+    ],
+    width: 600,
+    height: 900,
+  },
   {
     src: '/images/dummy-03.jpg',
     width: 900,
     height: 600,
+    srcSet: [
+      { src: '/images/image1_400x300.jpg', width: 400, height: 300 },
+      { src: '/images/image1_200x150.jpg', width: 200, height: 150 },
+    ],
     alt: '代替テキスト4',
   },
   {
     src: '/images/dummy-02.jpg',
+    srcSet: [
+      { src: '/images/image1_400x300.jpg', width: 400, height: 300 },
+      { src: '/images/image1_200x150.jpg', width: 200, height: 150 },
+    ],
     width: 600,
     height: 900,
     alt: '代替テキスト5',
   },
-  { src: '/images/lorem.jpg', width: 900, height: 600 },
+  {
+    src: '/images/lorem.jpg',
+    srcSet: [
+      { src: '/images/image1_400x300.jpg', width: 400, height: 300 },
+      { src: '/images/image1_200x150.jpg', width: 200, height: 150 },
+    ],
+    width: 900,
+    height: 600,
+  },
   {
     src: '/images/dummy-01.jpg',
     width: 900,
     height: 600,
+    srcSet: [
+      { src: '/images/image1_400x300.jpg', width: 400, height: 300 },
+      { src: '/images/image1_200x150.jpg', width: 200, height: 150 },
+    ],
     alt: '代替テキスト7',
   },
   {
     src: '/images/dummy-03.jpg',
     width: 900,
     height: 600,
+    srcSet: [
+      { src: '/images/image1_400x300.jpg', width: 400, height: 300 },
+      { src: '/images/image1_200x150.jpg', width: 200, height: 150 },
+    ],
     alt: '代替テキスト8',
   },
 ]
@@ -191,8 +231,7 @@ export default function Home() {
                       alt='Lorem'
                       width={2100}
                       height={1400}
-                      sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                      priority
+                      sizes='(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw' // 3,2,1 レイアウト
                     />
                   </div>
                   <figcaption
@@ -216,7 +255,6 @@ export default function Home() {
                       width={2100}
                       height={1400}
                       sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                      priority
                     />
                   </div>
                   <figcaption
@@ -240,7 +278,6 @@ export default function Home() {
                       width={2100}
                       height={1400}
                       sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                      priority
                     />
                   </div>
                   <figcaption
@@ -264,7 +301,6 @@ export default function Home() {
                       width={2100}
                       height={1400}
                       sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                      priority
                     />
                   </div>
                   <figcaption
@@ -288,7 +324,6 @@ export default function Home() {
                       width={2100}
                       height={1400}
                       sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                      priority
                     />
                   </div>
                   <figcaption

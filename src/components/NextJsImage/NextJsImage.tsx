@@ -8,13 +8,14 @@ export default function NextJsImage({
   wrapperStyle,
 }: RenderPhotoProps) {
   return (
-    <div style={{ ...wrapperStyle, position: 'relative' }}>
+    <figure style={{ ...wrapperStyle, position: 'relative' }}>
       <Image
         fill
         src={photo}
         placeholder={'blurDataURL' in photo ? 'blur' : undefined}
         {...{ alt, title, sizes, className, onClick }}
       />
-    </div>
+      <figcaption>あああああ</figcaption>
+    </figure>
   )
 }
