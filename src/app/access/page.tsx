@@ -60,33 +60,33 @@ const routeDataByTrain = [
 const routeDataByCar = [
   {
     description:
-      '改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。',
-    image: '/images/route-train-08.jpg',
+      '「東畦野」交差点で東に曲がります。(※ 写真は池田/川西方面から来たときのものです。)',
+    image: '/images/route-car-a-01.jpg',
   },
   {
     description:
-      '改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。',
-    image: '/images/route-train-08.jpg',
+      '交差点からすぐの高架には乗らずに左の側道に入ってください。そして、郵便局の角を左に曲がります。',
+    image: '/images/route-car-a-02.jpg',
   },
   {
     description:
-      '改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。',
-    image: '/images/route-train-08.jpg',
+      'しばらく直進します。十分な幅のある道ではないので、対向車とすれ違う際はお気を付けください。',
+    image: '/images/route-car-a-03.jpg',
   },
   {
     description:
-      '改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。',
-    image: '/images/route-train-08.jpg',
+      '右手に「頼光寺→」と書かれた大きな看板のある三叉路を左折します。',
+    image: '/images/route-car-a-04.jpg',
   },
   {
     description:
-      '改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。',
-    image: '/images/route-train-08.jpg',
+      '道なりに進み、行き止まりを左に入ったところが頼光寺の駐車場です。',
+    image: '/images/route-car-a-05.jpg',
   },
   {
     description:
-      '改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。',
-    image: '/images/route-train-08.jpg',
+      '空いている駐車スペースに停めてください。入り口を出てすぐのトンネルを潜ると当寺の境内です。',
+    image: '/images/route-car-a-06.jpg',
   },
 ]
 
@@ -244,6 +244,25 @@ export default function Page() {
                   「東畦野」交差点を東に折れ、５分以内の場所にあります。
                 </p>
               </div>
+
+              <div className='mx-auto mt-8 max-w-screen-md'>
+                <Card
+                  className={cn(
+                    'relative mx-auto p-8',
+                    'bg-red-50',
+                    'rounded-xl',
+                  )}
+                >
+                  <h3 className='flex text-xl text-red-500'>
+                    <FaExclamationTriangle className='mr-2 text-2xl' />
+                    カーナビで来られる方へ
+                  </h3>
+                  <p className='mt-3'>
+                    カーナビで頼光寺やその住所を目的地に設定すると、若干遠回りで道順もわかりづらい上の駐車場に案内されてしまうことがあります。事前に下記の道順説明や地図などで道順をご確認されておくことをおすすめします。
+                  </p>
+                </Card>
+              </div>
+
               <div className='mx-auto max-w-screen-lg'>
                 <div
                   className={cn(
@@ -299,39 +318,32 @@ export default function Page() {
                   </div>
                 </div>
               </div>
-              <div className='mx-auto mt-8 max-w-screen-md'>
-                <Card
-                  className={cn(
-                    'relative mx-auto p-8',
-                    'bg-red-50',
-                    'rounded-xl',
-                  )}
-                >
-                  <h3 className='flex text-xl text-red-500'>
-                    <FaExclamationTriangle className='mr-2 text-2xl' />
-                    カーナビで来られる方へ
-                  </h3>
-                  <p className='mt-3'>
-                    カーナビで頼光寺やその住所を目的地に設定すると、若干遠回りで道順もわかりづらい上の駐車場に案内されてしまうことがあります。事前に下記の地図などで道順をご確認されておくことをおすすめします。
-                  </p>
-                </Card>
-              </div>
 
               <h3 className='mt-12 text-center'>
-                国道173号線から下の駐車場への道順
+                国道173号線から
+                <br />
+                下の駐車場への道順
               </h3>
               <p className='mt-3 text-center'>
-                下の駐車場をご利用の方は、東に折れてすぐの高架には乗らず側道へ進んでください。
+                下の駐車場をご利用の方は、
+                <b className='underline'>
+                  東に折れてすぐの高架には乗らず側道へ進んでください。
+                </b>
               </p>
               <DirectionsFlow routeData={routeDataByCar} />
 
               <hr className='line-with-three-dots my-16' />
 
               <h3 className='mt-12 text-center'>
-                国道173号線から上の駐車場への道順
+                国道173号線から
+                <br />
+                上の駐車場への道順
               </h3>
               <p className='mt-3 text-center'>
-                上の駐車場をご利用の方は、東に折れてすぐの高架に乗って進んでください。
+                上の駐車場をご利用の方は、
+                <b className='underline'>
+                  東に折れてすぐの高架に乗って進んでください。
+                </b>
               </p>
               <DirectionsFlow routeData={routeDataByCar2} />
             </div>
