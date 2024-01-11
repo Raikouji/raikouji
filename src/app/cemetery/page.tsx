@@ -204,7 +204,7 @@ export default function Page() {
             >
               <p className='md:w-1/2'>
                 <Image
-                  src='/images/altar.jpg'
+                  src='/images/general-cemetery.jpg'
                   alt='一般墓地 (檀家)'
                   width={2000}
                   height={1333}
