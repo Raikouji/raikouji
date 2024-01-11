@@ -18,6 +18,7 @@ function MainNavigation() {
       path: 'about',
       name: '頼光寺について',
       subMenu: [
+        { path: 'about', name: 'ごあいさつ・沿革' },
         { path: 'gallery', name: 'ギャラリー' },
         { path: 'scarlet-seal', name: '御朱印、仏前結婚式' },
         { path: 'multi-purpose-hall', name: '紫陽閣の貸し出し' },
