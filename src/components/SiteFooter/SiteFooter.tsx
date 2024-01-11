@@ -1,5 +1,3 @@
-import Logo from '@/components/Logo'
-import { SITE_TITLE } from '@/constants'
 import { cn } from '@/utils'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -18,13 +16,32 @@ function SiteFooter() {
         <div className='container flex max-w-screen-xl flex-col-reverse justify-between gap-12 md:flex-row md:items-center'>
           <div className='max-w-xl text-center md:text-left'>
             <address className='flex flex-col gap-2 text-center not-italic'>
-              <Logo tagline='タグラインです' taglinePosition='top'>
-                {SITE_TITLE}
-              </Logo>
-              <div>
+              {/*<Logo tagline='タグラインです' taglinePosition='top'>*/}
+              {/*  {SITE_TITLE}*/}
+              {/*</Logo>*/}
+              <div className='shrink-0'>
+                {/*<p className='text-xs'>タグライン</p>*/}
+                <Link href='/' className='lg:hover:opacity-80'>
+                  <div className='flex items-center gap-2'>
+                    <Image
+                      src='/images/ajisai-site-title.png'
+                      alt='あじさい寺'
+                      width={62}
+                      height={42}
+                    />
+                    <h1 className='flex items-center gap-3 font-serif'>
+                      <span className='text-sm tracking-widest'>
+                        曹洞宗 祥雲山
+                      </span>
+                      <span className='text-2xl tracking-[.25em]'>頼光寺</span>
+                    </h1>
+                  </div>
+                </Link>
+              </div>
+              <div className='text-sm'>
                 <p>〒666-0117 兵庫県川西市東畦野 2-17-2</p>
                 <p>
-                  電話: <b>072-794-1165</b>
+                  電話: <b className='text-lg'>072-794-1165</b>
                 </p>
               </div>
               <ul className='flex justify-center gap-2'>
