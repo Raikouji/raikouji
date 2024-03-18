@@ -1,6 +1,5 @@
-import Breadcrumbs from '@/components/Breadcrumbs'
+import ArticleWrapper from '@/components/ArticleWrapper'
 import ImageAboveHeading from '@/components/ImageAboveHeading'
-import PageHeader from '@/components/PageHeader'
 import Card from '@/components/ui/Card'
 import { Button } from '@/components/ui/button'
 import { cn, outputMetadata } from '@/utils'
@@ -149,208 +148,188 @@ type RouteData = {
 }
 export default function Page() {
   return (
-    <div className='container max-w-screen-xl'>
-      <main>
-        <PageHeader fullWidth>{pageTitle}</PageHeader>
-        <Breadcrumbs className='mt-2' />
+    <ArticleWrapper pageTitle={pageTitle}>
+      <ul
+        className={cn(
+          'mt-8 flex justify-center text-sm',
+          '[&>li>a]:text-foreground/70',
+          '[&>li:after]:text-foreground/30',
+          '[&>li:not(:last-child):after]:mx-3 [&>li:not(:last-child):after]:content-["|"] ',
+        )}
+      >
+        <li>
+          <a className='hover:text-primary-400' href='#google-map'>
+            Google マップ
+          </a>
+        </li>
+        <li>
+          <a className='hover:text-primary-400' href='#access-by-train'>
+            電車でのアクセス
+          </a>
+        </li>
+        <li>
+          <a className='hover:text-primary-400' href='#access-by-car'>
+            車でのアクセス
+          </a>
+        </li>
+      </ul>
+      <section id='google-map' className='my-16'>
+        <div className='mx-auto max-w-screen-lg'>
+          <p className='text-center'>
+            <ImageAboveHeading imageName='frog' />
+          </p>
+          <h2 className='mt-2 text-center'>Google マップ</h2>
+          <p className='mx-auto mt-4 max-w-screen-md'>
+            Google マップのナビの案内に従うと「裏の駐車場」に案内されます。
+            表の駐車場をご利用の方は、上記の地図をご参照ください。
+          </p>
+          <div className='relative mt-8 h-0 overflow-hidden pb-[61.804697%]'>
+            <iframe
+              src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6545.583216547808!2d135.41242965476988!3d34.88657891179472!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000f7d363fc0129%3A0x931d2d3f56786ea7!2z6LO05YWJ5a-6!5e0!3m2!1sja!2sjp!4v1700881280115!5m2!1sja!2sjp'
+              allowFullScreen={false}
+              loading='lazy'
+              referrerPolicy='no-referrer-when-downgrade'
+              className='absolute left-0 top-0 h-full w-full border-none'
+            ></iframe>
+          </div>
+          <p className='mt-6 text-center'>
+            <Button asChild>
+              <Link
+                href='https://www.google.com/maps?ll=34.887776,135.413674&z=16&t=m&hl=ja&gl=JP&mapclient=embed&cid=10600678847956938407'
+                target='_blank'
+              >
+                Google マップのページへ <small>(外部サイト)</small>
+              </Link>
+            </Button>
+          </p>
+        </div>
+      </section>
+      <hr className='line-with-three-dots' />
+      <div className='full-width bg-secondary-50'>
+        <section id='access-by-train' className='mx-auto max-w-screen-xl py-16'>
+          <p className='text-center'>
+            <ImageAboveHeading imageName='asagao' />
+          </p>
+          <h2 className='mt-3 text-center'>電車でのアクセス</h2>
+          <p className='mx-auto mt-6 max-w-lg text-center'>
+            能勢電鉄「畦野駅」より徒歩5分です。
+            <br />
+            大阪からなら、阪急電車宝塚線「梅田駅」から「川西能勢口駅」まで約20分、能勢電鉄に乗り換え「畦野駅」まで約10分です。
+          </p>
+          <h3 className='mt-8 text-center'>能勢電鉄「畦野駅」からの道順</h3>
+          <DirectionsFlow routeData={routeDataByTrain} />
+        </section>
+      </div>
 
-        <div className='flex flex-col'>
-          <ul
-            className={cn(
-              'mt-8 flex justify-center text-sm',
-              '[&>li>a]:text-foreground/70',
-              '[&>li:after]:text-foreground/30',
-              '[&>li:not(:last-child):after]:mx-3 [&>li:not(:last-child):after]:content-["|"] ',
-            )}
-          >
-            <li>
-              <a className='hover:text-primary-400' href='#google-map'>
-                Google マップ
-              </a>
-            </li>
-            <li>
-              <a className='hover:text-primary-400' href='#access-by-train'>
-                電車でのアクセス
-              </a>
-            </li>
-            <li>
-              <a className='hover:text-primary-400' href='#access-by-car'>
-                車でのアクセス
-              </a>
-            </li>
-          </ul>
-          <section id='google-map' className='my-16'>
-            <div className='mx-auto max-w-screen-lg'>
-              <p className='text-center'>
-                <ImageAboveHeading imageName='frog' />
-              </p>
-              <h2 className='mt-2 text-center'>Google マップ</h2>
-              <p className='mx-auto mt-4 max-w-screen-md'>
-                Google マップのナビの案内に従うと「裏の駐車場」に案内されます。
-                表の駐車場をご利用の方は、上記の地図をご参照ください。
-              </p>
-              <div className='relative mt-8 h-0 overflow-hidden pb-[61.804697%]'>
-                <iframe
-                  src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6545.583216547808!2d135.41242965476988!3d34.88657891179472!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000f7d363fc0129%3A0x931d2d3f56786ea7!2z6LO05YWJ5a-6!5e0!3m2!1sja!2sjp!4v1700881280115!5m2!1sja!2sjp'
-                  allowFullScreen={false}
-                  loading='lazy'
-                  referrerPolicy='no-referrer-when-downgrade'
-                  className='absolute left-0 top-0 h-full w-full border-none'
-                ></iframe>
-              </div>
-              <p className='mt-6 text-center'>
-                <Button asChild>
-                  <Link
-                    href='https://www.google.com/maps?ll=34.887776,135.413674&z=16&t=m&hl=ja&gl=JP&mapclient=embed&cid=10600678847956938407'
-                    target='_blank'
-                  >
-                    Google マップのページへ <small>(外部サイト)</small>
-                  </Link>
-                </Button>
-              </p>
-            </div>
-          </section>
-          <hr className='line-with-three-dots' />
-          <div className='full-width bg-secondary-50'>
-            <section
-              id='access-by-train'
-              className='mx-auto max-w-screen-xl py-16'
-            >
-              <p className='text-center'>
-                <ImageAboveHeading imageName='asagao' />
-              </p>
-              <h2 className='mt-3 text-center'>電車でのアクセス</h2>
-              <p className='mx-auto mt-6 max-w-lg text-center'>
-                能勢電鉄「畦野駅」より徒歩5分です。
-                <br />
-                大阪からなら、阪急電車宝塚線「梅田駅」から「川西能勢口駅」まで約20分、能勢電鉄に乗り換え「畦野駅」まで約10分です。
-              </p>
-              <h3 className='mt-8 text-center'>能勢電鉄「畦野駅」からの道順</h3>
-              <DirectionsFlow routeData={routeDataByTrain} />
-            </section>
+      <hr className='line-with-three-dots' />
+
+      <section id='access-by-car' className='my-16'>
+        <div className='mx-auto max-w-screen-xl'>
+          <div className='mx-auto mt-4 max-w-screen-md text-center'>
+            <p className='text-center'>
+              <ImageAboveHeading />
+            </p>
+            <h2 className='mt-3 text-center'>車でのアクセス</h2>
+            <p className='mt-4'>
+              国道173号線 「東畦野」交差点を東に折れ、５分以内の場所にあります。
+            </p>
           </div>
 
-          <hr className='line-with-three-dots' />
+          <div className='mx-auto mt-8 max-w-screen-md'>
+            <Card
+              className={cn('relative mx-auto p-8', 'bg-red-50', 'rounded-xl')}
+            >
+              <h3 className='flex text-xl text-red-500'>
+                <FaExclamationTriangle className='mr-2 text-2xl' />
+                カーナビで来られる方へ
+              </h3>
+              <p className='mt-3'>
+                カーナビで頼光寺やその住所を目的地に設定すると、若干遠回りで道順もわかりづらい上の駐車場に案内されてしまうことがあります。事前に下記の道順説明や地図などで道順をご確認されておくことをおすすめします。
+              </p>
+            </Card>
+          </div>
 
-          <section id='access-by-car' className='my-16'>
-            <div className='mx-auto max-w-screen-xl'>
-              <div className='mx-auto mt-4 max-w-screen-md text-center'>
-                <p className='text-center'>
-                  <ImageAboveHeading />
-                </p>
-                <h2 className='mt-3 text-center'>車でのアクセス</h2>
-                <p className='mt-4'>
-                  国道173号線
-                  「東畦野」交差点を東に折れ、５分以内の場所にあります。
-                </p>
-              </div>
-
-              <div className='mx-auto mt-8 max-w-screen-md'>
-                <Card
-                  className={cn(
-                    'relative mx-auto p-8',
-                    'bg-red-50',
-                    'rounded-xl',
-                  )}
-                >
-                  <h3 className='flex text-xl text-red-500'>
-                    <FaExclamationTriangle className='mr-2 text-2xl' />
-                    カーナビで来られる方へ
-                  </h3>
-                  <p className='mt-3'>
-                    カーナビで頼光寺やその住所を目的地に設定すると、若干遠回りで道順もわかりづらい上の駐車場に案内されてしまうことがあります。事前に下記の道順説明や地図などで道順をご確認されておくことをおすすめします。
-                  </p>
-                </Card>
-              </div>
-
-              <div className='mx-auto max-w-screen-lg'>
-                <div
-                  className={cn(
-                    'relative mt-10 p-8 lg:p-12',
-                    'bg-[url("/images/bg-paper.png")] bg-cover',
-                    'rounded-xl shadow-lg',
-                  )}
-                >
-                  <h3 className='mt-2 text-center text-secondary-dark'>
-                    2つの駐車場があります
-                  </h3>
-                  <p className='mt-3 text-center'>
-                    「下の駐車場」と「上の駐車場」の２つがございます。
-                    <br />
-                    下の駐車場の方が国道から近くて行きやすく、また十分な収容台数があります。
-                    <br />
-                    Google
-                    マップの場合、「賴光寺参拝者駐車場」を目的地にセットしていただくと、下の駐車場に案内されます。
-                  </p>
-                  <div className='mt-4 rounded bg-white px-4 py-2'>
-                    <h4 className='text-lg text-red-500'>
-                      ※
-                      足の不自由な方がおられる場合は、上の駐車場をご利用ください
-                    </h4>
-                    <p className='mt-2'>
-                      下の駐車場に停められた場合、境内に入るまでに急斜面の階段がございます。なので、車椅子の方、足の不自由な方は、段差なく境内に入れる上の駐車場をご利用ください。
-                    </p>
-                  </div>
-                  <div className='mt-8 flex flex-col items-center justify-center gap-4 text-center md:flex-row md:gap-8 lg:gap-12'>
-                    <figure>
-                      <Image
-                        src='/images/parking-1.jpg'
-                        alt='下の駐車場'
-                        width={900}
-                        height={600}
-                      />
-
-                      <figcaption className='mt-2'>
-                        下の駐車場（★★台）
-                      </figcaption>
-                    </figure>
-                    <figure>
-                      <Image
-                        src='/images/parking-2-2.jpg'
-                        alt='上の駐車場'
-                        width={900}
-                        height={600}
-                      />
-                      <figcaption className='mt-2'>
-                        上の駐車場（★★台）
-                      </figcaption>
-                    </figure>
-                  </div>
-                </div>
-              </div>
-
-              <h3 className='mt-12 text-center'>
-                国道173号線から
-                <br />
-                下の駐車場への道順
+          <div className='mx-auto max-w-screen-lg'>
+            <div
+              className={cn(
+                'relative mt-10 p-8 lg:p-12',
+                'bg-[url("/images/bg-paper.png")] bg-cover',
+                'rounded-xl shadow-lg',
+              )}
+            >
+              <h3 className='mt-2 text-center text-secondary-dark'>
+                2つの駐車場があります
               </h3>
               <p className='mt-3 text-center'>
-                下の駐車場をご利用の方は、
-                <b className='underline'>
-                  東に折れてすぐの高架には乗らず側道へ進んでください。
-                </b>
-              </p>
-              <DirectionsFlow routeData={routeDataByCar} />
-
-              <hr className='line-with-three-dots my-16' />
-
-              <h3 className='mt-12 text-center'>
-                国道173号線から
+                「下の駐車場」と「上の駐車場」の２つがございます。
                 <br />
-                上の駐車場への道順
-              </h3>
-              <p className='mt-3 text-center'>
-                上の駐車場をご利用の方は、
-                <b className='underline'>
-                  東に折れてすぐの高架に乗って進んでください。
-                </b>
+                下の駐車場の方が国道から近くて行きやすく、また十分な収容台数があります。
+                <br />
+                Google
+                マップの場合、「賴光寺参拝者駐車場」を目的地にセットしていただくと、下の駐車場に案内されます。
               </p>
-              <DirectionsFlow routeData={routeDataByCar2} />
+              <div className='mt-4 rounded bg-white px-4 py-2'>
+                <h4 className='text-lg text-red-500'>
+                  ※ 足の不自由な方がおられる場合は、上の駐車場をご利用ください
+                </h4>
+                <p className='mt-2'>
+                  下の駐車場に停められた場合、境内に入るまでに急斜面の階段がございます。なので、車椅子の方、足の不自由な方は、段差なく境内に入れる上の駐車場をご利用ください。
+                </p>
+              </div>
+              <div className='mt-8 flex flex-col items-center justify-center gap-4 text-center md:flex-row md:gap-8 lg:gap-12'>
+                <figure>
+                  <Image
+                    src='/images/parking-1.jpg'
+                    alt='下の駐車場'
+                    width={900}
+                    height={600}
+                  />
+
+                  <figcaption className='mt-2'>下の駐車場（★★台）</figcaption>
+                </figure>
+                <figure>
+                  <Image
+                    src='/images/parking-2-2.jpg'
+                    alt='上の駐車場'
+                    width={900}
+                    height={600}
+                  />
+                  <figcaption className='mt-2'>上の駐車場（★★台）</figcaption>
+                </figure>
+              </div>
             </div>
-          </section>
+          </div>
+
+          <h3 className='mt-12 text-center'>
+            国道173号線から
+            <br />
+            下の駐車場への道順
+          </h3>
+          <p className='mt-3 text-center'>
+            下の駐車場をご利用の方は、
+            <b className='underline'>
+              東に折れてすぐの高架には乗らず側道へ進んでください。
+            </b>
+          </p>
+          <DirectionsFlow routeData={routeDataByCar} />
+
+          <hr className='line-with-three-dots my-16' />
+
+          <h3 className='mt-12 text-center'>
+            国道173号線から
+            <br />
+            上の駐車場への道順
+          </h3>
+          <p className='mt-3 text-center'>
+            上の駐車場をご利用の方は、
+            <b className='underline'>
+              東に折れてすぐの高架に乗って進んでください。
+            </b>
+          </p>
+          <DirectionsFlow routeData={routeDataByCar2} />
         </div>
-      </main>
-    </div>
+      </section>
+    </ArticleWrapper>
   )
 }
 

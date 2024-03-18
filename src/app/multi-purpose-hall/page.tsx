@@ -1,7 +1,6 @@
-import Breadcrumbs from '@/components/Breadcrumbs'
+import ArticleWrapper from '@/components/ArticleWrapper'
 import Gellary from '@/components/Gallery'
 import ImageAboveHeading from '@/components/ImageAboveHeading'
-import PageHeader from '@/components/PageHeader'
 import { outputMetadata } from '@/utils'
 import type { Metadata } from 'next'
 import Image from 'next/image'
@@ -39,41 +38,36 @@ const photos = [
 
 export default function Page() {
   return (
-    <div className='container max-w-screen-xl'>
-      <main>
-        <PageHeader fullWidth>{pageTitle}</PageHeader>
-        <Breadcrumbs className='mt-2' />
+    <ArticleWrapper pageTitle={pageTitle}>
+      <div className='my-12'>
+        <section className='flex flex-col gap-12'>
+          <div className='full-width-md mx-auto max-w-screen-md'>
+            <Image
+              src='/images/zen-hall.jpg'
+              alt='Lorem'
+              width={2100}
+              height={1333}
+              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+              style={{ objectFit: 'cover' }}
+              priority
+            />
+            <p className='mt-6 text-center font-bold'>
+              多目的ホール「紫陽閣（しようかく）」を予約制でお貸ししています。
+              これまで、ヨガ教室や音楽演奏会などにご利用いただいたことがあります。
+              月例の早朝座禅会も、この紫陽閣で行っています。
+            </p>
+          </div>
 
-        <div className='my-12'>
-          <section className='flex flex-col gap-12'>
-            <div className='full-width-md mx-auto max-w-screen-md'>
-              <Image
-                src='/images/zen-hall.jpg'
-                alt='Lorem'
-                width={2100}
-                height={1333}
-                sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                style={{ objectFit: 'cover' }}
-                priority
-              />
-              <p className='mt-6 text-center font-bold'>
-                多目的ホール「紫陽閣（しようかく）」を予約制でお貸ししています。
-                これまで、ヨガ教室や音楽演奏会などにご利用いただいたことがあります。
-                月例の早朝座禅会も、この紫陽閣で行っています。
-              </p>
-            </div>
-
-            <div className='mx-auto max-w-screen-lg'>
-              <p className='text-center'>
-                <ImageAboveHeading imageName='priest2' />
-              </p>
-              <h2 className='mt-2 text-center font-serif'>貸し出しのご案内</h2>
-              <p className='mt-6'>内容、志納金など</p>
-            </div>
-            <Gellary photos={photos} col={1} colMd={3} colLg={3} />
-          </section>
-        </div>
-      </main>
-    </div>
+          <div className='mx-auto max-w-screen-lg'>
+            <p className='text-center'>
+              <ImageAboveHeading imageName='priest2' />
+            </p>
+            <h2 className='mt-2 text-center font-serif'>貸し出しのご案内</h2>
+            <p className='mt-6'>内容、志納金など</p>
+          </div>
+          <Gellary photos={photos} col={1} colMd={3} colLg={3} />
+        </section>
+      </div>
+    </ArticleWrapper>
   )
 }

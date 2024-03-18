@@ -1,6 +1,5 @@
-import Breadcrumbs from '@/components/Breadcrumbs'
+import ArticleWrapper from '@/components/ArticleWrapper'
 import ImageAboveHeading from '@/components/ImageAboveHeading'
-import PageHeader from '@/components/PageHeader'
 import { cn, outputMetadata } from '@/utils'
 import type { Metadata } from 'next'
 
@@ -91,38 +90,33 @@ function LinkList({
 
 export default function Page() {
   return (
-    <div className='container max-w-screen-xl'>
-      <main>
-        <PageHeader fullWidth>{pageTitle}</PageHeader>
-        <Breadcrumbs className='mt-2' />
+    <ArticleWrapper pageTitle={pageTitle}>
+      <div className='my-12 flex flex-col gap-12 lg:flex-row lg:gap-20'>
+        <section className='lg:w-1/2'>
+          <div className='mx-auto max-w-screen-lg'>
+            <p className='text-center'>
+              <ImageAboveHeading imageName='momiji' />
+            </p>
+            <h2 id='scarlet-seal' className='mt-2 text-center font-serif'>
+              関連リンク
+            </h2>
+            <LinkList events={events} kind='attribution' className='my-6' />
+          </div>
+          <hr className='line-with-three-dots lg:hidden' />
+        </section>
 
-        <div className='my-12 flex flex-col gap-12 lg:flex-row lg:gap-20'>
-          <section className='lg:w-1/2'>
-            <div className='mx-auto max-w-screen-lg'>
-              <p className='text-center'>
-                <ImageAboveHeading imageName='momiji' />
-              </p>
-              <h2 id='scarlet-seal' className='mt-2 text-center font-serif'>
-                関連リンク
-              </h2>
-              <LinkList events={events} kind='attribution' className='my-6' />
-            </div>
-            <hr className='line-with-three-dots lg:hidden' />
-          </section>
-
-          <section className='lg:w-1/2'>
-            <div className='mx-auto max-w-screen-lg'>
-              <p className='text-center'>
-                <ImageAboveHeading imageName='uguisu' />
-              </p>
-              <h2 id='scarlet-seal' className='mt-3 text-center font-serif'>
-                頼光寺を紹介いただいているサイト
-              </h2>
-              <LinkList events={events} kind='media' className='my-6' />
-            </div>
-          </section>
-        </div>
-      </main>
-    </div>
+        <section className='lg:w-1/2'>
+          <div className='mx-auto max-w-screen-lg'>
+            <p className='text-center'>
+              <ImageAboveHeading imageName='uguisu' />
+            </p>
+            <h2 id='scarlet-seal' className='mt-3 text-center font-serif'>
+              頼光寺を紹介いただいているサイト
+            </h2>
+            <LinkList events={events} kind='media' className='my-6' />
+          </div>
+        </section>
+      </div>
+    </ArticleWrapper>
   )
 }
