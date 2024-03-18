@@ -57,7 +57,7 @@ export default function Page() {
         </p>
         <ul
           className={cn(
-            'mt-8 flex justify-center text-sm',
+            'mt-8 flex flex-wrap justify-center text-sm leading-7',
             '[&>li>a]:text-foreground/70',
             '[&>li:after]:text-foreground/30',
             '[&>li:not(:last-child):after]:mx-3 [&>li:not(:last-child):after]:content-["|"] ',
@@ -139,8 +139,8 @@ export default function Page() {
 
       <hr className='line-with-three-dots' />
 
-      <div className='full-width bg-secondary-50'>
-        <section className='mx-auto max-w-screen-lg py-12'>
+      <div className='full-width bg-secondary-50 px-8 py-12 lg:px-2'>
+        <section className='mx-auto max-w-screen-lg'>
           <div id='mizuko-kuyou' className='mt-8'>
             <p className='mx-auto max-w-screen-sm'>
               <Image
@@ -235,7 +235,7 @@ export default function Page() {
 
       <hr className='line-with-three-dots' />
 
-      <div className='full-width bg-secondary-50'>
+      <div className='full-width bg-secondary-50 px-8 py-12 lg:px-2'>
         <section
           id='historic-graves'
           className='mx-auto w-full max-w-screen-lg py-12'
