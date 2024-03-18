@@ -205,7 +205,7 @@ export default function Page() {
         </div>
       </section>
       <hr className='line-with-three-dots' />
-      <div className='full-width bg-secondary-50'>
+      <div className='full-width bg-secondary-50 px-8 lg:px-2'>
         <section id='access-by-train' className='mx-auto max-w-screen-xl py-16'>
           <p className='text-center'>
             <ImageAboveHeading imageName='asagao' />
@@ -335,13 +335,13 @@ export default function Page() {
 
 function DirectionsFlow({ routeData }: RouteData) {
   return (
-    <ol className='mt-8 grid grid-flow-col gap-x-8 gap-y-4 md:grid-rows-2 lg:grid-rows-3'>
+    <ol className='mt-8 grid-flow-col gap-x-8 gap-y-4 md:grid md:grid-rows-2 lg:grid-rows-3'>
       {routeData.map(({ description, image }, index) => (
         <li
           key={index}
           className='text-center after:mt-4 after:block after:text-2xl after:text-primary-400 after:content-["▼"]'
         >
-          <div className='flex gap-3 md:gap-4'>
+          <div className='center flex items-center gap-3 md:gap-4'>
             <p className='order-1 text-left leading-snug tracking-normal'>
               <span className='text-2xl font-bold text-primary'>
                 {index + 1}.
