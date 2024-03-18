@@ -151,7 +151,7 @@ export default function Page() {
     <ArticleWrapper pageTitle={pageTitle}>
       <ul
         className={cn(
-          'mt-8 flex justify-center text-sm',
+          'mt-8 flex flex-wrap justify-center text-sm leading-7',
           '[&>li>a]:text-foreground/70',
           '[&>li:after]:text-foreground/30',
           '[&>li:not(:last-child):after]:mx-3 [&>li:not(:last-child):after]:content-["|"] ',
