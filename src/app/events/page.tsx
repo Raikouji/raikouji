@@ -193,7 +193,7 @@ export default function Page() {
                 <p className='mt-6 text-center font-bold md:text-left'>
                   【座禅会の流れ】
                 </p>
-                <ol className='list-inside list-decimal -indent-4 font-bold leading-7'>
+                <ol className='mt-2 list-inside list-decimal font-bold leading-7'>
                   <li>本堂内で受付を済ませ、坐禅堂に移動し約30分すわります</li>
                   <li>その後、本堂にて朝のお勤め（読経）</li>
                   <li>
@@ -231,27 +231,27 @@ export default function Page() {
             </div>
           </div>
 
-          <hr className='line-with-three-dots' />
+          {/*<hr className='line-with-three-dots' />*/}
 
-          <div className='mx-auto max-w-screen-md py-12'>
-            <h3 className='text-center'>月例会</h3>
-            <p className='mt-2 text-center'>
-              毎月★★日 午後★★時〜
-              <br />
-              ※檀家様向け
-            </p>
-            <p className='mt-4'>
-              ★★ダミーコピーですダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝たしはでまた箱のダミーコピーです上手どもっさと俄たますて、みんなまでぶ弾いとだまし。
-            </p>
-            <p className='mt-4'>
-              <Image
-                src='/images/zazen1.jpg'
-                alt='月例会'
-                width={2000}
-                height={1333}
-              />
-            </p>
-          </div>
+          {/*<div className='mx-auto max-w-screen-md py-12'>*/}
+          {/*  <h3 className='text-center'>月例会</h3>*/}
+          {/*  <p className='mt-2 text-center'>*/}
+          {/*    毎月★★日 午後★★時〜*/}
+          {/*    <br />*/}
+          {/*    ※檀家様向け*/}
+          {/*  </p>*/}
+          {/*  <p className='mt-4'>*/}
+          {/*    ★★ダミーコピーですダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝たしはでまた箱のダミーコピーです上手どもっさと俄たますて、みんなまでぶ弾いとだまし。*/}
+          {/*  </p>*/}
+          {/*  <p className='mt-4'>*/}
+          {/*    <Image*/}
+          {/*      src='/images/zazen1.jpg'*/}
+          {/*      alt='月例会'*/}
+          {/*      width={2000}*/}
+          {/*      height={1333}*/}
+          {/*    />*/}
+          {/*  </p>*/}
+          {/*</div>*/}
         </div>
       </section>
     </ArticleWrapper>
