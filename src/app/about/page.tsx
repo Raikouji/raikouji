@@ -18,7 +18,7 @@ export const metadata: Metadata = outputMetadata({
 
 export default function Page() {
   return (
-    <div className='container max-w-screen-xl'>
+    <div className='container max-w-screen-xl px-8 lg:px-2'>
       <main>
         <PageHeader fullWidth>{pageTitle}</PageHeader>
         <Breadcrumbs className='mt-2' />
@@ -33,13 +33,13 @@ export default function Page() {
           </p>
 
           <section>
-            <div className='mx-auto max-w-screen-lg'>
+            <div className='mx-auto max-w-screen-md xl:max-w-screen-lg'>
               <p className='text-center'>
                 <ImageAboveHeading />
               </p>
               <h2 className='mt-3 text-center font-serif'>住職 ごあいさつ</h2>
               <div className='mt-8 flex flex-col items-center gap-4 md:flex-row md:gap-8 lg:gap-12'>
-                <p>
+                <p className='mx-16 md:mx-auto'>
                   <Image
                     src='/images/portrait.jpg'
                     alt='頼光寺 住職の近影'
@@ -47,7 +47,7 @@ export default function Page() {
                     height={256}
                   />
                 </p>
-                <div className='md:w-3/4'>
+                <div className='mt-8 md:mt-0 md:w-3/4'>
                   <p>
                     頼光寺は源氏ゆかりのお寺です。源満仲公（みつなかこう）の奥さまである法如尼公（ほうにょにこう）の発願で建立されたお寺です。
                   </p>
@@ -80,16 +80,18 @@ export default function Page() {
               <ImageAboveHeading imageName='statue' />
             </p>
             <h2 className='mt-3 text-center'>頼光寺の沿革</h2>
-            <div className='aspect-h-3 aspect-w-2 relative mt-4 w-full md:aspect-h-4 md:aspect-w-16'>
-              <Image
-                src='/images/spider.jpg'
-                alt='Lorem'
-                width={2100}
-                height={1400}
-                sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                style={{ objectFit: 'cover' }}
-                priority
-              />
+            <div className='full-width'>
+              <div className='relative mt-4 w-full md:aspect-h-4 md:aspect-w-16'>
+                <Image
+                  src='/images/spider.jpg'
+                  alt='Lorem'
+                  width={2100}
+                  height={1400}
+                  sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+                  style={{ objectFit: 'cover' }}
+                  priority
+                />
+              </div>
             </div>
             <div className='mx-auto max-w-screen-md'>
               <p className='mt-8 font-bold'>
@@ -99,17 +101,9 @@ export default function Page() {
               </p>
             </div>
 
-            <div className='mx-auto max-w-screen-lg'>
+            <div className='mx-auto max-w-screen-md xl:max-w-screen-lg'>
               <div className='mt-12 flex flex-col gap-16'>
                 <div className='mx-auto flex flex-col items-center lg:flex-row lg:gap-12'>
-                  <Fadein tag='p' className='order-1 lg:w-5/12'>
-                    <Image
-                      src='/images/toumbs.jpg'
-                      alt=''
-                      width={2000}
-                      height={1333}
-                    />
-                  </Fadein>
                   <div className='lg:w-7/12'>
                     <h3 className='text-center text-primary'>頼光寺の設立</h3>
                     <p className='mt-3 leading-loose'>
@@ -123,17 +117,17 @@ export default function Page() {
                       亡くなった後の自身の安らかな世界を祈る寺として祥雲山賴光寺を創建しました(真言律宗に所属)。
                     </p>
                   </div>
-                </div>
-
-                <div className='mx-auto flex flex-col items-center lg:flex-row lg:gap-12'>
-                  <Fadein tag='p' className='lg:w-5/12'>
+                  <Fadein tag='p' className='mt-8 md:order-1 lg:mt-0 lg:w-5/12'>
                     <Image
-                      src='/images/lotus.jpg'
+                      src='/images/toumbs.jpg'
                       alt=''
                       width={2000}
                       height={1333}
                     />
                   </Fadein>
+                </div>
+
+                <div className='mx-auto flex flex-col items-center lg:flex-row lg:gap-12'>
                   <div className='lg:w-7/12'>
                     <h3 className='text-center text-primary'>衰退と復興</h3>
                     <p className='mt-3 leading-loose'>
@@ -143,17 +137,17 @@ export default function Page() {
                       1804年(光格天皇文化元年)に公式に認められ、尼寺（女性僧侶だけの寺）となりました。
                     </p>
                   </div>
-                </div>
-
-                <div className='mx-auto flex flex-col items-center lg:flex-row lg:gap-12'>
-                  <Fadein tag='p' className='order-1 lg:w-5/12'>
+                  <Fadein tag='p' className='mt-8 lg:mt-0 lg:w-5/12'>
                     <Image
-                      src='/images/altar.jpg'
+                      src='/images/lotus.jpg'
                       alt=''
                       width={2000}
                       height={1333}
                     />
                   </Fadein>
+                </div>
+
+                <div className='mx-auto flex flex-col items-center lg:flex-row lg:gap-12'>
                   <div className='lg:w-7/12'>
                     <h3 className='text-center text-primary'>
                       継承・お寺の維持
@@ -167,17 +161,17 @@ export default function Page() {
                       現在も本堂内に安置されています。
                     </p>
                   </div>
-                </div>
-
-                <div className='mx-auto flex flex-col items-center lg:flex-row lg:gap-8'>
-                  <Fadein tag='p' className='lg:w-5/12'>
+                  <Fadein tag='p' className='mt-8 md:order-1 lg:mt-0 lg:w-5/12'>
                     <Image
-                      src='/images/temple-and-ajisai.jpg'
+                      src='/images/altar.jpg'
                       alt=''
                       width={2000}
                       height={1333}
                     />
                   </Fadein>
+                </div>
+
+                <div className='mx-auto flex flex-col items-center lg:flex-row lg:gap-8'>
                   <div className='lg:w-7/12'>
                     <h3 className='text-center text-primary'>現在</h3>
                     <p className='mt-3 leading-loose'>
@@ -185,6 +179,14 @@ export default function Page() {
                       あじさい寺」として親しまれています。
                     </p>
                   </div>
+                  <Fadein tag='p' className='mt-8 lg:mt-0 lg:w-5/12'>
+                    <Image
+                      src='/images/temple-and-ajisai.jpg'
+                      alt=''
+                      width={2000}
+                      height={1333}
+                    />
+                  </Fadein>
                 </div>
               </div>
             </div>
