@@ -34,7 +34,7 @@ export default function Breadcrumbs({
     <div className={cn(styles.wrapper, className)} {...delegated}>
       <ul
         className={cn(
-          'flex text-gray-600',
+          'flex text-sm text-gray-600',
           '[&>li:not(:last-child)]:after:mx-2',
           '[&>li:not(:last-child)]:after:content-["/"]',
           '[&>li:not(:last-child)]:after:text-gray-300',
