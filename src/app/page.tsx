@@ -95,15 +95,15 @@ export default function Home() {
       className={`${styles.wrapper} container flex max-w-screen-xl flex-col gap-12`}
     >
       <main>
-        <div className='flex flex-col gap-12 pb-12'>
+        <div className='flex flex-col gap-12 px-8 pb-12 lg:px-2'>
           <Hero />
 
           <div className='text-center'>
             <p className='font-bold'>
               祥雲山 頼光寺※ は、紀元1000年頃に源氏一族によって創立されました。
-              <br />
+              <br className='hidden md:inline' />
               初夏には境内にたくさんのあじさいが咲き乱れ、
-              <br />
+              <br className='hidden md:inline' />
               地域の人々に「あじさい寺」として親しまれています。
             </p>
             <p className='mt-1'>
