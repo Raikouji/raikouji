@@ -218,7 +218,7 @@ export default function Home() {
           </section>
 
           <section className='py-4'>
-            <div className='flex flex-wrap justify-center gap-6'>
+            <div className='flex flex-wrap justify-center gap-6 lg:flex-nowrap'>
               <Fadein
                 tag='figure'
                 className='relative w-48 shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)]'
