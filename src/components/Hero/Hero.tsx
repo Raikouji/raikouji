@@ -29,10 +29,10 @@ function Hero() {
       )}
     >
       <div className={cn('relative')}>
-        <div className='ml-auto mr-0 w-3/4'>
+        <div className='ml-auto mr-0 w-11/12 lg:w-3/4'>
           <Slider images={sliderImages} />
         </div>
-        <div className='absolute -bottom-8 w-full'>
+        <div className='absolute bottom-8 w-full lg:-bottom-8'>
           <div className='mx-auto max-w-screen-xl'>
             <div
               className={cn(
