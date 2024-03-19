@@ -98,7 +98,7 @@ export default function Page() {
         <div className='mx-auto max-w-screen-md xl:max-w-screen-lg'>
           <div className='mt-12 flex flex-col gap-16'>
             <div className='mx-auto flex flex-col items-center lg:flex-row lg:gap-12'>
-              <div className='lg:w-7/12'>
+              <div className='lg:order-1 lg:w-7/12'>
                 <h3 className='text-center text-primary'>頼光寺の設立</h3>
                 <p className='mt-3 leading-loose'>
                   祥雲山賴光寺は、一條天皇長保年間(紀元1000年頃)に、源満仲公令夫人、
@@ -111,7 +111,7 @@ export default function Page() {
                   亡くなった後の自身の安らかな世界を祈る寺として祥雲山賴光寺を創建しました(真言律宗に所属)。
                 </p>
               </div>
-              <Fadein tag='p' className='mt-8 md:order-1 lg:mt-0 lg:w-5/12'>
+              <Fadein tag='p' className='mt-8 lg:mt-0 lg:w-5/12'>
                 <Image
                   src='/images/toumbs.jpg'
                   alt=''
@@ -142,7 +142,7 @@ export default function Page() {
             </div>
 
             <div className='mx-auto flex flex-col items-center lg:flex-row lg:gap-12'>
-              <div className='lg:w-7/12'>
+              <div className='lg:order-1 lg:w-7/12'>
                 <h3 className='text-center text-primary'>継承・お寺の維持</h3>
                 <p className='mt-3 leading-loose'>
                   840年(天保十一年)には、本寺の十世勅謚
@@ -153,7 +153,7 @@ export default function Page() {
                   現在も本堂内に安置されています。
                 </p>
               </div>
-              <Fadein tag='p' className='mt-8 md:order-1 lg:mt-0 lg:w-5/12'>
+              <Fadein tag='p' className='mt-8 lg:mt-0 lg:w-5/12'>
                 <Image
                   src='/images/altar.jpg'
                   alt=''
@@ -168,7 +168,7 @@ export default function Page() {
                 <h3 className='text-center text-primary'>現在</h3>
                 <p className='mt-3 leading-loose'>
                   1990年(平成二年)以来、頼光寺は曹洞宗に所属し、「北摂七福神寿老人
-                  あじさい寺」として親しまれています。
+                  あじさい寺」として親しまれています。2024年に、本堂「願王殿」を改修しました。
                 </p>
               </div>
               <Fadein tag='p' className='mt-8 lg:mt-0 lg:w-5/12'>
