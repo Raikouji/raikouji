@@ -1,6 +1,7 @@
 import { cn } from '@/utils'
+import React from 'react'
 
-function TocLink(data: { id: string; title?: string }[]) {
+function TocLink({ children }: { children: React.ReactNode }) {
   return (
     <ul
       className={cn(
@@ -10,16 +11,18 @@ function TocLink(data: { id: string; title?: string }[]) {
         '[&>li:not(:last-child):after]:mx-3 [&>li:not(:last-child):after]:content-["|"] ',
       )}
     >
-      {data.map(({ id, title }) => {
-        return (
-          <li key={id}>
-            <a className='hover:text-primary-400' href={`#${id}`}>
-              {title ? title : id}
-            </a>
-          </li>
-        )
-      })}
+      {children}
     </ul>
+  )
+}
+
+export function TocLinkItem({ id, title }: { id: string; title?: string }) {
+  return (
+    <li key={id}>
+      <a className='hover:text-primary-400' href={`#${id}`}>
+        {title ? title : id}
+      </a>
+    </li>
   )
 }
 

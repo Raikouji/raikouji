@@ -1,6 +1,7 @@
 import ArticleWrapper from '@/components/ArticleWrapper'
 import Hr from '@/components/Hr'
 import ImageAboveHeading from '@/components/ImageAboveHeading'
+import TocLink, { TocLinkItem } from '@/components/TocLink'
 import Card from '@/components/ui/Card'
 import { Button } from '@/components/ui/button'
 import { cn, outputMetadata } from '@/utils'
@@ -150,30 +151,12 @@ type RouteData = {
 export default function Page() {
   return (
     <ArticleWrapper pageTitle={pageTitle}>
-      <ul
-        className={cn(
-          'mt-8 flex flex-wrap justify-center text-sm leading-7',
-          '[&>li>a]:text-foreground/70',
-          '[&>li:after]:text-foreground/30',
-          '[&>li:not(:last-child):after]:mx-3 [&>li:not(:last-child):after]:content-["|"] ',
-        )}
-      >
-        <li>
-          <a className='hover:text-primary-400' href='#google-map'>
-            Google マップ
-          </a>
-        </li>
-        <li>
-          <a className='hover:text-primary-400' href='#access-by-train'>
-            電車でのアクセス
-          </a>
-        </li>
-        <li>
-          <a className='hover:text-primary-400' href='#access-by-car'>
-            車でのアクセス
-          </a>
-        </li>
-      </ul>
+      <TocLink>
+        <TocLinkItem id='google-map' title='Google マップ' />
+        <TocLinkItem id='access-by-train' title='電車でのアクセス' />
+        <TocLinkItem id='access-by-car' title='車でのアクセス' />
+      </TocLink>
+
       <section id='google-map' className='my-16'>
         <div className='mx-auto max-w-screen-lg'>
           <p className='text-center'>
