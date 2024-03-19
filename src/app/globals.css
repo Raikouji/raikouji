@@ -151,16 +151,16 @@
     @apply text-4xl;
   }
   main h2 {
-    @apply text-3xl;
-  }
-  main h3 {
     @apply text-2xl;
   }
-  main h4 {
+  main h3 {
     @apply text-xl;
   }
-  main h5 {
+  main h4 {
     @apply text-lg;
+  }
+  main h5 {
+    @apply text-base;
   }
   main h6 {
     @apply text-base;
