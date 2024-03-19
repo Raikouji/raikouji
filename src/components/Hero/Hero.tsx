@@ -37,13 +37,13 @@ function Hero() {
             <div
               className={cn(
                 'grid place-content-center',
-                'bottom-0 left-0 h-96 w-96 bg-primary-700/90',
-                'bottom-0 left-0 h-96 w-96',
+                'bottom-0 left-0',
+                'h-72 w-72 lg:h-96 lg:w-96',
                 'bg-primary-700/80 text-center text-white',
               )}
             >
               <div className='flex flex-col gap-3'>
-                <p className='text-5xl'>
+                <p>
                   <Image
                     src='/images/genji-emblem-white.png'
                     alt='源氏の家紋 笹竜胆'
@@ -52,15 +52,19 @@ function Hero() {
                     height={79}
                   />
                 </p>
-                <p className='font-serif text-3xl'>曹洞宗 | 祥雲山</p>
-                <p className='ml-[0.5em] font-serif text-6xl font-bold tracking-[0.5em]'>
+                <p className='font-serif text-xl lg:text-3xl'>
+                  曹洞宗 | 祥雲山
+                </p>
+                <p className='ml-[0.5em] font-serif text-4xl font-bold tracking-[0.5em] lg:text-6xl'>
                   頼光寺
                 </p>
-                <p className='tracking-widest'>
+                <p className='-mt-2 text-sm tracking-widest lg:text-base'>
                   <span className='text-primary-300'>Raikouji</span>{' '}
                   <span className='text-indigo-300'>Temple</span>
                 </p>
-                <p className='font-serif text-2xl'>〜 あじさい寺 〜</p>
+                <p className='font-serif text-xl lg:text-2xl'>
+                  〜 あじさい寺 〜
+                </p>
               </div>
             </div>
           </div>
