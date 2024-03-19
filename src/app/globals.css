@@ -219,6 +219,7 @@
     /* --dot-color: orange; */
     --dot-size: 8px;
     position: relative;
+    overflow: visible;
     height: 1px;
     border: 0;
     background-image: radial-gradient(
