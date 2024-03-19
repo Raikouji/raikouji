@@ -261,7 +261,7 @@ export default function Home() {
                     className='absolute -top-2 left-1 border-t-4 border-primary bg-white px-2 py-3 tracking-widest shadow-lg'
                     style={{ writingMode: 'vertical-rl' }}
                   >
-                    座禅会・写経会
+                    坐禅会・写経会
                   </figcaption>
                 </Link>
               </Fadein>

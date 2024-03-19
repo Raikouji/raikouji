@@ -108,7 +108,7 @@ const photosEvent = [
     height: 600,
     alt: '代替テキスト1',
   },
-  { src: '/images/zazen.jpg', width: 600, height: 900, alt: '座禅会' },
+  { src: '/images/zazen.jpg', width: 600, height: 900, alt: '坐禅会' },
   {
     src: '/images/ajisai-bouquet.jpg',
     width: 600,

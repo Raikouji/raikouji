@@ -191,7 +191,7 @@ export default function Page() {
                   坐禅や読経、食事の作法につきましてはその都度ご説明いたします。
                 </p>
                 <p className='mt-6 text-center font-bold md:text-left'>
-                  【座禅会の流れ】
+                  【坐禅会の流れ】
                 </p>
                 <ol className='mt-2 list-inside list-decimal font-bold leading-7'>
                   <li>本堂内で受付を済ませ、坐禅堂に移動し約30分すわります</li>
