@@ -55,7 +55,7 @@ function Hero() {
                 <p className='font-serif text-xl lg:text-3xl'>
                   曹洞宗 | 祥雲山
                 </p>
-                <p className='ml-[0.5em] font-serif text-4xl font-bold tracking-[0.5em] lg:text-6xl'>
+                <p className='ml-[0.5em] font-serif text-5xl font-bold tracking-[0.5em] lg:text-6xl'>
                   頼光寺
                 </p>
                 <p className='-mt-2 text-sm tracking-widest lg:text-base'>
