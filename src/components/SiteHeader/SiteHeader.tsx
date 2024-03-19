@@ -16,10 +16,16 @@ function SiteHeader() {
                 alt='あじさい寺'
                 width={77}
                 height={52}
+                sizes='(max-width: 640px) 77px, 52px'
+                style={{
+                  width: '77px',
+                  height: 'auto',
+                }}
+                priority
               />
-              <h1 className='-ml-8 flex items-center gap-3 font-serif'>
+              <h1 className='-ml-10 flex items-center gap-1 font-serif'>
                 <span className='tracking-widest'>曹洞宗 祥雲山</span>
-                <span className='text-3xl tracking-[.25em]'>頼光寺</span>
+                <span className='text-3xl tracking-[.2em]'>頼光寺</span>
               </h1>
             </div>
           </Link>
