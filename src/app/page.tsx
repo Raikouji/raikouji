@@ -98,7 +98,7 @@ export default function Home() {
         <div className='flex flex-col gap-12 px-8 pb-12 lg:px-2'>
           <Hero />
 
-          <div className='text-center'>
+          <div className='-mt-12 text-center lg:mt-0'>
             <p className='font-bold'>
               祥雲山 頼光寺※ は、紀元1000年頃に源氏一族によって創立されました。
               <br className='hidden md:inline' />
@@ -122,7 +122,7 @@ export default function Home() {
               className={cn(
                 'absolute -left-6 top-3',
                 'border-t-4 border-gray-800 bg-primary-dark px-2 py-3 shadow-lg',
-                'text-lg tracking-widest text-white ',
+                'text-sm tracking-widest text-white ',
               )}
               style={{ writingMode: 'vertical-rl' }}
             >
@@ -130,17 +130,17 @@ export default function Home() {
             </h2>
             <div className='flex flex-col gap-8 lg:flex-row'>
               <div className='lg:order-1 lg:w-2/3'>
-                <h3 className='text-xl'>
+                <h3 className='text-base'>
                   <a href='#' className='text-primary-dark underline'>
                     0月00日に「●●●●●●●●●●」を開催します
                   </a>
                 </h3>
-                <p className='mt-2'>
+                <p className='mt-2 text-sm'>
                   ここに開花情報等を載せます。ダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝た。
                 </p>
-                <div className='mt-4 border border-primary p-4'>
-                  <h3 className='text-xl'>あじさいの開花状況 (2023-06-17)</h3>
-                  <p className='mt-2'>
+                <div className='mt-3 border border-primary p-4'>
+                  <h3 className='text-base'>あじさいの開花状況 (2023-06-17)</h3>
+                  <p className='mt-2 text-sm'>
                     ここに開花情報等を載せます。ダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝た。
                   </p>
                 </div>
@@ -159,17 +159,17 @@ export default function Home() {
           <section className='pb-16'>
             <div
               className={cn(
-                'full-width relative pr-4',
+                'md:full-width relative md:pr-4',
                 'bg-[length:396.5px_178px] bg-right-top bg-no-repeat',
                 'bg-[url("/images/illust-2-color-ajisai.png")]',
                 styles.wrapper,
               )}
             >
               <div className={cn('relative')}>
-                <div className='w-3/4'>
+                <div className='md:w-3/4'>
                   <Fadein
                     tag='div'
-                    className='aspect-h-3 aspect-w-2 md:aspect-h-9 md:aspect-w-16'
+                    className='aspect-h-2 aspect-w-3 md:aspect-h-9 md:aspect-w-16'
                   >
                     <Image
                       src='/images/ajisai.jpg'
@@ -182,13 +182,13 @@ export default function Home() {
                     />
                   </Fadein>
                 </div>
-                <div className='absolute -bottom-8 w-full'>
+                <div className='md:absolute md:-bottom-8 md:w-full'>
                   <div className='mx-auto max-w-screen-xl'>
                     <div
                       className={cn(
-                        'grid place-content-center p-4 lg:p-8',
-                        'ml-auto w-1/2',
-                        'bg-white/90 text-center shadow-lg',
+                        'p-4 md:grid md:place-content-center lg:p-8',
+                        'md:ml-auto md:w-1/2',
+                        'bg-white/90 text-center md:shadow-lg',
                       )}
                     >
                       <div className='flex flex-col gap-3'>
@@ -221,7 +221,7 @@ export default function Home() {
             <div className='flex flex-wrap justify-center gap-6 lg:flex-nowrap'>
               <Fadein
                 tag='figure'
-                className='relative w-48 shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)]'
+                className='relative w-40 shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)] lg:w-48'
               >
                 <Link href='events' className='hover:opacity-90'>
                   <div className='aspect-h-3 aspect-w-2'>
@@ -244,7 +244,7 @@ export default function Home() {
               </Fadein>
               <Fadein
                 tag='figure'
-                className='relative w-48 shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)]'
+                className='relative w-40 shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)] lg:w-48'
               >
                 <Link href='events' className='hover:opacity-90'>
                   <div className='aspect-h-3 aspect-w-2'>
@@ -267,7 +267,7 @@ export default function Home() {
               </Fadein>
               <Fadein
                 tag='figure'
-                className='relative w-48 shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)]'
+                className='relative w-40 shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)] lg:w-48'
               >
                 <Link href='cemetery' className='hover:opacity-90'>
                   <div className='aspect-h-3 aspect-w-2'>
@@ -290,7 +290,7 @@ export default function Home() {
               </Fadein>
               <Fadein
                 tag='figure'
-                className='relative w-48 shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)]'
+                className='relative w-40 shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)] lg:w-48'
               >
                 <Link href='scarlet-seal' className='hover:opacity-90'>
                   <div className='aspect-h-3 aspect-w-2'>
@@ -313,7 +313,7 @@ export default function Home() {
               </Fadein>
               <Fadein
                 tag='figure'
-                className='relative w-48 shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)]'
+                className='relative w-40 shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)] lg:w-48'
               >
                 <Link href='scarlet-seal' className='hover:opacity-90'>
                   <div className='aspect-h-3 aspect-w-2'>
@@ -347,7 +347,7 @@ export default function Home() {
             <section className='mx-auto flex max-w-screen-xl flex-col gap-12 lg:flex-row lg:items-center'>
               <div className='flex flex-col gap-12 text-center lg:w-72'>
                 <h2
-                  className='mx-auto border-t-4 border-primary pt-3 tracking-[0.35em]'
+                  className='mx-auto border-t-4 border-primary pt-3 text-xl tracking-[0.35em]'
                   style={{ writingMode: 'vertical-rl' }}
                 >
                   頼光寺の風景
