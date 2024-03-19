@@ -1,0 +1,29 @@
+.square {
+  /* --dot-color: orange; */
+  --dot-size: 8px;
+  position: relative;
+  overflow: visible;
+  height: 1px;
+  border: 0;
+  background-image: radial-gradient(
+    closest-side,
+    hsla(0, 0%, 50%, 0.5),
+    hsla(0, 0%, 50%, 0) 100%
+  );
+}
+.square:after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: inline-block;
+  height: var(--dot-size);
+  width: var(--dot-size);
+  margin-top: calc(var(--dot-size) * -0.5);
+  margin-left: calc(var(--dot-size) * -0.5);
+  content: '';
+  background-color: hsla(266, 35%, 23%, 0.6);
+  box-shadow:
+    calc(var(--dot-size) * -1) var(--dot-size) 0 hsla(266, 35%, 23%, 0.3),
+    var(--dot-size) calc(var(--dot-size) * -1) 0 hsla(266, 35%, 23%, 0.3);
+  transform: rotate(45deg);
+}
