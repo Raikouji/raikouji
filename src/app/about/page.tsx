@@ -1,5 +1,6 @@
 import ArticleWrapper from '@/components/ArticleWrapper'
 import Fadein from '@/components/FadeIn'
+import Hr from '@/components/Hr'
 import ImageAboveHeading from '@/components/ImageAboveHeading'
 import { outputMetadata } from '@/utils'
 import type { Metadata } from 'next'
@@ -67,7 +68,7 @@ export default function Page() {
         </div>
       </section>
 
-      <hr className='line-with-three-dots' />
+      <Hr type='square' />
 
       <section>
         <p className='text-center'>

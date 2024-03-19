@@ -8,6 +8,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 
 import ArticleWrapper from '@/components/ArticleWrapper'
+import Hr from '@/components/Hr'
 import { outputMetadata } from '@/utils'
 import { ChevronRightIcon } from 'lucide-react'
 import type { Metadata } from 'next'
@@ -229,7 +230,7 @@ export default function Page() {
         <h3 className='my-4'>No class</h3>
         <hr />
         <h3 className='my-4'>hr.line-with-three-dots</h3>
-        <hr className='line-with-three-dots' />
+        <Hr type='square' />
       </section>
 
       <section>

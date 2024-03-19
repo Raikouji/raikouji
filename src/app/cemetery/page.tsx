@@ -2,6 +2,7 @@ import Image from 'next/image'
 
 import ArticleWrapper from '@/components/ArticleWrapper'
 import Gallery from '@/components/Gallery'
+import Hr from '@/components/Hr'
 import ImageAboveHeading from '@/components/ImageAboveHeading'
 import Card from '@/components/ui/Card'
 import { Button } from '@/components/ui/button'
@@ -137,7 +138,7 @@ export default function Page() {
         </div>
       </section>
 
-      <hr className='line-with-three-dots' />
+      <Hr type='square' />
 
       <div className='full-width bg-secondary-50 px-8 py-12 lg:px-2'>
         <section className='mx-auto max-w-screen-lg'>
@@ -187,7 +188,7 @@ export default function Page() {
         </section>
       </div>
 
-      <hr className='line-with-three-dots' />
+      <Hr type='square' />
 
       <section className='mx-auto max-w-screen-lg py-12'>
         <div
@@ -233,7 +234,7 @@ export default function Page() {
         </div>
       </section>
 
-      <hr className='line-with-three-dots' />
+      <Hr type='square' />
 
       <div className='full-width bg-secondary-50 px-8 py-12 lg:px-2'>
         <section

@@ -1,5 +1,6 @@
 import ArticleWrapper from '@/components/ArticleWrapper'
 import Gallery from '@/components/Gallery'
+import Hr from '@/components/Hr'
 import ImageAboveHeading from '@/components/ImageAboveHeading'
 import { cn, outputMetadata } from '@/utils'
 import type { Metadata } from 'next'
@@ -155,7 +156,7 @@ export default function Page() {
         </div>
       </section>
 
-      <hr className='line-with-three-dots' />
+      <Hr type='square' />
 
       <section id='monthly-events' className='py-16'>
         <div className='mx-auto flex max-w-screen-xl flex-col gap-8'>
@@ -203,7 +204,7 @@ export default function Page() {
                 </ol>
               </div>
             </div>
-            <hr className='line-with-three-dots' />
+
             <div className='py-12'>
               <p>
                 <Image
@@ -231,7 +232,7 @@ export default function Page() {
             </div>
           </div>
 
-          {/*<hr className='line-with-three-dots' />*/}
+          {/*<Hr type='square' />*/}
 
           {/*<div className='mx-auto max-w-screen-md py-12'>*/}
           {/*  <h3 className='text-center'>月例会</h3>*/}

@@ -1,4 +1,5 @@
 import ArticleWrapper from '@/components/ArticleWrapper'
+import Hr from '@/components/Hr'
 import ImageAboveHeading from '@/components/ImageAboveHeading'
 import Card from '@/components/ui/Card'
 import { cn, outputMetadata } from '@/utils'
@@ -84,7 +85,7 @@ export default function Page() {
         </div>
       </section>
 
-      <hr className='line-with-three-dots' />
+      <Hr type='square' />
 
       <section id='wedding' className='mx-auto max-w-screen-lg py-12'>
         <div

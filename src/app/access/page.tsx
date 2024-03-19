@@ -1,4 +1,5 @@
 import ArticleWrapper from '@/components/ArticleWrapper'
+import Hr from '@/components/Hr'
 import ImageAboveHeading from '@/components/ImageAboveHeading'
 import Card from '@/components/ui/Card'
 import { Button } from '@/components/ui/button'
@@ -204,7 +205,7 @@ export default function Page() {
           </p>
         </div>
       </section>
-      <hr className='line-with-three-dots' />
+      <Hr type='square' />
       <div className='full-width bg-secondary-50 px-8 lg:px-2'>
         <section id='access-by-train' className='mx-auto max-w-screen-xl py-16'>
           <p className='text-center'>
@@ -221,7 +222,7 @@ export default function Page() {
         </section>
       </div>
 
-      <hr className='line-with-three-dots' />
+      <Hr type='square' />
 
       <section id='access-by-car' className='my-16'>
         <div className='mx-auto max-w-screen-xl'>
