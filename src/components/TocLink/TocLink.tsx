@@ -1,7 +1,14 @@
 import { cn } from '@/utils'
 import React from 'react'
 
-function TocLink({ children }: { children: React.ReactNode }) {
+function TocLink({
+  className,
+  children,
+  ...delegated
+}: {
+  className?: string
+  children: React.ReactNode
+}) {
   return (
     <ul
       className={cn(
@@ -9,18 +16,29 @@ function TocLink({ children }: { children: React.ReactNode }) {
         '[&>li>a]:text-foreground/70',
         '[&>li:after]:text-foreground/30',
         '[&>li:not(:last-child):after]:mx-3 [&>li:not(:last-child):after]:content-["|"] ',
+        className,
       )}
+      {...delegated}
     >
       {children}
     </ul>
   )
 }
 
-export function TocLinkItem({ id, title }: { id: string; title?: string }) {
+export function TocLinkItem({
+  id,
+  className,
+  children,
+  ...delegated
+}: {
+  id: string
+  className?: string
+  children: string
+}) {
   return (
-    <li key={id}>
+    <li key={id} className={className} {...delegated}>
       <a className='hover:text-primary-400' href={`#${id}`}>
-        {title ? title : id}
+        {children}
       </a>
     </li>
   )

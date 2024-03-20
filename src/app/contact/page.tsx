@@ -1,5 +1,6 @@
 import ArticleWrapper from '@/components/ArticleWrapper'
 import ImageAboveHeading from '@/components/ImageAboveHeading'
+import TocLink, { TocLinkItem } from '@/components/TocLink'
 import Card from '@/components/ui/Card'
 import { Button } from '@/components/ui/button'
 import { cn, outputMetadata } from '@/utils'
@@ -19,30 +20,11 @@ export default function Page() {
   return (
     <ArticleWrapper pageTitle={pageTitle}>
       <div className='mx-auto max-w-screen-md'>
-        <ul
-          className={cn(
-            'flex text-sm',
-            '[&>li>a]:text-foreground/70',
-            '[&>li:after]:text-foreground/30',
-            '[&>li:not(:last-child):after]:mx-3 [&>li:not(:last-child):after]:content-["|"] ',
-          )}
-        >
-          <li>
-            <a className='hover:text-primary-400' href='#ajisai'>
-              あじさいの開花状況
-            </a>
-          </li>
-          <li>
-            <a className='hover:text-primary-400' href='#tel'>
-              電話でのお問合せ
-            </a>
-          </li>
-          <li>
-            <a className='hover:text-primary-400' href='#form'>
-              フォームでのお問合せ
-            </a>
-          </li>
-        </ul>
+        <TocLink>
+          <TocLinkItem id='#ajisai'>あじさいの開花状況</TocLinkItem>
+          <TocLinkItem id='tel'>電話でのお問合せ</TocLinkItem>
+          <TocLinkItem id='form'>フォームでのお問合せ</TocLinkItem>
+        </TocLink>
       </div>
 
       <section>

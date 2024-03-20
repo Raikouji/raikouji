@@ -152,9 +152,9 @@ export default function Page() {
   return (
     <ArticleWrapper pageTitle={pageTitle}>
       <TocLink>
-        <TocLinkItem id='google-map' title='Google マップ' />
-        <TocLinkItem id='access-by-train' title='電車でのアクセス' />
-        <TocLinkItem id='access-by-car' title='車でのアクセス' />
+        <TocLinkItem id='google-map'>Google マップ</TocLinkItem>
+        <TocLinkItem id='access-by-train'>電車でのアクセス</TocLinkItem>
+        <TocLinkItem id='access-by-car'>車でのアクセス</TocLinkItem>
       </TocLink>
 
       <section id='google-map' className='my-16'>

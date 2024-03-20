@@ -4,6 +4,7 @@ import ArticleWrapper from '@/components/ArticleWrapper'
 import Gallery from '@/components/Gallery'
 import Hr from '@/components/Hr'
 import ImageAboveHeading from '@/components/ImageAboveHeading'
+import TocLink, { TocLinkItem } from '@/components/TocLink'
 import Card from '@/components/ui/Card'
 import { Button } from '@/components/ui/button'
 import { cn, outputMetadata } from '@/utils'
@@ -56,35 +57,12 @@ export default function Page() {
           <br />
           能勢電鉄「畦野駅」から徒歩５分とアクセスもしやすい立地です。
         </p>
-        <ul
-          className={cn(
-            'mt-8 flex flex-wrap justify-center text-sm leading-7',
-            '[&>li>a]:text-foreground/70',
-            '[&>li:after]:text-foreground/30',
-            '[&>li:not(:last-child):after]:mx-3 [&>li:not(:last-child):after]:content-["|"] ',
-          )}
-        >
-          <li>
-            <a className='hover:text-primary-400' href='#public-grave'>
-              永代供養共同墓
-            </a>
-          </li>
-          <li>
-            <a className='hover:text-primary-400' href='#mizuko-kuyou'>
-              水子供養
-            </a>
-          </li>
-          <li>
-            <a className='hover:text-primary-400' href='#general-cemetery'>
-              一般墓地（檀家様）
-            </a>
-          </li>
-          <li>
-            <a className='hover:text-primary-400' href='#historic-graves'>
-              歴史にまつわるお墓
-            </a>
-          </li>
-        </ul>
+        <TocLink>
+          <TocLinkItem id='public-grave'>永代供養共同墓</TocLinkItem>
+          <TocLinkItem id='mizuko-kuyou'>水子供養</TocLinkItem>
+          <TocLinkItem id='general-cemetery'>一般墓地（檀家様）</TocLinkItem>
+          <TocLinkItem id='historic-graves'>歴史にまつわるお墓</TocLinkItem>
+        </TocLink>
       </div>
 
       <section className='mx-auto max-w-screen-lg py-12'>

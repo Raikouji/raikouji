@@ -1,8 +1,9 @@
 import ArticleWrapper from '@/components/ArticleWrapper'
 import Gellary from '@/components/Gallery'
 import ImageAboveHeading from '@/components/ImageAboveHeading'
+import TocLink, { TocLinkItem } from '@/components/TocLink'
 import { getGalleryPhotos } from '@/helpers/microcms'
-import { cn, outputMetadata } from '@/utils'
+import { outputMetadata } from '@/utils'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 
@@ -217,30 +218,11 @@ export default async function Page() {
           秋には紅葉をお楽しみいただけます。
         </p>
         <div className='mx-auto mt-4 max-w-screen-md'>
-          <ul
-            className={cn(
-              'flex text-sm',
-              '[&>li>a]:text-foreground/70',
-              '[&>li:after]:text-foreground/30',
-              '[&>li:not(:last-child):after]:mx-3 [&>li:not(:last-child):after]:content-["|"] ',
-            )}
-          >
-            <li>
-              <a className='hover:text-primary-400' href='#temple'>
-                境内の風景
-              </a>
-            </li>
-            <li>
-              <a className='hover:text-primary-400' href='#ajisai'>
-                あじさい
-              </a>
-            </li>
-            <li>
-              <a className='hover:text-primary-400' href='#events'>
-                イベント
-              </a>
-            </li>
-          </ul>
+          <TocLink>
+            <TocLinkItem id='temple'>境内の風景</TocLinkItem>
+            <TocLinkItem id='ajisai'>あじさい</TocLinkItem>
+            <TocLinkItem id='events'>イベント</TocLinkItem>
+          </TocLink>
         </div>
 
         <section className='full-width px-4 py-16'>

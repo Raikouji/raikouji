@@ -2,6 +2,7 @@ import ArticleWrapper from '@/components/ArticleWrapper'
 import Gallery from '@/components/Gallery'
 import Hr from '@/components/Hr'
 import ImageAboveHeading from '@/components/ImageAboveHeading'
+import TocLink, { TocLinkItem } from '@/components/TocLink'
 import { cn, outputMetadata } from '@/utils'
 import type { Metadata } from 'next'
 import Image from 'next/image'
@@ -120,25 +121,10 @@ export default function Page() {
         <p className='text-center font-bold'>
           頼光寺では季節ごとの仏事、また、毎月の行事（早朝坐禅会、写経会、檀家様向け月例会）を開催しています。皆様の参加をお待ちしております。
         </p>
-        <ul
-          className={cn(
-            'mt-8 flex justify-center text-sm',
-            '[&>li>a]:text-foreground/70',
-            '[&>li:after]:text-foreground/30',
-            '[&>li:not(:last-child):after]:mx-3 [&>li:not(:last-child):after]:content-["|"] ',
-          )}
-        >
-          <li>
-            <a className='hover:text-primary-400' href='#annual-events'>
-              年中行事
-            </a>
-          </li>
-          <li>
-            <a className='hover:text-primary-400' href='#monthly-events'>
-              月例行事
-            </a>
-          </li>
-        </ul>
+        <TocLink>
+          <TocLinkItem id='annual-events'>年中行事</TocLinkItem>
+          <TocLinkItem id='monthly-events'>月例行事</TocLinkItem>
+        </TocLink>
       </div>
 
       <section className='id="annual-events" py-16'>

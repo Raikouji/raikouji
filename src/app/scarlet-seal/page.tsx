@@ -1,6 +1,7 @@
 import ArticleWrapper from '@/components/ArticleWrapper'
 import Hr from '@/components/Hr'
 import ImageAboveHeading from '@/components/ImageAboveHeading'
+import TocLink, { TocLinkItem } from '@/components/TocLink'
 import Card from '@/components/ui/Card'
 import { cn, outputMetadata } from '@/utils'
 import type { Metadata } from 'next'
@@ -19,25 +20,10 @@ export default function Page() {
   return (
     <ArticleWrapper pageTitle={pageTitle}>
       <div className='mx-auto max-w-screen-md'>
-        <ul
-          className={cn(
-            'flex text-sm',
-            '[&>li>a]:text-foreground/70',
-            '[&>li:after]:text-foreground/30',
-            '[&>li:not(:last-child):after]:mx-3 [&>li:not(:last-child):after]:content-["|"] ',
-          )}
-        >
-          <li>
-            <a className='hover:text-primary-400' href='#scarlet-seal'>
-              御朱印
-            </a>
-          </li>
-          <li>
-            <a className='hover:text-primary-400' href='#wedding'>
-              仏前結婚式
-            </a>
-          </li>
-        </ul>
+        <TocLink>
+          <TocLinkItem id='scarlet-seal'>御朱印</TocLinkItem>
+          <TocLinkItem id='wedding'>仏前結婚式</TocLinkItem>
+        </TocLink>
       </div>
 
       <section id='scarlet-seal' className='mx-auto max-w-screen-lg py-12'>
