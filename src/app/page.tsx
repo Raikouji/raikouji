@@ -391,7 +391,7 @@ export default function Home() {
                 allowFullScreen={false}
                 loading='lazy'
                 referrerPolicy='no-referrer-when-downgrade'
-                className='absolute left-0 top-0 h-full w-full border-none'
+                className='absolute inset-0 h-full w-full border-none'
               ></iframe>
             </div>
           </section>
