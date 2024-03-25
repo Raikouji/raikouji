@@ -6,6 +6,7 @@ import Card from '@/components/ui/Card'
 import { cn, outputMetadata } from '@/utils'
 import type { Metadata } from 'next'
 import Image from 'next/image'
+import Link from 'next/link'
 
 // for metadata
 const pageTitle = '御朱印、仏前結婚式'
@@ -95,9 +96,19 @@ export default function Page() {
             </h2>
             <p className='mt-8'>
               頼光寺では、静かな雰囲気の中での仏前結婚式をとり行っています。
-              愛と尊敬の誓いを立てる特別な場所で、心からの祝福を捧げます。
+              古き良き伝統に新しい始まりを重ね合わせ、お二人の大切な一日を、神聖な本堂で執り行います。
               詳細についてのお問い合わせやご相談は、いつでもお寺までお気軽にご連絡ください。
             </p>
+            <ul className='mt-4 list-inside list-disc marker:text-tertiary'>
+              <li>
+                小規模な式から最大50人を収容できる式まで、ご参加人数に合わせて柔軟に対応いたします。
+              </li>
+              <li>お食事は、実績のある仕出し業者を紹介可能です。</li>
+              <li>
+                衣装はご自身で手配ください。着替えのためのスペースは用意いたします。
+              </li>
+              <li>大切な瞬間を残すカメラマンもご自身で手配ください。</li>
+            </ul>
             <div className='mx-auto mt-12 max-w-screen-md'>
               <Card
                 className={cn(
@@ -106,15 +117,25 @@ export default function Page() {
                   'rounded-xl shadow-lg',
                 )}
               >
-                <h3 className='text-center text-xl text-secondary-dark'>
-                  仏前結婚式のご案内
-                </h3>
-                <p className='mt-4'>★★内容、流れ、志納金など</p>
-                {/*<ul className='mt-4 list-inside list-disc marker:text-tertiary'>*/}
-                {/*  <li>墓石はありません。</li>*/}
-                {/*  <li>お墓の管理は頼光寺が行います。</li>*/}
-                {/*  <li>お墓の場所は、墓地内で選ぶことができます。</li>*/}
-                {/*</ul>*/}
+                <h4 className=' text-xl text-secondary-dark'>ご依頼の流れ</h4>
+                <p className='mt-2'>
+                  まずはお電話でお問い合わせください。
+                  その後、頼光寺へお越しいただき、本堂での結婚式についてご見学しながら詳細をご説明いたします。
+                  打ち合わせを通じて、具体的な内容を決定していきます。
+                </p>
+                <h4 className='mt-4 text-xl text-secondary-dark'>当日の流れ</h4>
+                <p className='mt-2'>
+                  本堂での厳かな結婚式から始まります。
+                  その後、お色直しを経て、当寺の
+                  <Link
+                    href='../multi-purpose-hall'
+                    className='text-primary underline'
+                  >
+                    多目的ホール「紫陽閣」
+                  </Link>
+                  での披露宴へと移ります。
+                  結婚式のみ当寺で行い、披露宴を別の会場で執り行うことも可能です。
+                </p>
               </Card>
             </div>
           </div>
