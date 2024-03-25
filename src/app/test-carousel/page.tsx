@@ -12,6 +12,8 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel'
 
+import { type CarouselApi } from '@/components/ui/carousel'
+
 const photos = [
   'https://source.unsplash.com/1600x900/?nature,water',
   'https://source.unsplash.com/1600x900/?nature,sky',
@@ -21,8 +23,25 @@ const photos = [
 ]
 
 export default function CarouselPlugin() {
+  const [api, setApi] = React.useState<CarouselApi>()
+  const [current, setCurrent] = React.useState(0)
+  const [count, setCount] = React.useState(0)
+
+  React.useEffect(() => {
+    if (!api) {
+      return
+    }
+
+    setCount(api.scrollSnapList().length)
+    setCurrent(api.selectedScrollSnap() + 1)
+
+    api.on('select', () => {
+      setCurrent(api.selectedScrollSnap() + 1)
+    })
+  }, [api])
+
   const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true }),
+    Autoplay({ delay: 4000, stopOnInteraction: true }),
   )
 
   return (
@@ -36,6 +55,7 @@ export default function CarouselPlugin() {
           align: 'start',
           loop: true,
         }}
+        setApi={setApi}
       >
         <CarouselContent>
           {photos.map((photo, index) => (
@@ -48,6 +68,9 @@ export default function CarouselPlugin() {
             </CarouselItem>
           ))}
         </CarouselContent>
+        <p>
+          {current} / {count}
+        </p>
         <CarouselPrevious />
         <CarouselNext />
       </Carousel>
