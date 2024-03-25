@@ -12,6 +12,14 @@ import {
   CarouselPrevious,
 } from '@/components/ui/carousel'
 
+const photos = [
+  'https://source.unsplash.com/1600x900/?nature,water',
+  'https://source.unsplash.com/1600x900/?nature,sky',
+  'https://source.unsplash.com/1600x900/?nature,forest',
+  'https://source.unsplash.com/1600x900/?nature,tree',
+  'https://source.unsplash.com/1600x900/?nature,flower',
+]
+
 export default function CarouselPlugin() {
   const plugin = React.useRef(
     Autoplay({ delay: 2000, stopOnInteraction: true }),
@@ -30,11 +38,11 @@ export default function CarouselPlugin() {
         }}
       >
         <CarouselContent>
-          {Array.from({ length: 5 }).map((_, index) => (
+          {photos.map((photo, index) => (
             <CarouselItem key={index}>
               <div className='p-1'>
                 <Card className='aspect-square flex items-center justify-center border p-6'>
-                  コンテンツ {index + 1}
+                  <img src={photo} alt='' />
                 </Card>
               </div>
             </CarouselItem>
