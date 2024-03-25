@@ -2,7 +2,6 @@ import Image from 'next/image'
 
 import ArticleWrapper from '@/components/ArticleWrapper'
 import Gallery from '@/components/Gallery'
-import Hr from '@/components/Hr'
 import ImageAboveHeading from '@/components/ImageAboveHeading'
 import TocLink, { TocLinkItem } from '@/components/TocLink'
 import Card from '@/components/ui/Card'
@@ -50,7 +49,7 @@ const photos = [
 
 export default function Page() {
   return (
-    <ArticleWrapper pageTitle={pageTitle}>
+    <ArticleWrapper pageTitle={pageTitle} className='mb-0'>
       <div className='mx-auto max-w-screen-md'>
         <p className='font-bold lg:text-center'>
           頼光寺のお墓は、静かで緑豊かな心安らぐ空間で、永遠の憩いの場所としてふさわしい場所。
@@ -90,36 +89,33 @@ export default function Page() {
               そのような方々のご要望にお応えして、賴光寺では、境内に「永代供養共同墓」を設けました。生前にご契約いただくことで、祭祀の後継者がいない方々のために、永代供養共同墓に遺骨を埋葬された後、私たちは責任を持ってこれを管理します。
             </p>
             <p className='mt-4'>
-              永代にわり、お盆や春秋の彼岸には供養を行います。安心して晩年をお過ごしいただくことができるでしょう。
+              永代にわたり、お盆や春秋の彼岸には供養を行います。安心して晩年をお過ごしいただくことができるでしょう。
             </p>
+            <Card
+              className={cn(
+                'relative mx-auto mt-8 p-8',
+                'bg-[url("/images/bg-paper.png")] bg-cover',
+                'rounded-xl shadow-lg',
+              )}
+            >
+              <h3 className='text-center text-secondary-dark'>
+                永代供養納骨塔のご案内
+              </h3>
+              <p className='mt-4'>
+                当寺永代供養納骨塔へのご納骨をご検討の方は、ご予約の上、当寺にご訪問いただきご見学ください。
+                ご見学の際に、納骨塔の詳細やお手続きの流れについてご説明させていただきます。
+              </p>
+              <ul className='mt-4 list-inside list-disc text-sm marker:text-tertiary'>
+                <li>墓石はありません。</li>
+                <li>お布施の目安：15万円から</li>
+              </ul>
+            </Card>
           </div>
-        </div>
-
-        <div className='mx-auto mt-12 max-w-screen-md'>
-          <Card
-            className={cn(
-              'relative mx-auto p-8',
-              'bg-[url("/images/bg-paper.png")] bg-cover',
-              'rounded-xl shadow-lg',
-            )}
-          >
-            <h3 className='text-center text-secondary-dark'>
-              永代供養納骨塔のご案内
-            </h3>
-            <p className='mt-4'>★★内容、志納金など</p>
-            <ul className='mt-4 list-inside list-disc marker:text-tertiary'>
-              <li>墓石はありません。</li>
-              <li>お墓の管理は頼光寺が行います。</li>
-              <li>お墓の場所は、墓地内で選ぶことができます。</li>
-            </ul>
-          </Card>
         </div>
       </section>
 
-      <Hr type='square' />
-
       <div className='full-width bg-secondary-50 px-8 py-12 lg:px-2'>
-        <section className='mx-auto max-w-screen-lg'>
+        <section className='mx-auto max-w-screen-md'>
           <div id='mizuko-kuyou' className='mt-8'>
             <p className='mx-auto max-w-screen-sm'>
               <Image
@@ -133,8 +129,8 @@ export default function Page() {
               <ImageAboveHeading imageName='momiji' />
             </p>
             <h2 className='mt-3 text-center tracking-widest'>水子供養</h2>
-            <div className='mt-12 flex flex-col gap-4 lg:flex-row lg:gap-12'>
-              <div className='lg:w-1/2'>
+            <div className='mt-12 flex flex-col gap-4 lg:gap-12'>
+              <div className=''>
                 <p>
                   心を込めて水子供養を行います。手厚く供養し、大切に管理しております。緑に囲まれ、初夏には庭を彩る紫陽花が心の安らぎを与えてくれます。
                 </p>
@@ -142,7 +138,7 @@ export default function Page() {
                   都会の喧騒からは遠く、しかし大阪からは１時間以内とアクセスも良好。心静かな環境で故人を偲び、供養することができます。
                 </p>
               </div>
-              <div className='lg:w-1/2'>
+              <div className=''>
                 <Card
                   className={cn(
                     'relative mx-auto p-8',
@@ -153,20 +149,26 @@ export default function Page() {
                   <h3 className='text-center text-secondary-dark'>
                     水子供養のご案内
                   </h3>
-                  <p className='mt-4'>★★内容、志納金など</p>
-                  <ul className='mt-4 list-inside list-disc marker:text-tertiary'>
+                  <p className='mt-4'>
+                    ご依頼・お問合せは、お電話にて承っております。ご家族の想いやご希望をお聞きした上で、法要の日時を決めさせていただきます。供養の法要は、本堂にて行います。
+                  </p>
+                  <ul className='mt-4 list-inside list-disc text-sm marker:text-tertiary'>
                     <li>墓石はありません。</li>
                     <li>お墓の管理は頼光寺が行います。</li>
-                    <li>お墓の場所は、墓地内で選ぶことができます。</li>
+                    <li>お布施の目安：５千円から</li>
                   </ul>
+                  <div className='mt-4 border border-secondary-300 p-3'>
+                    <h4>【来山(来寺)が困難な方】</h4>
+                    <p className='mt-2'>
+                      当寺へのお越しが難しい方は、来寺なしでの供養も可能です。問合せフォームまたはお電話でご連絡いただければ、お聞きした内容に基づき、法要を執り行います。ご希望の方には、供養が行われたことを証明する「回向証」の発行も承ります。
+                    </p>
+                  </div>
                 </Card>
               </div>
             </div>
           </div>
         </section>
       </div>
-
-      <Hr type='square' />
 
       <section className='mx-auto max-w-screen-lg py-12'>
         <div
@@ -197,27 +199,12 @@ export default function Page() {
             </p>
           </div>
         </div>
-
-        <div className='mx-auto mt-12 max-w-screen-md'>
-          <Card
-            className={cn(
-              'relative mx-auto p-8',
-              'bg-[url("/images/bg-paper.png")] bg-cover',
-              'rounded-xl shadow-lg',
-            )}
-          >
-            <h3 className='text-center text-secondary-dark'>檀家様のご案内</h3>
-            <p className='mt-4'>★★説明など</p>
-          </Card>
-        </div>
       </section>
 
-      <Hr type='square' />
-
-      <div className='full-width bg-secondary-50 px-8 py-12 lg:px-2'>
+      <div className='full-width bg-primary-950 px-8 py-12 lg:px-2'>
         <section
           id='historic-graves'
-          className='mx-auto w-full max-w-screen-lg py-12'
+          className='mx-auto w-full max-w-screen-lg py-12 text-white'
         >
           <p className='text-center'>
             <ImageAboveHeading imageName='uguisu' />
@@ -229,7 +216,7 @@ export default function Page() {
             詳しくは
             <Link
               href='about'
-              className='text-primary underline hover:no-underline'
+              className='text-primary-300 underline hover:no-underline'
             >
               「頼光寺の沿革」
             </Link>
