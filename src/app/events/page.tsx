@@ -3,6 +3,7 @@ import Gallery from '@/components/Gallery'
 import Hr from '@/components/Hr'
 import ImageAboveHeading from '@/components/ImageAboveHeading'
 import TocLink, { TocLinkItem } from '@/components/TocLink'
+import Card from '@/components/ui/Card'
 import { cn, outputMetadata } from '@/utils'
 import type { Metadata } from 'next'
 import Image from 'next/image'
@@ -161,33 +162,37 @@ export default function Page() {
                   alt='早朝坐禅会'
                   width={2000}
                   height={1333}
+                  className='rounded-md'
                 />
               </p>
               <h3 className='mt-6 text-center tracking-widest'>早朝坐禅会</h3>
               <p className='mt-2 text-center'>
-                毎月第１日曜日 午前６時半〜
+                毎月第１日曜日 午前６時半〜８時ごろ
                 <br />
-                （１月、８月は除く）
+                （※１月、８月は除く）
                 <br />
                 参加費なし
               </p>
               <div className='mx-auto max-w-screen-sm'>
                 <p className='mt-4 md:text-center'>
-                  初めての方でも気軽にご参加いただけます。
+                  初めての方でも気軽にご参加ください。
                   <br className='hidden md:inline' />
-                  坐禅や読経、食事の作法につきましてはその都度ご説明いたします。
+                  坐禅や読経、食事の作法につきましては、その都度ご説明いたします。
                 </p>
-                <p className='mt-6 text-center font-bold md:text-left'>
-                  【坐禅会の流れ】
-                </p>
-                <ol className='mt-2 list-inside list-decimal font-bold leading-7'>
-                  <li>本堂内で受付を済ませ、坐禅堂に移動し約30分すわります</li>
-                  <li>その後、本堂にて朝のお勤め（読経）</li>
-                  <li>
-                    再度坐禅堂にて坐禅をしながら朝ご飯（おかゆ）を召し上がっていただきます
-                  </li>
-                  <li>8時頃解散となります </li>
-                </ol>
+                <Card className='mt-4 rounded bg-secondary-50 px-4 py-3 shadow'>
+                  <p className='text-center font-bold text-secondary'>
+                    【坐禅会の流れ】
+                  </p>
+                  <ol className='mt-2 list-inside list-decimal leading-7'>
+                    <li>本堂内で受付、坐禅堂(紫陽閣)に移動</li>
+                    <li>約30分間の坐禅</li>
+                    <li>本堂にて朝のお勤め(読経)</li>
+                    <li>
+                      坐禅堂にて坐禅をしながら、朝ご飯(おかゆ)を召し上がっていただきます
+                    </li>
+                    <li>解散</li>
+                  </ol>
+                </Card>
               </div>
             </div>
 
@@ -198,6 +203,7 @@ export default function Page() {
                   alt='早朝坐禅会'
                   width={2000}
                   height={1333}
+                  className='rounded-md'
                 />
               </p>
               <h3 className='mt-6 text-center tracking-widest'>写経会</h3>
