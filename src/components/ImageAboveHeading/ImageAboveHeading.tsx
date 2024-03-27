@@ -20,7 +20,7 @@ function ImageAboveHeading({
   function renderSrc(imageName: string | undefined): string {
     switch (imageName) {
       case 'lotus':
-        return '/images/shape_lotus.png'
+        return '/images/shape-lotus.png'
       case 'frog':
         return '/images/shape-frog.png'
       case 'statue':
