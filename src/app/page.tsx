@@ -193,7 +193,7 @@ export default function Home() {
                     >
                       <div className='flex flex-col gap-3'>
                         <p className='text-center'>
-                          <ImageAboveHeading />
+                          <ImageAboveHeading imageName='bell' />
                         </p>
                         <h2>頼光寺について</h2>
                         <p>
@@ -218,7 +218,11 @@ export default function Home() {
           </section>
 
           <section className='py-4'>
-            <div className='flex flex-wrap justify-center gap-6 lg:flex-nowrap'>
+            <p className='text-center'>
+              <ImageAboveHeading imageName='lotus' />
+            </p>
+            <h2 className='mt-2 text-center tracking-widest'>ご案内メニュー</h2>
+            <div className='mt-12 flex flex-wrap justify-center gap-6 lg:flex-nowrap'>
               <Fadein
                 tag='figure'
                 className='relative w-40 shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)] lg:w-48'
