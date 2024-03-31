@@ -15,7 +15,7 @@ export default function NextJsImage({
         placeholder={'blurDataURL' in photo ? 'blur' : undefined}
         {...{ alt, title, sizes, className, onClick }}
       />
-      <figcaption>あああああ</figcaption>
+      <figcaption>{title}</figcaption>
     </figure>
   )
 }
