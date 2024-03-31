@@ -1,8 +1,14 @@
 'use client'
 
+// embla-carousel: @ref https://github.com/shadcn-ui/ui/issues/2281
+// type CarouselApi = UseEmblaCarouselType[1];
+// type CarouselPlugin = UseCarouselParameters[1];
+
 import Autoplay from 'embla-carousel-autoplay'
-import useEmblaCarousel, { EmblaOptionsType } from 'embla-carousel-react'
+import useEmblaCarousel from 'embla-carousel-react'
 import Image from 'next/image'
+type UseCarouselParameters = Parameters<typeof useEmblaCarousel>
+type CarouselOptions = UseCarouselParameters[0]
 
 type Image = {
   src: string
@@ -12,7 +18,7 @@ type Image = {
 type Images = Image[]
 
 function Slider({ images }: { images: Images }) {
-  const emblaOptions: EmblaOptionsType = { loop: true }
+  const emblaOptions: CarouselOptions = { loop: true }
   const autoplayOptions = {
     delay: 8000,
     stopOnMouseEnter: true,
