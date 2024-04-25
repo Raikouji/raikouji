@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <GetScrollBarWidth>
       <html lang='ja' className='font-sans'>
-        <body className='relative'>
+        <body className='relative antialiased'>
           <SiteHeader />
           {children}
           <SiteFooter />
