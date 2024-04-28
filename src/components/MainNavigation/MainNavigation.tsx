@@ -56,7 +56,7 @@ function MainNavigation() {
         </div>
       )}
 
-      {isMobileMenuOpen && (
+      {isMobile && isMobileMenuOpen && (
         <nav
           className={cn(
             'absolute inset-4 z-20 h-[95vh] ',
