@@ -128,16 +128,16 @@ export default function Page() {
         </TocLink>
       </div>
 
-      <section className='id="annual-events" py-16'>
+      <section id='annual-events' className='max-w-screen-lg py-16'>
         <div className='mx-auto max-w-screen-lg'>
           <p className='text-center'>
             <ImageAboveHeading imageName='chime' />
           </p>
           <h2 className='mt-3 text-center'>年中行事</h2>
-          <div className='mt-8 flex flex-col items-center gap-4 lg:flex-row lg:gap-12'>
+          <div className='mt-8 flex flex-col gap-4 lg:flex-row lg:gap-12'>
             <EventList events={events} className='my-6' />
             <div className='flex-grow'>
-              <Gallery photos={photos} col={1} colMd={3} />
+              <Gallery photos={photos} />
             </div>
           </div>
         </div>
