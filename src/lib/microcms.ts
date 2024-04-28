@@ -1,27 +1,5 @@
-import type {
-  MicroCMSDate,
-  MicroCMSImage,
-  MicroCMSQueries,
-} from 'microcms-js-sdk'
-
-import { createClient } from 'microcms-js-sdk'
-
-// news の型定義
-export type News = {
-  id: string
-  title: string
-  content: string
-  eyecatch?: MicroCMSImage
-} & MicroCMSDate
-
-// gallery の型定義
-export type Gallery = {
-  id: string
-  caption?: string
-  category: string[]
-  isDisplayOnHome: boolean
-  photo: MicroCMSImage
-} & MicroCMSDate
+import { Gallery, News } from '@/types/post'
+import { MicroCMSQueries, createClient } from 'microcms-js-sdk'
 
 if (!process.env.MICROCMS_SERVICE_DOMAIN) {
   throw new Error('MICROCMS_SERVICE_DOMAIN is required')
@@ -42,15 +20,13 @@ export const client = createClient({
  * @param queries
  */
 export const getList = async (queries?: MicroCMSQueries) => {
-  const listData = await client.getList<News>({
-    endpoint: 'news',
-    queries,
-  })
-
   // データの取得が目視しやすいよう明示的に遅延効果を追加
   // await new Promise((resolve) => setTimeout(resolve, 3000))
 
-  return listData
+  return await client.getList<News>({
+    endpoint: 'news',
+    queries,
+  })
 }
 
 /**
@@ -69,7 +45,7 @@ export const getDetail = async (
   })
 
   // データの取得が目視しやすいよう明示的に遅延効果を追加
-  await new Promise((resolve) => setTimeout(resolve, 3000))
+  // await new Promise((resolve) => setTimeout(resolve, 3000))
 
   return detailData
 }
@@ -79,13 +55,11 @@ export const getDetail = async (
  * @param queries
  */
 export const getGalleryPhotos = async (queries?: MicroCMSQueries) => {
-  const listData = await client.getList<Gallery>({
-    endpoint: 'gallery',
-    queries,
-  })
-
   // データの取得が目視しやすいよう明示的に遅延効果を追加
   // await new Promise((resolve) => setTimeout(resolve, 3000))
 
-  return listData
+  return await client.getList<Gallery>({
+    endpoint: 'gallery',
+    queries,
+  })
 }
