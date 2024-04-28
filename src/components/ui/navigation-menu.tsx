@@ -44,7 +44,7 @@ const navigationMenuTriggerStyle = cva(
   'inline-flex w-max items-center justify-center group' +
     ' h-10 rounded-md px-4 py-2' +
     ' bg-background hover:bg-accent focus:bg-accent data-[active]:bg-accent/50 data-[state=open]:bg-accent/50' +
-    ' font-bold transition-colors hover:text-accent-foreground focus:text-accent-foreground' +
+    ' transition-colors hover:text-accent-foreground focus:text-accent-foreground' +
     ' focus:outline-none disabled:pointer-events-none disabled:opacity-50',
 )
 

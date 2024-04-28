@@ -1,92 +1,83 @@
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from '@/components/ui/navigation-menu'
 import { cn } from '@/utils'
-import Link from 'next/link'
-import styles from './MainNavigationDesktop.module.css'
+import React from 'react'
 
 function MainNavigationDesktop({
-  setActiveMenu,
-  isSubMenuOpen,
-  setIsSubMenuOpen,
   items,
   segment,
 }: {
-  activeMenu: string
-  setActiveMenu: (path: string) => void
-  isSubMenuOpen: boolean
-  setIsSubMenuOpen: (isOpen: boolean) => void
   items: {
-    path: string
-    name: string
-    subMenu?: { path: string; name: string }[]
+    title: string
+    href: string
+    subMenu?: { title: string; href: string }[]
   }[]
   segment: string | null
 }) {
   return (
-    <nav className={styles.wapper}>
-      <ul className='flex gap-4 [&>li>a]:p-2'>
-        {items.map((item, index) => {
-          const isActive = item.path === segment
-
-          return (
-            <li
-              key={index}
-              className={cn(`relative`, isActive ? 'font-bold' : undefined)}
-              onMouseOver={() => setActiveMenu(item.path)}
-              onMouseOut={() => setActiveMenu('')}
-            >
-              <Link
-                href={`/${item.path}`}
-                className={cn(
-                  'text-foreground/80 hover:text-foreground',
-                  'hover:border-b hover:border-b-primary-400',
-                  'transition-all ease-out',
-                )}
-                onMouseEnter={() => setIsSubMenuOpen(true)}
-                onMouseLeave={() => {
-                  isSubMenuOpen && setIsSubMenuOpen(false)
-                }}
-              >
-                {item.name}
-              </Link>
-              {item.subMenu && (
-                <ul
-                  className={cn(
-                    'absolute left-0 top-full z-30',
-                    'w-48 rounded-lg bg-primary-100 p-2 shadow-lg',
-                    'transition-all duration-300 ease-out',
-                    !isSubMenuOpen && 'hidden',
-                  )}
-                  onMouseLeave={() => setIsSubMenuOpen(false)}
-                >
-                  {item.subMenu.map((subItem, index) => {
-                    const isActive = subItem.path === segment
-
-                    return (
-                      <li
+    <NavigationMenu>
+      <NavigationMenuList>
+        {items.map((item, index) => (
+          <NavigationMenuItem key={index}>
+            {item.subMenu ? (
+              <>
+                <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className='grid w-[400px] gap-3 p-4 text-sm md:w-[26em] md:grid-cols-2'>
+                    {item.subMenu.map((subItem, index) => (
+                      <ListItem
                         key={index}
-                        className={isActive ? 'font-bold' : 'font-normal'}
-                      >
-                        <Link
-                          href={`/${subItem.path}`}
-                          className={cn(
-                            'block px-3 py-2 text-foreground/80',
-                            'transition-all ease-out',
-                            'hover:rounded-md hover:bg-primary-200 hover:text-foreground',
-                          )}
-                          onClick={() => setIsSubMenuOpen(false)}
-                        >
-                          {subItem.name}
-                        </Link>
-                      </li>
-                    )
-                  })}
-                </ul>
-              )}
-            </li>
-          )
-        })}
-      </ul>
-    </nav>
+                        title={subItem.title}
+                        href={subItem.href}
+                      />
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </>
+            ) : (
+              <ListItem title={item.title} href={item.href} segment={segment} />
+            )}
+          </NavigationMenuItem>
+        ))}
+      </NavigationMenuList>
+    </NavigationMenu>
   )
 }
 
 export default MainNavigationDesktop
+
+type ListItemProps = React.ComponentPropsWithoutRef<'a'> & {
+  segment?: string | null
+  className?: string
+  title: string
+}
+
+const ListItem = React.forwardRef<React.ElementRef<'a'>, ListItemProps>(
+  ({ segment, className, title, ...props }, ref) => {
+    return (
+      <li>
+        <NavigationMenuLink asChild>
+          <a
+            ref={ref}
+            className={cn(
+              segment === props.href && 'font-bold',
+              'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors' +
+                ' hover:bg-primary-100 hover:text-accent-foreground focus:bg-primary-100 focus:text-accent-foreground',
+              className,
+            )}
+            {...props}
+          >
+            {title}
+          </a>
+        </NavigationMenuLink>
+      </li>
+    )
+  },
+)
+ListItem.displayName = 'ListItem'
