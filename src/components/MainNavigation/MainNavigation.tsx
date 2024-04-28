@@ -60,7 +60,7 @@ function MainNavigation() {
         <nav
           className={cn(
             'absolute inset-4 z-20 h-[95vh] ',
-            'flex items-center justify-center p-8',
+            'flex justify-center p-8',
             'bg-white opacity-95 shadow-lg',
             'transition-opacity duration-300 ease-out',
           )}
