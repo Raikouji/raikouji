@@ -16,48 +16,36 @@ export const client = createClient({
 })
 
 /**
- * 新着情報の一覧を取得
- * @param queries
+ * 新着情報
  */
-export const getList = async (queries?: MicroCMSQueries) => {
-  // データの取得が目視しやすいよう明示的に遅延効果を追加
-  // await new Promise((resolve) => setTimeout(resolve, 3000))
 
+// 一覧を取得
+export const getNewsList = async (queries?: MicroCMSQueries) => {
+  // await new Promise((resolve) => setTimeout(resolve, 3000)) // 確認用の遅延処理
   return await client.getList<News>({
     endpoint: 'news',
     queries,
   })
 }
 
-/**
- * 新着情報の詳細を取得
- * @param contentId
- * @param queries
- */
-export const getDetail = async (
+// 詳細を取得
+export const getNewsDetail = async (
   contentId: string,
   queries?: MicroCMSQueries,
 ) => {
-  const detailData = await client.getListDetail<News>({
+  return await client.getListDetail<News>({
     endpoint: 'news',
     contentId,
     queries,
   })
-
-  // データの取得が目視しやすいよう明示的に遅延効果を追加
-  // await new Promise((resolve) => setTimeout(resolve, 3000))
-
-  return detailData
 }
 
 /**
- * ギャラリーの写真一覧を取得
- * @param queries
+ * ギャラリー
  */
-export const getGalleryPhotos = async (queries?: MicroCMSQueries) => {
-  // データの取得が目視しやすいよう明示的に遅延効果を追加
-  // await new Promise((resolve) => setTimeout(resolve, 3000))
 
+// 一覧を取得
+export const getGalleryList = async (queries?: MicroCMSQueries) => {
   return await client.getList<Gallery>({
     endpoint: 'gallery',
     queries,

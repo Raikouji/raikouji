@@ -2,7 +2,7 @@ import ArticleWrapper from '@/components/ArticleWrapper'
 import Gellary from '@/components/Gallery'
 import ImageAboveHeading from '@/components/ImageAboveHeading'
 import TocLink, { TocLinkItem } from '@/components/TocLink'
-import { getGalleryPhotos } from '@/lib/microcms'
+import { getGalleryList } from '@/lib/microcms'
 import { outputMetadata } from '@/utils'
 import type { Metadata } from 'next'
 import Image from 'next/image'
@@ -119,7 +119,7 @@ const photosEvent = [
 ]
 
 export default async function Page() {
-  const { contents, totalCount, offset, limit } = await getGalleryPhotos({
+  const { contents, totalCount, offset, limit } = await getGalleryList({
     limit: 100,
   })
 
