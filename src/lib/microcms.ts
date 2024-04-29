@@ -1,4 +1,4 @@
-import { Gallery, News } from '@/types/post'
+import { Blog, Gallery } from '@/types/post'
 import { MicroCMSQueries, createClient } from 'microcms-js-sdk'
 
 if (!process.env.MICROCMS_SERVICE_DOMAIN) {
@@ -20,21 +20,21 @@ export const client = createClient({
  */
 
 // 一覧を取得
-export const getNewsList = async (queries?: MicroCMSQueries) => {
+export const getBlogList = async (queries?: MicroCMSQueries) => {
   // await new Promise((resolve) => setTimeout(resolve, 3000)) // 確認用の遅延処理
-  return await client.getList<News>({
-    endpoint: 'news',
+  return await client.getList<Blog>({
+    endpoint: 'blog',
     queries,
   })
 }
 
 // 詳細を取得
-export const getNewsDetail = async (
+export const getBlogDetail = async (
   contentId: string,
   queries?: MicroCMSQueries,
 ) => {
-  return await client.getListDetail<News>({
-    endpoint: 'news',
+  return await client.getListDetail<Blog>({
+    endpoint: 'blog',
     contentId,
     queries,
   })

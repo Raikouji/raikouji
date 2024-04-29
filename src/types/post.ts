@@ -1,7 +1,7 @@
 import type { MicroCMSDate, MicroCMSImage } from 'microcms-js-sdk'
 
 // news の型定義
-export type News = {
+export type Blog = {
   id: string
   title: string
   content: string
