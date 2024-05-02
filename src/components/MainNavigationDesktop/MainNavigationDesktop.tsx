@@ -61,7 +61,7 @@ type ListItemProps = React.ComponentPropsWithoutRef<'a'> & {
 const ListItem = React.forwardRef<React.ElementRef<'a'>, ListItemProps>(
   ({ segment, className, title, ...props }, ref) => {
     return (
-      <li>
+      <>
         <NavigationMenuLink asChild>
           <a
             ref={ref}
@@ -76,7 +76,7 @@ const ListItem = React.forwardRef<React.ElementRef<'a'>, ListItemProps>(
             {title}
           </a>
         </NavigationMenuLink>
-      </li>
+      </>
     )
   },
 )

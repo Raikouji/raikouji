@@ -2,10 +2,10 @@
 
 import MainNavigationDesktop from '@/components/MainNavigationDesktop'
 import { cn } from '@/utils'
-import { useMediaQuery } from '@react-hookz/web'
 import Link from 'next/link'
 import { useSelectedLayoutSegment } from 'next/navigation'
 import React from 'react'
+import { useMediaQuery } from 'usehooks-ts'
 
 function MainNavigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
@@ -35,8 +35,9 @@ function MainNavigation() {
     },
   ]
 
-  const isMobile = useMediaQuery('only screen and (max-width : 768px)', {
-    initializeWithValue: false, // ハイドレーションエラーを防ぐため
+  const isMobile = useMediaQuery('(max-width: 769px)', {
+    defaultValue: false,
+    initializeWithValue: false,
   })
 
   return (
