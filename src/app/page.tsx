@@ -225,7 +225,7 @@ export default function Home() {
             <div className='mt-12 flex flex-wrap justify-center gap-6 lg:flex-nowrap'>
               <Fadein
                 tag='figure'
-                className='relative w-40 shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)] lg:w-48'
+                className='relative w-36 shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)] lg:w-48'
               >
                 <Link href='events' className='hover:opacity-90'>
                   <div className='aspect-h-3 aspect-w-2'>
@@ -248,7 +248,7 @@ export default function Home() {
               </Fadein>
               <Fadein
                 tag='figure'
-                className='relative w-40 shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)] lg:w-48'
+                className='relative w-36 shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)] lg:w-48'
               >
                 <Link href='events' className='hover:opacity-90'>
                   <div className='aspect-h-3 aspect-w-2'>
@@ -271,7 +271,7 @@ export default function Home() {
               </Fadein>
               <Fadein
                 tag='figure'
-                className='relative w-40 shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)] lg:w-48'
+                className='relative w-36 shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)] lg:w-48'
               >
                 <Link href='cemetery' className='hover:opacity-90'>
                   <div className='aspect-h-3 aspect-w-2'>
@@ -294,7 +294,7 @@ export default function Home() {
               </Fadein>
               <Fadein
                 tag='figure'
-                className='relative w-40 shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)] lg:w-48'
+                className='relative w-36 shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)] lg:w-48'
               >
                 <Link href='scarlet-seal' className='hover:opacity-90'>
                   <div className='aspect-h-3 aspect-w-2'>
@@ -317,7 +317,7 @@ export default function Home() {
               </Fadein>
               <Fadein
                 tag='figure'
-                className='relative w-40 shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)] lg:w-48'
+                className='relative w-36 shadow-[3px_5px_4px_0_rgba(0,0,0,0.2)] lg:w-48'
               >
                 <Link href='scarlet-seal' className='hover:opacity-90'>
                   <div className='aspect-h-3 aspect-w-2'>
