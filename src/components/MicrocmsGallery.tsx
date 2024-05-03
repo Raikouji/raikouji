@@ -1,6 +1,11 @@
 /*
   Usage:
   <MicrocmsGallery
+    queries={{
+      limit: 100,
+      filters: { category: { equals: 'gallery' } },
+      orders: 'system:default', // '-publishedAt' or 'publishedAt'
+    }}
     cols={2} // default
     colsMd={3} // optional
     colsLg={4} // optional
@@ -11,9 +16,11 @@
  */
 import { getGalleryList } from '@/lib/microcms'
 import { cn } from '@/utils'
+import { MicroCMSQueries } from 'microcms-js-sdk'
 import Image from 'next/image'
 
 type Props = {
+  queries: MicroCMSQueries
   cols?: number
   colsMd?: number
   colsLg?: number
@@ -21,7 +28,9 @@ type Props = {
   className?: string
   childClassName?: string
 }
+
 async function MicrocmsGallery({
+  queries,
   cols = 2,
   colsMd,
   colsLg,
@@ -30,11 +39,7 @@ async function MicrocmsGallery({
   childClassName = 'mb-2',
   ...delegated
 }: Props) {
-  const { contents } = await getGalleryList({
-    limit: 100,
-    orders: 'system:default',
-    filters: 'isDisplayOnHome[equals]true',
-  })
+  const { contents } = await getGalleryList(queries)
 
   if (!contents || contents.length === 0) {
     return <p>No contents</p>
