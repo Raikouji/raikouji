@@ -1,93 +1,12 @@
 import Fadein from '@/components/FadeIn'
-import Gallery from '@/components/Gallery'
 import Hero from '@/components/Hero'
 import ImageAboveHeading from '@/components/ImageAboveHeading'
+import MicrocmsGallery from '@/components/MicrocmsGallery'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/utils'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from './homepage.module.css'
-
-const photos = [
-  {
-    src: '/images/lorem.jpg',
-    srcSet: [
-      { src: '/images/image1_400x300.jpg', width: 400, height: 300 },
-      { src: '/images/image1_200x150.jpg', width: 200, height: 150 },
-    ],
-    width: 900,
-    height: 600,
-    alt: '代替テキスト1',
-  },
-  {
-    src: '/images/dummy-01.jpg',
-    width: 900,
-    height: 600,
-    srcSet: [
-      { src: '/images/image1_400x300.jpg', width: 400, height: 300 },
-      { src: '/images/image1_200x150.jpg', width: 200, height: 150 },
-    ],
-    alt: '代替テキスト2',
-  },
-  {
-    src: '/images/dummy-02.jpg',
-    srcSet: [
-      { src: '/images/image1_400x300.jpg', width: 400, height: 300 },
-      { src: '/images/image1_200x150.jpg', width: 200, height: 150 },
-    ],
-    width: 600,
-    height: 900,
-  },
-  {
-    src: '/images/dummy-03.jpg',
-    width: 900,
-    height: 600,
-    srcSet: [
-      { src: '/images/image1_400x300.jpg', width: 400, height: 300 },
-      { src: '/images/image1_200x150.jpg', width: 200, height: 150 },
-    ],
-    alt: '代替テキスト4',
-  },
-  {
-    src: '/images/dummy-02.jpg',
-    srcSet: [
-      { src: '/images/image1_400x300.jpg', width: 400, height: 300 },
-      { src: '/images/image1_200x150.jpg', width: 200, height: 150 },
-    ],
-    width: 600,
-    height: 900,
-    alt: '代替テキスト5',
-  },
-  {
-    src: '/images/lorem.jpg',
-    srcSet: [
-      { src: '/images/image1_400x300.jpg', width: 400, height: 300 },
-      { src: '/images/image1_200x150.jpg', width: 200, height: 150 },
-    ],
-    width: 900,
-    height: 600,
-  },
-  {
-    src: '/images/dummy-01.jpg',
-    width: 900,
-    height: 600,
-    srcSet: [
-      { src: '/images/image1_400x300.jpg', width: 400, height: 300 },
-      { src: '/images/image1_200x150.jpg', width: 200, height: 150 },
-    ],
-    alt: '代替テキスト7',
-  },
-  {
-    src: '/images/dummy-03.jpg',
-    width: 900,
-    height: 600,
-    srcSet: [
-      { src: '/images/image1_400x300.jpg', width: 400, height: 300 },
-      { src: '/images/image1_200x150.jpg', width: 200, height: 150 },
-    ],
-    alt: '代替テキスト8',
-  },
-]
 
 export default function Home() {
   return (
@@ -361,7 +280,17 @@ export default function Home() {
                 </p>
               </div>
               <div className='flex-grow'>
-                <Gallery photos={photos} />
+                <MicrocmsGallery
+                  queries={{
+                    limit: 100,
+                    orders: 'system:default',
+                    filters: 'isDisplayOnHome[equals]true',
+                  }}
+                  colsMd={3}
+                  colsLg={4}
+                  colsXL={5}
+                  imageWidth={360}
+                />
                 <p className='mt-8 text-center'>
                   <Button asChild>
                     <Link href='gallery'>ギャラリーを見る</Link>
