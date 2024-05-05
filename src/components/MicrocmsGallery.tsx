@@ -57,6 +57,7 @@ async function MicrocmsGallery({
         colsXL && `@xl\:columns-${colsXL}`,
         className,
       )}
+      {...delegated}
     >
       {contents.map((post) => {
         return (
