@@ -20,7 +20,7 @@ export default function Page() {
   )
 }
 
-export function HamburgerMenuIcon() {
+function HamburgerMenuIcon() {
   const [isOpen, setIsOpen] = React.useState(false)
   return (
     <>
@@ -78,7 +78,7 @@ export function HamburgerMenuIcon() {
   )
 }
 
-export function CardNarrow() {
+function CardNarrow() {
   return (
     //幅狭い、カード
     <div className='mx-auto mt-12 max-w-screen-md'>
