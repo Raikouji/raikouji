@@ -1,7 +1,7 @@
 /*
   Usage:
   <MicrocmsGallery
-    queries={{
+    queries={{ // MicroCMSQueries
       limit: 100,
       filters: { category: { equals: 'gallery' } },
       orders: 'system:default', // '-publishedAt' or 'publishedAt'
@@ -10,6 +10,7 @@
     colsMd={3} // optional
     colsLg={4} // optional
     colsXL={5} // optional
+    imageWidth={600} // default
     className='gap-2' // default
     childClassName='mb-2' //default
   />
@@ -25,6 +26,7 @@ type Props = {
   colsMd?: number
   colsLg?: number
   colsXL?: number
+  imageWidth?: number
   className?: string
   childClassName?: string
 }
@@ -35,6 +37,7 @@ async function MicrocmsGallery({
   colsMd,
   colsLg,
   colsXL,
+  imageWidth = 600,
   className = 'gap-2',
   childClassName = 'mb-2',
   ...delegated
@@ -49,10 +52,9 @@ async function MicrocmsGallery({
     <ul
       className={cn(
         `columns-${cols}`,
-        colsMd && `md:columns-${colsMd}`,
-        colsLg && `lg:columns-${colsLg}`,
-        colsLg && `lg:columns-${colsLg}`,
-        colsXL && `xl:columns-${colsXL}`,
+        colsMd && `@md\:columns-${colsMd}`,
+        colsLg && `@lg\:columns-${colsLg}`,
+        colsXL && `@xl\:columns-${colsXL}`,
         className,
       )}
     >
@@ -63,11 +65,12 @@ async function MicrocmsGallery({
               <Image
                 alt={post?.caption || ''}
                 src={post.photo.url}
-                width={600}
+                width={imageWidth}
                 height={
-                  (600 * Number(post.photo?.height)) / Number(post.photo?.width)
+                  (imageWidth * Number(post.photo?.height)) /
+                  Number(post.photo?.width)
                 }
-                className='rounded'
+                className='w-full rounded'
               />
               {post?.caption && (
                 <figcaption className='absolute bottom-1 left-1 inline-block rounded bg-black/60 px-1 text-sm leading-tight text-white'>

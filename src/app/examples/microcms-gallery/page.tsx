@@ -8,9 +8,12 @@ export default function StaticPage() {
         orders: 'system:default',
         filters: 'isDisplayOnHome[equals]true',
       }}
+      cols={2}
       colsMd={3}
       colsLg={4}
       colsXL={5}
+      imageWidth={600}
+      className='@container'
     />
   )
 }
