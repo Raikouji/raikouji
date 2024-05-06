@@ -74,7 +74,7 @@ async function MicrocmsGallery({
                 className='w-full rounded'
               />
               {post?.caption && (
-                <figcaption className='absolute bottom-1 left-1 inline-block rounded bg-black/60 px-1 text-sm leading-tight text-white'>
+                <figcaption className='absolute bottom-1 left-1 inline-block rounded bg-black/60 px-1 text-xs leading-tight text-white md:text-sm'>
                   {post?.caption}
                 </figcaption>
               )}
