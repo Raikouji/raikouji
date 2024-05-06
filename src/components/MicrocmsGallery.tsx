@@ -57,9 +57,13 @@ async function MicrocmsGallery({
     <ul
       className={cn(
         `columns-${cols}`,
-        colsMd && `@md\:columns-${colsMd}`,
-        colsLg && `@lg\:columns-${colsLg}`,
-        colsXL && `@xl\:columns-${colsXL}`,
+        // colsMd && `@md\:columns-${colsMd}`,
+        // colsLg && `@lg\:columns-${colsLg}`,
+        // colsXL && `@xl\:columns-${colsXL}`,
+        'lg:columns-3',
+        colsMd && `@3xl:columns-${colsMd}`, // md, 768px
+        colsLg && `@5xl:columns-${colsLg}`, // lg, 1024px
+        colsXL && `@7xl:columns-${colsXL}`, // xl, 1280px
         className,
       )}
       {...delegated}
