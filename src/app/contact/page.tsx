@@ -74,9 +74,6 @@ export default function Page() {
                 src='https://docs.google.com/forms/d/e/1FAIpQLSehno7mm4V8lPWX1toSMtIP4TJ59f6RhlFReuwQWWtw-gfltw/viewform?embedded=true'
                 width='100%'
                 height='1000'
-                frameBorder={0}
-                marginHeight={0}
-                marginWidth={0}
               >
                 読み込んでいます…
               </iframe>
@@ -121,7 +118,7 @@ export default function Page() {
             <p className='text-center'>
               <ImageAboveHeading imageName='priest2' />
             </p>
-            <h2 id='tel' className='mt-3 text-center font-serif'>
+            <h2 id='faq' className='mt-3 text-center font-serif'>
               よくいただく質問
             </h2>
             <p className='mt-6'>
