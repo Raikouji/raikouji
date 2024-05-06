@@ -1,20 +1,14 @@
 'use client'
 
 import ArticleWrapper from '@/components/ArticleWrapper'
-import Card from '@/components/ui/Card'
-import { cn } from '@/utils'
 import React from 'react'
 
 export default function Page() {
   return (
-    <ArticleWrapper pageTitle='コンポーネント まとめ'>
+    <ArticleWrapper pageTitle='ハンバーガーメニュー'>
       <section className='border p-4'>
         <h2>ハンバーガーメニュー</h2>
         <HamburgerMenuIcon />
-      </section>
-      <section className='border p-4'>
-        <h2>カード (幅が狭い)</h2>
-        <CardNarrow />
       </section>
     </ArticleWrapper>
   )
@@ -75,33 +69,5 @@ function HamburgerMenuIcon() {
         </rect>
       </svg>
     </>
-  )
-}
-
-function CardNarrow() {
-  return (
-    //幅狭い、カード
-    <div className='mx-auto mt-12 max-w-screen-md'>
-      <Card
-        className={cn(
-          'relative mx-auto p-8',
-          'bg-[url("/images/bg-paper.png")] bg-cover',
-          'rounded-xl shadow-lg',
-        )}
-      >
-        <h3 className='text-center text-secondary-dark'>
-          Card スタイル - 幅の狭いカード
-        </h3>
-        <p className='mt-4'>
-          ★★ダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。
-          それから思わ口まし勝た(50)しはでまた箱のダミーコピーです上手どもっさと俄たますて、
-          みんなまでぶんを弾いとだまし(100文字)。
-        </p>
-        <ul className='mt-4 list-inside list-disc marker:text-tertiary'>
-          <li>リスト項目１</li>
-          <li>リスト項目２</li>
-        </ul>
-      </Card>
-    </div>
   )
 }
