@@ -14,6 +14,9 @@
     className='gap-2' // default
     childClassName='mb-2' //default
   />
+
+  // その他のデータ
+  totalCount: {totalCount}, offset: {offset}, limit: {limit}
  */
 import { getGalleryList } from '@/lib/microcms'
 import { cn } from '@/utils'
