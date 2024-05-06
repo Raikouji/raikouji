@@ -1,11 +1,9 @@
 import ArticleWrapper from '@/components/ArticleWrapper'
-import Gellary from '@/components/Gallery'
 import ImageAboveHeading from '@/components/ImageAboveHeading'
+import MicrocmsGallery from '@/components/MicrocmsGallery'
 import TocLink, { TocLinkItem } from '@/components/TocLink'
-import { getGalleryList } from '@/lib/microcms'
 import { outputMetadata } from '@/utils'
 import type { Metadata } from 'next'
-import Image from 'next/image'
 
 // for metadata
 const pageTitle = 'ギャラリー'
@@ -17,200 +15,9 @@ export const metadata: Metadata = outputMetadata({
   description: pageDescription,
 })
 
-const photos = [
-  {
-    src: '/images/dried-persimmons.jpg',
-    width: 600,
-    height: 900,
-    alt: '代替テキスト2',
-  },
-  {
-    src: '/images/rain-drop.jpg',
-    width: 900,
-    height: 600,
-    alt: '代替テキスト3',
-  },
-  {
-    src: '/images/dummy-03.jpg',
-    width: 900,
-    height: 600,
-    alt: '代替テキスト4',
-  },
-  {
-    src: '/images/narcissus.jpg',
-    width: 600,
-    height: 900,
-    alt: '代替テキスト5',
-  },
-  {
-    src: '/images/ume-blossoms.jpg',
-    width: 600,
-    height: 900,
-    alt: '代替テキスト7',
-  },
-  {
-    src: '/images/lotus.jpg',
-    width: 900,
-    height: 600,
-    alt: '代替テキスト8',
-  },
-]
-
-const photosAjisai = [
-  {
-    src: '/images/ajisai6.jpg',
-    width: 900,
-    height: 600,
-    alt: '代替テキスト1',
-  },
-  {
-    src: '/images/ajisai2.jpg',
-    width: 900,
-    height: 600,
-    alt: '代替テキスト2',
-  },
-  {
-    src: '/images/ajisai7.jpg',
-    width: 900,
-    height: 600,
-    alt: '代替テキスト3',
-  },
-  {
-    src: '/images/ajisai4.jpg',
-    width: 900,
-    height: 600,
-    alt: '代替テキスト4',
-  },
-  {
-    src: '/images/ajisai3.jpg',
-    width: 900,
-    height: 600,
-    alt: '代替テキスト5',
-  },
-  { src: '/images/spider.jpg', width: 900, height: 600, alt: '代替テキスト6' },
-  {
-    src: '/images/ajisai-garden3.jpg',
-    width: 900,
-    height: 600,
-    alt: '代替テキスト7',
-  },
-  {
-    src: '/images/ajisai-garden2.jpg',
-    width: 900,
-    height: 600,
-    alt: '代替テキスト8',
-  },
-]
-
-const photosEvent = [
-  {
-    src: '/images/light-up.jpg',
-    width: 900,
-    height: 600,
-    alt: '代替テキスト1',
-  },
-  { src: '/images/zazen.jpg', width: 600, height: 900, alt: '坐禅会' },
-  {
-    src: '/images/ajisai-bouquet.jpg',
-    width: 600,
-    height: 900,
-    alt: 'あじさい札',
-  },
-]
-
 export default async function Page() {
-  const { contents, totalCount, offset, limit } = await getGalleryList({
-    limit: 100,
-  })
-
-  const filteredByCategory = (categoryName: string) =>
-    contents.filter((content) => {
-      return content.category[0] === categoryName
-    })
-  const contentsTemple = filteredByCategory('境内の風景')
-  const contentsAjisai = filteredByCategory('あじさい')
-  const contentsEvents = filteredByCategory('行事・イベント')
-
   return (
     <ArticleWrapper pageTitle={pageTitle}>
-      <div className='border p-4'>
-        <h2 className='text-center'>サンプル: MicroCMS から取得</h2>
-        <p>
-          totalCount: {totalCount}, offset: {offset}, limit: {limit}
-        </p>
-        <ul className='flex gap-4'>
-          {contentsTemple.map(
-            ({ id, photo, category, caption, isDisplayOnHome }) => {
-              return (
-                <li key={id}>
-                  <figure>
-                    <Image
-                      src={photo.url}
-                      width={photo.width}
-                      height={photo.height}
-                      alt={caption ? caption : ''}
-                    />
-                    <figcaption className='mt-2'>
-                      {caption}/{category[0]}/
-                      {isDisplayOnHome
-                        ? 'トップページに表示'
-                        : 'トップページに非表示'}
-                    </figcaption>
-                  </figure>
-                </li>
-              )
-            },
-          )}
-        </ul>
-        <ul className='flex gap-4'>
-          {contentsAjisai.map(
-            ({ id, photo, category, caption, isDisplayOnHome }) => {
-              return (
-                <li key={id}>
-                  <figure>
-                    <Image
-                      src={photo.url}
-                      width={photo.width}
-                      height={photo.height}
-                      alt={caption ? caption : ''}
-                    />
-                    <figcaption className='mt-2'>
-                      {caption}/{category[0]}/
-                      {isDisplayOnHome
-                        ? 'トップページに表示'
-                        : 'トップページに非表示'}
-                    </figcaption>
-                  </figure>
-                </li>
-              )
-            },
-          )}
-        </ul>
-        <ul className='flex gap-4'>
-          {contentsEvents.map(
-            ({ id, photo, category, caption, isDisplayOnHome }) => {
-              return (
-                <li key={id}>
-                  <figure>
-                    <Image
-                      src={photo.url}
-                      width={photo.width}
-                      height={photo.height}
-                      alt={caption ? caption : ''}
-                    />
-                    <figcaption className='mt-2'>
-                      {caption}/{category[0]}/
-                      {isDisplayOnHome
-                        ? 'トップページに表示'
-                        : 'トップページに非表示'}
-                    </figcaption>
-                  </figure>
-                </li>
-              )
-            },
-          )}
-        </ul>
-      </div>
       <div className='my-12 flex flex-col'>
         <p className='text-center font-bold'>
           頼光寺の風景やイベントなどの写真です。
@@ -232,8 +39,22 @@ export default async function Page() {
           <h2 id='temple' className='mt-3 text-center'>
             境内の風景
           </h2>
-          <div className='mx-auto mt-8 max-w-screen-2xl'>
-            <Gellary photos={photos} col={1} colMd={3} />
+          <div className='@container mx-auto mt-8 max-w-screen-2xl'>
+            <MicrocmsGallery
+              queries={{
+                limit: 32,
+                orders: 'system:default',
+                filters: 'category[contains]境内の風景',
+              }}
+              cols={2}
+              colsMd={3}
+              colsLg={4}
+              colsXL={5}
+              className='gap-2'
+              childClassName='mb-2'
+              imageWidth={600}
+              imageClassName='rounded-lg'
+            />
           </div>
         </section>
 
@@ -244,8 +65,22 @@ export default async function Page() {
           <h2 id='ajisai' className='mt-2 text-center'>
             あじさい
           </h2>
-          <div className='mx-auto mt-8 max-w-screen-2xl'>
-            <Gellary photos={photosAjisai} col={1} colMd={3} />
+          <div className='@container mx-auto mt-8 max-w-screen-2xl'>
+            <MicrocmsGallery
+              queries={{
+                limit: 32,
+                orders: 'system:default',
+                filters: 'category[contains]あじさい',
+              }}
+              cols={2}
+              colsMd={3}
+              colsLg={4}
+              colsXL={5}
+              className='gap-2'
+              childClassName='mb-2'
+              imageWidth={600}
+              imageClassName='rounded-lg'
+            />
           </div>
         </section>
 
@@ -256,8 +91,22 @@ export default async function Page() {
           <h2 id='events' className='mt-2 text-center'>
             イベント
           </h2>
-          <div className='mx-auto mt-8 max-w-screen-2xl'>
-            <Gellary photos={photosEvent} col={1} colMd={3} />
+          <div className='@container mx-auto mt-8 max-w-screen-2xl'>
+            <MicrocmsGallery
+              queries={{
+                limit: 32,
+                orders: 'system:default',
+                filters: 'category[contains]行事・イベント',
+              }}
+              cols={2}
+              colsMd={3}
+              colsLg={4}
+              colsXL={5}
+              className='gap-2'
+              childClassName='mb-2'
+              imageWidth={600}
+              imageClassName='rounded-lg'
+            />
           </div>
         </section>
       </div>
