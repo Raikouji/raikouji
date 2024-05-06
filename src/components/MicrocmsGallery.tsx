@@ -26,9 +26,10 @@ type Props = {
   colsMd?: number
   colsLg?: number
   colsXL?: number
-  imageWidth?: number
   className?: string
   childClassName?: string
+  imageWidth?: number
+  imageClassName?: string
 }
 
 async function MicrocmsGallery({
@@ -37,9 +38,10 @@ async function MicrocmsGallery({
   colsMd = 2,
   colsLg = 3,
   colsXL = 4,
-  imageWidth = 600,
   className,
   childClassName,
+  imageWidth = 600,
+  imageClassName,
   ...delegated
 }: Props) {
   const { contents } = await getGalleryList(queries)
@@ -71,7 +73,7 @@ async function MicrocmsGallery({
                   (imageWidth * Number(post.photo?.height)) /
                   Number(post.photo?.width)
                 }
-                className='w-full rounded'
+                className={cn('w-full', imageClassName && imageClassName)}
               />
               {post?.caption && (
                 <figcaption className='absolute bottom-1 left-1 inline-block rounded bg-black/60 px-1 text-xs leading-tight text-white md:text-sm'>

@@ -289,9 +289,10 @@ export default function Home() {
                   cols={2}
                   colsMd={3}
                   colsLg={4}
-                  imageWidth={360}
                   className='gap-2'
                   childClassName='mb-2'
+                  imageWidth={360}
+                  imageClassName='rounded'
                 />
                 <p className='mt-8 text-center'>
                   <Button asChild>
