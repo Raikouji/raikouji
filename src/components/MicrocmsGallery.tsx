@@ -33,10 +33,10 @@ type Props = {
 
 async function MicrocmsGallery({
   queries,
-  cols = 2,
-  colsMd,
-  colsLg,
-  colsXL,
+  cols = 1,
+  colsMd = 2,
+  colsLg = 3,
+  colsXL = 4,
   imageWidth = 600,
   className,
   childClassName,

@@ -40,7 +40,7 @@ export default function Home() {
             <h2
               className={cn(
                 'absolute -left-6 top-3',
-                'border-t-4 border-gray-800 bg-primary-dark px-2 py-3 shadow-lg',
+                'bg-primary-dark border-t-4 border-gray-800 px-2 py-3 shadow-lg',
                 'text-sm tracking-widest text-white ',
               )}
               style={{ writingMode: 'vertical-rl' }}
@@ -57,7 +57,7 @@ export default function Home() {
                 <p className='mt-2 text-sm'>
                   ここに開花情報等を載せます。ダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝た。
                 </p>
-                <div className='mt-3 border border-primary p-4'>
+                <div className='border-primary mt-3 border p-4'>
                   <h3 className='text-base'>あじさいの開花状況 (2023-06-17)</h3>
                   <p className='mt-2 text-sm'>
                     ここに開花情報等を載せます。ダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝た。
@@ -158,7 +158,7 @@ export default function Home() {
                     />
                   </div>
                   <figcaption
-                    className='absolute -top-2 left-1 border-t-4 border-primary bg-white px-2 py-3 tracking-widest shadow-lg'
+                    className='border-primary absolute -top-2 left-1 border-t-4 bg-white px-2 py-3 tracking-widest shadow-lg'
                     style={{ writingMode: 'vertical-rl' }}
                   >
                     年間行事
@@ -181,7 +181,7 @@ export default function Home() {
                     />
                   </div>
                   <figcaption
-                    className='absolute -top-2 left-1 border-t-4 border-primary bg-white px-2 py-3 tracking-widest shadow-lg'
+                    className='border-primary absolute -top-2 left-1 border-t-4 bg-white px-2 py-3 tracking-widest shadow-lg'
                     style={{ writingMode: 'vertical-rl' }}
                   >
                     坐禅会・写経会
@@ -204,7 +204,7 @@ export default function Home() {
                     />
                   </div>
                   <figcaption
-                    className='absolute -top-2 left-1 border-t-4 border-primary bg-white px-2 py-3 tracking-widest shadow-lg'
+                    className='border-primary absolute -top-2 left-1 border-t-4 bg-white px-2 py-3 tracking-widest shadow-lg'
                     style={{ writingMode: 'vertical-rl' }}
                   >
                     墓地のご案内
@@ -227,7 +227,7 @@ export default function Home() {
                     />
                   </div>
                   <figcaption
-                    className='absolute -top-2 left-1 border-t-4 border-primary bg-white px-2 py-3 tracking-widest shadow-lg'
+                    className='border-primary absolute -top-2 left-1 border-t-4 bg-white px-2 py-3 tracking-widest shadow-lg'
                     style={{ writingMode: 'vertical-rl' }}
                   >
                     御朱印
@@ -250,7 +250,7 @@ export default function Home() {
                     />
                   </div>
                   <figcaption
-                    className='absolute -top-2 left-1 border-t-4 border-primary bg-white px-2 py-3 tracking-widest shadow-lg'
+                    className='border-primary absolute -top-2 left-1 border-t-4 bg-white px-2 py-3 tracking-widest shadow-lg'
                     style={{ writingMode: 'vertical-rl' }}
                   >
                     仏前結婚式
@@ -270,7 +270,7 @@ export default function Home() {
             <section className='mx-auto flex max-w-screen-xl flex-col gap-12 lg:flex-row lg:items-center'>
               <div className='flex flex-col gap-12 text-center lg:w-72'>
                 <h2
-                  className='mx-auto border-t-4 border-primary pt-3 text-xl tracking-[0.35em]'
+                  className='border-primary mx-auto border-t-4 pt-3 text-xl tracking-[0.35em]'
                   style={{ writingMode: 'vertical-rl' }}
                 >
                   頼光寺の風景
@@ -279,16 +279,16 @@ export default function Home() {
                   境内にはゆかりある墓地が点在し、300株以上のあじさいをはじめ様々な植物が植っています。初夏のあじさいの季節が見どころで、毎年多くの方にご参拝いただいております。
                 </p>
               </div>
-              <div className='flex-grow @container'>
+              <div className='@container flex-grow'>
                 <MicrocmsGallery
                   queries={{
                     limit: 100,
                     orders: 'system:default',
                     filters: 'isDisplayOnHome[equals]true',
                   }}
+                  cols={2}
                   colsMd={3}
                   colsLg={4}
-                  colsXL={5}
                   imageWidth={360}
                   className='gap-2'
                   childClassName='mb-2'
