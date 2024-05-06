@@ -51,7 +51,7 @@ export default function Page() {
         </div>
       </section>
 
-      <div className='flex flex-col gap-4 md:flex-row md:gap-8 lg:gap-20'>
+      <div className='flex flex-col gap-4 lg:flex-row lg:gap-20'>
         <section className='lg:w-3/5'>
           <div className='flex flex-col gap-8'>
             <div>
@@ -131,7 +131,7 @@ export default function Page() {
             </p>
             <ul className='mt-4 flex flex-col gap-6'>
               <li>
-                <h3 className='text-lg text-primary'>
+                <h3 className='text-primary text-lg'>
                   Q. あじさいの開花状況は？
                 </h3>
                 <p>
@@ -139,7 +139,7 @@ export default function Page() {
                 </p>
               </li>
               <li>
-                <h3 className='text-lg text-primary'>
+                <h3 className='text-primary text-lg'>
                   Q. お墓の見学はできますか？
                 </h3>
                 <p>
@@ -147,7 +147,7 @@ export default function Page() {
                 </p>
               </li>
               <li>
-                <h3 className='text-lg text-primary'>
+                <h3 className='text-primary text-lg'>
                   Q. お墓の購入はできますか？
                 </h3>
                 <p>
@@ -155,13 +155,13 @@ export default function Page() {
                 </p>
               </li>
               <li>
-                <h3 className='text-lg text-primary'>
+                <h3 className='text-primary text-lg'>
                   Q. お墓の管理や清掃はどのように行われていますか？
                 </h3>
                 <p>お墓の管理は、頼光寺にて行っております。</p>
               </li>
               <li>
-                <h3 className='text-lg text-primary'>
+                <h3 className='text-primary text-lg'>
                   Q. お墓のお参りができる時間帯を教えてください
                 </h3>
                 <p>いつでもお参りいただけます。</p>
