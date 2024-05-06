@@ -38,8 +38,8 @@ async function MicrocmsGallery({
   colsLg,
   colsXL,
   imageWidth = 600,
-  className = 'gap-2',
-  childClassName = 'mb-2',
+  className,
+  childClassName,
   ...delegated
 }: Props) {
   const { contents } = await getGalleryList(queries)

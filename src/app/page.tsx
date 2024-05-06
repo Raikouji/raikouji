@@ -279,7 +279,7 @@ export default function Home() {
                   境内にはゆかりある墓地が点在し、300株以上のあじさいをはじめ様々な植物が植っています。初夏のあじさいの季節が見どころで、毎年多くの方にご参拝いただいております。
                 </p>
               </div>
-              <div className='flex-grow'>
+              <div className='flex-grow @container'>
                 <MicrocmsGallery
                   queries={{
                     limit: 100,
@@ -290,6 +290,8 @@ export default function Home() {
                   colsLg={4}
                   colsXL={5}
                   imageWidth={360}
+                  className='gap-2'
+                  childClassName='mb-2'
                 />
                 <p className='mt-8 text-center'>
                   <Button asChild>

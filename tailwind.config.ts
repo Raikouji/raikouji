@@ -1,10 +1,7 @@
 import type { Config } from 'tailwindcss'
 
-// @ts-ignore
-// @ts-ignore
 const config: Config = {
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
@@ -131,13 +128,13 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
-      // // chadcn/ui の設定
+      // chadcn/ui の設定
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
       },
-      // // chadcn/ui の設定
+      // chadcn/ui の設定
       keyframes: {
         'accordion-down': {
           // @ts-ignore
@@ -150,7 +147,7 @@ const config: Config = {
           to: { height: 0 },
         },
       },
-      // // chadcn/ui の設定
+      // chadcn/ui の設定
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',

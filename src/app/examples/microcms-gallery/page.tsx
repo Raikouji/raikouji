@@ -13,7 +13,8 @@ export default function StaticPage() {
       colsLg={4}
       colsXL={5}
       imageWidth={600}
-      className='@container'
+      className='gap-2 @container'
+      childClassName='mb-2'
     />
   )
 }
