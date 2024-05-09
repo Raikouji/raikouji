@@ -74,7 +74,7 @@ function LinkList({
       {filteredEvents.map(({ title, url }) => (
         <li
           key={crypto.randomUUID()}
-          className='border-b-1 border-b border-dotted border-b-gray-300 px-4 py-2'
+          className='border-b-1 border-b border-dotted border-b-gray-300 px-4 py-4'
         >
           <a
             href={url}
@@ -100,7 +100,11 @@ export default function Page() {
             <h2 id='scarlet-seal' className='mt-2 text-center font-serif'>
               関連リンク
             </h2>
-            <LinkList events={events} kind='attribution' className='my-6' />
+            <LinkList
+              events={events}
+              kind='attribution'
+              className='my-8 font-bold'
+            />
           </div>
           <hr className='line-with-three-dots lg:hidden' />
         </section>
@@ -113,7 +117,7 @@ export default function Page() {
             <h2 id='scarlet-seal' className='mt-3 text-center font-serif'>
               頼光寺を紹介いただいているサイト
             </h2>
-            <LinkList events={events} kind='media' className='my-6' />
+            <LinkList events={events} kind='media' className='my-8 font-bold' />
           </div>
         </section>
       </div>
