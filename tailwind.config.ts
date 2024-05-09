@@ -128,6 +128,9 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      boxShadow: {
+        sharp: '5px 5px 0 rgba(0, 0, 0, 0.5)',
+      },
       // chadcn/ui の設定 ここから
       borderRadius: {
         lg: 'var(--radius)',
