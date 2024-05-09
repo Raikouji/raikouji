@@ -86,7 +86,7 @@ const routeDataByCar = [
   },
   {
     description:
-      '空いている駐車スペースに停めてください。入り口を出てすぐのトンネルを潜ると当寺の境内です。',
+      '空いている駐車スペースに停めてください。降車し入り口を出てすぐのトンネルをくぐると当寺の境内です。',
     image: '/images/route-car-a-06.jpg',
   },
 ]
@@ -188,7 +188,7 @@ export default function Page() {
           </p>
         </div>
       </section>
-      <Hr type='square' />
+
       <div className='full-width bg-secondary-50 px-8 lg:px-2'>
         <section id='access-by-train' className='mx-auto max-w-screen-xl py-16'>
           <p className='text-center'>
@@ -204,8 +204,6 @@ export default function Page() {
           <DirectionsFlow routeData={routeDataByTrain} />
         </section>
       </div>
-
-      <Hr type='square' />
 
       <section id='access-by-car' className='my-16'>
         <div className='mx-auto max-w-screen-xl'>
@@ -269,7 +267,7 @@ export default function Page() {
                     height={600}
                   />
 
-                  <figcaption className='mt-2'>下の駐車場（★★台）</figcaption>
+                  <figcaption className='mt-2'>下の駐車場</figcaption>
                 </figure>
                 <figure>
                   <Image
@@ -278,13 +276,13 @@ export default function Page() {
                     width={900}
                     height={600}
                   />
-                  <figcaption className='mt-2'>上の駐車場（★★台）</figcaption>
+                  <figcaption className='mt-2'>上の駐車場</figcaption>
                 </figure>
               </div>
             </div>
           </div>
 
-          <h3 className='mt-12 text-center'>
+          <h3 className='mt-16 text-center'>
             国道173号線から
             <br />
             下の駐車場への道順
@@ -297,7 +295,7 @@ export default function Page() {
           </p>
           <DirectionsFlow routeData={routeDataByCar} />
 
-          <hr className='line-with-three-dots my-16' />
+          <Hr type='square' className='my-16' />
 
           <h3 className='mt-12 text-center'>
             国道173号線から
@@ -319,7 +317,7 @@ export default function Page() {
 
 function DirectionsFlow({ routeData }: RouteData) {
   return (
-    <ol className='mt-8 grid-flow-col gap-x-8 gap-y-4 md:grid md:grid-rows-2 lg:grid-rows-3'>
+    <ol className='mt-12 grid-flow-col gap-x-8 gap-y-4 md:grid md:grid-rows-2 lg:grid-rows-3'>
       {routeData.map(({ description, image }, index) => (
         <li
           key={index}
@@ -335,8 +333,9 @@ function DirectionsFlow({ routeData }: RouteData) {
             <Image
               src={image}
               alt={`Step ${index + 1}`}
-              width={180}
-              height={120}
+              width={240}
+              height={160}
+              className='shadow-sharp rounded-sm shadow-primary-300'
             />
           </div>
         </li>
