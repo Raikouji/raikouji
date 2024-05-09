@@ -105,7 +105,7 @@ function EventList({
       {events.map(({ title, date }) => (
         <li
           key={crypto.randomUUID()}
-          className='border-b-1 border-b border-dotted border-b-blue-400 px-4 py-2'
+          className='border-b-1 border-b border-dotted border-b-blue-400 p-4'
         >
           <span className='mr-4 inline-block w-20 text-center'>{date}</span>
           <span className=' tracking-widest'>{title}</span>
@@ -128,18 +128,16 @@ export default function Page() {
         </TocLink>
       </div>
 
-      <section id='annual-events' className='max-w-screen-lg py-16'>
-        <div className='mx-auto max-w-screen-lg'>
-          <p className='text-center'>
-            <ImageAboveHeading imageName='chime' />
-          </p>
-          <h2 className='mt-3 text-center'>年中行事</h2>
-          <div className='mt-8 flex flex-col gap-4 lg:flex-row lg:gap-12'>
-            <EventList events={events} className='my-6' />
-            <div className='flex-grow'>
-              <Gallery photos={photos} />
-            </div>
-          </div>
+      <section id='annual-events' className='py-16'>
+        <p className='mx-auto max-w-screen-lg text-center'>
+          <ImageAboveHeading imageName='chime' />
+        </p>
+        <h2 className='mt-3 text-center'>年中行事</h2>
+        <div className='mx-auto mt-8 max-w-screen-sm'>
+          <EventList events={events} className='my-6' />
+        </div>
+        <div className='mt-16'>
+          <Gallery photos={photos} />
         </div>
       </section>
 
