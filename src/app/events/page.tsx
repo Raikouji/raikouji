@@ -1,7 +1,7 @@
 import ArticleWrapper from '@/components/ArticleWrapper'
-import Gallery from '@/components/Gallery'
 import Hr from '@/components/Hr'
 import ImageAboveHeading from '@/components/ImageAboveHeading'
+import MicrocmsGallery from '@/components/MicrocmsGallery'
 import TocLink, { TocLinkItem } from '@/components/TocLink'
 import Card from '@/components/ui/Card'
 import { cn, outputMetadata } from '@/utils'
@@ -46,45 +46,6 @@ const events: Event[] = [
   {
     title: '秋のお彼岸会',
     date: '９月',
-  },
-]
-
-const photos = [
-  {
-    src: '/images/dummy-01.jpg',
-    width: 900,
-    height: 600,
-    alt: '代替テキスト1',
-  },
-  {
-    src: '/images/dummy-03.jpg',
-    width: 900,
-    height: 600,
-    alt: '代替テキスト2',
-  },
-  {
-    src: '/images/dummy-01.jpg',
-    width: 900,
-    height: 600,
-    alt: '代替テキスト1',
-  },
-  {
-    src: '/images/dummy-03.jpg',
-    width: 900,
-    height: 600,
-    alt: '代替テキスト2',
-  },
-  {
-    src: '/images/dummy-01.jpg',
-    width: 900,
-    height: 600,
-    alt: '代替テキスト1',
-  },
-  {
-    src: '/images/dummy-03.jpg',
-    width: 900,
-    height: 600,
-    alt: '代替テキスト2',
   },
 ]
 
@@ -137,7 +98,20 @@ export default function Page() {
           <EventList events={events} className='my-6' />
         </div>
         <div className='mt-16'>
-          <Gallery photos={photos} />
+          <MicrocmsGallery
+            queries={{
+              limit: 24,
+              orders: 'system:default',
+              filters: 'category[contains]行事・イベント',
+            }}
+            cols={2}
+            colsMd={3}
+            colsLg={4}
+            colsXL={5}
+            className='gap-1'
+            childClassName='mb-1'
+            imageWidth={600}
+          />
         </div>
       </section>
 
@@ -150,9 +124,14 @@ export default function Page() {
               <ImageAboveHeading imageName='ume' />
             </p>
             <h2 className='mt-3 text-center'>月例行事</h2>
+            <p className='mt-4 text-center font-bold'>
+              当寺では早朝坐禅会と写経会を月一で開催しています。
+              <br />
+              初めての方でも気軽にご参加ください。
+            </p>
           </div>
 
-          <div className='flex flex-col gap-4 lg:flex-row lg:gap-12'>
+          <div className='flex flex-col gap-4 text-center lg:flex-row lg:gap-12'>
             <div className='py-12'>
               <p>
                 <Image
@@ -163,30 +142,32 @@ export default function Page() {
                   className='rounded-md'
                 />
               </p>
-              <h3 className='mt-6 text-center tracking-widest'>早朝坐禅会</h3>
-              <p className='mt-2 text-center'>
+              <h3 className='mt-6 text-center tracking-widest'>
+                <span className='inline-block bg-gradient-to-r from-primary-400 to-transparent bg-[length:100%_40%] bg-bottom bg-no-repeat px-2 pb-0.5'>
+                  早朝坐禅会
+                </span>
+              </h3>
+              <p className='mt-4 text-center'>
                 毎月第１日曜日 午前６時半〜８時ごろ
                 <br />
                 （※１月、８月は除く）
-                <br />
+              </p>
+              <p className='mt-2 inline-block border px-2 text-center'>
                 参加費なし
               </p>
               <div className='mx-auto max-w-screen-sm'>
-                <p className='mt-4 md:text-center'>
-                  初めての方でも気軽にご参加ください。
-                  <br className='hidden md:inline' />
+                <p className='mt-6 md:text-center lg:px-12'>
+                  心を穏やかに、精神を整える座禅会。静かな空間で自分を見つめ直し、内面の平和を深めるとともに心身の調和を目指します。
                   坐禅や読経、食事の作法につきましては、その都度ご説明いたします。
                 </p>
-                <Card className='mt-4 rounded bg-secondary-50 px-4 py-3 shadow'>
-                  <p className='text-center font-bold text-secondary'>
-                    【坐禅会の流れ】
-                  </p>
-                  <ol className='mt-2 list-inside list-decimal leading-7'>
+                <Card className='mt-6 rounded bg-secondary-50 px-4 py-3 shadow'>
+                  <h4 className='text-secondary'>【坐禅会の流れ】</h4>
+                  <ol className='mt-4 list-inside list-decimal text-left font-bold leading-7'>
                     <li>本堂内で受付、坐禅堂(紫陽閣)に移動</li>
                     <li>約30分間の坐禅</li>
                     <li>本堂にて朝のお勤め(読経)</li>
                     <li>
-                      坐禅堂にて坐禅をしながら、朝ご飯(おかゆ)を召し上がっていただきます
+                      坐禅堂へ。坐禅をしながら朝ご飯(おかゆ)を召し上がっていただきます
                     </li>
                     <li>解散</li>
                   </ol>
@@ -204,19 +185,23 @@ export default function Page() {
                   className='rounded-md'
                 />
               </p>
-              <h3 className='mt-6 text-center tracking-widest'>写経会</h3>
-              <p className='mt-2 text-center'>
-                毎月８日 午後１時〜
+              <h3 className='mt-6 text-center tracking-widest'>
+                <span className='inline-block bg-gradient-to-r from-tertiary-300 to-transparent bg-[length:100%_40%] bg-bottom bg-no-repeat px-2 pb-0.5'>
+                  写経会
+                </span>
+              </h3>
+              <p className='mt-4 text-center'>
+                毎月８日 午後１時〜３時頃
                 <br />
                 （１月、８月は除く）
-                <br />
+              </p>
+              <p className='mt-2 inline-block border px-2 text-center'>
                 参加費(納経料)：1,000円
               </p>
               <div className='mx-auto mt-6 max-w-screen-sm'>
-                <p className='md:text-center'>
-                  当寺では写経会を月一で開催しています。すべて椅子席で、写経用具は全てご用意（筆ペン派の方はご持参ください）。
-                  午後3時頃に解散となります。
-                  功徳を得られ、無心になり心が落ち着く写経の魅力を体感しませんか？
+                <p className='md:text-center lg:px-12'>
+                  無心になり、心を込めて写経をする会。精神をクリアにし、内なる平和へと繋がる貴重な体験です。すべて椅子席で、写経用具は全て当寺でご用意（※
+                  筆ペン派の方はご持参ください）。
                 </p>
               </div>
             </div>
