@@ -96,47 +96,57 @@ const routeDataByCar2 = [
   {
     description:
       '改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。',
-    image: '/images/route-train-08.jpg',
+    image: '/images/route-car-b-01.jpg',
   },
   {
     description:
       '改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。',
-    image: '/images/route-train-08.jpg',
+    image: '/images/route-car-b-02.jpg',
   },
   {
     description:
       '改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。',
-    image: '/images/route-train-08.jpg',
+    image: '/images/route-car-b-03.jpg',
   },
   {
     description:
       '改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。',
-    image: '/images/route-train-08.jpg',
+    image: '/images/route-car-b-04.jpg',
   },
   {
     description:
       '改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。',
-    image: '/images/route-train-08.jpg',
+    image: '/images/route-car-b-05.jpg',
   },
   {
     description:
       '改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。',
-    image: '/images/route-train-08.jpg',
+    image: '/images/route-car-b-06.jpg',
   },
   {
     description:
       '改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。',
-    image: '/images/route-train-08.jpg',
+    image: '/images/route-car-b-07.jpg',
   },
   {
     description:
       '改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。',
-    image: '/images/route-train-08.jpg',
+    image: '/images/route-car-b-08.jpg',
   },
   {
     description:
       '改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。',
-    image: '/images/route-train-08.jpg',
+    image: '/images/route-car-b-09.jpg',
+  },
+  {
+    description:
+      '改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。',
+    image: '/images/route-car-b-10.jpg',
+  },
+  {
+    description:
+      '改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。',
+    image: '/images/route-car-b-11.jpg',
   },
 ]
 
@@ -335,7 +345,7 @@ function DirectionsFlow({ routeData }: RouteData) {
               alt={`Step ${index + 1}`}
               width={240}
               height={160}
-              className='shadow-sharp rounded-sm shadow-primary-300'
+              className='rounded-sm shadow-sharp shadow-primary-300'
             />
           </div>
         </li>
