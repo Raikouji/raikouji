@@ -18,6 +18,7 @@
   // その他のデータ
   totalCount: {totalCount}, offset: {offset}, limit: {limit}
  */
+import Fadein from '@/components/FadeIn'
 import { getGalleryList } from '@/lib/microcms'
 import { cn } from '@/utils'
 import { MicroCMSQueries } from 'microcms-js-sdk'
@@ -71,26 +72,28 @@ async function MicrocmsGallery({
       {contents.map((post) => {
         return (
           <li key={post.id} className={childClassName}>
-            <figure className='relative break-inside-avoid shadow'>
-              <Image
-                alt={post?.caption || ''}
-                src={post.photo.url}
-                width={imageWidth}
-                height={
-                  (imageWidth * Number(post.photo?.height)) /
-                  Number(post.photo?.width)
-                }
-                className={cn('w-full', imageClassName && imageClassName)}
-              />
-              {post?.caption && (
-                <figcaption className='absolute bottom-1 left-1 inline-block rounded bg-black/60 px-1 text-xs leading-tight text-white md:text-sm'>
-                  {post?.caption}
-                </figcaption>
-              )}
-              <p className='hidden p-1 text-sm'>
-                {post?.category[0]} / {post?.isDisplayOnHome}
-              </p>
-            </figure>
+            <Fadein tag='figure' className='relative break-inside-avoid shadow'>
+              <>
+                <Image
+                  alt={post?.caption || ''}
+                  src={post.photo.url}
+                  width={imageWidth}
+                  height={
+                    (imageWidth * Number(post.photo?.height)) /
+                    Number(post.photo?.width)
+                  }
+                  className={cn('w-full', imageClassName && imageClassName)}
+                />
+                {post?.caption && (
+                  <figcaption className='absolute bottom-1 left-1 inline-block rounded bg-black/60 px-1 text-xs leading-tight text-white md:text-sm'>
+                    {post?.caption}
+                  </figcaption>
+                )}
+                <p className='hidden p-1 text-sm'>
+                  {post?.category[0]} / {post?.isDisplayOnHome}
+                </p>
+              </>
+            </Fadein>
           </li>
         )
       })}
