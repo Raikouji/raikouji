@@ -10,6 +10,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FaExclamationTriangle } from 'react-icons/fa'
 
+type RouteDataItem = {
+  description: string
+  image: string
+}
+
 // for metadata
 const pageTitle = 'アクセス'
 const pageDescription = '頼光寺へのアクセスです。駐車場情報も。'
@@ -140,15 +145,6 @@ const routeDataByCar2 = [
     image: '/images/route-car-b-11.jpg',
   },
 ]
-
-type RouteDataItem = {
-  description: string
-  image: string
-}
-
-type RouteData = {
-  routeData: RouteDataItem[]
-}
 export default function Page() {
   return (
     <ArticleWrapper pageTitle={pageTitle}>
