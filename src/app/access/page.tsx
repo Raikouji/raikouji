@@ -95,57 +95,48 @@ const routeDataByCar = [
 const routeDataByCar2 = [
   {
     description:
-      '改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。',
+      '「東畦野」交差点で東に曲がります。(※ 写真は池田/川西方面から来たときのものです。)',
     image: '/images/route-car-b-01.jpg',
   },
   {
-    description:
-      '改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。',
+    description: '交差点を曲ったら、すぐに右側にある高架に乗ってください。',
     image: '/images/route-car-b-02.jpg',
   },
   {
     description:
-      '改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。',
+      'すぐの交差点(左に緑のひさしの建物、右にTimes駐車場)を左折します。',
     image: '/images/route-car-b-03.jpg',
   },
   {
-    description:
-      '改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。',
+    description: '３つ目の交差点まで直進します。',
     image: '/images/route-car-b-04.jpg',
   },
   {
-    description:
-      '改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。',
+    description: '３つ目の交差点を左折します。',
     image: '/images/route-car-b-05.jpg',
   },
   {
-    description:
-      '改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。',
+    description: '１つ目の交差点（一旦停止してください）は直進してください。',
     image: '/images/route-car-b-06.jpg',
   },
   {
-    description:
-      '改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。',
+    description: '２つ目の交差点（下り坂になっている手前）を右折します。',
     image: '/images/route-car-b-07.jpg',
   },
   {
-    description:
-      '改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。',
+    description: '直進し左折します。',
     image: '/images/route-car-b-08.jpg',
   },
   {
-    description:
-      '改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。',
+    description: '下り坂になっているので、道なりに進みます。',
     image: '/images/route-car-b-09.jpg',
   },
   {
-    description:
-      '改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。',
+    description: '道なりに進むと門がありますので、そのまま進入してください。',
     image: '/images/route-car-b-10.jpg',
   },
   {
-    description:
-      '改札を出たら、右側にある階段を降ります。ダミーコピーです手はおっかさの。',
+    description: '突き当たりが頼光寺の駐車場となります。',
     image: '/images/route-car-b-11.jpg',
   },
 ]
@@ -211,7 +202,10 @@ export default function Page() {
             大阪からなら、阪急電車宝塚線「梅田駅」から「川西能勢口駅」まで約20分、能勢電鉄に乗り換え「畦野駅」まで約10分です。
           </p>
           <h3 className='mt-8 text-center'>能勢電鉄「畦野駅」からの道順</h3>
-          <DirectionsFlow routeData={routeDataByTrain} />
+          <DirectionsFlow
+            className='mt-16 text-sm md:text-base'
+            routeData={routeDataByTrain}
+          />
         </section>
       </div>
 
@@ -295,59 +289,74 @@ export default function Page() {
           <h3 className='mt-16 text-center'>
             国道173号線から
             <br />
-            下の駐車場への道順
+            『下の駐車場』への道順
           </h3>
           <p className='mt-3 text-center'>
-            下の駐車場をご利用の方は、
-            <b className='underline'>
-              東に折れてすぐの高架には乗らず側道へ進んでください。
+            <b className='text-red-500 underline'>
+              ※
+              東畦野交差点を東に折れてすぐの高架には乗らず側道へ進んでください。
             </b>
           </p>
-          <DirectionsFlow routeData={routeDataByCar} />
+          <DirectionsFlow
+            className='mt-16 text-sm md:text-base'
+            routeData={routeDataByCar}
+          />
 
           <Hr type='square' className='my-16' />
 
           <h3 className='mt-12 text-center'>
             国道173号線から
             <br />
-            上の駐車場への道順
+            『上の駐車場』への道順
           </h3>
           <p className='mt-3 text-center'>
-            上の駐車場をご利用の方は、
-            <b className='underline'>
-              東に折れてすぐの高架に乗って進んでください。
+            <b className='text-red-500 underline'>
+              ※ 東畦野交差点を東に折れてすぐの高架に乗ってください。
             </b>
           </p>
-          <DirectionsFlow routeData={routeDataByCar2} />
+          <DirectionsFlow
+            className='mt-16 text-sm md:text-base'
+            routeData={routeDataByCar2}
+          />
         </div>
       </section>
     </ArticleWrapper>
   )
 }
 
-function DirectionsFlow({ routeData }: RouteData) {
+function DirectionsFlow({
+  routeData,
+  className,
+  childClassName,
+  ...delegated
+}: {
+  routeData: RouteDataItem[]
+  className?: string
+  childClassName?: string
+}) {
   return (
-    <ol className='mt-12 grid-flow-col gap-x-8 gap-y-4 md:grid md:grid-rows-2 lg:grid-rows-3'>
+    <ol
+      className={cn(
+        `grid gap-4 md:grid-cols-2 md:gap-x-6 md:gap-y-8 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-12`,
+        className,
+      )}
+      {...delegated}
+    >
       {routeData.map(({ description, image }, index) => (
-        <li
-          key={index}
-          className='text-center after:mt-4 after:block after:text-2xl after:text-primary-400 after:content-["▼"]'
-        >
-          <div className='center flex items-center gap-3 md:gap-4'>
-            <p className='order-1 text-left leading-snug tracking-normal'>
-              <span className='text-2xl font-bold text-primary'>
-                {index + 1}.
-              </span>{' '}
-              {description}
-            </p>
-            <Image
-              src={image}
-              alt={`Step ${index + 1}`}
-              width={240}
-              height={160}
-              className='rounded-sm shadow-sharp shadow-primary-300'
-            />
-          </div>
+        <li key={index} className='grid grid-cols-2 gap-4'>
+          <p className='order-1 text-left leading-snug tracking-normal'>
+            <span className='text-3xl font-bold text-primary'>
+              {index + 1}.
+            </span>{' '}
+            {description}
+          </p>
+          <Image
+            src={image}
+            alt={`Step ${index + 1}`}
+            width={240}
+            height={160}
+            className='rounded-sm shadow-sharp shadow-primary-300'
+          />
         </li>
       ))}
     </ol>
