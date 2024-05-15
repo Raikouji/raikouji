@@ -8,6 +8,7 @@ import { cn, outputMetadata } from '@/utils'
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import React from 'react'
 import { FaExclamationTriangle } from 'react-icons/fa'
 
 type RouteDataItem = {
@@ -322,16 +323,18 @@ export default function Page() {
 
 function DirectionsFlow({
   routeData,
+  tag = 'ol',
   className,
-  childClassName,
   ...delegated
 }: {
   routeData: RouteDataItem[]
+  tag?: 'section' | 'aside' | 'div' | 'p' | 'ol' | 'ul'
   className?: string
-  childClassName?: string
 }) {
+  const Tag = tag as React.ElementType
+
   return (
-    <ol
+    <Tag
       className={cn(
         `grid gap-4 md:grid-cols-2 md:gap-x-6 md:gap-y-8 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-12`,
         className,
@@ -339,22 +342,42 @@ function DirectionsFlow({
       {...delegated}
     >
       {routeData.map(({ description, image }, index) => (
-        <li key={index} className='grid grid-cols-2 gap-4'>
-          <p className='order-1 text-left leading-snug tracking-normal'>
-            <span className='text-3xl font-bold text-primary'>
-              {index + 1}.
-            </span>{' '}
-            {description}
-          </p>
-          <Image
-            src={image}
-            alt={`Step ${index + 1}`}
-            width={240}
-            height={160}
-            className='rounded-sm shadow-sharp shadow-primary-300'
-          />
-        </li>
+        <Media
+          key={index}
+          description={description}
+          image={image}
+          index={index}
+        />
       ))}
-    </ol>
+    </Tag>
+  )
+}
+
+function Media({
+  image,
+  description,
+  index,
+  className,
+  ...delegated
+}: {
+  image: string
+  description: string
+  index: number
+  className?: string
+}) {
+  return (
+    <li className={cn('grid grid-cols-2 gap-4', className)} {...delegated}>
+      <p className='order-1 text-left leading-snug tracking-normal'>
+        <span className='text-3xl font-bold text-primary'>{index + 1}.</span>{' '}
+        {description}
+      </p>
+      <Image
+        src={image}
+        alt={`Step ${index + 1}`}
+        width={240}
+        height={160}
+        className='rounded-sm shadow-sharp shadow-primary-300'
+      />
+    </li>
   )
 }
