@@ -199,9 +199,17 @@ export default function Page() {
             大阪からなら、阪急電車宝塚線「梅田駅」から「川西能勢口駅」まで約20分、能勢電鉄に乗り換え「畦野駅」まで約10分です。
           </p>
           <h3 className='mt-8 text-center'>能勢電鉄「畦野駅」からの道順</h3>
-          <DirectionsFlow
+          <List
             className='mt-16 text-sm md:text-base'
-            routeData={routeDataByTrain}
+            items={routeDataByTrain}
+            renderItem={(item, index) => (
+              <Media
+                key={index}
+                description={item.description}
+                image={item.image}
+                index={index}
+              />
+            )}
           />
         </section>
       </div>
@@ -294,9 +302,17 @@ export default function Page() {
               東畦野交差点を東に折れてすぐの高架には乗らず側道へ進んでください。
             </b>
           </p>
-          <DirectionsFlow
+          <List
             className='mt-16 text-sm md:text-base'
-            routeData={routeDataByCar}
+            items={routeDataByCar}
+            renderItem={(item, index) => (
+              <Media
+                key={index}
+                description={item.description}
+                image={item.image}
+                index={index}
+              />
+            )}
           />
 
           <Hr type='square' className='my-16' />
@@ -311,9 +327,17 @@ export default function Page() {
               ※ 東畦野交差点を東に折れてすぐの高架に乗ってください。
             </b>
           </p>
-          <DirectionsFlow
+          <List
             className='mt-16 text-sm md:text-base'
-            routeData={routeDataByCar2}
+            items={routeDataByCar2}
+            renderItem={(item, index) => (
+              <Media
+                key={index}
+                description={item.description}
+                image={item.image}
+                index={index}
+              />
+            )}
           />
         </div>
       </section>
@@ -321,15 +345,19 @@ export default function Page() {
   )
 }
 
-function DirectionsFlow({
-  routeData,
+function List({
+  items,
+  renderItem = (item: RouteDataItem, index: number) => (
+    <React.Fragment key={index} />
+  ), // TODO: 呼び出し元で指定した型を適用できるように
   tag = 'ol',
   className,
   ...delegated
 }: {
-  routeData: RouteDataItem[]
-  tag?: 'section' | 'aside' | 'div' | 'p' | 'ol' | 'ul'
+  items: RouteDataItem[]
+  tag?: 'section' | 'aside' | 'div' | 'ol' | 'ul'
   className?: string
+  renderItem?: (item: RouteDataItem, index: number) => React.ReactElement
 }) {
   const Tag = tag as React.ElementType
 
@@ -341,14 +369,9 @@ function DirectionsFlow({
       )}
       {...delegated}
     >
-      {routeData.map(({ description, image }, index) => (
-        <Media
-          key={index}
-          description={description}
-          image={image}
-          index={index}
-        />
-      ))}
+      {items.map((item, index) => {
+        return renderItem(item, index)
+      })}
     </Tag>
   )
 }
@@ -357,16 +380,20 @@ function Media({
   image,
   description,
   index,
+  tag = 'li',
   className,
   ...delegated
 }: {
   image: string
   description: string
   index: number
+  tag?: 'div' | 'p' | 'li' | 'span'
   className?: string
 }) {
+  const Tag = tag as React.ElementType
+
   return (
-    <li className={cn('grid grid-cols-2 gap-4', className)} {...delegated}>
+    <Tag className={cn('grid grid-cols-2 gap-4', className)} {...delegated}>
       <p className='order-1 text-left leading-snug tracking-normal'>
         <span className='text-3xl font-bold text-primary'>{index + 1}.</span>{' '}
         {description}
@@ -378,6 +405,6 @@ function Media({
         height={160}
         className='rounded-sm shadow-sharp shadow-primary-300'
       />
-    </li>
+    </Tag>
   )
 }
