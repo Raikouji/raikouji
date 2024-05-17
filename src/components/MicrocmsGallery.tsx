@@ -21,7 +21,7 @@
 import Fadein from '@/components/FadeIn'
 import { getGalleryList } from '@/lib/microcms'
 import { cn } from '@/utils'
-import { MicroCMSQueries } from 'microcms-js-sdk'
+import type { MicroCMSQueries } from 'microcms-js-sdk'
 import Image from 'next/image'
 
 type Props = {
