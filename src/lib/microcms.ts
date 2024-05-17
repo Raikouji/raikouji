@@ -16,7 +16,16 @@ export const client = createClient({
 })
 
 /**
- * 新着情報
+ * 基本設定 (紫陽花の開花状況など。オブジェクト)
+ */
+export const getBasicInformation = async () => {
+  return await client.get({
+    endpoint: 'ajisai',
+  })
+}
+
+/**
+ * 新着情報 (リスト)
  */
 
 // 一覧を取得
@@ -41,7 +50,7 @@ export const getBlogDetail = async (
 }
 
 /**
- * ギャラリー
+ * ギャラリー (リスト)
  */
 
 // 一覧を取得
