@@ -76,6 +76,10 @@ function SiteFooter() {
                     alt='曹洞宗 Sotozen-net'
                     width={180}
                     height={48}
+                    style={{
+                      width: '100%',
+                      height: 'auto',
+                    }}
                     priority
                   />
                 </a>
