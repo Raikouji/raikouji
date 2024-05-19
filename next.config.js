@@ -10,6 +10,7 @@ const nextConfig = {
         pathname: '/assets/**',
       },
     ],
+    domains: ['source.unsplash.com', 'images.unsplash.com'],
   },
 }
 
