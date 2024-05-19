@@ -2,11 +2,12 @@
 
 // TODO:
 // - 画像サイズを指定して表示、object-fit 設定
-// - スライドではなく、ふわっと切り替わるアニメーションに
+// - Fade を embla-carousel 本体のものに変更
 // - ドットボタンをクリックで当該スライドに移動
 // https://codesandbox.io/p/sandbox/embla-carousel-generator-react-7cgfq9?file=%2Fsrc%2Fjs%2FEmblaCarouselDotButton.tsx%3A16%2C10
 
 import Autoplay from 'embla-carousel-autoplay'
+import Fade from 'embla-carousel-fade'
 import Image from 'next/image'
 import * as React from 'react'
 
@@ -51,10 +52,12 @@ export default function CarouselPlugin() {
     Autoplay({ delay: 4000, stopOnInteraction: true }),
   )
 
+  const fade = React.useRef(Fade())
+
   return (
     <div className={`container mx-auto max-w-screen-lg`}>
       <Carousel
-        plugins={[plugin.current]}
+        plugins={[plugin.current, fade.current]}
         className='w-full overflow-hidden' // relative
         onMouseEnter={plugin.current.stop}
         onMouseLeave={plugin.current.reset}
@@ -66,7 +69,13 @@ export default function CarouselPlugin() {
       >
         <CarouselContent className='&>ml-0'>
           {photos.map(({ url, alt }, index) => (
-            <CarouselItem key={index} className='pl-0'>
+            <CarouselItem
+              key={index}
+              className='pl-0'
+              // style={{
+              //   opacity: fade.current ? fade.current.opacity(index) : 1,
+              // }}
+            >
               <p className='flex items-center justify-center'>
                 <Image
                   src={url}
