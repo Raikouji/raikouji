@@ -1,12 +1,15 @@
 'use client'
 
 // TODO:
-//  ドットボタン：https://codesandbox.io/p/sandbox/embla-carousel-generator-react-7cgfq9?file=%2Fsrc%2Fjs%2FEmblaCarouselDotButton.tsx%3A16%2C10
+// - 画像サイズを指定して表示、object-fit 設定
+// - スライドではなく、ふわっと切り替わるアニメーションに
+// - ドットボタンをクリックで当該スライドに移動
+// https://codesandbox.io/p/sandbox/embla-carousel-generator-react-7cgfq9?file=%2Fsrc%2Fjs%2FEmblaCarouselDotButton.tsx%3A16%2C10
 
 import Autoplay from 'embla-carousel-autoplay'
+import Image from 'next/image'
 import * as React from 'react'
 
-import Card from '@/components/ui/Card'
 import {
   Carousel,
   CarouselContent,
@@ -18,7 +21,7 @@ import {
 import { type CarouselApi } from '@/components/ui/carousel'
 import { range } from '@/utils'
 
-const photos = [
+let photos = [
   { url: 'https://source.unsplash.com/1600x900/?nature,water', alt: 'aaaa' },
   { url: 'https://source.unsplash.com/1600x900/?nature,sky', alt: 'bbbb' },
   { url: 'https://source.unsplash.com/1600x900/?nature,forest', alt: 'cccc' },
@@ -62,23 +65,28 @@ export default function CarouselPlugin() {
         setApi={setApi}
       >
         <CarouselContent className='&>ml-0'>
-          {/* div.overflow-hidden > div.flex.-ml-4 */}
           {photos.map(({ url, alt }, index) => (
             <CarouselItem key={index} className='pl-0'>
-              {/* min-w-0 shrink-0 grow-0 basis-full, pl-4 */}
-              <Card className='flex items-center justify-center'>
-                <img src={url} alt={alt} />
-              </Card>
+              <p className='flex items-center justify-center'>
+                <Image
+                  src={url}
+                  alt={alt}
+                  width={180}
+                  height={48}
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                  }}
+                />
+              </p>
             </CarouselItem>
           ))}
         </CarouselContent>
-        <p className='absolute bottom-2 w-full text-center'>
+        <div className='absolute bottom-2 w-full text-center'>
           {CarouselDotIndicator({ count, current })}
-        </p>
+        </div>
         <CarouselPrevious className='left-2' />
-        {/* absolute h-8 w-8 rounded-full, -left-12 top-1/2 -translate-y-1/2 */}
         <CarouselNext className='right-2' />
-        {/* absolute h-8 w-8 rounded-full, -right-12 top-1/2 -translate-y-1/2 */}
       </Carousel>
     </div>
   )
