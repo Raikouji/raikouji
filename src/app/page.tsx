@@ -1,6 +1,7 @@
 import Fadein from '@/components/FadeIn'
 import Hero from '@/components/Hero'
 import ImageAboveHeading from '@/components/ImageAboveHeading'
+import Information from '@/components/Information'
 import MicrocmsGallery from '@/components/MicrocmsGallery'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/utils'
@@ -30,50 +31,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div
-            className={cn(
-              'relative mx-auto max-w-screen-md p-8',
-              'bg-[url("/images/bg-paper.png")] bg-cover bg-top',
-              'rounded-xl shadow-lg',
-            )}
-          >
-            <h2
-              className={cn(
-                'absolute -left-6 top-3',
-                'bg-primary-dark border-t-4 border-gray-800 px-2 py-3 shadow-lg',
-                'text-sm tracking-widest text-white ',
-              )}
-              style={{ writingMode: 'vertical-rl' }}
-            >
-              お知らせ
-            </h2>
-            <div className='flex flex-col gap-8 lg:flex-row'>
-              <div className='lg:order-1 lg:w-2/3'>
-                <h3 className='text-base'>
-                  <a href='#' className='text-primary-dark underline'>
-                    0月00日に「●●●●●●●●●●」を開催します
-                  </a>
-                </h3>
-                <p className='mt-2 text-sm'>
-                  ここに開花情報等を載せます。ダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝た。
-                </p>
-                <div className='border-primary mt-3 border p-4'>
-                  <h3 className='text-base'>あじさいの開花状況 (2023-06-17)</h3>
-                  <p className='mt-2 text-sm'>
-                    ここに開花情報等を載せます。ダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝た。
-                  </p>
-                </div>
-              </div>
-              <div className='lg:w-1/3'>
-                <Image
-                  src='/images/ajisai2.jpg'
-                  width={900}
-                  height={600}
-                  alt='あじさい'
-                />
-              </div>
-            </div>
-          </div>
+          <Information />
 
           <section className='pb-16'>
             <div
@@ -158,7 +116,7 @@ export default function Home() {
                     />
                   </div>
                   <figcaption
-                    className='border-primary absolute -top-2 left-1 border-t-4 bg-white px-2 py-3 tracking-widest shadow-lg'
+                    className='absolute -top-2 left-1 border-t-4 border-primary bg-white px-2 py-3 tracking-widest shadow-lg'
                     style={{ writingMode: 'vertical-rl' }}
                   >
                     年間行事
@@ -181,7 +139,7 @@ export default function Home() {
                     />
                   </div>
                   <figcaption
-                    className='border-primary absolute -top-2 left-1 border-t-4 bg-white px-2 py-3 tracking-widest shadow-lg'
+                    className='absolute -top-2 left-1 border-t-4 border-primary bg-white px-2 py-3 tracking-widest shadow-lg'
                     style={{ writingMode: 'vertical-rl' }}
                   >
                     坐禅会・写経会
@@ -204,7 +162,7 @@ export default function Home() {
                     />
                   </div>
                   <figcaption
-                    className='border-primary absolute -top-2 left-1 border-t-4 bg-white px-2 py-3 tracking-widest shadow-lg'
+                    className='absolute -top-2 left-1 border-t-4 border-primary bg-white px-2 py-3 tracking-widest shadow-lg'
                     style={{ writingMode: 'vertical-rl' }}
                   >
                     墓地のご案内
@@ -227,7 +185,7 @@ export default function Home() {
                     />
                   </div>
                   <figcaption
-                    className='border-primary absolute -top-2 left-1 border-t-4 bg-white px-2 py-3 tracking-widest shadow-lg'
+                    className='absolute -top-2 left-1 border-t-4 border-primary bg-white px-2 py-3 tracking-widest shadow-lg'
                     style={{ writingMode: 'vertical-rl' }}
                   >
                     御朱印
@@ -250,7 +208,7 @@ export default function Home() {
                     />
                   </div>
                   <figcaption
-                    className='border-primary absolute -top-2 left-1 border-t-4 bg-white px-2 py-3 tracking-widest shadow-lg'
+                    className='absolute -top-2 left-1 border-t-4 border-primary bg-white px-2 py-3 tracking-widest shadow-lg'
                     style={{ writingMode: 'vertical-rl' }}
                   >
                     仏前結婚式
@@ -270,7 +228,7 @@ export default function Home() {
             <section className='mx-auto flex max-w-screen-xl flex-col gap-12 lg:flex-row lg:items-center'>
               <div className='flex flex-col gap-12 text-center lg:w-72'>
                 <h2
-                  className='border-primary mx-auto border-t-4 pt-3 text-xl tracking-[0.35em]'
+                  className='mx-auto border-t-4 border-primary pt-3 text-xl tracking-[0.35em]'
                   style={{ writingMode: 'vertical-rl' }}
                 >
                   頼光寺の風景
@@ -279,7 +237,7 @@ export default function Home() {
                   境内にはゆかりある墓地が点在し、300株以上のあじさいをはじめ様々な植物が植っています。初夏のあじさいの季節が見どころで、毎年多くの方にご参拝いただいております。
                 </p>
               </div>
-              <div className='@container flex-grow'>
+              <div className='flex-grow @container'>
                 <MicrocmsGallery
                   queries={{
                     limit: 100,
