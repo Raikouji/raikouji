@@ -5,6 +5,7 @@
 // type CarouselPlugin = UseCarouselParameters[1];
 
 import Autoplay from 'embla-carousel-autoplay'
+import Fade from 'embla-carousel-fade'
 import useEmblaCarousel from 'embla-carousel-react'
 import Image from 'next/image'
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>
@@ -20,11 +21,14 @@ type Images = Image[]
 function Slider({ images }: { images: Images }) {
   const emblaOptions: CarouselOptions = { loop: true }
   const autoplayOptions = {
-    delay: 8000,
+    delay: 9000,
     stopOnMouseEnter: true,
   }
 
-  const [emblaRef] = useEmblaCarousel(emblaOptions, [Autoplay(autoplayOptions)])
+  const [emblaRef] = useEmblaCarousel(emblaOptions, [
+    Autoplay(autoplayOptions),
+    Fade(),
+  ])
 
   return (
     <div
