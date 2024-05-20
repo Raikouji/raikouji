@@ -47,12 +47,19 @@ export default async function Information() {
       </h2>
       <div className='flex flex-col gap-8 lg:flex-row'>
         <div className='lg:order-1 lg:w-2/3'>
-          <div className='-ml-6 w-fit rounded-3xl border bg-primary px-4 py-2 text-white'>
-            <h3 className='text-base'>
-              あじさいの開花状況 (更新：{format(date, 'MM月dd日 H時m分')})
-            </h3>
-            <p className='mt-1 text-sm'>{data.flowerState}</p>
+          <div className='-ml-6 flex items-center justify-start'>
+            <div className='w-3 overflow-hidden'>
+              <div className='h-4 origin-bottom-right rotate-45 transform bg-primary'></div>
+            </div>
+            <div className='w-fit flex-1 rounded-3xl bg-primary px-4 py-2 text-white'>
+              <h3 className='text-base'>あじさいの開花状況</h3>
+              <p className='text-sm text-yellow-200'>
+                {format(date, 'MM月dd日 H時m分')} 更新
+              </p>
+              <p className='mt-1 text-sm'>{data.flowerState}</p>
+            </div>
           </div>
+
           <div>
             <h3 className='mt-4 text-base'>
               <a href='#' className='text-primary-dark underline'>
