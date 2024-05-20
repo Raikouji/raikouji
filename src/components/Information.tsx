@@ -1,3 +1,4 @@
+import NewsList from '@/components/NewsList'
 import { getBasicInformation } from '@/lib/microcms'
 import type { BasicInformation } from '@/types/post'
 import { cn } from '@/utils'
@@ -51,7 +52,7 @@ export default async function Information() {
             <div className='w-3 overflow-hidden'>
               <div className='h-4 origin-bottom-right rotate-45 transform bg-primary'></div>
             </div>
-            <div className='w-fit flex-1 rounded-3xl bg-primary px-4 py-2 text-white'>
+            <div className='w-fit rounded-3xl bg-primary px-4 py-2 text-white'>
               <h3 className='text-base'>あじさいの開花状況</h3>
               <p className='text-sm text-yellow-200'>
                 {format(date, 'MM月dd日 H時m分')} 更新
@@ -61,22 +62,7 @@ export default async function Information() {
           </div>
 
           <div>
-            <h3 className='mt-4 text-base'>
-              <a href='#' className='text-primary-dark underline'>
-                0月00日に「●●●●●●●●●●」を開催します
-              </a>
-            </h3>
-            <p className='mt-2 text-sm'>
-              ここに開花情報等を載せます。ダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝た。
-            </p>
-            <h3 className='mt-4 text-base'>
-              <a href='#' className='text-primary-dark underline'>
-                0月00日に「●●●●●●●●●●」を開催します
-              </a>
-            </h3>
-            <p className='mt-2 text-sm'>
-              ここに開花情報等を載せます。ダミーコピーです手はおっかさんの演奏硝子屋をセロに思ったばこだた。それから思わ口まし勝た。
-            </p>
+            <NewsList className='mt-6 flex flex-col gap-3' />
           </div>
         </div>
         <div className='lg:w-1/3'>
