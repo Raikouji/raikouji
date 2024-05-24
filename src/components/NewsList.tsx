@@ -23,7 +23,7 @@ export default async function NewsList({
           <Link
             key={post.id}
             href={`/blog/${post.id}`}
-            className='hover:opacity-80'
+            className='border-b border-dashed border-b-secondary-200 py-2 hover:opacity-80'
           >
             <li className='flex gap-1'>
               <span className='inline-block w-16 pt-0.5 text-sm'>

@@ -46,15 +46,17 @@ export default async function Information() {
       >
         お知らせ
       </h2>
-      <div className='flex flex-col gap-8 lg:flex-row'>
-        <div className='lg:order-1 lg:w-2/3'>
-          <div className='-ml-6 flex items-center justify-start'>
-            <div className='w-3 overflow-hidden'>
+      <div className='flex flex-col lg:flex-row lg:gap-8'>
+        <div className='order-1 lg:w-2/3'>
+          <div className='flex items-center justify-start lg:-ml-6'>
+            <div className='hidden w-3 overflow-hidden lg:block'>
               <div className='h-4 origin-bottom-right rotate-45 transform bg-primary'></div>
             </div>
-            <div className='w-fit rounded-3xl bg-primary px-4 py-2 text-white'>
-              <h3 className='text-base'>あじさいの開花状況</h3>
-              <p className='text-sm text-yellow-200'>
+            <div className='w-fit bg-primary px-4 py-2 text-white lg:rounded-3xl'>
+              <h3 className='text-center text-base lg:text-left'>
+                あじさいの開花状況
+              </h3>
+              <p className='text-center text-sm text-yellow-200 lg:text-left'>
                 {format(date, 'MM月dd日 H時m分')} 更新
               </p>
               <p className='mt-1 text-sm'>{data.flowerState}</p>
@@ -62,7 +64,7 @@ export default async function Information() {
           </div>
 
           <div>
-            <NewsList className='mt-6 flex flex-col gap-3' />
+            <NewsList className='mt-4 flex flex-col' />
           </div>
         </div>
         <div className='lg:w-1/3'>
@@ -72,7 +74,7 @@ export default async function Information() {
               width={data.flowerPhoto[0].width}
               height={data.flowerPhoto[0].height}
               alt='開花状況 1'
-              className='h-60 w-60 rounded-lg object-cover shadow-lg'
+              className='aspect-h-auto mx-auto w-full object-cover shadow-lg lg:rounded-lg'
             />
           </p>
         </div>
