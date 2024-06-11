@@ -1,2 +1,2 @@
-export * from './ImageAboveHeading'
-export { default } from './ImageAboveHeading'
+export * from "./ImageAboveHeading";
+export { default } from "./ImageAboveHeading";

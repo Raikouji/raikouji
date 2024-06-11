@@ -1,2 +1,2 @@
-export * from './ArticleWrapper'
-export { default } from './ArticleWrapper'
+export * from "./ArticleWrapper";
+export { default } from "./ArticleWrapper";

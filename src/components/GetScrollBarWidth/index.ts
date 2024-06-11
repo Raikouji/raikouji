@@ -1,2 +1,2 @@
-export * from './GetScrollBarWidth'
-export { default } from './GetScrollBarWidth'
+export * from "./GetScrollBarWidth";
+export { default } from "./GetScrollBarWidth";

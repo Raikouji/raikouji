@@ -1,2 +1,2 @@
-export * from './TocLink'
-export { default } from './TocLink'
+export * from "./TocLink";
+export { default } from "./TocLink";

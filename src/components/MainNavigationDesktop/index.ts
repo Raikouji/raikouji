@@ -1,2 +1,2 @@
-export * from './MainNavigationDesktop'
-export { default } from './MainNavigationDesktop'
+export * from "./MainNavigationDesktop";
+export { default } from "./MainNavigationDesktop";

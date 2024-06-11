@@ -1,23 +1,23 @@
-import clsx from 'clsx'
-import React from 'react'
+import clsx from "clsx";
+import type React from "react";
 
-import styles from './VisuallyHidden.module.css'
+import styles from "./VisuallyHidden.module.css";
 
 function VisuallyHidden({
-  as: Element = 'span',
-  className,
-  children,
-  ...delegated
+	as: Element = "span",
+	className,
+	children,
+	...delegated
 }: {
-  as?: React.ElementType
-  className?: string
-  children: React.ReactNode
+	as?: React.ElementType;
+	className?: string;
+	children: React.ReactNode;
 }) {
-  return (
-    <Element className={clsx(styles.wrapper, className)} {...delegated}>
-      {children}
-    </Element>
-  )
+	return (
+		<Element className={clsx(styles.wrapper, className)} {...delegated}>
+			{children}
+		</Element>
+	);
 }
 
-export default VisuallyHidden
+export default VisuallyHidden;

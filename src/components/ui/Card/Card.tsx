@@ -1,21 +1,21 @@
-import { cn } from '@/utils'
-import React from 'react'
+import { cn } from "@/utils";
+import type React from "react";
 
-import styles from './Card.module.css'
+import styles from "./Card.module.css";
 
 function Card({
-  children,
-  className,
-  ...delegated
+	children,
+	className,
+	...delegated
 }: {
-  children: React.ReactNode
-  className?: string
+	children: React.ReactNode;
+	className?: string;
 }) {
-  return (
-    <div className={cn(styles.wrapper, className)} {...delegated}>
-      {children}
-    </div>
-  )
+	return (
+		<div className={cn(styles.wrapper, className)} {...delegated}>
+			{children}
+		</div>
+	);
 }
 
-export default Card
+export default Card;

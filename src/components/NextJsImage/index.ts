@@ -1,2 +1,2 @@
-export * from './NextJsImage'
-export { default } from './NextJsImage'
+export * from "./NextJsImage";
+export { default } from "./NextJsImage";
