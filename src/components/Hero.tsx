@@ -1,7 +1,6 @@
 import Slider from "@/components/Slider";
 import { cn } from "@/utils";
 import Image from "next/image";
-import styles from "./Hero.module.css";
 
 const sliderImages = [
 	{
@@ -25,7 +24,6 @@ function Hero() {
 				"full-width relative pl-4",
 				"bg-[length:329px_269px] bg-left bg-no-repeat",
 				'bg-[url("/images/illust-ajisai-blue.png")]',
-				styles.wrapper,
 			)}
 		>
 			<div className={cn("relative")}>

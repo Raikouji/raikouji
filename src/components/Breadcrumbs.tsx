@@ -4,7 +4,6 @@ import { cn } from "@/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaHome } from "react-icons/fa";
-import styles from "./Breadcrumbs.module.css";
 
 const items = [
 	{ path: "/", name: "Home" },
@@ -31,7 +30,7 @@ export default function Breadcrumbs({
 	const pathNames = pathString.split("/").filter((name) => name);
 
 	return (
-		<div className={cn(styles.wrapper, className)} {...delegated}>
+		<div className={className} {...delegated}>
 			<ul
 				className={cn(
 					"flex text-sm text-gray-600",
