@@ -1,15 +1,15 @@
 // utils.ts
 // 抽象的なタスクを実行する汎用関数
-import { SITE_TITLE, SITE_URL } from "@/constants";
-import { type ClassValue, clsx } from "clsx";
-import { twMerge } from "tailwind-merge";
+import { SITE_TITLE, SITE_URL } from '@/constants'
+import { type ClassValue, clsx } from 'clsx'
+import { twMerge } from 'tailwind-merge'
 
 /**
  * Tailwind CSS クラスを効率的にマージ
  * (スタイルの競合を解決、chadcn/ui が使用)
  */
 export function cn(...inputs: ClassValue[]) {
-	return twMerge(clsx(inputs));
+	return twMerge(clsx(inputs))
 }
 
 /**
@@ -50,42 +50,42 @@ export const range = (
 	endInput?: number,
 	step = 1,
 ): number[] => {
-	let start = startInput;
-	let end = endInput;
+	let start = startInput
+	let end = endInput
 
-	if (typeof end === "undefined") {
-		end = start;
-		start = 0;
+	if (typeof end === 'undefined') {
+		end = start
+		start = 0
 	}
 
-	const output: number[] = [];
+	const output: number[] = []
 	for (let i = start; i < end; i += step) {
-		output.push(i);
+		output.push(i)
 	}
-	return output;
-};
+	return output
+}
 
 /**
  * meta tag
  */
 type Metadata = {
-	title: string;
-	description: string;
+	title: string
+	description: string
 	openGraph?: {
-		title: string;
-		description: string;
-		url: string;
-		siteName: string;
+		title: string
+		description: string
+		url: string
+		siteName: string
 		images: {
-			url: string;
-			width: number;
-			height: number;
-			alt?: string;
-		}[];
-		locale: string;
-		type: string;
-	};
-};
+			url: string
+			width: number
+			height: number
+			alt?: string
+		}[]
+		locale: string
+		type: string
+	}
+}
 
 export const outputMetadata = ({ title, description, openGraph }: Metadata) => {
 	return {
@@ -109,8 +109,8 @@ export const outputMetadata = ({ title, description, openGraph }: Metadata) => {
 					alt: `${SITE_TITLE} post image`,
 				},
 			],
-			locale: "ja_JP",
-			type: "website",
+			locale: 'ja_JP',
+			type: 'website',
 		},
-	};
-};
+	}
+}

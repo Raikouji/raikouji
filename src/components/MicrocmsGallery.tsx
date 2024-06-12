@@ -18,23 +18,23 @@
   // その他のデータ
   totalCount: {totalCount}, offset: {offset}, limit: {limit}
  */
-import Fadein from "@/components/FadeIn";
-import { getGalleryList } from "@/lib/microcms";
-import { cn } from "@/utils";
-import type { MicroCMSQueries } from "microcms-js-sdk";
-import Image from "next/image";
+import Fadein from '@/components/FadeIn'
+import { getGalleryList } from '@/lib/microcms'
+import { cn } from '@/utils'
+import type { MicroCMSQueries } from 'microcms-js-sdk'
+import Image from 'next/image'
 
 type Props = {
-	queries: MicroCMSQueries;
-	cols?: number;
-	colsMd?: number;
-	colsLg?: number;
-	colsXL?: number;
-	className?: string;
-	childClassName?: string;
-	imageWidth?: number;
-	imageClassName?: string;
-};
+	queries: MicroCMSQueries
+	cols?: number
+	colsMd?: number
+	colsLg?: number
+	colsXL?: number
+	className?: string
+	childClassName?: string
+	imageWidth?: number
+	imageClassName?: string
+}
 
 async function MicrocmsGallery({
 	queries,
@@ -48,10 +48,10 @@ async function MicrocmsGallery({
 	imageClassName,
 	...delegated
 }: Props) {
-	const { contents } = await getGalleryList(queries);
+	const { contents } = await getGalleryList(queries)
 
 	if (!contents || contents.length === 0) {
-		return <p>No contents</p>;
+		return <p>No contents</p>
 	}
 
 	return (
@@ -61,7 +61,7 @@ async function MicrocmsGallery({
 				// colsMd && `@md\:columns-${colsMd}`,
 				// colsLg && `@lg\:columns-${colsLg}`,
 				// colsXL && `@xl\:columns-${colsXL}`,
-				"lg:columns-3",
+				'lg:columns-3',
 				colsMd && `@3xl:columns-${colsMd}`, // md, 768px
 				colsLg && `@5xl:columns-${colsLg}`, // lg, 1024px
 				colsXL && `@7xl:columns-${colsXL}`, // xl, 1280px
@@ -72,33 +72,33 @@ async function MicrocmsGallery({
 			{contents.map((post) => {
 				return (
 					<li key={post.id} className={childClassName}>
-						<Fadein tag="figure" className="relative break-inside-avoid shadow">
+						<Fadein tag='figure' className='relative break-inside-avoid shadow'>
 							<>
 								<Image
-									alt={post?.caption || ""}
+									alt={post?.caption || ''}
 									src={post.photo.url}
 									width={imageWidth}
 									height={
 										(imageWidth * Number(post.photo?.height)) /
 										Number(post.photo?.width)
 									}
-									className={cn("w-full", imageClassName && imageClassName)}
+									className={cn('w-full', imageClassName && imageClassName)}
 								/>
 								{post?.caption && (
-									<figcaption className="absolute bottom-1 left-1 inline-block rounded bg-black/60 px-1 text-xs leading-tight text-white md:text-sm">
+									<figcaption className='absolute bottom-1 left-1 inline-block rounded bg-black/60 px-1 text-xs leading-tight text-white md:text-sm'>
 										{post?.caption}
 									</figcaption>
 								)}
-								<p className="hidden p-1 text-sm">
+								<p className='hidden p-1 text-sm'>
 									{post?.category[0]} / {post?.isDisplayOnHome}
 								</p>
 							</>
 						</Fadein>
 					</li>
-				);
+				)
 			})}
 		</ul>
-	);
+	)
 }
 
-export default MicrocmsGallery;
+export default MicrocmsGallery

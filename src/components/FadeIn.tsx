@@ -1,28 +1,28 @@
-"use client";
+'use client'
 
-import { cn } from "@/utils";
-import { motion } from "framer-motion";
-import type { ElementType, ReactElement } from "react";
+import { cn } from '@/utils'
+import { motion } from 'framer-motion'
+import type { ElementType, ReactElement } from 'react'
 
 function FadeIn({
-	tag = "div",
+	tag = 'div',
 	className,
 	children,
 	...delegated
 }: {
-	tag?: ElementType;
-	className?: string;
-	children: ReactElement;
+	tag?: ElementType
+	className?: string
+	children: ReactElement
 }) {
-	const MotionTag = motion[tag as keyof typeof motion];
+	const MotionTag = motion[tag as keyof typeof motion]
 
 	return (
 		<MotionTag
-			className={cn("translate-y-24", className)}
+			className={cn('translate-y-24', className)}
 			initial={{ opacity: 0 }}
 			whileInView={{ opacity: 1 }}
 			viewport={{
-				amount: "all" /* root: motionContainerRef */,
+				amount: 'all' /* root: motionContainerRef */,
 				once: true,
 			}}
 			animate={{ y: 0 }}
@@ -33,7 +33,7 @@ function FadeIn({
 		>
 			{children}
 		</MotionTag>
-	);
+	)
 }
 
-export default FadeIn;
+export default FadeIn

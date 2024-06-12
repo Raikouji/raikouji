@@ -1,27 +1,27 @@
-"use client";
+'use client'
 
-import confetti from "canvas-confetti";
-import { motion, useScroll } from "framer-motion";
-import { useEffect, useRef } from "react";
+import confetti from 'canvas-confetti'
+import { motion, useScroll } from 'framer-motion'
+import { useEffect, useRef } from 'react'
 
 export default function Home() {
-	const motionContainerRef = useRef(null);
-	const { scrollYProgress } = useScroll();
+	const motionContainerRef = useRef(null)
+	const { scrollYProgress } = useScroll()
 
 	useEffect(() => {
 		/* @ref: https://zenn.dev/a_saya_108/articles/13f8a52eef9de6 */
 		/* @ref: https://blog.kimizuka.org/entry/2022/12/08/124903 */
-		const duration = 15 * 1000;
-		const animationEnd = Date.now() + duration;
-		let skew = 1;
+		const duration = 15 * 1000
+		const animationEnd = Date.now() + duration
+		let skew = 1
 
 		function randomInRange(min: number, max: number) {
-			return Math.random() * (max - min) + min;
+			return Math.random() * (max - min) + min
 		}
-		(function frame() {
-			const timeLeft = animationEnd - Date.now();
-			const ticks = Math.max(100, 500 * (timeLeft / duration));
-			skew = Math.max(0.8, skew - 0.001);
+		;(function frame() {
+			const timeLeft = animationEnd - Date.now()
+			const ticks = Math.max(100, 500 * (timeLeft / duration))
+			skew = Math.max(0.8, skew - 0.001)
 
 			confetti({
 				particleCount: 2,
@@ -32,43 +32,43 @@ export default function Home() {
 					// since particles fall down, skew start toward the top
 					y: Math.random() * skew - 0.2,
 				},
-				colors: ["#fbe8ff", "#dbe9ff"],
-				shapes: ["circle"],
+				colors: ['#fbe8ff', '#dbe9ff'],
+				shapes: ['circle'],
 				gravity: randomInRange(0.4, 0.6),
 				scalar: randomInRange(0.4, 1),
 				drift: randomInRange(-0.4, 0.4),
-			});
+			})
 
 			if (timeLeft > 0) {
-				requestAnimationFrame(frame);
+				requestAnimationFrame(frame)
 			}
-		})();
-	});
+		})()
+	})
 
 	return (
-		<div className={"container flex max-w-screen-xl flex-col gap-12"}>
+		<div className={'container flex max-w-screen-xl flex-col gap-12'}>
 			<motion.div
-				className="full-width sticky left-0 top-0 z-50 h-10 bg-primary"
+				className='full-width sticky left-0 top-0 z-50 h-10 bg-primary'
 				style={{
 					scaleX: scrollYProgress,
 				}}
 			/>
 
-			<main className="h-[3000px] bg-gray-100">
+			<main className='h-[3000px] bg-gray-100'>
 				<p>メイン 3000px</p>
 			</main>
 
-			<div ref={motionContainerRef} style={{ overflow: "scroll" }}>
+			<div ref={motionContainerRef} style={{ overflow: 'scroll' }}>
 				<p>
 					Framer Motion スクロールで表示テスト：この親要素に ref
 					を設定しており、これが画面内に入った時にアニメーションが発火
 				</p>
 				<motion.div
-					className="translate-y-24 text-4xl font-bold text-tertiary"
+					className='translate-y-24 text-4xl font-bold text-tertiary'
 					initial={{ opacity: 0 }}
 					whileInView={{ opacity: 1 }}
 					viewport={{
-						amount: "all" /* root: motionContainerRef */,
+						amount: 'all' /* root: motionContainerRef */,
 						once: true,
 					}}
 					animate={{ y: 0 }}
@@ -85,5 +85,5 @@ export default function Home() {
 				</motion.div>
 			</div>
 		</div>
-	);
+	)
 }

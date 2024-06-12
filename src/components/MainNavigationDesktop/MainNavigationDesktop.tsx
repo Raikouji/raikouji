@@ -5,20 +5,20 @@ import {
 	NavigationMenuLink,
 	NavigationMenuList,
 	NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
-import { cn } from "@/utils";
-import React from "react";
+} from '@/components/ui/navigation-menu'
+import { cn } from '@/utils'
+import React from 'react'
 
 function MainNavigationDesktop({
 	items,
 	segment,
 }: {
 	items: {
-		title: string;
-		href: string;
-		subMenu?: { title: string; href: string }[];
-	}[];
-	segment: string | null;
+		title: string
+		href: string
+		subMenu?: { title: string; href: string }[]
+	}[]
+	segment: string | null
 }) {
 	return (
 		<NavigationMenu>
@@ -29,7 +29,7 @@ function MainNavigationDesktop({
 							<>
 								<NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
 								<NavigationMenuContent>
-									<ul className="grid w-[400px] gap-3 p-4 text-sm md:w-[26em] md:grid-cols-2">
+									<ul className='grid w-[400px] gap-3 p-4 text-sm md:w-[26em] md:grid-cols-2'>
 										{item.subMenu.map((subItem) => (
 											<ListItem
 												key={crypto.randomUUID()}
@@ -47,18 +47,18 @@ function MainNavigationDesktop({
 				))}
 			</NavigationMenuList>
 		</NavigationMenu>
-	);
+	)
 }
 
-export default MainNavigationDesktop;
+export default MainNavigationDesktop
 
-type ListItemProps = React.ComponentPropsWithoutRef<"a"> & {
-	segment?: string | null;
-	className?: string;
-	title: string;
-};
+type ListItemProps = React.ComponentPropsWithoutRef<'a'> & {
+	segment?: string | null
+	className?: string
+	title: string
+}
 
-const ListItem = React.forwardRef<React.ElementRef<"a">, ListItemProps>(
+const ListItem = React.forwardRef<React.ElementRef<'a'>, ListItemProps>(
 	({ segment, className, title, ...props }, ref) => {
 		return (
 			<>
@@ -66,9 +66,9 @@ const ListItem = React.forwardRef<React.ElementRef<"a">, ListItemProps>(
 					<a
 						ref={ref}
 						className={cn(
-							segment === props.href && "font-bold",
-							"block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors" +
-								" hover:bg-primary-100 hover:text-accent-foreground focus:bg-primary-100 focus:text-accent-foreground",
+							segment === props.href && 'font-bold',
+							'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors' +
+								' hover:bg-primary-100 hover:text-accent-foreground focus:bg-primary-100 focus:text-accent-foreground',
 							className,
 						)}
 						{...props}
@@ -77,7 +77,7 @@ const ListItem = React.forwardRef<React.ElementRef<"a">, ListItemProps>(
 					</a>
 				</NavigationMenuLink>
 			</>
-		);
+		)
 	},
-);
-ListItem.displayName = "ListItem";
+)
+ListItem.displayName = 'ListItem'

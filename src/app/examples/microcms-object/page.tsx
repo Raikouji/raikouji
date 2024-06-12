@@ -1,28 +1,28 @@
-import { getBasicInformation } from "@/lib/microcms";
-import type { BasicInformation } from "@/types/post";
-import Image from "next/image";
+import { getBasicInformation } from '@/lib/microcms'
+import type { BasicInformation } from '@/types/post'
+import Image from 'next/image'
 
 export default async function StaticPage() {
-	let data: BasicInformation | null = null;
-	let errorMassage = "";
+	let data: BasicInformation | null = null
+	let errorMassage = ''
 
 	try {
-		data = await getBasicInformation();
+		data = await getBasicInformation()
 	} catch (error) {
-		errorMassage = `Error fetching basic information: ${error}`;
+		errorMassage = `Error fetching basic information: ${error}`
 	}
 
 	if (errorMassage) {
-		return <p>{errorMassage}</p>;
+		return <p>{errorMassage}</p>
 	}
 
 	if (!data) {
-		return <p>No data.</p>;
+		return <p>No data.</p>
 	}
 
 	return (
 		<>
-			<h1 className="text-4xl">MicroCMS オブジェクトデータの取得</h1>
+			<h1 className='text-4xl'>MicroCMS オブジェクトデータの取得</h1>
 			<p>data: {data.isActive.toString()}</p>
 			<p>flowerState: {data.flowerState}</p>
 			{data.flowerPhoto?.length &&
@@ -34,14 +34,14 @@ export default async function StaticPage() {
 								width={photo.height}
 								height={photo.width}
 								style={{
-									width: "300px",
-									height: "auto",
+									width: '300px',
+									height: 'auto',
 								}}
 								alt={`頼光寺の開花状況の写真 ${index}`}
 							/>
 						</p>
-					);
+					)
 				})}
 		</>
-	);
+	)
 }

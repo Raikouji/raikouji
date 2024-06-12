@@ -1,84 +1,84 @@
-import NewsList from "@/components/NewsList";
-import { getBasicInformation } from "@/lib/microcms";
-import type { BasicInformation } from "@/types/post";
-import { cn } from "@/utils";
-import { format, parseISO } from "date-fns";
-import Image from "next/image";
+import NewsList from '@/components/NewsList'
+import { getBasicInformation } from '@/lib/microcms'
+import type { BasicInformation } from '@/types/post'
+import { cn } from '@/utils'
+import { format, parseISO } from 'date-fns'
+import Image from 'next/image'
 export default async function Information() {
-	let data: BasicInformation | null = null;
-	let errorMassage = "";
+	let data: BasicInformation | null = null
+	let errorMassage = ''
 
 	try {
-		data = await getBasicInformation();
+		data = await getBasicInformation()
 	} catch (error) {
-		errorMassage = `Error fetching basic information: ${error}`;
+		errorMassage = `Error fetching basic information: ${error}`
 	}
 
 	if (errorMassage) {
-		return <p>{errorMassage}</p>;
+		return <p>{errorMassage}</p>
 	}
 
 	if (!data || !data.flowerPhoto || data.flowerPhoto.length === 0) {
-		return <p>No data or no flower photo.</p>;
+		return <p>No data or no flower photo.</p>
 	}
 
 	if (!data.isActive) {
-		return;
+		return
 	}
 
-	const date = parseISO(data.publishedAt as string);
+	const date = parseISO(data.publishedAt as string)
 
 	return (
 		<div
 			className={cn(
-				"relative mx-auto max-w-screen-md p-8",
+				'relative mx-auto max-w-screen-md p-8',
 				'bg-[url("/images/bg-paper.png")] bg-cover bg-top',
-				"rounded-xl shadow-lg",
+				'rounded-xl shadow-lg',
 			)}
 		>
 			<h2
 				className={cn(
-					"absolute -left-6 top-3",
-					"border-t-4 border-gray-800 bg-primary-dark px-2 py-3 shadow-lg",
-					"text-sm tracking-widest text-white ",
+					'absolute -left-6 top-3',
+					'border-t-4 border-gray-800 bg-primary-dark px-2 py-3 shadow-lg',
+					'text-sm tracking-widest text-white ',
 				)}
-				style={{ writingMode: "vertical-rl" }}
+				style={{ writingMode: 'vertical-rl' }}
 			>
 				お知らせ
 			</h2>
-			<div className="flex flex-col lg:flex-row lg:gap-8">
-				<div className="order-1 lg:w-2/3">
-					<div className="flex items-center justify-start lg:-ml-6">
-						<div className="hidden w-3 overflow-hidden lg:block">
-							<div className="h-4 origin-bottom-right rotate-45 transform bg-primary" />
+			<div className='flex flex-col lg:flex-row lg:gap-8'>
+				<div className='order-1 lg:w-2/3'>
+					<div className='flex items-center justify-start lg:-ml-6'>
+						<div className='hidden w-3 overflow-hidden lg:block'>
+							<div className='h-4 origin-bottom-right rotate-45 transform bg-primary' />
 						</div>
-						<div className="w-fit bg-primary px-4 py-2 text-white lg:rounded-3xl">
-							<h3 className="text-center text-base lg:text-left">
+						<div className='w-fit bg-primary px-4 py-2 text-white lg:rounded-3xl'>
+							<h3 className='text-center text-base lg:text-left'>
 								あじさいの開花状況
 							</h3>
-							<p className="text-center text-sm text-yellow-200 lg:text-left">
-								{format(date, "MM月dd日 H時m分")} 更新
+							<p className='text-center text-sm text-yellow-200 lg:text-left'>
+								{format(date, 'MM月dd日 H時m分')} 更新
 							</p>
-							<p className="mt-1 text-sm">{data.flowerState}</p>
+							<p className='mt-1 text-sm'>{data.flowerState}</p>
 						</div>
 					</div>
 
 					<div>
-						<NewsList className="mt-4 flex flex-col" />
+						<NewsList className='mt-4 flex flex-col' />
 					</div>
 				</div>
-				<div className="lg:w-1/3">
-					<p className="aspect-square">
+				<div className='lg:w-1/3'>
+					<p className='aspect-square'>
 						<Image
 							src={data.flowerPhoto[0].url}
 							width={data.flowerPhoto[0].width}
 							height={data.flowerPhoto[0].height}
-							alt="開花状況 1"
-							className="aspect-h-auto mx-auto w-full object-cover shadow-lg lg:rounded-lg"
+							alt='開花状況 1'
+							className='aspect-h-auto mx-auto w-full object-cover shadow-lg lg:rounded-lg'
 						/>
 					</p>
 				</div>
 			</div>
 		</div>
-	);
+	)
 }
