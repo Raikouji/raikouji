@@ -69,8 +69,8 @@ export default function Page() {
 					<p className='mt-3 text-center'>
 						<a href='/contact' className='text-primary-dark underline'>
 							問合せフォーム
-						</a>
-						{` `}からごご連絡ください。
+						</a>{' '}
+						からごご連絡ください。
 					</p>
 				</div>
 			</div>
