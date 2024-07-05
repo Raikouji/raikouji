@@ -156,7 +156,7 @@ function SiteFooter() {
 				</div>
 
 				<p className='mt-16 text-center text-xs'>
-					Copyright ©︎ {new Date().getFullYear()} name
+					Copyright © {new Date().getFullYear()} Raikouji Temple
 				</p>
 			</div>
 		</footer>
