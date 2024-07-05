@@ -42,19 +42,13 @@ export default async function StaticDetailPage({
 
 	return (
 		<ArticleWrapper pageTitle='お知らせ'>
-			<div className='mx-auto max-w-screen-md'>
-				<TocLink>
-					<TocLinkItem id='scarlet-seal'>御朱印</TocLinkItem>
-					<TocLinkItem id='wedding'>仏前結婚式</TocLinkItem>
-				</TocLink>
-			</div>
-
 			<h2>{post.title}</h2>
+			<p>更新日: {new Date().toLocaleString()}</p>
 			{parse(post.content)}
-
-			<p>Update: {new Date().toLocaleString()}</p>
 			<p>
-				<a href='../examples/microcms'>« 一覧に戻る</a>
+				<a className='underline' href='../examples/microcms'>
+					« 一覧に戻る
+				</a>
 			</p>
 		</ArticleWrapper>
 	)
