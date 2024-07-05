@@ -14,6 +14,7 @@ const items = [
 	{ path: '/gallery', name: 'ギャラリー' },
 	{ path: '/scarlet-seal', name: '御朱印、仏前結婚式' },
 	{ path: '/multi-purpose-hall', name: '紫陽閣の貸し出し' },
+	{ path: '/news', name: 'お知らせ' },
 	{ path: '/links', name: 'リンク' },
 	{ path: '/contact', name: 'お問合せ' },
 	{ path: '/privacy-policy', name: 'プライバシーポリシー' },
