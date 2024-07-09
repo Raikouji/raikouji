@@ -29,17 +29,8 @@ export default function Page() {
 
 			<section id='scarlet-seal' className='mx-auto max-w-screen-lg py-12'>
 				<div
-					id='public-grave'
-					className='mt-8 flex flex-col items-center gap-4 md:flex-row md:gap-8 lg:gap-12'
+					id='public-grave' className='mt-8 flex flex-col items-center gap-4 md:flex-row-reverse md:gap-8 lg:gap-12'
 				>
-					<p>
-						<Image
-							src='/images/scarlet-seal-2.png'
-							alt='御朱印'
-							width={384}
-							height={256}
-						/>
-					</p>
 					<div className='md:w-3/5'>
 						<p className='text-center'>
 							<ImageAboveHeading imageName='priest' />
@@ -69,6 +60,14 @@ export default function Page() {
 							</Card>
 						</div>
 					</div>
+					<p>
+						<Image
+							src='/images/scarlet-seal-2.png'
+							alt='御朱印'
+							width={384}
+							height={256}
+						/>
+					</p>
 				</div>
 			</section>
 
@@ -79,14 +78,6 @@ export default function Page() {
 					id='public-grave'
 					className='mt-8 flex flex-col items-center gap-4 md:flex-row md:gap-8 lg:gap-12'
 				>
-					<p className='order-1'>
-						<Image
-							src='/images/bridal.jpg'
-							alt='仏前結婚式'
-							width={384}
-							height={256}
-						/>
-					</p>
 					<div className='md:w-3/5'>
 						<p className='text-center'>
 							<ImageAboveHeading imageName='bell' />
@@ -116,13 +107,13 @@ export default function Page() {
 									'rounded-xl shadow-lg',
 								)}
 							>
-								<h4 className=' text-xl text-secondary-dark'>ご依頼の流れ</h4>
+								<h4 className='text-center md:text-left text-xl text-secondary-dark'>ご依頼の流れ</h4>
 								<p className='mt-2'>
 									まずは電話でお問い合わせください。
 									その後、ご都合の良い日に当寺へお越しいただき、ご見学いただきながら詳細を説明いたします。
 									打ち合わせを通じて具体的な内容を決定していきます。
 								</p>
-								<h4 className='mt-4 text-xl text-secondary-dark'>当日の流れ</h4>
+								<h4 className='mt-4 text-center md:text-left text-xl text-secondary-dark'>当日の流れ</h4>
 								<p className='mt-2'>
 									本堂での厳かな結婚式から始まります。
 									その後、お色直しを経て、当寺の
@@ -138,6 +129,14 @@ export default function Page() {
 							</Card>
 						</div>
 					</div>
+					<p className='mt-6 md-mt-'>
+						<Image
+							src='/images/bridal.jpg'
+							alt='仏前結婚式'
+							width={384}
+							height={256}
+						/>
+					</p>
 				</div>
 			</section>
 		</ArticleWrapper>
