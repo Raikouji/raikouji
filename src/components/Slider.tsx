@@ -32,7 +32,7 @@ function Slider({ images }: { images: Images }) {
 
 	return (
 		<div
-			className='embla aspect-h-3 aspect-w-2 overflow-hidden md:aspect-h-9 md:aspect-w-16'
+			className='embla aspect-h-4 aspect-w-3 overflow-hidden md:aspect-h-9 md:aspect-w-16'
 			ref={emblaRef}
 		>
 			<div className='embla__container flex'>

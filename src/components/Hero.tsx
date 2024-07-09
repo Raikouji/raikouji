@@ -21,8 +21,8 @@ function Hero() {
 	return (
 		<div
 			className={cn(
-				'full-width relative pl-4',
-				'bg-[length:329px_269px] bg-left bg-no-repeat',
+				'full-width relative lg:pl-4',
+				'bg-[length:295px_200px] lg:bg-[length:329px_269px] bg-right-bottom lg:bg-left bg-no-repeat',
 				'bg-[url("/images/illust-ajisai-blue.png")]',
 			)}
 		>
@@ -36,11 +36,11 @@ function Hero() {
 							className={cn(
 								'grid place-content-center',
 								'bottom-0 left-0',
-								'h-72 w-72 lg:h-96 lg:w-96',
+								'h-60 w-60 lg:h-96 lg:w-96',
 								'bg-primary-700/80 text-center text-white',
 							)}
 						>
-							<div className='flex flex-col gap-3'>
+							<div className='flex flex-col gap-1 lg:gap-3'>
 								<p>
 									<Image
 										src='/images/genji-emblem-white.png'
@@ -50,17 +50,17 @@ function Hero() {
 										height={79}
 									/>
 								</p>
-								<p className='font-serif text-xl lg:text-3xl'>
+								<p className='font-serif text-lg lg:text-3xl'>
 									曹洞宗 | 祥雲山
 								</p>
-								<p className='ml-[0.5em] font-serif text-5xl font-bold tracking-[0.5em] lg:text-6xl'>
+								<p className='ml-[0.5em] font-serif text-4xl font-bold tracking-[0.4em] lg:text-6xl'>
 									頼光寺
 								</p>
-								<p className='-mt-2 text-sm tracking-widest lg:text-base'>
+								<p className='-mt-2 text-xs tracking-widest lg:text-base'>
 									<span className='text-primary-300'>Raikouji</span>{' '}
 									<span className='text-indigo-300'>Temple</span>
 								</p>
-								<p className='font-serif text-xl lg:text-2xl'>
+								<p className='font-serif text-lg lg:text-2xl'>
 									〜 あじさい寺 〜
 								</p>
 							</div>
