@@ -57,9 +57,9 @@ export const getBlogDetail = async (
 // 一覧を取得
 export const getGalleryList = async (queries?: MicroCMSQueries) => {
 	return await client.getList<Gallery>({
-		customRequestInit: {
-			cache: "no-store", // キャッシュを利用せずに常に新しいデータを取得する
-		},
+		// customRequestInit: {
+		// 	cache: "no-store", // キャッシュを利用せずに常に新しいデータを取得する
+		// },
 		endpoint: 'gallery',
 		queries,
 	})
