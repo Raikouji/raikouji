@@ -36,17 +36,17 @@ export default function Home() {
 					<section className='pb-16'>
 						<div
 							className={cn(
-								'md:full-width relative md:pr-4',
+								'full-width relative md:pr-4',
 								'bg-[length:396.5px_178px] bg-right-top bg-no-repeat',
 								'bg-[url("/images/illust-2-color-ajisai.png")]',
 								styles.wrapper,
 							)}
 						>
-							<div className={cn('relative')}>
+							<div className='relative'>
 								<div className='md:w-3/4'>
 									<Fadein
 										tag='div'
-										className='aspect-h-2 aspect-w-3 md:aspect-h-9 md:aspect-w-16'
+										className='aspect-h-4 aspect-w-3 md:aspect-h-9 md:aspect-w-16'
 									>
 										<Image
 											src='/images/ajisai.jpg'
@@ -59,13 +59,13 @@ export default function Home() {
 										/>
 									</Fadein>
 								</div>
-								<div className='md:absolute md:-bottom-8 md:w-full'>
+								<div className='relative z-10 -mt-40 md:mt-0 mx-8 md:mx-0 md:absolute md:-bottom-8 md:w-full'>
 									<div className='mx-auto max-w-screen-xl'>
 										<div
 											className={cn(
 												'p-4 md:grid md:place-content-center lg:p-8',
 												'md:ml-auto md:w-1/2',
-												'bg-white/90 text-center md:shadow-lg',
+												'bg-white/90 text-center shadow-lg',
 											)}
 										>
 											<div className='flex flex-col gap-3'>
