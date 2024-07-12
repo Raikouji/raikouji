@@ -50,8 +50,8 @@ function ImageAboveHeading({
 		<Image
 			src={renderSrc(imageName)}
 			alt=''
-			width={60}
-			height={57}
+			width={42}
+			height={40}
 			className='inline-block'
 		/>
 	)
