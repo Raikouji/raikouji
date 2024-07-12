@@ -236,7 +236,7 @@ export default function Home() {
 							<div className='flex-grow @container'>
 								<MicrocmsGallery
 									queries={{
-										limit: 100,
+										limit: 20,
 										orders: 'system:default',
 										filters: 'isDisplayOnHome[equals]true',
 									}}
