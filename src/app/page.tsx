@@ -43,10 +43,10 @@ export default function Home() {
 							)}
 						>
 							<div className='relative'>
-								<div className='md:w-3/4'>
+								<div className='md:w-4/5 lg:w-3/4'>
 									<Fadein
 										tag='div'
-										className='aspect-h-4 aspect-w-3 md:aspect-h-9 md:aspect-w-16'
+										className='aspect-h-4 aspect-w-3 md:aspect-h-3 md:aspect-w-4 lg:aspect-h-9 lg:aspect-w-16'
 									>
 										<Image
 											src='/images/ajisai.jpg'
@@ -59,12 +59,12 @@ export default function Home() {
 										/>
 									</Fadein>
 								</div>
-								<div className='relative z-10 -mt-40 md:mt-0 mx-8 md:mx-0 md:absolute md:-bottom-8 md:w-full'>
+								<div className='relative z-10 -mt-40 md:mt-10 lg:mt-0 mx-8 md:mx-0 md:absolute md:-bottom-24 lg:-bottom-8 md:w-full'>
 									<div className='mx-auto max-w-screen-xl'>
 										<div
 											className={cn(
 												'p-4 md:grid md:place-content-center lg:p-8',
-												'md:ml-auto md:w-1/2',
+												'md:ml-auto md:w-3/5 lg:w-1/2',
 												'bg-white/90 text-center shadow-lg',
 											)}
 										>
@@ -73,10 +73,9 @@ export default function Home() {
 													<ImageAboveHeading imageName='bell' />
 												</p>
 												<h2>頼光寺について</h2>
-												<p>祥雲山・頼光寺は、紀元1000年頃に源氏の一族によって創立され、真言律宗の寺院としてその歴史を始めました。
-													戦火により一時衰退しましたが、二度の再興を経て、1804年に尼寺となりました。</p>
-												<p>その後、尼僧たちの坐禅道場として利用されましたが、1875年には維持が困難となり、法常寺に合併されました。
-													しかし、旧信徒たちの支援によって建物や什物は引き継がれ、現在では曹洞宗に属し、地域の人々に「あじさい寺」として親しまれています。</p>
+												<p>祥雲山・頼光寺は、紀元1000年頃に源氏の一族によって創立され、真言律宗の寺院としてその歴史を始めました。</p>
+												<p>戦火により一時衰退しましたが、二度の再興を経て、1804年に尼寺となりました。その後、尼僧たちの坐禅道場として利用されましたが、1875年には維持が困難となり、法常寺に合併されました。</p>
+												<p>しかし、旧信徒たちの支援によって建物や什物は引き継がれ、現在では曹洞宗に属し、地域の人々に「あじさい寺」として親しまれています。</p>
 												<p>
 													<Button asChild>
 														<Link href='about'>住職ご挨拶・頼光寺の沿革</Link>
