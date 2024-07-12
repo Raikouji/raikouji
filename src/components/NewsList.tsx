@@ -24,11 +24,11 @@ export default async function NewsList({
 						href={`/blog/${post.id}`}
 						className='border-b border-dashed border-b-secondary-200 py-2 hover:opacity-80'
 					>
-						<li className='flex gap-1'>
-							<span className='inline-block w-16 pt-0.5 text-sm'>
+						<li className='flex flex-row gap-1'>
+							<span className='block shrink-0 basis-16 pt-0.5 text-sm'>
 								{format(date, 'MM月dd日')}
 							</span>
-							<p className='grow text-base text-primary-dark underline'>
+							<p className='basis-auto text-base text-primary-dark underline'>
 								{post.title}
 							</p>
 						</li>
