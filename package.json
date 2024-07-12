@@ -10,7 +10,12 @@
 		"lint": "next lint --dir src",
 		"biome": "biome check --write ./src"
 	},
-	"browserslist": [">0.3%", "not ie 11", "not dead", "not op_mini all"],
+	"browserslist": [
+		">0.3%",
+		"not ie 11",
+		"not dead",
+		"not op_mini all"
+	],
 	"dependencies": {
 		"@next/bundle-analyzer": "^14.2.3",
 		"@radix-ui/react-aspect-ratio": "^1.0.3",
@@ -52,6 +57,7 @@
 		"@tailwindcss/aspect-ratio": "^0.4.2",
 		"@tailwindcss/container-queries": "^0.1.1",
 		"@tailwindcss/forms": "^0.5.7",
-		"@tailwindcss/typography": "^0.5.13"
+		"@tailwindcss/typography": "^0.5.13",
+		"netlify-cli": "^17.33.0"
 	}
 }
