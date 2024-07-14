@@ -10,6 +10,7 @@ import Image from 'next/image'
 const pageTitle = '頼光寺について'
 const pageDescription =
 	'頼光寺のお墓は、静かで緑豊かな心安らぐ空間です。永代供養共同墓、水子供養塔もあります。能勢電鉄「畦野駅」から徒歩５分とアクセスもしやすい立地です。'
+const headerImage = '/images/temple-and-ajisai.jpg'
 
 export const metadata: Metadata = outputMetadata({
 	title: pageTitle,
@@ -18,7 +19,7 @@ export const metadata: Metadata = outputMetadata({
 
 export default function Page() {
 	return (
-		<ArticleWrapper pageTitle={pageTitle}>
+		<ArticleWrapper pageTitle={pageTitle} headerImage={headerImage}>
 			<p className='text-center font-bold'>
 				祥雲山 頼光寺※ は、紀元1000年頃に源氏一族によって創立されました。
 				<br />

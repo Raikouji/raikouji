@@ -11,6 +11,7 @@ import Image from 'next/image'
 // for metadata
 const pageTitle = '年中行事 / 月例行事'
 const pageDescription = '頼光寺の行事の紹介です。'
+const headerImage = '/images/ajisai4.jpg'
 
 export const metadata: Metadata = outputMetadata({
 	title: pageTitle,
@@ -78,7 +79,7 @@ function EventList({
 
 export default function Page() {
 	return (
-		<ArticleWrapper pageTitle={pageTitle}>
+		<ArticleWrapper pageTitle={pageTitle} headerImage={headerImage}>
 			<div className='mx-auto max-w-screen-sm'>
 				<p className='text-center font-bold'>
 					頼光寺では季節ごとの仏事、また、毎月の行事（早朝坐禅会、写経会、檀家様向け月例会）を開催しています。皆様の参加をお待ちしております。

@@ -19,6 +19,8 @@ type RouteDataItem = {
 // for metadata
 const pageTitle = 'アクセス'
 const pageDescription = '頼光寺へのアクセスです。駐車場情報も。'
+const headerImage =
+	'https://images.microcms-assets.io/assets/2954660cbcb2468c91911ef67d43d6dc/2eaf5b5bf2374009a0f468fc1c47fa07/lotus.jpg'
 
 export const metadata: Metadata = outputMetadata({
 	title: pageTitle,
@@ -148,7 +150,7 @@ const routeDataByCar2 = [
 ]
 export default function Page() {
 	return (
-		<ArticleWrapper pageTitle={pageTitle}>
+		<ArticleWrapper pageTitle={pageTitle} headerImage={headerImage}>
 			<TocLink>
 				<TocLinkItem id='google-map'>Google マップ</TocLinkItem>
 				<TocLinkItem id='access-by-train'>電車でのアクセス</TocLinkItem>

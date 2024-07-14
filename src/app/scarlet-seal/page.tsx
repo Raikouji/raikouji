@@ -11,6 +11,8 @@ import Link from 'next/link'
 // for metadata
 const pageTitle = '御朱印、仏前結婚式'
 const pageDescription = '頼光寺の御朱印と仏前結婚式について。'
+const headerImage =
+	'https://images.microcms-assets.io/assets/2954660cbcb2468c91911ef67d43d6dc/fa011a177fb04550a4e0316338357cd1/ajisai6.jpg'
 
 export const metadata: Metadata = outputMetadata({
 	title: pageTitle,
@@ -19,7 +21,7 @@ export const metadata: Metadata = outputMetadata({
 
 export default function Page() {
 	return (
-		<ArticleWrapper pageTitle={pageTitle}>
+		<ArticleWrapper pageTitle={pageTitle} headerImage={headerImage}>
 			<div className='mx-auto max-w-screen-md'>
 				<TocLink>
 					<TocLinkItem id='scarlet-seal'>御朱印</TocLinkItem>

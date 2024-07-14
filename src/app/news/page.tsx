@@ -9,6 +9,7 @@ import { FaArrowRightLong } from 'react-icons/fa6'
 // for metadata
 const pageTitle = 'お知らせ'
 const pageDescription = '頼光寺からのお知らせです。'
+const headerImage = '/images/temple-and-ajisai.jpg'
 
 export const metadata: Metadata = outputMetadata({
 	title: pageTitle,
@@ -17,7 +18,7 @@ export const metadata: Metadata = outputMetadata({
 
 export default function Page() {
 	return (
-		<ArticleWrapper pageTitle={pageTitle}>
+		<ArticleWrapper pageTitle={pageTitle} headerImage={headerImage}>
 			<div className='mx-auto max-w-screen-sm'>
 				<p className='text-center font-bold'>
 					頼光寺では季節ごとの仏事、また、毎月の行事（早朝坐禅会、写経会、檀家様向け月例会）を開催しています。皆様の参加をお待ちしております。

@@ -6,6 +6,7 @@ import type { Metadata } from 'next'
 // for metadata
 const pageTitle = 'リンク'
 const pageDescription = '関連しているサイトのリンク集です。'
+const headerImage = '/images/spider.jpg'
 
 export const metadata: Metadata = outputMetadata({
 	title: pageTitle,
@@ -90,7 +91,7 @@ function LinkList({
 
 export default function Page() {
 	return (
-		<ArticleWrapper pageTitle={pageTitle}>
+		<ArticleWrapper pageTitle={pageTitle} headerImage={headerImage}>
 			<div className='my-12 flex flex-col gap-12 lg:flex-row lg:gap-20'>
 				<section className='lg:w-1/2'>
 					<div className='mx-auto max-w-screen-lg'>

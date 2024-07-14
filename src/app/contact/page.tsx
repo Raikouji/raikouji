@@ -10,6 +10,7 @@ import Link from 'next/link'
 // for metadata
 const pageTitle = 'お問合せ'
 const pageDescription = '頼光寺へのお問い合わせ。'
+const headerImage = '/images/sea-of-clouds.jpg'
 
 export const metadata: Metadata = outputMetadata({
 	title: pageTitle,
@@ -18,7 +19,7 @@ export const metadata: Metadata = outputMetadata({
 
 export default function Page() {
 	return (
-		<ArticleWrapper pageTitle={pageTitle}>
+		<ArticleWrapper pageTitle={pageTitle} headerImage={headerImage}>
 			<div className='mx-auto max-w-screen-md'>
 				<TocLink>
 					<TocLinkItem id='#ajisai'>あじさいの開花状況</TocLinkItem>

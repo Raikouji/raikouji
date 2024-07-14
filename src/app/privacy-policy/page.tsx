@@ -6,6 +6,7 @@ import type { Metadata } from 'next'
 const pageTitle = 'プライバシーポリシー'
 const pageDescription =
 	'頼光寺ホームページの個人情報保護方針(プライバシーポリシー)です。'
+const headerImage = '/images/washi-paper.jpg'
 
 export const metadata: Metadata = outputMetadata({
 	title: pageTitle,
@@ -14,7 +15,7 @@ export const metadata: Metadata = outputMetadata({
 
 export default function Page() {
 	return (
-		<ArticleWrapper pageTitle={pageTitle}>
+		<ArticleWrapper pageTitle={pageTitle} headerImage={headerImage}>
 			<div
 				id='privacy-policy'
 				className='mx-auto flex max-w-screen-md flex-col gap-12 py-12'

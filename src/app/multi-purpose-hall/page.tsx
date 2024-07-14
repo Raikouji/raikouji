@@ -12,6 +12,8 @@ import Link from 'next/link'
 const pageTitle = '紫陽閣(多目的ホール)の貸し出し'
 const pageDescription =
 	'頼光寺のお墓は、静かで緑豊かな心安らぐ空間です。永代供養共同墓、水子供養塔もあります。能勢電鉄「畦野駅」から徒歩５分とアクセスもしやすい立地です。'
+const headerImage =
+	'https://images.microcms-assets.io/assets/2954660cbcb2468c91911ef67d43d6dc/38f85a71571148ea921a925856e4b340/lotus-white.jpg'
 
 export const metadata: Metadata = outputMetadata({
 	title: pageTitle,
@@ -41,7 +43,7 @@ const photos = [
 
 export default function Page() {
 	return (
-		<ArticleWrapper pageTitle={pageTitle}>
+		<ArticleWrapper pageTitle={pageTitle} headerImage={headerImage}>
 			<div className='my-12'>
 				<section className='flex flex-col gap-12'>
 					<div className='full-width-md mx-auto max-w-screen-md'>

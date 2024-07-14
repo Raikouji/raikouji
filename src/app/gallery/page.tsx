@@ -9,6 +9,7 @@ import type { Metadata } from 'next'
 const pageTitle = 'ギャラリー'
 const pageDescription =
 	'境内の様子、あじさい、イベントなど、頼光寺の風景の写真ギャラリーです。'
+const headerImage = '/images/monochrome.jpg'
 
 export const metadata: Metadata = outputMetadata({
 	title: pageTitle,
@@ -17,7 +18,7 @@ export const metadata: Metadata = outputMetadata({
 
 export default async function Page() {
 	return (
-		<ArticleWrapper pageTitle={pageTitle}>
+		<ArticleWrapper pageTitle={pageTitle} headerImage={headerImage}>
 			<div className='my-12 flex flex-col'>
 				<p className='text-center font-bold'>
 					頼光寺の風景やイベントなどの写真です。

@@ -14,6 +14,8 @@ import Link from 'next/link'
 const pageTitle = '墓地の案内'
 const pageDescription =
 	'頼光寺のお墓は、静かで緑豊かな心安らぐ空間です。永代供養共同墓、水子供養塔もあります。能勢電鉄「畦野駅」から徒歩５分とアクセスもしやすい立地です。'
+const headerImage =
+	'https://images.microcms-assets.io/assets/2954660cbcb2468c91911ef67d43d6dc/22ef56d8a6544574afa8d49e9bd17ac3/flower.jpg'
 
 export const metadata: Metadata = outputMetadata({
 	title: pageTitle,
@@ -49,7 +51,11 @@ const photos = [
 
 export default function Page() {
 	return (
-		<ArticleWrapper pageTitle={pageTitle} className='mb-0'>
+		<ArticleWrapper
+			className='mb-0'
+			pageTitle={pageTitle}
+			headerImage={headerImage}
+		>
 			<div className='mx-auto max-w-screen-md'>
 				<p className='font-bold lg:text-center'>
 					頼光寺のお墓は、静かで緑豊かな心安らぐ空間で、永遠の憩いの場所としてふさわしい場所。
