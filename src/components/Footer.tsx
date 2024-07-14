@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FaFacebook, FaSquareInstagram } from 'react-icons/fa6'
 
-function SiteFooter() {
+function Footer() {
 	return (
 		<footer>
 			<div
@@ -163,4 +163,4 @@ function SiteFooter() {
 	)
 }
 
-export default SiteFooter
+export default Footer

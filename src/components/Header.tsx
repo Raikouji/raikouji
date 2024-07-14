@@ -3,7 +3,7 @@ import MainNavigation from '@/components/MainNavigation'
 import Image from 'next/image'
 import Link from 'next/link'
 
-function SiteHeader() {
+function Header() {
 	return (
 		<>
 			<header className='container flex max-w-screen-xl justify-between py-4 lg:items-center'>
@@ -36,4 +36,4 @@ function SiteHeader() {
 	)
 }
 
-export default SiteHeader
+export default Header

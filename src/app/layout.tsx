@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import type React from 'react'
 
-import SiteFooter from '../components/SiteFooter'
-import SiteHeader from '../components/SiteHeader'
+import Footer from '../components/Footer'
+import Header from '../components/Header'
 
 import GetScrollBarWidth from '@/components/GetScrollBarWidth'
 import { SITE_TITLE } from '@/constants'
@@ -25,9 +25,9 @@ export default function RootLayout({
 		<GetScrollBarWidth>
 			<html lang='ja' className='font-sans'>
 				<body className='relative antialiased'>
-					<SiteHeader />
+					<Header />
 					{children}
-					<SiteFooter />
+					<Footer />
 				</body>
 			</html>
 		</GetScrollBarWidth>
