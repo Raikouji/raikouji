@@ -283,7 +283,7 @@ export default function Page() {
 								</figure>
 								<figure>
 									<Image
-										src='/images/parking-2-2.jpg'
+										src='/images/parking-2-1.jpg'
 										alt='上の駐車場'
 										width={900}
 										height={600}
