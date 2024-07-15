@@ -62,11 +62,17 @@ export async function generateStaticParams() {
 	return [...paths]
 }
 
+type Props = {
+	params: {
+		id: string
+		// searchParams: { dk?: string }
+	}
+}
+
 export default async function StaticDetailPage({
 	params: { id },
-}: {
-	params: { id: string }
-}) {
+	// searchParams,
+}: Props) {
 	const post = await getBlogDetail(id)
 
 	if (!post) {
