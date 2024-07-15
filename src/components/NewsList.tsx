@@ -29,7 +29,7 @@ export default async function NewsList({
 	)
 
 	return (
-		<div className={cn('flex flex-col gap-12', { className })} {...delegated}>
+		<div className={cn('flex flex-col gap-4', { className })} {...delegated}>
 			{Object.entries(postsByYear).map(([year, posts]) => (
 				<section key={year}>
 					<h2 className='text-base border-b-2 border-primary-400/50'>
