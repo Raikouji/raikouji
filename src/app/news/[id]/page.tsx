@@ -11,6 +11,7 @@ import TocLink, { TocLinkItem } from '@/components/TocLink'
 // for metadata
 const pageTitle = '★★★★★★★★'
 const pageDescription = '★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★'
+const headerImage = '/images/ajisai4.jpg'
 
 export const metadata: Metadata = outputMetadata({
 	title: pageTitle,
@@ -41,15 +42,17 @@ export default async function StaticDetailPage({
 	}
 
 	return (
-		<ArticleWrapper pageTitle='お知らせ'>
-			<h2>{post.title}</h2>
-			<p>更新日: {new Date().toLocaleString()}</p>
-			{parse(post.content)}
-			<p>
-				<a className='underline' href='../examples/microcms'>
-					« 一覧に戻る
-				</a>
-			</p>
+		<ArticleWrapper pageTitle='お知らせ' headerImage={headerImage}>
+			<div className='mx-auto max-w-screen-sm'>
+				<h2>{post.title}</h2>
+				<p>更新日: {new Date().toLocaleString()}</p>
+				{parse(post.content)}
+				<p>
+					<a className='underline' href='../examples/microcms'>
+						« 一覧に戻る
+					</a>
+				</p>
+			</div>
 		</ArticleWrapper>
 	)
 }
