@@ -113,7 +113,10 @@ export default function Page() {
 									亡くなった後の自身の安らかな世界を祈る寺として祥雲山賴光寺を創建しました(真言律宗に所属)。
 								</p>
 							</div>
-							<Fadein tag='p' className='mt-8 lg:mt-0 lg:w-5/12'>
+							<Fadein
+								tag='p'
+								className='mt-8 lg:mt-0 lg:w-5/12 md:ml-[calc(50%-50vw)]'
+							>
 								<Image
 									src='/images/toumbs.jpg'
 									alt=''
@@ -133,7 +136,10 @@ export default function Page() {
 									1804年(光格天皇文化元年)に公式に認められ、尼寺（女性僧侶だけの寺）となりました。
 								</p>
 							</div>
-							<Fadein tag='p' className='mt-8 lg:mt-0 lg:w-5/12'>
+							<Fadein
+								tag='p'
+								className='mt-8 lg:mt-0 lg:w-5/12 md:mr-[calc(50%-50vw)]'
+							>
 								<Image
 									src='/images/lotus.jpg'
 									alt=''
