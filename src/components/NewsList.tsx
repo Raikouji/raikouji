@@ -21,7 +21,7 @@ export default async function NewsList({
 				return (
 					<Link
 						key={post.id}
-						href={`/blog/${post.id}`}
+						href={`/news/${post.id}`}
 						className='border-b border-dashed border-b-secondary-200 py-2 hover:opacity-80'
 					>
 						<li className='flex flex-row gap-1'>
