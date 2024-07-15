@@ -8,19 +8,47 @@ import { getBlogDetail, getBlogList } from '@/lib/microcms'
 import { outputMetadata } from '@/utils'
 
 import ArticleWrapper from '@/components/ArticleWrapper'
-import TocLink, { TocLinkItem } from '@/components/TocLink'
 import Link from 'next/link'
 import { IoArrowUndoSharp } from 'react-icons/io5'
 
-// for metadata
-const pageTitle = '★★★★★★★★'
-const pageDescription = '★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★'
 const headerImage = '/images/ajisai4.jpg'
 
-export const metadata: Metadata = outputMetadata({
-	title: pageTitle,
-	description: pageDescription,
-})
+export async function generateMetadata({
+	params,
+	searchParams,
+}: {
+	params: { id: string }
+	searchParams: { dk?: string }
+}): Promise<Metadata> {
+	const post = await getBlogDetail(params.id as string, {
+		draftKey: searchParams.dk ?? undefined,
+	})
+
+	if (!post) {
+		notFound()
+	}
+
+	return outputMetadata({
+		title: post.title,
+		description: post?.description ?? '',
+		openGraph: {
+			type: 'website',
+			locale: 'ja_JP',
+			url: `https://ajisai-raikouji.com/news/${post.id}`,
+			siteName: '頼光寺',
+			title: post.title,
+			description: post?.description ?? '頼光寺からのお知らせ',
+			images: [
+				{
+					url: post?.eyecatch?.url ?? '/og.jpg',
+					width: 1200,
+					height: 630,
+					alt: post.title,
+				},
+			],
+		},
+	})
+}
 
 export async function generateStaticParams() {
 	const { contents } = await getBlogList()
