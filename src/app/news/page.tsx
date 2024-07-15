@@ -8,7 +8,7 @@ import { IoArrowUndoSharp } from 'react-icons/io5'
 
 // for metadata
 const pageTitle = 'お知らせ'
-const pageDescription = '頼光寺からのお知らせです。'
+const pageDescription = '頼光寺のお知らせの一覧です。'
 const headerImage = '/images/temple-and-ajisai.jpg'
 
 export const metadata: Metadata = outputMetadata({
