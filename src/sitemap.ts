@@ -4,7 +4,7 @@ import type { MetadataRoute } from 'next'
 
 const buildUrl = (path: string) => `https://ajisai-raikouji.com${path ?? ''}`
 
-export default async function Sitemap(): Promise<MetadataRoute.Sitemap> {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 	const now = new Date().toISOString()
 
 	return [
