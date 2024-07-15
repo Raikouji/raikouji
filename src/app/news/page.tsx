@@ -4,7 +4,7 @@ import { Button, buttonVariants } from '@/components/ui/button'
 import { outputMetadata } from '@/utils'
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { FaArrowRightLong } from 'react-icons/fa6'
+import { IoArrowUndoSharp } from 'react-icons/io5'
 
 // for metadata
 const pageTitle = 'お知らせ'
@@ -19,20 +19,15 @@ export const metadata: Metadata = outputMetadata({
 export default function Page() {
 	return (
 		<ArticleWrapper pageTitle={pageTitle} headerImage={headerImage}>
-			<div className='mx-auto max-w-screen-sm'>
-				<p className='text-center font-bold'>
-					頼光寺では季節ごとの仏事、また、毎月の行事（早朝坐禅会、写経会、檀家様向け月例会）を開催しています。皆様の参加をお待ちしております。
-				</p>
-
+			<div className='mx-auto w-full max-w-screen-sm'>
 				<main>
 					<div className='flex flex-col gap-12 px-8 pb-12 lg:px-2'>
 						<NewsList className='mt-4 flex flex-col' />
 					</div>
 					<p className='text-center'>
-						<Button asChild>
+						<Button variant='outline' asChild>
 							<Link href='/'>
-								トップページに戻る{' '}
-								<FaArrowRightLong className='ml-2 opacity-50' />
+								<IoArrowUndoSharp className='mr-2 opacity-50' /> トップに戻る
 							</Link>
 						</Button>
 					</p>
