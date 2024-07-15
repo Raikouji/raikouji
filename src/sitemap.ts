@@ -1,3 +1,5 @@
+// TODO: ダイナミックコンテンツのサイトマップを生成 (p271)
+
 import type { MetadataRoute } from 'next'
 
 const buildUrl = (path: string) => `https://ajisai-raikouji.com${path ?? ''}`
