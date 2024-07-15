@@ -97,96 +97,95 @@ export default function Page() {
 					</p>
 				</div>
 
-				<div className='mx-auto max-w-screen-md xl:max-w-screen-lg'>
-					<div className='mt-12 flex flex-col gap-16'>
-						<div className='mx-auto flex flex-col items-center lg:flex-row lg:gap-12'>
-							<div className='lg:order-1 lg:w-7/12'>
-								<h3 className='text-center text-primary'>頼光寺の設立</h3>
-								<p className='mt-3 leading-loose'>
-									祥雲山賴光寺は、一條天皇長保年間(紀元1000年頃)に、源満仲公令夫人、
-									法如尼公（ほうにょにこう）の願いにより設立されました。
-									設立者は源頼光公（よりみつこう）の四男で、開山（初代住職）は源頼光公の四男永寿阿闍梨（えいじゅあじゃり）でした。
-								</p>
-								<p className='mt-3 leading-loose'>
-									源頼光公(治安元年(1021年)七月二十四日
-									寂)は神儀を行い、霊像を安置し、
-									亡くなった後の自身の安らかな世界を祈る寺として祥雲山賴光寺を創建しました(真言律宗に所属)。
-								</p>
+				<div className='lg:pl-4 bg-[length:277.5px_124.5px] lg:bg-[length:555.1px_249.2px] bg-right-bottom lg:bg-left bg-no-repeat bg-[url(/images/illust-2-color-ajisai.png)]'>
+					<div className='mt-20 mx-auto max-w-screen-md xl:max-w-screen-lg'>
+						<div className='flex flex-col gap-24'>
+							<div className='mx-auto flex flex-col items-center lg:flex-row lg:gap-12'>
+								<div className='lg:order-1 lg:w-7/12'>
+									<h3 className='text-center text-primary'>頼光寺の設立</h3>
+									<p className='mt-3 leading-loose'>
+										祥雲山賴光寺は、一條天皇長保年間(紀元1000年頃)に、源満仲公令夫人、
+										法如尼公（ほうにょにこう）の願いにより設立されました。
+										設立者は源頼光公（よりみつこう）の四男で、開山（初代住職）は源頼光公の四男永寿阿闍梨（えいじゅあじゃり）でした。
+									</p>
+									<p className='mt-3 leading-loose'>
+										源頼光公(治安元年(1021年)七月二十四日
+										寂)は神儀を行い、霊像を安置し、
+										亡くなった後の自身の安らかな世界を祈る寺として祥雲山賴光寺を創建しました(真言律宗に所属)。
+									</p>
+								</div>
+								<Fadein
+									tag='p'
+									className='mt-8 lg:mt-0 lg:w-5/12 md:ml-[calc(50%-50vw)]'
+								>
+									<Image
+										src='/images/toumbs.jpg'
+										alt=''
+										width={2000}
+										height={1333}
+									/>
+								</Fadein>
 							</div>
-							<Fadein
-								tag='p'
-								className='mt-8 lg:mt-0 lg:w-5/12 md:ml-[calc(50%-50vw)]'
-							>
-								<Image
-									src='/images/toumbs.jpg'
-									alt=''
-									width={2000}
-									height={1333}
-								/>
-							</Fadein>
-						</div>
 
-						<div className='mx-auto flex flex-col items-center lg:flex-row lg:gap-12'>
-							<div className='lg:w-7/12'>
-								<h3 className='text-center text-primary'>衰退と復興</h3>
-								<p className='mt-3 leading-loose'>
-									二世となる永覚阿闍梨が亡くなった後、平安時代、鎌倉時代、戦国時代の各時代に度々戦争により衰退しましたが、
-									1671年(霊元天皇寛文十一年)に禅僧万愚和尚（まんぐうおしょう）が寺を復興しました。
-									更に1746年(桜町天皇延享三年)に、現在の亀岡市にある臨済宗の法常寺の末寺となり、
-									1804年(光格天皇文化元年)に公式に認められ、尼寺（女性僧侶だけの寺）となりました。
-								</p>
+							<div className='mx-auto flex flex-col items-center lg:flex-row lg:gap-12'>
+								<div className='lg:w-7/12'>
+									<h3 className='text-center text-primary'>衰退と復興</h3>
+									<p className='mt-3 leading-loose'>
+										二世となる永覚阿闍梨が亡くなった後、平安時代、鎌倉時代、戦国時代の各時代に度々戦争により衰退しましたが、
+										1671年(霊元天皇寛文十一年)に禅僧万愚和尚（まんぐうおしょう）が寺を復興しました。
+										更に1746年(桜町天皇延享三年)に、現在の亀岡市にある臨済宗の法常寺の末寺となり、
+										1804年(光格天皇文化元年)に公式に認められ、尼寺（女性僧侶だけの寺）となりました。
+									</p>
+								</div>
+								<Fadein tag='p' className='mt-8 lg:mt-0 lg:w-5/12'>
+									<Image
+										src='/images/lotus.jpg'
+										alt=''
+										width={2000}
+										height={1333}
+									/>
+								</Fadein>
 							</div>
-							<Fadein
-								tag='p'
-								className='mt-8 lg:mt-0 lg:w-5/12 md:mr-[calc(50%-50vw)]'
-							>
-								<Image
-									src='/images/lotus.jpg'
-									alt=''
-									width={2000}
-									height={1333}
-								/>
-							</Fadein>
-						</div>
 
-						<div className='mx-auto flex flex-col items-center lg:flex-row lg:gap-12'>
-							<div className='lg:order-1 lg:w-7/12'>
-								<h3 className='text-center text-primary'>継承・お寺の維持</h3>
-								<p className='mt-3 leading-loose'>
-									840年(天保十一年)には、本寺の十世勅謚
-									普照恵燈禅師ふしょうえとうぜんじ）は、ここを弟子たちの坐禅の道場とし、
-									優れた者を選んで住持を継がせていきました。しかし、1875年(明治八年)には、
-									当時の状況の中で寺を維持するのが難しくなり、本寺である法常寺に合併されました。
-									それでも、旧信徒らの希望により、建物や仏像、その他の物々はそのまま引き継がれ、
-									現在も本堂内に安置されています。
-								</p>
+							<div className='mx-auto flex flex-col items-center lg:flex-row lg:gap-12'>
+								<div className='lg:order-1 lg:w-7/12'>
+									<h3 className='text-center text-primary'>継承・お寺の維持</h3>
+									<p className='mt-3 leading-loose'>
+										840年(天保十一年)には、本寺の十世勅謚
+										普照恵燈禅師ふしょうえとうぜんじ）は、ここを弟子たちの坐禅の道場とし、
+										優れた者を選んで住持を継がせていきました。しかし、1875年(明治八年)には、
+										当時の状況の中で寺を維持するのが難しくなり、本寺である法常寺に合併されました。
+										それでも、旧信徒らの希望により、建物や仏像、その他の物々はそのまま引き継がれ、
+										現在も本堂内に安置されています。
+									</p>
+								</div>
+								<Fadein tag='p' className='mt-8 lg:mt-0 lg:w-5/12'>
+									<Image
+										src='/images/altar.jpg'
+										alt=''
+										width={2000}
+										height={1333}
+									/>
+								</Fadein>
 							</div>
-							<Fadein tag='p' className='mt-8 lg:mt-0 lg:w-5/12'>
-								<Image
-									src='/images/altar.jpg'
-									alt=''
-									width={2000}
-									height={1333}
-								/>
-							</Fadein>
-						</div>
 
-						<div className='mx-auto flex flex-col items-center lg:flex-row lg:gap-8'>
-							<div className='lg:w-7/12'>
-								<h3 className='text-center text-primary'>現在</h3>
-								<p className='mt-3 leading-loose'>
-									1990年(平成二年)以来、頼光寺は曹洞宗に所属し、「北摂七福神寿老人
-									あじさい寺」として親しまれています。2024年に、本堂「願王殿」を改修しました。
-								</p>
+							<div className='mx-auto flex flex-col items-center lg:flex-row lg:gap-8'>
+								<div className='lg:w-7/12'>
+									<h3 className='text-center text-primary'>現在</h3>
+									<p className='mt-3 leading-loose'>
+										1990年(平成二年)以来、頼光寺は曹洞宗に所属し、「北摂七福神寿老人
+										あじさい寺」として親しまれています。2024年には、本堂「願王殿」を改修しました。
+									</p>
+								</div>
+								<Fadein tag='p' className='mt-8 lg:mt-0 lg:w-5/12'>
+									<Image
+										src='/images/front-of-temple.jpg'
+										alt=''
+										width={2000}
+										height={1333}
+									/>
+								</Fadein>
 							</div>
-							<Fadein tag='p' className='mt-8 lg:mt-0 lg:w-5/12'>
-								<Image
-									src='/images/front-of-temple.jpg'
-									alt=''
-									width={2000}
-									height={1333}
-								/>
-							</Fadein>
 						</div>
 					</div>
 				</div>
