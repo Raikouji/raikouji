@@ -63,7 +63,7 @@ export default async function Information() {
 						</div>
 					</div>
 
-					<div>
+					<div className='mt-4'>
 						<NewsList className='mt-4 flex flex-col' />
 					</div>
 				</div>
