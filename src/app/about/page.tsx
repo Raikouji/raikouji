@@ -181,7 +181,7 @@ export default function Page() {
 							</div>
 							<Fadein tag='p' className='mt-8 lg:mt-0 lg:w-5/12'>
 								<Image
-									src='/images/temple-and-ajisai.jpg'
+									src='/images/front-of-temple.jpg'
 									alt=''
 									width={2000}
 									height={1333}
