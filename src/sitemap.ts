@@ -2,14 +2,14 @@
 
 import type { MetadataRoute } from 'next'
 
-const buildUrl = (path: string) => `https://ajisai-raikouji.com${path ?? ''}`
+const buildUrl = (path?: string) => `https://ajisai-raikouji.com${path ?? ''}`
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 	const now = new Date().toISOString()
 
 	return [
 		{
-			url: buildUrl('/'),
+			url: buildUrl(),
 			lastModified: now,
 			changeFrequency: 'daily',
 			priority: 1,
