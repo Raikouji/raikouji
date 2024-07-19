@@ -31,7 +31,7 @@ export default async function Information() {
 	return (
 		<div
 			className={cn(
-				'relative mx-auto max-w-screen-md p-8',
+				'relative mx-auto max-w-screen-md w-full p-8',
 				'bg-[url("/images/bg-paper.png")] bg-cover bg-top',
 				'rounded-xl shadow-lg',
 			)}
@@ -68,13 +68,14 @@ export default async function Information() {
 					</div>
 				</div>
 				<div className='md:w-1/3'>
-					<p className='aspect-square'>
+					<p className='aspect-w-1 aspect-h-1'>
 						<Image
 							src={data.flowerPhoto[0].url}
 							width={data.flowerPhoto[0].width}
 							height={data.flowerPhoto[0].height}
 							alt='開花状況 1'
-							className='aspect-h-auto mx-auto w-full object-cover shadow-lg md:rounded-lg'
+							className='mx-auto w-full h-full object-cover shadow-lg md:rounded-lg'
+							objectFit='cover'
 						/>
 					</p>
 				</div>
