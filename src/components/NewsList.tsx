@@ -23,6 +23,11 @@ export default async function NewsList({
 				acc[year] = []
 			}
 			acc[year].push(post)
+			acc[year].sort(
+				(a, b) =>
+					parseISO(b.publishedAt || new Date().toISOString()).getTime() -
+					parseISO(a.publishedAt || new Date().toISOString()).getTime(),
+			)
 			return acc
 		},
 		{} as Record<string, typeof contents>,
