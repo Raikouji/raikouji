@@ -1,5 +1,8 @@
 import type { Blog, Gallery } from '@/types/post'
+import { outputMetadata } from '@/utils'
 import { type MicroCMSQueries, createClient } from 'microcms-js-sdk'
+import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
 
 if (!process.env.MICROCMS_SERVICE_DOMAIN) {
 	throw new Error('MICROCMS_SERVICE_DOMAIN is required')
@@ -48,6 +51,49 @@ export const getBlogDetail = async (
 		contentId,
 		queries,
 	})
+}
+
+// メタデータを取得
+export const generateMetadata = async ({
+	params,
+	searchParams,
+}: {
+	params: { id: string }
+	searchParams: { dk?: string }
+}): Promise<Metadata> => {
+	try {
+		const post = await getBlogDetail(params.id as string, {
+			draftKey: searchParams.dk ?? undefined,
+		})
+
+		if (!post) {
+			notFound()
+		}
+
+		return outputMetadata({
+			title: post.title,
+			description: post?.description ?? '',
+			openGraph: {
+				type: 'website',
+				locale: 'ja_JP',
+				url: `https://ajisai-raikouji.com/news/${post.id}`,
+				siteName: '頼光寺',
+				title: post.title,
+				description: post?.description ?? '頼光寺からのお知らせ',
+				images: [
+					{
+						url: post?.eyecatch?.url ?? '/og.jpg',
+						width: 1200,
+						height: 630,
+						alt: post.title,
+					},
+				],
+			},
+		})
+	} catch (error) {
+		console.error('Error generating metadata:', error)
+		notFound()
+	}
 }
 
 /**
