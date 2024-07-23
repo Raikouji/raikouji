@@ -5,6 +5,9 @@ import TocLink, { TocLinkItem } from '@/components/TocLink'
 import Card from '@/components/ui/Card'
 import { Button } from '@/components/ui/button'
 import { cn, outputMetadata } from '@/utils'
+
+import { getBasicInformation } from '@/lib/microcms'
+import type { BasicInformation } from '@/types/post'
 import type { Metadata } from 'next'
 import Link from 'next/link'
 
@@ -18,12 +21,31 @@ export const metadata: Metadata = outputMetadata({
 	description: pageDescription,
 })
 
-export default function Page() {
+export default async function Page() {
+	let data: BasicInformation | null = null
+	let errorMassage = ''
+
+	try {
+		data = await getBasicInformation()
+	} catch (error) {
+		errorMassage = `Error fetching basic information: ${error}`
+	}
+
+	if (errorMassage) {
+		return <p>{errorMassage}</p>
+	}
+
+	if (!data) {
+		return <p>No data.</p>
+	}
+
 	return (
 		<ArticleWrapper pageTitle={pageTitle} headerImage={headerImage}>
 			<div className='mx-auto max-w-screen-md'>
 				<TocLink>
-					<TocLinkItem id='#ajisai'>あじさいの開花状況</TocLinkItem>
+					{data.isActive && (
+						<TocLinkItem id='#ajisai'>あじさいの開花状況</TocLinkItem>
+					)}
 					<TocLinkItem id='tel'>電話でのお問合せ</TocLinkItem>
 					<TocLinkItem id='form'>フォームでのお問合せ</TocLinkItem>
 				</TocLink>
@@ -44,11 +66,15 @@ export default function Page() {
 							開花状況については、別途お知らせ版をご覧いただくようお願い申し上げます。
 							どうぞよろしくお願い申し上げます。
 						</p>
-						<p className='mt-4 text-center'>
-							<Button asChild>
-								<Link href='#'>あじさいの開花状況を見る</Link>
-							</Button>
-						</p>
+						{data.isActive && (
+							<p className='mt-4 text-center'>
+								<Button asChild>
+									<Link href='/#flowerState'>
+										あじさいの開花状況 (お知らせ)
+									</Link>
+								</Button>
+							</p>
+						)}
 					</Card>
 				</div>
 			</section>

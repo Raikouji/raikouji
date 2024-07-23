@@ -43,7 +43,7 @@ export default async function Information() {
 				お知らせ
 			</h2>
 			<div className='flex flex-col md:flex-row md:gap-8'>
-				<div className='order-1 md:w-2/3'>
+				<div id='flowerState' className='order-1 md:w-2/3'>
 					{data.isActive && (
 						<div className='flex items-center justify-start md:-ml-6'>
 							<div className='hidden w-3 overflow-hidden md:block'>
