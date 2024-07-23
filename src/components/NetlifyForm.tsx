@@ -1,5 +1,6 @@
 'use client'
 
+import { Button } from '@/components/ui/button'
 import type React from 'react'
 
 export function NetlifyForm() {
@@ -30,17 +31,60 @@ export function NetlifyForm() {
 	}
 
 	return (
-		<form name='feedback' onSubmit={handleFormSubmit}>
+		<form
+			name='feedback'
+			onSubmit={handleFormSubmit}
+			className='flex flex-col gap-4'
+		>
 			<input type='hidden' name='form-name' value='feedback' />
-			お名前：
-			<input name='name' type='text' placeholder='お名前を入力…' required />
-			Email：
-			<input name='email' type='text' placeholder='Emailを入力…' required />
-			電話番号：
-			<input name='tel' type='text' placeholder='電話番号を入力… (任意)' />
-			お問合せ内容：
-			<textarea name='message' placeholder='お問い合わせ内容を入力…' required />
-			<button type='submit'>送信する</button>
+			<p>
+				<b>お名前：</b>
+				<br />
+				<input
+					className='rounded'
+					name='name'
+					type='text'
+					placeholder='お名前を入力…'
+					size={50}
+					required
+				/>
+			</p>
+			<p>
+				<b>Email：</b>
+				<br />
+				<input
+					className='rounded'
+					name='email'
+					type='text'
+					placeholder='Emailを入力…'
+					size={50}
+					required
+				/>
+			</p>
+			<p>
+				<b>電話番号：</b>
+				<br />
+				<input
+					className='rounded'
+					name='tel'
+					type='text'
+					size={50}
+					placeholder='電話番号を入力… (任意)'
+				/>
+			</p>
+			<p>
+				<b>お問合せ内容：</b>
+				<br />
+				<textarea
+					className='rounded'
+					name='message'
+					rows={10}
+					cols={50}
+					placeholder='お問い合わせ内容を入力…'
+					required
+				/>
+			</p>
+			<Button type='submit'>送信する</Button>
 		</form>
 	)
 }
