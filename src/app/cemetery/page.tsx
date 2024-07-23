@@ -124,7 +124,7 @@ export default function Page() {
 							</p>
 							<ul className='mt-4 list-inside list-disc text-sm marker:text-tertiary'>
 								<li>墓石はありません。</li>
-								<li>お布施の目安：15万円から</li>
+								<li>志納金の目安：15万円から</li>
 							</ul>
 						</Card>
 					</div>
@@ -170,9 +170,9 @@ export default function Page() {
 										ご依頼・お問合せは、お電話にて承っております。ご家族の想いやご希望をお聞きした上で、法要の日時を決めさせていただきます。供養の法要は、本堂にて行います。
 									</p>
 									<ul className='mt-4 list-inside list-disc text-sm marker:text-tertiary'>
-										<li>墓石はありません。</li>
-										<li>お墓の管理は頼光寺が行います。</li>
 										<li>お布施の目安：５千円から</li>
+										<li>墓石はありません。</li>
+										<li>納骨ご希望の方はご相談ください。</li>
 									</ul>
 									<div className='mt-4 border border-secondary-300 p-3'>
 										<h4>【来山(来寺)が困難な方】</h4>
