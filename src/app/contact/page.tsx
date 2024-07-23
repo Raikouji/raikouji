@@ -1,5 +1,6 @@
 import ArticleWrapper from '@/components/ArticleWrapper'
 import ImageAboveHeading from '@/components/ImageAboveHeading'
+import { NetlifyForm } from '@/components/NetlifyForm'
 import TocLink, { TocLinkItem } from '@/components/TocLink'
 import Card from '@/components/ui/Card'
 import { Button } from '@/components/ui/button'
@@ -70,16 +71,17 @@ export default function Page() {
 							※
 							送信後5日間の間に返信がない場合、送受信エラーの可能性があります。その場合、お手数ですが電話でのお問い合わせをお願いいたします。
 						</p>
-						<div>
-							<iframe
-								title='Google Form'
-								src='https://docs.google.com/forms/d/e/1FAIpQLSehFnOs8DgdaWW0sp-SjPcwsdbvPq9EZ5IZePqDsePAm_WjCA/viewform?embedded=true'
-								width='100%'
-								height='1000'
-							>
-								読み込んでいます…
-							</iframe>
-						</div>
+						<NetlifyForm />
+						{/*<div>*/}
+						{/*	<iframe*/}
+						{/*		title='Google Form'*/}
+						{/*		src='https://docs.google.com/forms/d/e/1FAIpQLSehFnOs8DgdaWW0sp-SjPcwsdbvPq9EZ5IZePqDsePAm_WjCA/viewform?embedded=true'*/}
+						{/*		width='100%'*/}
+						{/*		height='1000'*/}
+						{/*	>*/}
+						{/*		読み込んでいます…*/}
+						{/*	</iframe>*/}
+						{/*</div>*/}
 					</div>
 				</section>
 
