@@ -73,7 +73,7 @@ export default function Page() {
 						<div>
 							<iframe
 								title='Google Form'
-								src='https://docs.google.com/forms/d/e/1FAIpQLSehno7mm4V8lPWX1toSMtIP4TJ59f6RhlFReuwQWWtw-gfltw/viewform?embedded=true'
+								src='https://docs.google.com/forms/d/e/1FAIpQLSehFnOs8DgdaWW0sp-SjPcwsdbvPq9EZ5IZePqDsePAm_WjCA/viewform?embedded=true'
 								width='100%'
 								height='1000'
 							>
