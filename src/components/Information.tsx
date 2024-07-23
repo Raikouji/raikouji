@@ -22,10 +22,6 @@ export default async function Information() {
 		return <p>No data or no flower photo.</p>
 	}
 
-	if (!data.isActive) {
-		return
-	}
-
 	const date = parseISO(data.publishedAt as string)
 
 	return (
@@ -48,21 +44,22 @@ export default async function Information() {
 			</h2>
 			<div className='flex flex-col md:flex-row md:gap-8'>
 				<div className='order-1 md:w-2/3'>
-					<div className='flex items-center justify-start md:-ml-6'>
-						<div className='hidden w-3 overflow-hidden md:block'>
-							<div className='h-4 origin-bottom-right rotate-45 transform bg-primary' />
+					{data.isActive && (
+						<div className='flex items-center justify-start md:-ml-6'>
+							<div className='hidden w-3 overflow-hidden md:block'>
+								<div className='h-4 origin-bottom-right rotate-45 transform bg-primary' />
+							</div>
+							<div className='w-fit bg-primary px-4 py-2 text-white md:rounded-3xl'>
+								<h3 className='text-center text-base md:text-left'>
+									あじさいの開花状況
+								</h3>
+								<p className='text-center text-sm text-yellow-200 md:text-left'>
+									{format(date, 'MM月dd日 H時m分')} 更新
+								</p>
+								<p className='mt-1 text-sm'>{data.flowerState}</p>
+							</div>
 						</div>
-						<div className='w-fit bg-primary px-4 py-2 text-white md:rounded-3xl'>
-							<h3 className='text-center text-base md:text-left'>
-								あじさいの開花状況
-							</h3>
-							<p className='text-center text-sm text-yellow-200 md:text-left'>
-								{format(date, 'MM月dd日 H時m分')} 更新
-							</p>
-							<p className='mt-1 text-sm'>{data.flowerState}</p>
-						</div>
-					</div>
-
+					)}
 					<div className='mt-4'>
 						<NewsList className='mt-4 flex flex-col' />
 					</div>
