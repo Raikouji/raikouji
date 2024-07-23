@@ -23,7 +23,6 @@ function MainNavigation() {
 				{ href: '/gallery', title: 'ギャラリー' },
 				{ href: '/scarlet-seal', title: '御朱印、仏前結婚式' },
 				{ href: '/multi-purpose-hall', title: '紫陽閣の貸し出し' },
-				{ href: '/template', title: 'Template' },
 			],
 		},
 		{ href: '/events', title: '行事案内' },
