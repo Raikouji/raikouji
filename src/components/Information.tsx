@@ -60,7 +60,7 @@ export default async function Information() {
 							</div>
 						</div>
 					)}
-					<div className='mt-4'>
+					<div className={data.isActive ? 'mt-4' : undefined}>
 						<NewsList className='mt-4 flex flex-col' />
 					</div>
 				</div>
