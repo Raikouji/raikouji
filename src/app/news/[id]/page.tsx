@@ -1,11 +1,9 @@
 import { Button } from '@/components/ui/button'
 import { format, parseISO } from 'date-fns'
 import parse from 'html-react-parser'
-import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
 import { generateMetadata, getBlogDetail, getBlogList } from '@/lib/microcms'
-import { outputMetadata } from '@/utils'
 
 import ArticleWrapper from '@/components/ArticleWrapper'
 import Link from 'next/link'
