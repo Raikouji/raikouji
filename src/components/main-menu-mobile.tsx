@@ -1,60 +1,35 @@
-'use client'
-
-import MainNavigationDesktop from '@/components/MainNavigationDesktop'
-import { useMediaQuery } from '@/hooks/use-media-query'
 import { cn } from '@/utils'
 import Link from 'next/link'
-import { useSelectedLayoutSegment } from 'next/navigation'
 import React from 'react'
 
-function MainNavigation() {
+export default function MainMenuMobile({
+	items,
+	segment,
+}: {
+	items: {
+		title: string
+		href: string
+		subMenu?: { title: string; href: string }[]
+	}[]
+	segment: string | null
+}) {
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
 	const [activeMenu, setActiveMenu] = React.useState('')
-
-	const segment = useSelectedLayoutSegment()
-
-	const items = [
-		{ href: '/', title: 'Home' },
-		{
-			href: 'about',
-			title: '頼光寺について',
-			subMenu: [
-				{ href: '/about', title: 'ごあいさつ・沿革' },
-				{ href: '/gallery', title: 'ギャラリー' },
-				{ href: '/scarlet-seal', title: '御朱印、仏前結婚式' },
-				{ href: '/multi-purpose-hall', title: '紫陽閣の貸し出し' },
-			],
-		},
-		{ href: '/events', title: '行事案内' },
-		{ href: '/cemetery', title: '墓地の案内' },
-		{ href: '/access', title: 'アクセス' },
-		{
-			href: '/contact',
-			title: 'お問合せ',
-		},
-	]
-
-	const isDesktop = useMediaQuery('(min-width: 768px)')
-
 	return (
 		<>
-			{isDesktop && <MainNavigationDesktop items={items} segment={segment} />}
+			<div className='z-30 grid place-content-center'>
+				<button
+					type='button'
+					onClick={() => {
+						setIsMobileMenuOpen(!isMobileMenuOpen)
+					}}
+					className='px-2 py-1 text-3xl leading-none text-foreground/60'
+				>
+					{isMobileMenuOpen ? '×' : '≡'}
+				</button>
+			</div>
 
-			{!isDesktop && (
-				<div className='z-30 grid place-content-center'>
-					<button
-						type='button'
-						onClick={() => {
-							setIsMobileMenuOpen(!isMobileMenuOpen)
-						}}
-						className='px-2 py-1 text-3xl leading-none text-foreground/60'
-					>
-						{isMobileMenuOpen ? '×' : '≡'}
-					</button>
-				</div>
-			)}
-
-			{!isDesktop && isMobileMenuOpen && (
+			{isMobileMenuOpen && (
 				<nav
 					className={cn(
 						'absolute inset-4 z-20 h-[95vh] ',
@@ -141,5 +116,3 @@ function MainNavigation() {
 		</>
 	)
 }
-
-export default MainNavigation

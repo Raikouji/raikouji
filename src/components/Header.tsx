@@ -1,5 +1,4 @@
 // TODO: サイトタイトルをコンポーネントにする (Logo.tsx 途中まで作成)
-import MainNavigation from '@/components/MainNavigation'
 import MainMenu from '@/components/main-menu'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -32,7 +31,6 @@ function Header() {
 					</Link>
 				</div>
 				<MainMenu />
-				<MainNavigation />
 			</header>
 		</>
 	)

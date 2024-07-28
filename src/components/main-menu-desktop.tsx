@@ -9,7 +9,7 @@ import {
 import { cn } from '@/utils'
 import React from 'react'
 
-function MainNavigationDesktop({
+export default function MainMenuDesktop({
 	items,
 	segment,
 }: {
@@ -49,8 +49,6 @@ function MainNavigationDesktop({
 		</NavigationMenu>
 	)
 }
-
-export default MainNavigationDesktop
 
 type ListItemProps = React.ComponentPropsWithoutRef<'a'> & {
 	segment?: string | null
