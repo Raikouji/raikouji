@@ -1,9 +1,9 @@
-/** @ref: https://react-photo-album.com/documentation */
 'use client'
 import NextJsImage from '@/components/NextJsImage'
 import PhotoAlbum from 'react-photo-album'
 
-function Gallery({
+/** @ref: https://react-photo-album.com/documentation */
+export default function Gallery({
 	photos,
 	col = 2,
 	colMd = 3,
@@ -41,5 +41,3 @@ function Gallery({
 		/>
 	)
 }
-
-export default Gallery

@@ -2,7 +2,7 @@ import { cn } from '@/utils'
 import Image from 'next/image'
 import type React from 'react'
 
-function PageHeader({
+export default function PageHeader({
 	fullWidth = false,
 	headerLevel = 1,
 	className,
@@ -50,5 +50,3 @@ function PageHeader({
 		</div>
 	)
 }
-
-export default PageHeader

@@ -4,7 +4,7 @@ import { cn } from '@/utils'
 import { motion } from 'framer-motion'
 import type { ElementType, ReactElement } from 'react'
 
-function FadeIn({
+export default function FadeIn({
 	tag = 'div',
 	className,
 	children,
@@ -35,5 +35,3 @@ function FadeIn({
 		</MotionTag>
 	)
 }
-
-export default FadeIn

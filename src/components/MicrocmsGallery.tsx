@@ -36,7 +36,7 @@ type Props = {
 	imageClassName?: string
 }
 
-async function MicrocmsGallery({
+export default async function MicrocmsGallery({
 	queries,
 	cols = 1,
 	colsMd = 2,
@@ -100,5 +100,3 @@ async function MicrocmsGallery({
 		</ul>
 	)
 }
-
-export default MicrocmsGallery

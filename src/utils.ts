@@ -1,5 +1,10 @@
-// utils.ts
-// 抽象的なタスクを実行する汎用関数
+/**
+ * 抽象的なタスクを実行する汎用関数
+ *   - Tailwind CSS クラスを効率的にマージ
+ *   - 範囲関数: 開始値と終了値の間の連続した数値の配列を返す
+ *   - メタタグ
+ *
+ */
 import { SITE_TITLE, SITE_URL } from '@/constants'
 import { type ClassValue, clsx } from 'clsx'
 import { twMerge } from 'tailwind-merge'
@@ -66,7 +71,7 @@ export const range = (
 }
 
 /**
- * meta tag
+ * メタタグ
  */
 type Metadata = {
 	title: string

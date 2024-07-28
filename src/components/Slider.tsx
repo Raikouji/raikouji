@@ -18,7 +18,7 @@ type ImageType = {
 
 type Images = ImageType[]
 
-function Slider({ images }: { images: Images }) {
+export default function Slider({ images }: { images: Images }) {
 	const emblaOptions: CarouselOptions = { loop: true }
 	const autoplayOptions = {
 		delay: 9000,
@@ -55,5 +55,3 @@ function Slider({ images }: { images: Images }) {
 		</div>
 	)
 }
-
-export default Slider

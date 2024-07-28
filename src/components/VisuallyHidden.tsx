@@ -12,7 +12,7 @@ const hiddenStyles = {
 	border: 0,
 }
 
-function VisuallyHidden({
+export default function VisuallyHidden({
 	as: Element = 'span',
 	children,
 }: {
@@ -21,5 +21,3 @@ function VisuallyHidden({
 }) {
 	return <Element style={hiddenStyles}>{children}</Element>
 }
-
-export default VisuallyHidden

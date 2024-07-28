@@ -1,3 +1,10 @@
+/**
+ * microCMS API に関する処理をまとめたモジュール
+ *   - 基本設定 (紫陽花の開花状況など。オブジェクト)
+ *   - 新着情報 (リスト)
+ *   - ギャラリー (リスト)
+ */
+
 import type { Blog, Gallery } from '@/types/post'
 import { outputMetadata } from '@/utils'
 import { type MicroCMSQueries, createClient } from 'microcms-js-sdk'

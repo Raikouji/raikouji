@@ -1,7 +1,7 @@
 import { cn } from '@/utils'
 import type React from 'react'
 
-function TocLink({
+export default function TocLink({
 	className,
 	children,
 	...delegated
@@ -43,5 +43,3 @@ export function TocLinkItem({
 		</li>
 	)
 }
-
-export default TocLink

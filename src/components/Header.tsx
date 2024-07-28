@@ -3,7 +3,7 @@ import MainMenu from '@/components/main-menu'
 import Image from 'next/image'
 import Link from 'next/link'
 
-function Header() {
+export default function Header() {
 	return (
 		<>
 			<header className='container flex max-w-screen-xl justify-between py-4 lg:items-center'>
@@ -35,5 +35,3 @@ function Header() {
 		</>
 	)
 }
-
-export default Header

@@ -4,6 +4,7 @@ import type { BasicInformation } from '@/types/post'
 import { cn } from '@/utils'
 import { format, parseISO } from 'date-fns'
 import Image from 'next/image'
+
 export default async function Information() {
 	let data: BasicInformation | null = null
 	let errorMassage = ''

@@ -17,7 +17,7 @@ const sliderImages = [
 	},
 ]
 
-function Hero() {
+export default function Hero() {
 	return (
 		<div
 			className={cn(
@@ -71,5 +71,3 @@ function Hero() {
 		</div>
 	)
 }
-
-export default Hero

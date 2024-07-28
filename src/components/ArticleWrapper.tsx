@@ -1,5 +1,5 @@
-import Breadcrumbs from '@/components/Breadcrumbs'
 import PageHeader from '@/components/PageHeader'
+import Breadcrumbs from '@/components/breadcrumbs'
 import { cn } from '@/utils'
 import type { ReactNode } from 'react'
 

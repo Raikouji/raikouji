@@ -1,7 +1,7 @@
 import { cn } from '@/utils'
 import styles from './Hr.module.css'
 
-function Hr({
+export default function Hr({
 	type,
 	className,
 	...delegated
@@ -11,5 +11,3 @@ function Hr({
 }) {
 	return <hr className={cn(type && styles[type], className)} {...delegated} />
 }
-
-export default Hr

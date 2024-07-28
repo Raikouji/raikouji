@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-function ImageAboveHeading({
+export default function ImageAboveHeading({
 	imageName,
 }: {
 	imageName?:
@@ -56,5 +56,3 @@ function ImageAboveHeading({
 		/>
 	)
 }
-
-export default ImageAboveHeading

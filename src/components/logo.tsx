@@ -1,9 +1,9 @@
+// TODO: 未使用。完成後、Header のものと差し替える
 import { cn } from '@/utils'
 import Link from 'next/link'
 import type React from 'react'
-import styles from './Logo.module.css'
 
-function Logo({
+export default function Logo({
 	tagline,
 	taglinePosition = 'bottom',
 	className,
@@ -25,15 +25,10 @@ function Logo({
 	}
 
 	return (
-		<div
-			className={cn('site-logo', styles.wrapper, flexClass, className)}
-			{...delegated}
-		>
+		<div className={cn('site-logo', flexClass, className)} {...delegated}>
 			{tagline && taglinePosition === 'top' && <Tagline tagline={tagline} />}
 			<h1 className='text-xl font-bold'>
-				<Link href='/' className={styles.wrapper}>
-					{children}
-				</Link>
+				<Link href='/'>{children}</Link>
 			</h1>
 			{tagline && taglinePosition !== 'top' && <Tagline tagline={tagline} />}
 		</div>
@@ -43,5 +38,3 @@ function Logo({
 function Tagline({ tagline }: { tagline: string }) {
 	return <p className='text-xs'>{tagline}</p>
 }
-
-export default Logo

@@ -1,5 +1,5 @@
-import Breadcrumbs from '@/components/Breadcrumbs'
 import PageHeader from '@/components/PageHeader'
+import Breadcrumbs from '@/components/breadcrumbs'
 import { cn, outputMetadata } from '@/utils'
 import type { Metadata } from 'next'
 import Link from 'next/link'
