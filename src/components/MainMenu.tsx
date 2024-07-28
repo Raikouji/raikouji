@@ -1,7 +1,7 @@
 'use client'
 
-import MainMenuDesktop from '@/components/main-menu-desktop'
-import MainMenuMobile from '@/components/main-menu-mobile'
+import MainMenuDesktop from '@/components/MainMenuDesktop'
+import MainMenuMobile from '@/components/MainMenuMobile'
 import { useMediaQuery } from '@/hooks/use-media-query'
 import { useSelectedLayoutSegment } from 'next/navigation'
 

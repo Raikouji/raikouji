@@ -8,7 +8,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 
 import ArticleWrapper from '@/components/ArticleWrapper'
-import Hr from '@/components/Hr'
+import Hr from '@/components/ui/Hr'
 import { outputMetadata } from '@/utils'
 import { ChevronRightIcon } from 'lucide-react'
 import type { Metadata } from 'next'

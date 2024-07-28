@@ -1,5 +1,5 @@
 // TODO: サイトタイトルをコンポーネントにする (Logo.tsx 途中まで作成)
-import MainMenu from '@/components/main-menu'
+import MainMenu from '@/components/MainMenu'
 import Image from 'next/image'
 import Link from 'next/link'
 

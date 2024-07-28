@@ -1,7 +1,7 @@
 import ArticleWrapper from '@/components/ArticleWrapper'
 import Fadein from '@/components/FadeIn'
-import Hr from '@/components/Hr'
 import ImageAboveHeading from '@/components/ImageAboveHeading'
+import Hr from '@/components/ui/Hr'
 import { outputMetadata } from '@/utils'
 import type { Metadata } from 'next'
 import Image from 'next/image'
