@@ -1,11 +1,11 @@
 'use client'
 
 import MainNavigationDesktop from '@/components/MainNavigationDesktop'
+import { useMediaQuery } from '@/hooks/use-media-query'
 import { cn } from '@/utils'
 import Link from 'next/link'
 import { useSelectedLayoutSegment } from 'next/navigation'
 import React from 'react'
-import { useMediaQuery } from 'usehooks-ts'
 
 function MainNavigation() {
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
@@ -34,16 +34,13 @@ function MainNavigation() {
 		},
 	]
 
-	const isMobile = useMediaQuery('(max-width: 769px)', {
-		defaultValue: false,
-		initializeWithValue: false,
-	})
+	const isDesktop = useMediaQuery('(min-width: 768px)')
 
 	return (
 		<>
-			{!isMobile && <MainNavigationDesktop items={items} segment={segment} />}
+			{isDesktop && <MainNavigationDesktop items={items} segment={segment} />}
 
-			{isMobile && (
+			{!isDesktop && (
 				<div className='z-30 grid place-content-center'>
 					<button
 						type='button'
@@ -57,7 +54,7 @@ function MainNavigation() {
 				</div>
 			)}
 
-			{isMobile && isMobileMenuOpen && (
+			{!isDesktop && isMobileMenuOpen && (
 				<nav
 					className={cn(
 						'absolute inset-4 z-20 h-[95vh] ',
