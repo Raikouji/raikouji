@@ -64,6 +64,7 @@ export default function MainMenuMobile({
 									<Link
 										href={`/${item.href}`}
 										className={cn(
+											segment === item.href && 'font-bold',
 											'text-foreground/80 hover:text-foreground',
 											'hover:border-b hover:border-b-primary-400',
 											'transition-all lg:ease-out',
