@@ -1,4 +1,5 @@
 import { cn } from '@/utils'
+import { Menu, X } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
 
@@ -25,7 +26,7 @@ export default function MainMenuMobile({
 					}}
 					className='px-2 py-1 text-3xl leading-none text-foreground/60'
 				>
-					{isMobileMenuOpen ? '×' : '≡'}
+					{isMobileMenuOpen ? <X /> : <Menu />}
 				</button>
 			</div>
 
