@@ -22,9 +22,9 @@ export default function Page() {
 		<ArticleWrapper pageTitle={pageTitle} headerImage={headerImage}>
 			<p className='text-center font-bold'>
 				祥雲山 頼光寺※ は、紀元1000年頃に源氏一族によって創立されました。
-				<br />
+				<br className='hidden md:inline' />
 				初夏には境内にたくさんのあじさいが咲き乱れ、
-				<br />
+				<br className='hidden md:inline' />
 				地域の人々に「あじさい寺」として親しまれています。
 			</p>
 
