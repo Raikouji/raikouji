@@ -123,6 +123,7 @@ const config: Config = {
 			danger: 'hsl(var(--danger))',
 			'danger-foreground': 'hsl(var(--danger-foreground))',
 			backgroundImage: {
+				washi: "url('/images/bg-paper.png')",
 				dots: "url('https://www.toptal.com/designers/subtlepatterns/uploads/watercolor.png')",
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 				'gradient-conic':
