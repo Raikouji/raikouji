@@ -33,17 +33,16 @@ export default function MainMenuMobile({
 			{isMobileMenuOpen && (
 				<nav
 					className={cn(
-						'absolute inset-4 z-20 h-[95vh] ',
-						'flex justify-center p-8',
-						'bg-white opacity-95 shadow-lg',
-						'transition-opacity duration-300 ease-out',
+						'animate-fade-in',
+						'absolute inset-0 z-20 h-dvh bg-[#fbf8ed] bg-washi',
+						'grid place-content-center p-8',
 					)}
 				>
 					<ul
 						className={cn(
-							'flex flex-col bg-white',
+							'flex flex-col',
 							'[&>li:not(:last-child)]:border-b' +
-								' [&>li:not(:last-child)]:border-b-gray-200',
+								' [&>li:not(:last-child)]:border-b-primary-300',
 						)}
 					>
 						{items.map((item) => {
@@ -53,8 +52,8 @@ export default function MainMenuMobile({
 								<li
 									key={crypto.randomUUID()}
 									className={cn(
-										isActive ? 'font-bold' : undefined,
-										'w-full text-center [&>a]:block [&>a]:p-4 [&>a]:active:bg-primary-100',
+										isActive ? 'text-primary-700' : undefined,
+										'font-bold w-full text-center [&>a]:block [&>a]:p-4 [&>a]:active:bg-primary-100',
 									)}
 									onClick={() => setActiveMenu(item.href)}
 									onKeyUp={() => setActiveMenu(item.href)}
@@ -64,10 +63,10 @@ export default function MainMenuMobile({
 									onBlur={() => setActiveMenu('')}
 								>
 									<Link
-										href={`/${item.href}`}
+										href={item.href}
 										className={cn(
 											segment === item.href && 'font-bold',
-											'text-foreground/80 hover:text-foreground',
+											'text-foreground/70 tracking-widest hover:text-foreground',
 											'hover:border-b hover:border-b-primary-400',
 											'transition-all lg:ease-out',
 										)}
@@ -78,10 +77,8 @@ export default function MainMenuMobile({
 									{item.subMenu && (
 										<ul
 											className={cn(
-												'lg:absolute lg:left-0 lg:top-full lg:z-10',
-												'lg:w-48 lg:rounded-lg lg:bg-primary-100 lg:p-2 lg:shadow-lg',
-												'lg:transition-all lg:duration-300 lg:ease-out',
-												activeMenu !== item.href && 'hidden',
+												'mb-2',
+												activeMenu !== item.href && 'block', // hidden TODO: 開閉メニューに
 											)}
 										>
 											{item.subMenu.map((subItem) => {
@@ -97,7 +94,7 @@ export default function MainMenuMobile({
 														}
 													>
 														<Link
-															href={`/${subItem.href}`}
+															href={subItem.href}
 															className={cn(
 																'block px-3 py-2 text-foreground/80',
 																'transition-all ease-out',
