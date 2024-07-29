@@ -1,3 +1,4 @@
+import LinkFixer from '@/components/LinkFixer'
 import { cn } from '@/utils'
 import { Menu, X } from 'lucide-react'
 import Link from 'next/link'
@@ -15,9 +16,10 @@ export default function MainMenuMobile({
 	segment: string | null
 }) {
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
-	const [activeMenu, setActiveMenu] = React.useState('')
+	// const [activeMenu, setActiveMenu] = React.useState('')
 	return (
 		<>
+			<LinkFixer />
 			<div className='z-30 grid place-content-center'>
 				<button
 					type='button'
@@ -55,6 +57,7 @@ export default function MainMenuMobile({
 										isActive ? 'text-primary-700' : undefined,
 										'font-bold w-full text-center [&>a]:block [&>a]:p-4 [&>a]:active:bg-primary-100',
 									)}
+									// TODO:
 									// onClick={() => setActiveMenu(item.href)}
 									// onKeyUp={() => setActiveMenu(item.href)}
 									// onMouseOver={() => setActiveMenu(item.href)}
@@ -75,12 +78,13 @@ export default function MainMenuMobile({
 										{item.title}
 									</Link>
 									{item.subMenu && (
-										<ul
-											className={cn(
-												'mb-2',
-												activeMenu !== item.href && 'block', // hidden TODO: 開閉メニューに
-											)}
-										>
+										<ul className='mb-2'>
+											{/*<ul*/}
+											{/*	className={cn(*/}
+											{/*		'mb-2',*/}
+											{/*		activeMenu !== item.href && 'block', // hidden TODO: 開閉メニューに*/}
+											{/*	)}*/}
+											{/*>*/}
 											{item.subMenu.map((subItem) => {
 												const isActive = subItem.href === segment
 
