@@ -159,8 +159,8 @@ const config: Config = {
 			},
 			animation: {
 				'fade-in':
-					'fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000)   both',
-				'fade-out': 'fade-out 1s ease   both',
+					'fade-in 0.7s cubic-bezier(0.390, 0.575, 0.565, 1.000)   both',
+				'fade-out': 'fade-out 0.5s ease   both',
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 			},
