@@ -56,9 +56,11 @@ export default function MainMenuMobile({
 										isActive ? 'font-bold' : undefined,
 										'w-full text-center [&>a]:block [&>a]:p-4 [&>a]:active:bg-primary-100',
 									)}
-									onMouseOver={() => setActiveMenu(item.href)}
-									onMouseOut={() => setActiveMenu('')}
-									onFocus={() => setActiveMenu(item.href)}
+									onClick={() => setActiveMenu(item.href)}
+									onKeyUp={() => setActiveMenu(item.href)}
+									// onMouseOver={() => setActiveMenu(item.href)}
+									// onMouseOut={() => setActiveMenu('')}
+									// onFocus={() => setActiveMenu(item.href)}
 									onBlur={() => setActiveMenu('')}
 								>
 									<Link
