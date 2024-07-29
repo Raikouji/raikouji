@@ -6,7 +6,10 @@ import {
 	NavigationMenuList,
 	NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu'
+import { navigationMenuTriggerStyle } from '@/components/ui/navigation-menu'
 import { cn } from '@/utils'
+import Link from 'next/link'
+
 import React from 'react'
 
 export default function MainMenuDesktop({
@@ -57,23 +60,27 @@ type ListItemProps = React.ComponentPropsWithoutRef<'a'> & {
 }
 
 const ListItem = React.forwardRef<React.ElementRef<'a'>, ListItemProps>(
-	({ segment, className, title, ...props }, ref) => {
+	({ href, segment, className, title, ...props }, ref) => {
 		return (
 			<>
-				<NavigationMenuLink asChild>
-					<a
-						ref={ref}
+				<Link
+					href={href ? href : 'undefined'}
+					legacyBehavior
+					passHref
+					ref={ref}
+					{...props}
+				>
+					<NavigationMenuLink
 						className={cn(
-							segment === props.href && 'font-bold',
+							segment === href && 'font-bold',
 							'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors' +
 								' hover:bg-primary-100 hover:text-accent-foreground focus:bg-primary-100 focus:text-accent-foreground',
 							className,
 						)}
-						{...props}
 					>
 						{title}
-					</a>
-				</NavigationMenuLink>
+					</NavigationMenuLink>
+				</Link>
 			</>
 		)
 	},
