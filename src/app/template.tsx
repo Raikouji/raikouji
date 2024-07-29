@@ -33,6 +33,10 @@ export default function Template({ children }: { children: React.ReactNode }) {
 		}
 	}, [])
 
+	useEffect(() => {
+		document.addEventListener('touchstart', () => {}, { passive: true })
+	}, [])
+
 	return (
 		<motion.div
 			className='site-wrapper'
