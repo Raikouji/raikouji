@@ -38,7 +38,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
 	}, [])
 
 	// スマホ実機でダブルタップしないとリンク先に飛ばない問題を解決
-	touchDeviceLinkFixer()
+	// touchDeviceLinkFixer()
 
 	return (
 		<motion.div
