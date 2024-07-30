@@ -1,9 +1,10 @@
 'use client'
 
+import { useSelectedLayoutSegment } from 'next/navigation'
+
 import MainMenuDesktop from '@/components/MainMenuDesktop'
 import MainMenuMobile from '@/components/MainMenuMobile'
 import { useMediaQuery } from '@/hooks/use-media-query'
-import { useSelectedLayoutSegment } from 'next/navigation'
 
 import { BREAKPOINTS } from '@/constants'
 
@@ -23,10 +24,7 @@ export default function MainMenu() {
 		{ href: '/events', title: '行事案内' },
 		{ href: '/cemetery', title: '墓地の案内' },
 		{ href: '/access', title: 'アクセス' },
-		{
-			href: '/contact',
-			title: 'お問合せ',
-		},
+		{ href: '/contact', title: 'お問合せ' },
 	]
 	const isDesktop = useMediaQuery(`(min-width: ${BREAKPOINTS.TABLET}px)`)
 	const segment = useSelectedLayoutSegment()
