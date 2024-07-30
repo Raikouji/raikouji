@@ -1,6 +1,6 @@
 import ArticleWrapper from '@/components/ArticleWrapper'
 import Card from '@/components/ui/Card'
-import { cn } from '@/utils'
+import { cn } from '@/lib/cn'
 
 export default function Page() {
 	return (

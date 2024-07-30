@@ -1,14 +1,16 @@
+import type { Metadata } from 'next'
+import Image from 'next/image'
+import Link from 'next/link'
+import React from 'react'
+
 import ArticleWrapper from '@/components/ArticleWrapper'
 import ImageAboveHeading from '@/components/ImageAboveHeading'
 import TocLink, { TocLinkItem } from '@/components/TocLink'
 import Card from '@/components/ui/Card'
 import Hr from '@/components/ui/Hr'
 import { Button } from '@/components/ui/button'
-import { cn, outputMetadata } from '@/utils'
-import type { Metadata } from 'next'
-import Image from 'next/image'
-import Link from 'next/link'
-import React from 'react'
+import { cn } from '@/lib/cn'
+import { getMetadata } from '@/lib/get-metadata'
 import { FaExclamationTriangle } from 'react-icons/fa'
 
 type RouteDataItem = {
@@ -16,13 +18,12 @@ type RouteDataItem = {
 	image: string
 }
 
-// for metadata
 const pageTitle = 'アクセス'
 const pageDescription = '頼光寺へのアクセスです。駐車場情報も。'
 const headerImage =
 	'https://images.microcms-assets.io/assets/2954660cbcb2468c91911ef67d43d6dc/2eaf5b5bf2374009a0f468fc1c47fa07/lotus.jpg'
 
-export const metadata: Metadata = outputMetadata({
+export const metadata: Metadata = getMetadata({
 	title: pageTitle,
 	description: pageDescription,
 })

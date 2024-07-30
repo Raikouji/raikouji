@@ -1,19 +1,17 @@
+import Image from 'next/image'
+import Link from 'next/link'
+
 import Fadein from '@/components/FadeIn'
 import Hero from '@/components/Hero'
 import ImageAboveHeading from '@/components/ImageAboveHeading'
 import Information from '@/components/Information'
 import MicrocmsGallery from '@/components/MicrocmsGallery'
 import { Button } from '@/components/ui/button'
-import { cn } from '@/utils'
-import Image from 'next/image'
-import Link from 'next/link'
-import styles from './homepage.module.css'
+import { cn } from '@/lib/cn'
 
 export default function Home() {
 	return (
-		<div
-			className={`${styles.wrapper} container flex max-w-screen-xl flex-col gap-12`}
-		>
+		<div className='container flex max-w-screen-xl flex-col gap-12'>
 			<main>
 				<div className='flex flex-col gap-12 px-8 pb-12 lg:px-2'>
 					<Hero />
@@ -39,7 +37,6 @@ export default function Home() {
 								'full-width relative md:pr-4',
 								'bg-[length:396.5px_178px] bg-right-top bg-no-repeat',
 								'bg-[url("/images/illust-2-color-ajisai.png")]',
-								styles.wrapper,
 							)}
 						>
 							<div className='relative'>

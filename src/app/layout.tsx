@@ -5,9 +5,10 @@ import Footer from '../components/Footer'
 import Header from '../components/Header'
 
 import GetScrollBarWidth from '@/components/GetScrollBarWidth'
+import ScrollToTopButton from '@/components/ScrollToTopButton'
+
 import { SITE_DESCRIPTION, SITE_TITLE } from '@/constants'
 import './globals.css'
-import ScrollToTopButton from '@/components/ScrollToTopButton'
 
 export const metadata: Metadata = {
 	metadataBase: new URL('https://ajisai-raikouji.com'),

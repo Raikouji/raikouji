@@ -1,4 +1,4 @@
-import { cn } from '@/utils'
+import { cn } from '@/lib/cn'
 import type React from 'react'
 
 import styles from './Card.module.css'

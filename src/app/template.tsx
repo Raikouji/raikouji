@@ -1,7 +1,7 @@
 'use client'
 
-import type React from 'react'
 import { useEffect } from 'react'
+import type React from 'react'
 
 import { MobileMenuProvider, useMobileMenu } from '@/context/MobileMenuContext'
 import { touchDeviceLinkFixer } from '@/lib/touch-device-link-fixer'

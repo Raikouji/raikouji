@@ -1,12 +1,11 @@
-import { Button } from '@/components/ui/button'
-import { format, parseISO } from 'date-fns'
-import parse from 'html-react-parser'
+import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
-import { generateMetadata, getBlogDetail, getBlogList } from '@/lib/microcms'
-
 import ArticleWrapper from '@/components/ArticleWrapper'
-import Link from 'next/link'
+import { Button } from '@/components/ui/button'
+import { getBlogDetail, getBlogList } from '@/lib/microcms' // generateMetadata
+import { format, parseISO } from 'date-fns'
+import parse from 'html-react-parser'
 import { IoArrowUndoSharp } from 'react-icons/io5'
 
 const headerImage = '/images/ajisai4.jpg'

@@ -1,7 +1,8 @@
 // TODO: 未使用。完成後、Header のものと差し替える
-import { cn } from '@/utils'
 import Link from 'next/link'
 import type React from 'react'
+
+import { cn } from '@/lib/cn'
 
 export default function Logo({
 	tagline,

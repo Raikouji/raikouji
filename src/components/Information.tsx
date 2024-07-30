@@ -1,9 +1,11 @@
-import NewsList from '@/components/NewsList'
-import { getBasicInformation } from '@/lib/microcms'
-import type { BasicInformation } from '@/types/post'
-import { cn } from '@/utils'
-import { format, parseISO } from 'date-fns'
 import Image from 'next/image'
+
+import NewsList from '@/components/NewsList'
+import { cn } from '@/lib/cn'
+import { getBasicInformation } from '@/lib/microcms'
+import { format, parseISO } from 'date-fns'
+
+import type { BasicInformation } from '@/types/post'
 
 export default async function Information() {
 	let data: BasicInformation | null = null
@@ -19,7 +21,11 @@ export default async function Information() {
 		return <p>{errorMassage}</p>
 	}
 
-	if (!data || !data.flowerPhoto || data.flowerPhoto.length === 0) {
+	if (!data) {
+		return <p>No data or no flower photo.</p>
+	}
+
+	if (!data.flowerPhoto || data.flowerPhoto.length === 0) {
 		return <p>No data or no flower photo.</p>
 	}
 

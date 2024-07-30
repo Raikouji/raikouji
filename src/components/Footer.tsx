@@ -1,6 +1,7 @@
-import { cn } from '@/utils'
 import Image from 'next/image'
 import Link from 'next/link'
+
+import { cn } from '@/lib/cn'
 import { FaFacebook, FaSquareInstagram } from 'react-icons/fa6'
 
 export default function Footer() {

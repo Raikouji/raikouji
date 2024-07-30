@@ -1,4 +1,6 @@
+import type { Metadata } from 'next'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import ArticleWrapper from '@/components/ArticleWrapper'
 import Gallery from '@/components/Gallery'
@@ -6,18 +8,16 @@ import ImageAboveHeading from '@/components/ImageAboveHeading'
 import TocLink, { TocLinkItem } from '@/components/TocLink'
 import Card from '@/components/ui/Card'
 import { Button } from '@/components/ui/button'
-import { cn, outputMetadata } from '@/utils'
-import type { Metadata } from 'next'
-import Link from 'next/link'
+import { cn } from '@/lib/cn'
+import { getMetadata } from '@/lib/get-metadata'
 
-// for metadata
 const pageTitle = '墓地の案内'
 const pageDescription =
 	'頼光寺のお墓は、静かで緑豊かな心安らぐ空間です。永代供養共同墓、水子供養塔もあります。能勢電鉄「畦野駅」から徒歩５分とアクセスもしやすい立地です。'
 const headerImage =
 	'https://images.microcms-assets.io/assets/2954660cbcb2468c91911ef67d43d6dc/22ef56d8a6544574afa8d49e9bd17ac3/flower.jpg'
 
-export const metadata: Metadata = outputMetadata({
+export const metadata: Metadata = getMetadata({
 	title: pageTitle,
 	description: pageDescription,
 })

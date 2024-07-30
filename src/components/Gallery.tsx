@@ -1,4 +1,5 @@
 'use client'
+
 import NextJsImage from '@/components/NextJsImage'
 import PhotoAlbum from 'react-photo-album'
 
@@ -34,8 +35,12 @@ export default function Gallery({
 				],
 			}}
 			columns={(containerWidth) => {
-				if (containerWidth < 640) return col
-				if (containerWidth < 1024) return colMd
+				if (containerWidth < 640) {
+					return col
+				}
+				if (containerWidth < 1024) {
+					return colMd
+				}
 				return colLg
 			}}
 		/>

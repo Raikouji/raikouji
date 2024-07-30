@@ -1,17 +1,17 @@
-import ArticleWrapper from '@/components/ArticleWrapper'
-import NewsList from '@/components/NewsList'
-import { Button, buttonVariants } from '@/components/ui/button'
-import { outputMetadata } from '@/utils'
 import type { Metadata } from 'next'
 import Link from 'next/link'
+
+import ArticleWrapper from '@/components/ArticleWrapper'
+import NewsList from '@/components/NewsList'
+import { Button } from '@/components/ui/button'
+import { getMetadata } from '@/lib/get-metadata'
 import { IoArrowUndoSharp } from 'react-icons/io5'
 
-// for metadata
 const pageTitle = 'お知らせ'
 const pageDescription = '頼光寺のお知らせの一覧です。'
 const headerImage = '/images/temple-and-ajisai.jpg'
 
-export const metadata: Metadata = outputMetadata({
+export const metadata: Metadata = getMetadata({
 	title: pageTitle,
 	description: pageDescription,
 })

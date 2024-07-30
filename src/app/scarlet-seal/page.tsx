@@ -1,20 +1,21 @@
+import type { Metadata } from 'next'
+import Image from 'next/image'
+import Link from 'next/link'
+
 import ArticleWrapper from '@/components/ArticleWrapper'
 import ImageAboveHeading from '@/components/ImageAboveHeading'
 import TocLink, { TocLinkItem } from '@/components/TocLink'
 import Card from '@/components/ui/Card'
 import Hr from '@/components/ui/Hr'
-import { cn, outputMetadata } from '@/utils'
-import type { Metadata } from 'next'
-import Image from 'next/image'
-import Link from 'next/link'
+import { cn } from '@/lib/cn'
+import { getMetadata } from '@/lib/get-metadata'
 
-// for metadata
 const pageTitle = '御朱印、仏前結婚式'
 const pageDescription = '頼光寺の御朱印と仏前結婚式について。'
 const headerImage =
 	'https://images.microcms-assets.io/assets/2954660cbcb2468c91911ef67d43d6dc/fa011a177fb04550a4e0316338357cd1/ajisai6.jpg'
 
-export const metadata: Metadata = outputMetadata({
+export const metadata: Metadata = getMetadata({
 	title: pageTitle,
 	description: pageDescription,
 })

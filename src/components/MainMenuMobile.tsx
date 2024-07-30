@@ -1,8 +1,7 @@
 import Link from 'next/link'
-import React from 'react'
 
 import { MobileMenuProvider, useMobileMenu } from '@/context/MobileMenuContext'
-import { cn } from '@/utils'
+import { cn } from '@/lib/cn'
 import { Menu, X } from 'lucide-react'
 
 export default function MainMenuMobile({

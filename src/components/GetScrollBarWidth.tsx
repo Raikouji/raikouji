@@ -1,9 +1,12 @@
 'use client'
+
 import React from 'react'
 
 export default function GetScrollBarWidth({
 	children,
-}: { children: React.ReactNode }) {
+}: {
+	children: React.ReactNode
+}) {
 	const [windowHeight, setWindowHeight] = React.useState(0)
 	React.useEffect(() => {
 		setWindowHeight(window.innerHeight)

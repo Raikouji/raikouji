@@ -20,7 +20,7 @@ import {
 } from '@/components/ui/carousel'
 
 import type { CarouselApi } from '@/components/ui/carousel'
-import { range } from '@/utils'
+import { range } from '@/lib/range'
 
 const photos = [
 	{ url: 'https://source.unsplash.com/1600x900/?nature,water', alt: 'aaaa' },

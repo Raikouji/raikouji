@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button'
 
 import ArticleWrapper from '@/components/ArticleWrapper'
 import Hr from '@/components/ui/Hr'
-import { outputMetadata } from '@/utils'
+import { getMetadata } from '@/lib/get-metadata'
 import { ChevronRightIcon } from 'lucide-react'
 import type { Metadata } from 'next'
 
@@ -54,11 +54,10 @@ const photos = [
 	},
 ]
 
-// for metadata
 const pageTitle = '子ページのタイトルです'
 const pageDescription = '子ページのディスクリプションです'
 
-export const metadata: Metadata = outputMetadata({
+export const metadata: Metadata = getMetadata({
 	title: pageTitle,
 	description: pageDescription,
 })

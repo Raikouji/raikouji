@@ -1,7 +1,8 @@
+import type { ReactNode } from 'react'
+
 import Breadcrumbs from '@/components/Breadcrumbs'
 import PageHeader from '@/components/PageHeader'
-import { cn } from '@/utils'
-import type { ReactNode } from 'react'
+import { cn } from '@/lib/cn'
 
 function ArticleWrapper({
 	pageTitle,

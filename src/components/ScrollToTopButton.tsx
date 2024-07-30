@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import type React from 'react'
 
 import VisuallyHidden from '@/components/VisuallyHidden'
 import { ArrowUpToLine } from 'lucide-react'

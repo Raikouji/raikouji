@@ -1,19 +1,20 @@
+import type { Metadata } from 'next'
+import Image from 'next/image'
+
 import ArticleWrapper from '@/components/ArticleWrapper'
 import ImageAboveHeading from '@/components/ImageAboveHeading'
 import MicrocmsGallery from '@/components/MicrocmsGallery'
 import TocLink, { TocLinkItem } from '@/components/TocLink'
 import Card from '@/components/ui/Card'
 import Hr from '@/components/ui/Hr'
-import { cn, outputMetadata } from '@/utils'
-import type { Metadata } from 'next'
-import Image from 'next/image'
+import { cn } from '@/lib/cn'
+import { getMetadata } from '@/lib/get-metadata'
 
-// for metadata
 const pageTitle = '年中行事 / 月例行事'
 const pageDescription = '頼光寺の行事の紹介です。'
 const headerImage = '/images/ajisai4.jpg'
 
-export const metadata: Metadata = outputMetadata({
+export const metadata: Metadata = getMetadata({
 	title: pageTitle,
 	description: pageDescription,
 })

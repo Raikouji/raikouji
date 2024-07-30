@@ -1,21 +1,22 @@
+import Image from 'next/image'
+import Link from 'next/link'
+
 import ArticleWrapper from '@/components/ArticleWrapper'
 import Gellary from '@/components/Gallery'
 import ImageAboveHeading from '@/components/ImageAboveHeading'
 import Card from '@/components/ui/Card'
 import { Button } from '@/components/ui/button'
-import { outputMetadata } from '@/utils'
-import type { Metadata } from 'next'
-import Image from 'next/image'
-import Link from 'next/link'
+import { getMetadata } from '@/lib/get-metadata'
 
-// for metadata
+import type { Metadata } from 'next'
+
 const pageTitle = '紫陽閣(多目的ホール)の貸し出し'
 const pageDescription =
 	'頼光寺のお墓は、静かで緑豊かな心安らぐ空間です。永代供養共同墓、水子供養塔もあります。能勢電鉄「畦野駅」から徒歩５分とアクセスもしやすい立地です。'
 const headerImage =
 	'https://images.microcms-assets.io/assets/2954660cbcb2468c91911ef67d43d6dc/38f85a71571148ea921a925856e4b340/lotus-white.jpg'
 
-export const metadata: Metadata = outputMetadata({
+export const metadata: Metadata = getMetadata({
 	title: pageTitle,
 	description: pageDescription,
 })

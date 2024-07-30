@@ -1,14 +1,15 @@
 import ArticleWrapper from '@/components/ArticleWrapper'
 import ImageAboveHeading from '@/components/ImageAboveHeading'
-import { cn, outputMetadata } from '@/utils'
+import { cn } from '@/lib/cn'
+import { getMetadata } from '@/lib/get-metadata'
+
 import type { Metadata } from 'next'
 
-// for metadata
 const pageTitle = 'リンク'
 const pageDescription = '関連しているサイトのリンク集です。'
 const headerImage = '/images/spider.jpg'
 
-export const metadata: Metadata = outputMetadata({
+export const metadata: Metadata = getMetadata({
 	title: pageTitle,
 	description: pageDescription,
 })

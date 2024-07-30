@@ -1,7 +1,8 @@
-import { getBlogList } from '@/lib/microcms'
-import { cn } from '@/utils'
-import { format, parseISO } from 'date-fns'
 import Link from 'next/link'
+
+import { cn } from '@/lib/cn'
+import { getBlogList } from '@/lib/microcms'
+import { format, parseISO } from 'date-fns'
 
 export default async function NewsList({
 	className,

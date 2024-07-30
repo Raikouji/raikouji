@@ -1,3 +1,6 @@
+import Link from 'next/link'
+import React from 'react'
+
 import {
 	NavigationMenu,
 	NavigationMenuContent,
@@ -7,10 +10,7 @@ import {
 	NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu'
 import { navigationMenuTriggerStyle } from '@/components/ui/navigation-menu'
-import { cn } from '@/utils'
-import Link from 'next/link'
-
-import React from 'react'
+import { cn } from '@/lib/cn'
 
 export default function MainMenuDesktop({
 	items,

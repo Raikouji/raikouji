@@ -1,6 +1,7 @@
-import Slider from '@/components/Slider'
-import { cn } from '@/utils'
 import Image from 'next/image'
+
+import Slider from '@/components/Slider'
+import { cn } from '@/lib/cn'
 
 const sliderImages = [
 	{

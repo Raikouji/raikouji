@@ -1,8 +1,9 @@
 'use client'
 
-import { cn } from '@/utils'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+
+import { cn } from '@/lib/cn'
 import { FaHome } from 'react-icons/fa'
 
 const items = [
@@ -34,7 +35,7 @@ export default function Breadcrumbs({
 		<div className={className} {...delegated}>
 			<ul
 				className={cn(
-					'flex text-sm text-gray-600',
+					'flex text-gray-600 text-sm',
 					'[&>li:not(:last-child)]:after:mx-2',
 					'[&>li:not(:last-child)]:after:content-["/"]',
 					'[&>li:not(:last-child)]:after:text-gray-300',

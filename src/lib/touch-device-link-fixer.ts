@@ -13,7 +13,9 @@ export const touchDeviceLinkFixer = () => {
 
 	useEffect(() => {
 		// console.log(isDesktop)
-		if (isDesktop) return
+		if (isDesktop) {
+			return
+		}
 
 		document.addEventListener('touchstart', () => {}, { passive: true })
 		// console.log('touchDeviceLinkFixerです')

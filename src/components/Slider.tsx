@@ -1,13 +1,16 @@
 'use client'
 
-// embla-carousel: @ref https://github.com/shadcn-ui/ui/issues/2281
-// type CarouselApi = UseEmblaCarouselType[1];
-// type CarouselPlugin = UseCarouselParameters[1];
+/**
+ * embla-carousel: @ref https://github.com/shadcn-ui/ui/issues/2281
+ * type CarouselApi = UseEmblaCarouselType[1];
+ * type CarouselPlugin = UseCarouselParameters[1];
+ */
+
+import Image from 'next/image'
 
 import Autoplay from 'embla-carousel-autoplay'
 import Fade from 'embla-carousel-fade'
 import useEmblaCarousel from 'embla-carousel-react'
-import Image from 'next/image'
 type UseCarouselParameters = Parameters<typeof useEmblaCarousel>
 type CarouselOptions = UseCarouselParameters[0]
 

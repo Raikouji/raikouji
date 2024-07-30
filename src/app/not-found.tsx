@@ -1,22 +1,21 @@
-import Breadcrumbs from '@/components/Breadcrumbs'
-import PageHeader from '@/components/PageHeader'
-import { cn, outputMetadata } from '@/utils'
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import styles from './not-found.module.css'
 
-// for metadata
+import Breadcrumbs from '@/components/Breadcrumbs'
+import PageHeader from '@/components/PageHeader'
+import { getMetadata } from '@/lib/get-metadata'
+
 const pageTitle = '404 Not found'
 const pageDescription = '子ページのディスクリプションです'
 
-export const metadata: Metadata = outputMetadata({
+export const metadata: Metadata = getMetadata({
 	title: pageTitle,
 	description: pageDescription,
 })
 
 function NotFound() {
 	return (
-		<div className={cn(styles.wrapper, 'container max-w-screen-xl')}>
+		<div className='container max-w-screen-xl'>
 			<main>
 				<PageHeader fullWidth>{pageTitle}</PageHeader>
 				<Breadcrumbs className='mt-2' />

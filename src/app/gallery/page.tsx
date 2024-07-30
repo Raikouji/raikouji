@@ -2,16 +2,16 @@ import ArticleWrapper from '@/components/ArticleWrapper'
 import ImageAboveHeading from '@/components/ImageAboveHeading'
 import MicrocmsGallery from '@/components/MicrocmsGallery'
 import TocLink, { TocLinkItem } from '@/components/TocLink'
-import { outputMetadata } from '@/utils'
+import { getMetadata } from '@/lib/get-metadata'
+
 import type { Metadata } from 'next'
 
-// for metadata
 const pageTitle = 'ギャラリー'
 const pageDescription =
 	'境内の様子、あじさい、イベントなど、頼光寺の風景の写真ギャラリーです。'
 const headerImage = '/images/monochrome.jpg'
 
-export const metadata: Metadata = outputMetadata({
+export const metadata: Metadata = getMetadata({
 	title: pageTitle,
 	description: pageDescription,
 })

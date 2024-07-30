@@ -1,8 +1,9 @@
 'use client'
 
-import { cn } from '@/utils'
-import { motion } from 'framer-motion'
 import type { ElementType, ReactElement } from 'react'
+
+import { cn } from '@/lib/cn'
+import { motion } from 'framer-motion'
 
 export default function FadeIn({
 	tag = 'div',

@@ -1,22 +1,22 @@
+import type { Metadata } from 'next'
+import Link from 'next/link'
+
 import ArticleWrapper from '@/components/ArticleWrapper'
 import ImageAboveHeading from '@/components/ImageAboveHeading'
 import { NetlifyForm } from '@/components/NetlifyForm'
 import TocLink, { TocLinkItem } from '@/components/TocLink'
 import Card from '@/components/ui/Card'
 import { Button } from '@/components/ui/button'
-import { cn, outputMetadata } from '@/utils'
-
+import { cn } from '@/lib/cn'
+import { getMetadata } from '@/lib/get-metadata'
 import { getBasicInformation } from '@/lib/microcms'
 import type { BasicInformation } from '@/types/post'
-import type { Metadata } from 'next'
-import Link from 'next/link'
 
-// for metadata
 const pageTitle = 'お問合せ'
 const pageDescription = '頼光寺へのお問い合わせ。'
 const headerImage = '/images/sea-of-clouds.jpg'
 
-export const metadata: Metadata = outputMetadata({
+export const metadata: Metadata = getMetadata({
 	title: pageTitle,
 	description: pageDescription,
 })

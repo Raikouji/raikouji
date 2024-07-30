@@ -4,12 +4,13 @@
  *   - 新着情報 (リスト)
  *   - ギャラリー (リスト)
  */
-
-import type { Blog, Gallery } from '@/types/post'
-import { outputMetadata } from '@/utils'
-import { type MicroCMSQueries, createClient } from 'microcms-js-sdk'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+
+import { getMetadata } from '@/lib/get-metadata'
+// import { getMetadata } from '@/lib/get-metadata'
+import type { Blog, Gallery } from '@/types/post'
+import { type MicroCMSQueries, createClient } from 'microcms-js-sdk'
 
 if (!process.env.MICROCMS_SERVICE_DOMAIN) {
 	throw new Error('MICROCMS_SERVICE_DOMAIN is required')
@@ -77,7 +78,7 @@ export const generateMetadata = async ({
 			notFound()
 		}
 
-		return outputMetadata({
+		return getMetadata({
 			title: post.title,
 			description: post?.description ?? '',
 			openGraph: {

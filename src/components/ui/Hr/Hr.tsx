@@ -1,4 +1,4 @@
-import { cn } from '@/utils'
+import { cn } from '@/lib/cn'
 import styles from './Hr.module.css'
 
 export default function Hr({

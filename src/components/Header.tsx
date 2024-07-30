@@ -1,7 +1,8 @@
 // TODO: サイトタイトルをコンポーネントにする (Logo.tsx 途中まで作成)
-import MainMenu from '@/components/MainMenu'
 import Image from 'next/image'
 import Link from 'next/link'
+
+import MainMenu from '@/components/MainMenu'
 
 export default function Header() {
 	return (

@@ -1,14 +1,14 @@
-import ArticleWrapper from '@/components/ArticleWrapper'
-import { outputMetadata } from '@/utils'
 import type { Metadata } from 'next'
 
-// for metadata
+import ArticleWrapper from '@/components/ArticleWrapper'
+import { getMetadata } from '@/lib/get-metadata'
+
 const pageTitle = 'プライバシーポリシー'
 const pageDescription =
 	'頼光寺ホームページの個人情報保護方針(プライバシーポリシー)です。'
 const headerImage = '/images/washi-paper.jpg'
 
-export const metadata: Metadata = outputMetadata({
+export const metadata: Metadata = getMetadata({
 	title: pageTitle,
 	description: pageDescription,
 })

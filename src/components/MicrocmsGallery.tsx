@@ -1,4 +1,23 @@
-/*
+import Image from 'next/image'
+
+import Fadein from '@/components/FadeIn'
+import { cn } from '@/lib/cn'
+import { getGalleryList } from '@/lib/microcms'
+import type { MicroCMSQueries } from 'microcms-js-sdk'
+
+type Props = {
+	queries: MicroCMSQueries
+	cols?: number
+	colsMd?: number
+	colsLg?: number
+	colsXL?: number
+	className?: string
+	childClassName?: string
+	imageWidth?: number
+	imageClassName?: string
+}
+
+/**
   Usage:
   <MicrocmsGallery
     queries={{ // MicroCMSQueries
@@ -18,23 +37,6 @@
   // その他のデータ
   totalCount: {totalCount}, offset: {offset}, limit: {limit}
  */
-import Fadein from '@/components/FadeIn'
-import { getGalleryList } from '@/lib/microcms'
-import { cn } from '@/utils'
-import type { MicroCMSQueries } from 'microcms-js-sdk'
-import Image from 'next/image'
-
-type Props = {
-	queries: MicroCMSQueries
-	cols?: number
-	colsMd?: number
-	colsLg?: number
-	colsXL?: number
-	className?: string
-	childClassName?: string
-	imageWidth?: number
-	imageClassName?: string
-}
 
 export default async function MicrocmsGallery({
 	queries,
