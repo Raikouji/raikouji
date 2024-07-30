@@ -7,6 +7,7 @@ import Header from '../components/Header'
 import GetScrollBarWidth from '@/components/GetScrollBarWidth'
 import { SITE_DESCRIPTION, SITE_TITLE } from '@/constants'
 import './globals.css'
+import ScrollToTopButton from '@/components/ScrollToTopButton'
 
 export const metadata: Metadata = {
 	metadataBase: new URL('https://ajisai-raikouji.com'),
@@ -53,6 +54,7 @@ export default function RootLayout({
 					<Header />
 					{children}
 					<Footer />
+					<ScrollToTopButton />
 				</body>
 			</html>
 		</GetScrollBarWidth>

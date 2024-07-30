@@ -1,9 +1,7 @@
 'use client'
 
-import { useState } from 'react'
 import type React from 'react'
 
-import ScrollToTopButton from '@/components/ScrollToTopButton'
 import { touchDeviceLinkFixer } from '@/lib/touch-device-link-fixer'
 import { motion } from 'framer-motion'
 
@@ -13,7 +11,6 @@ const variants = {
 }
 
 export default function Template({ children }: { children: React.ReactNode }) {
-	// スマホ実機でダブルタップしないとリンク先に飛ばない問題を解決
 	touchDeviceLinkFixer()
 
 	return (
@@ -28,7 +25,6 @@ export default function Template({ children }: { children: React.ReactNode }) {
 			}}
 		>
 			{children}
-			<ScrollToTopButton />
 		</motion.div>
 	)
 }
