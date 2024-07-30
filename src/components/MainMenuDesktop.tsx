@@ -72,6 +72,7 @@ const ListItem = React.forwardRef<React.ElementRef<'a'>, ListItemProps>(
 				>
 					<NavigationMenuLink
 						className={cn(
+							navigationMenuTriggerStyle(),
 							segment === href && 'font-bold',
 							'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors' +
 								' hover:bg-primary-100 hover:text-accent-foreground focus:bg-primary-100 focus:text-accent-foreground',
