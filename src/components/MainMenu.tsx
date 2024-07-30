@@ -5,6 +5,8 @@ import MainMenuMobile from '@/components/MainMenuMobile'
 import { useMediaQuery } from '@/hooks/use-media-query'
 import { useSelectedLayoutSegment } from 'next/navigation'
 
+import { BREAKPOINTS } from '@/constants'
+
 export default function MainMenu() {
 	const items = [
 		{ href: '/', title: 'Home' },
@@ -26,7 +28,7 @@ export default function MainMenu() {
 			title: 'お問合せ',
 		},
 	]
-	const isDesktop = useMediaQuery('(min-width: 768px)')
+	const isDesktop = useMediaQuery(`(min-width: ${BREAKPOINTS.TABLET}px)`)
 	const segment = useSelectedLayoutSegment()
 
 	return isDesktop ? (
