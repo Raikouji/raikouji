@@ -1,10 +1,14 @@
 'use client'
+
+import { touchDeviceLinkFixer } from '@/lib/touch-device-link-fixer'
 import { motion } from 'framer-motion'
 import { ArrowUpToLine } from 'lucide-react'
-import type React from 'react'
 import { useEffect, useState } from 'react'
 import { animateScroll as scroll } from 'react-scroll'
 import VisuallyHidden from '../components/VisuallyHidden'
+
+import type React from 'react'
+
 const variants = {
 	hidden: { opacity: 0 },
 	enter: { opacity: 1 },
@@ -33,9 +37,8 @@ export default function Template({ children }: { children: React.ReactNode }) {
 		}
 	}, [])
 
-	useEffect(() => {
-		document.addEventListener('touchstart', () => {}, { passive: true })
-	}, [])
+	// スマホ実機でダブルタップしないとリンク先に飛ばない問題を解決
+	touchDeviceLinkFixer()
 
 	return (
 		<motion.div

@@ -1,4 +1,3 @@
-import LinkFixer from '@/components/LinkFixer'
 import { cn } from '@/utils'
 import { Menu, X } from 'lucide-react'
 import Link from 'next/link'
@@ -19,7 +18,6 @@ export default function MainMenuMobile({
 	// const [activeMenu, setActiveMenu] = React.useState('')
 	return (
 		<>
-			<LinkFixer />
 			<div className='z-30 grid place-content-center'>
 				<button
 					type='button'
