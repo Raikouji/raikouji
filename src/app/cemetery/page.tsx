@@ -124,7 +124,8 @@ export default function Page() {
 							</p>
 							<ul className='mt-4 list-inside list-disc text-sm marker:text-tertiary'>
 								<li>墓石はありません。</li>
-								<li>志納金の目安：15万円から</li>
+								<li>志納金：15万円から</li>
+								<li>申込み後の管理料はかかりません</li>
 							</ul>
 						</Card>
 					</div>
@@ -205,14 +206,11 @@ export default function Page() {
 							<ImageAboveHeading imageName='chime' />
 						</p>
 						<h2 className='mt-3 text-center tracking-widest'>
-							一般墓地 (檀家様)
+							一般墓地 (宗旨宗派問わず)
 						</h2>
 						<p className='mt-12'>
-							当寺の一般墓地は緑豊かな環境に囲まれた静かな環境にあり、故人の供養と管理を丁寧に行っております。
+							当寺の一般墓地は緑豊かな環境に囲まれた静かな環境にあります。
 							大阪から１時間以内のアクセスが可能な、お参りにしやすい便利な立地です。
-						</p>
-						<p className='mt-4'>
-							毎月法要（月例会）を行っており、檀家様は故人のご供養に参加いただけます。
 						</p>
 					</div>
 				</div>

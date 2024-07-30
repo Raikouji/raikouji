@@ -100,7 +100,6 @@ export default function Page() {
 							<li>
 								衣装はご自身で手配ください。着替えのためのスペースは用意いたします。
 							</li>
-							<li>大切な瞬間を残すカメラマンもご自身で手配ください。</li>
 						</ul>
 						<div className='mx-auto mt-12 max-w-screen-md'>
 							<Card

@@ -37,7 +37,7 @@ const events: Event[] = [
 		date: '４月',
 	},
 	{
-		title: '水子総供養法要',
+		title: 'あじさい願王祈祷会',
 		date: '６月',
 	},
 	{
@@ -161,7 +161,7 @@ export default function Page() {
 							</p>
 							<div className='mx-auto max-w-screen-sm'>
 								<p className='mt-6 md:text-center lg:px-12'>
-									心を穏やかに、精神を整える座禅会。静かな空間で自分を見つめ直し、内面の平和を深めるとともに心身の調和を目指します。
+									心を穏やかに、精神を整える坐禅会。静かな空間で自分を見つめ直し、内面の平和を深めるとともに心身の調和を目指します。
 									坐禅や読経、食事の作法につきましては、その都度ご説明いたします。
 								</p>
 								<Card className='mt-6 rounded bg-secondary-50 px-4 py-3 shadow'>
@@ -204,7 +204,7 @@ export default function Page() {
 							</p>
 							<div className='mx-auto mt-6 max-w-screen-sm'>
 								<p className='md:text-center lg:px-12'>
-									無心になり、心を込めて写経をする会。精神をクリアにし、内なる平和へと繋がる貴重な体験です。すべて椅子席で、写経用具は全て当寺でご用意（※
+									無心になり、心を込めて写経をする会。集中することにより日常を忘れ、内なる平和へと繋がる貴重な体験です。すべて椅子席で、写経用具は全て当寺で用意しております（※
 									筆ペン派の方はご持参ください）。
 								</p>
 							</div>
