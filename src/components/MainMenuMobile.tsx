@@ -1,7 +1,9 @@
-import { cn } from '@/utils'
-import { Menu, X } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
+
+import { MobileMenuProvider, useMobileMenu } from '@/context/MobileMenuContext'
+import { cn } from '@/utils'
+import { Menu, X } from 'lucide-react'
 
 export default function MainMenuMobile({
 	items,
@@ -14,7 +16,25 @@ export default function MainMenuMobile({
 	}[]
 	segment: string | null
 }) {
-	const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
+	return (
+		<MobileMenuProvider>
+			<MainMenuMobileContent items={items} segment={segment} />
+		</MobileMenuProvider>
+	)
+}
+
+function MainMenuMobileContent({
+	items,
+	segment,
+}: {
+	items: {
+		title: string
+		href: string
+		subMenu?: { title: string; href: string }[]
+	}[]
+	segment: string | null
+}) {
+	const [isOpen, setIsOpen] = useMobileMenu()
 	// const [activeMenu, setActiveMenu] = React.useState('')
 	return (
 		<>
@@ -22,15 +42,15 @@ export default function MainMenuMobile({
 				<button
 					type='button'
 					onClick={() => {
-						setIsMobileMenuOpen(!isMobileMenuOpen)
+						setIsOpen(!isOpen)
 					}}
-					className='px-2 py-1 text-3xl leading-none text-foreground/60'
+					className='px-2 py-1 text-foreground/60'
 				>
-					{isMobileMenuOpen ? <X /> : <Menu />}
+					{isOpen ? <X /> : <Menu />}
 				</button>
 			</div>
 
-			{isMobileMenuOpen && (
+			{isOpen && (
 				<nav
 					className={cn(
 						'animate-fade-in',
@@ -71,18 +91,12 @@ export default function MainMenuMobile({
 											'hover:border-b hover:border-b-primary-400',
 											'transition-all lg:ease-out',
 										)}
-										onClick={() => setIsMobileMenuOpen(false)}
+										onClick={() => setIsOpen(false)} // TODO: template.tsx で
 									>
 										{item.title}
 									</Link>
 									{item.subMenu && (
 										<ul className='mb-2'>
-											{/*<ul*/}
-											{/*	className={cn(*/}
-											{/*		'mb-2',*/}
-											{/*		activeMenu !== item.href && 'block', // hidden TODO: 開閉メニューに*/}
-											{/*	)}*/}
-											{/*>*/}
 											{item.subMenu.map((subItem) => {
 												const isActive = subItem.href === segment
 
@@ -101,7 +115,7 @@ export default function MainMenuMobile({
 																'block px-3 py-2 text-foreground/80',
 																'transition-all ease-out',
 															)}
-															onClick={() => setIsMobileMenuOpen(false)}
+															onClick={() => setIsOpen(false)} // TODO: template.tsx で
 														>
 															{subItem.title}
 														</Link>
