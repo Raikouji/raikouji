@@ -33,11 +33,16 @@ export function NetlifyForm() {
 
 	return (
 		<form
-			name='feedback'
+			name='お問合せフォーム'
 			onSubmit={handleFormSubmit}
 			className='flex flex-col gap-4'
 		>
-			<input type='hidden' name='form-name' value='feedback' />
+			{/*<input type='hidden' name='form-name' value='お問合せフォーム' />*/}
+			<input
+				type='hidden'
+				name='subject'
+				value='頼光寺公式サイト %{formName} から (%{submissionId})'
+			/>
 			<p>
 				<b>お名前：</b>
 				<br />
