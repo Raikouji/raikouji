@@ -63,25 +63,21 @@ const ListItem = React.forwardRef<React.ElementRef<'a'>, ListItemProps>(
 	({ href, segment, className, title, ...props }, ref) => {
 		return (
 			<>
-				<Link
-					href={href ? href : 'undefined'}
-					legacyBehavior
-					passHref
-					ref={ref}
-					{...props}
-				>
-					<NavigationMenuLink
+				<NavigationMenuLink asChild>
+					<a
+						href={href}
+						ref={ref}
 						className={cn(
-							navigationMenuTriggerStyle(),
-							segment === href && 'font-bold',
+							// segment === props.href && 'font-bold',
 							'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors' +
 								' hover:bg-primary-100 hover:text-accent-foreground focus:bg-primary-100 focus:text-accent-foreground',
 							className,
 						)}
+						{...props}
 					>
 						{title}
-					</NavigationMenuLink>
-				</Link>
+					</a>
+				</NavigationMenuLink>
 			</>
 		)
 	},
