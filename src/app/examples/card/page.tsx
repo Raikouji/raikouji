@@ -20,7 +20,7 @@ function CardNarrow() {
 			<Card
 				className={cn(
 					'relative mx-auto p-8',
-					'bg-[url("/images/bg-paper.png")] bg-cover',
+					'bg-[url("/images/bg-paper.png")] bg-repeat',
 					'rounded-xl shadow-lg',
 				)}
 			>

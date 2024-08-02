@@ -35,7 +35,7 @@ export default async function Information() {
 		<div
 			className={cn(
 				'relative mx-auto max-w-screen-md w-full p-8',
-				'bg-[url("/images/bg-paper.png")] bg-cover bg-top',
+				'bg-[url("/images/bg-paper.png")] bg-repeat',
 				'rounded-xl shadow-lg',
 			)}
 		>

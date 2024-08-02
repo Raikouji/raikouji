@@ -249,7 +249,7 @@ export default function Page() {
 						<div
 							className={cn(
 								'relative mt-10 p-8 lg:p-12',
-								'bg-[url("/images/bg-paper.png")] bg-cover',
+								'bg-[url("/images/bg-paper.png")] bg-repeat',
 								'rounded-xl shadow-lg',
 							)}
 						>
