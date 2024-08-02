@@ -37,7 +37,7 @@ export function NetlifyForm() {
 			onSubmit={handleFormSubmit}
 			className='flex flex-col gap-4'
 		>
-			{/*<input type='hidden' name='form-name' value='お問合せフォーム' />*/}
+			<input type='hidden' name='form-name' value='お問合せフォーム' />
 			<input
 				type='hidden'
 				name='subject'
