@@ -32,7 +32,10 @@ export function NetlifyForm() {
 	}
 
 	return (
-		<form onSubmit={handleFormSubmit} className='flex flex-col gap-4'>
+		<form
+			onSubmit={handleFormSubmit}
+			className='flex flex-col gap-4 max-w-full'
+		>
 			<input type='hidden' name='form-name' value='contact' />
 			<input
 				type='hidden'
@@ -40,10 +43,12 @@ export function NetlifyForm() {
 				value='頼光寺公式サイト %{formName} から (%{submissionId})'
 			/>
 			<p>
-				<b>お名前：</b>
+				<b>
+					<label htmlFor='name'>お名前：</label>
+				</b>
 				<br />
 				<input
-					className='rounded'
+					className='rounded max-w-full'
 					name='name'
 					type='text'
 					placeholder='お名前を入力…'
@@ -52,10 +57,12 @@ export function NetlifyForm() {
 				/>
 			</p>
 			<p>
-				<b>Email：</b>
+				<b>
+					<label htmlFor='email'>Email：</label>
+				</b>
 				<br />
 				<input
-					className='rounded'
+					className='rounded max-w-full'
 					name='email'
 					type='text'
 					placeholder='Emailを入力…'
@@ -64,10 +71,12 @@ export function NetlifyForm() {
 				/>
 			</p>
 			<p>
-				<b>電話番号：</b>
+				<b>
+					<label htmlFor='tel'>電話番号：</label>
+				</b>
 				<br />
 				<input
-					className='rounded'
+					className='rounded max-w-full'
 					name='tel'
 					type='text'
 					size={50}
@@ -75,18 +84,22 @@ export function NetlifyForm() {
 				/>
 			</p>
 			<p>
-				<b>お問合せ内容：</b>
+				<b>
+					<label htmlFor='message'>お問合せ内容：</label>
+				</b>
 				<br />
 				<textarea
-					className='rounded'
+					className='rounded max-w-full'
 					name='message'
 					rows={10}
 					cols={50}
-					placeholder='お問い合わせ内容を入力…'
+					placeholder='お問合せ内容を入力…'
 					required
 				/>
 			</p>
-			<Button type='submit'>送信する</Button>
+			<Button type='submit' className='max-w-full'>
+				送信する
+			</Button>
 		</form>
 	)
 }

@@ -80,7 +80,7 @@ export default async function Page() {
 			</section>
 
 			<div className='flex flex-col gap-4 lg:flex-row lg:gap-20'>
-				<section className='lg:w-3/5'>
+				<section className='lg:w-3/5 pb-8'>
 					<div className='flex flex-col gap-8'>
 						<div>
 							<p className='text-center'>
