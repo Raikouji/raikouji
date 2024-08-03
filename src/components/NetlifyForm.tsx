@@ -40,8 +40,8 @@ export function NetlifyForm() {
 			<input type='hidden' name='form-name' value='contact' />
 			<input
 				type='hidden'
-				name='contact'
-				value='頼光寺公式サイト お問合せフォームから (%{submissionId})'
+				name='message'
+				value='頼光寺公式サイトのお問合せフォームから'
 			/>
 			<p>
 				<b>
@@ -91,7 +91,7 @@ export function NetlifyForm() {
 				<br />
 				<textarea
 					className='rounded max-w-full'
-					name='message'
+					name='content'
 					rows={10}
 					cols={50}
 					placeholder='お問合せ内容を入力…'
