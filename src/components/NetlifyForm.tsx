@@ -40,7 +40,7 @@ export function NetlifyForm() {
 			<input
 				type='hidden'
 				name='contact'
-				value='頼光寺公式サイト %{formName} から (%{submissionId})'
+				value='頼光寺公式サイト お問合せフォームから (%{submissionId})'
 			/>
 			<p>
 				<b>
