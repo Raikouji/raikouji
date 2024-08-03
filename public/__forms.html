@@ -1,12 +1,17 @@
 <html>
     <head></head>
     <body>
-        <form name="feedback" data-netlify="true" hidden>
-            <input type="hidden" name="form-name" value="feedback" />
-            <input name="name" type="text" />
-            <input name="email" type="text" />
-            <input name="tel" type="text" />
-            <textarea name="message"></textarea>
+        <form name='お問い合わせ' data-netlify='true' hidden>
+            <input type='hidden' name='form-name' value='お問い合わせ' />
+            <input
+              type='hidden'
+              name='subject'
+              value='頼光寺公式サイト %{formName}フォームから (%{submissionId})'
+            />
+            <input name='name' type='text' />
+            <input name='email' type='text' />
+            <input name='tel' type='text' />
+            <textarea name='message'></textarea>
         </form>
     </body>
 </html>

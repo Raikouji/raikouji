@@ -32,12 +32,7 @@ export function NetlifyForm() {
 	}
 
 	return (
-		<form
-			name='feedback'
-			onSubmit={handleFormSubmit}
-			className='flex flex-col gap-4'
-		>
-			<input type='hidden' name='form-name' value='feedback' />
+		<form onSubmit={handleFormSubmit} className='flex flex-col gap-4'>
 			<p>
 				<b>お名前：</b>
 				<br />
