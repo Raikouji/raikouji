@@ -3,19 +3,14 @@
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
-		"dev": "next dev",
+		"dev": "next dev -H 0.0.0.0",
 		"build": "rm -rf .next/cache/fetch-cache && next build",
 		"start": "next start",
 		"analyze": "ANALYZE=true npm run build",
 		"lint": "next lint --dir src",
 		"biome": "biome check --write ./src"
 	},
-	"browserslist": [
-		">0.3%",
-		"not ie 11",
-		"not dead",
-		"not op_mini all"
-	],
+	"browserslist": [">0.3%", "not ie 11", "not dead", "not op_mini all"],
 	"dependencies": {
 		"@next/bundle-analyzer": "^14.2.5",
 		"@radix-ui/react-aspect-ratio": "^1.1.0",
