@@ -82,7 +82,7 @@ function MainMenuMobileContent({
 									// onFocus={() => setActiveMenu(item.href)}
 									// onBlur={() => setActiveMenu('')}
 								>
-									<Link
+									<a
 										href={item.href}
 										className={cn(
 											segment === item.href && 'font-bold',
@@ -93,7 +93,7 @@ function MainMenuMobileContent({
 										onClick={() => setIsOpen(false)} // TODO: template.tsx で
 									>
 										{item.title}
-									</Link>
+									</a>
 									{item.subMenu && (
 										<ul className='mb-2'>
 											{item.subMenu.map((subItem) => {
@@ -108,7 +108,7 @@ function MainMenuMobileContent({
 																: 'font-normal'
 														}
 													>
-														<Link
+														<a
 															href={subItem.href}
 															className={cn(
 																'block px-3 py-2 text-foreground/80',
@@ -117,7 +117,7 @@ function MainMenuMobileContent({
 															onClick={() => setIsOpen(false)} // TODO: template.tsx で
 														>
 															{subItem.title}
-														</Link>
+														</a>
 													</li>
 												)
 											})}
