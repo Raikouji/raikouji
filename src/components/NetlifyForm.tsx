@@ -4,6 +4,7 @@ import type React from 'react'
 import { useState } from 'react'
 
 import { Button } from '@/components/ui/button'
+import Link from 'next/link'
 
 export function NetlifyForm() {
 	const [mode, setMode] = useState<'input' | 'submitting' | 'send' | 'fail'>(
@@ -47,8 +48,8 @@ export function NetlifyForm() {
 				確認次第、ご返答差し上げます。
 			</p>
 			<p className='text-center'>
-				<Button type='submit' className='max-w-full md:max-w-fit'>
-					ホームページへ
+				<Button asChild>
+					<Link href='/'>ホームに戻る</Link>
 				</Button>
 			</p>
 		</>
