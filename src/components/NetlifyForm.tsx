@@ -3,8 +3,11 @@
 import type React from 'react'
 
 import { Button } from '@/components/ui/button'
+import { useRouter } from 'next/router'
 
 export function NetlifyForm() {
+	const router = useRouter()
+
 	const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault()
 
@@ -24,6 +27,7 @@ export function NetlifyForm() {
 				if (!response.ok) {
 					throw new Error('ネットワークの応答が良くありません')
 				}
+				router.push('/')
 			})
 			.catch((error) => {
 				console.error('フェッチ操作で問題が発生しました', error)
