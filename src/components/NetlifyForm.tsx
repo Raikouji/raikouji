@@ -3,7 +3,7 @@
 import type React from 'react'
 
 import { Button } from '@/components/ui/button'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 
 export function NetlifyForm() {
 	const router = useRouter()
@@ -38,7 +38,7 @@ export function NetlifyForm() {
 	return (
 		<form
 			onSubmit={handleFormSubmit}
-			className='flex flex-col gap-4 max-w-full'
+			className='flex flex-col gap-4 max-w-full md:max-w-4xl mx-auto'
 		>
 			<input type='hidden' name='form-name' value='contact' />
 			<input
@@ -48,7 +48,7 @@ export function NetlifyForm() {
 			/>
 			<p>
 				<b>
-					<label htmlFor='name'>お名前：</label>
+					<label htmlFor='name'>お名前</label>
 				</b>
 				<br />
 				<input
@@ -62,7 +62,7 @@ export function NetlifyForm() {
 			</p>
 			<p>
 				<b>
-					<label htmlFor='email'>Email：</label>
+					<label htmlFor='email'>Email</label>
 				</b>
 				<br />
 				<input
@@ -76,7 +76,7 @@ export function NetlifyForm() {
 			</p>
 			<p>
 				<b>
-					<label htmlFor='tel'>電話番号：</label>
+					<label htmlFor='tel'>電話番号</label>
 				</b>
 				<br />
 				<input
@@ -89,7 +89,7 @@ export function NetlifyForm() {
 			</p>
 			<p>
 				<b>
-					<label htmlFor='message'>お問合せ内容：</label>
+					<label htmlFor='message'>お問合せ内容</label>
 				</b>
 				<br />
 				<textarea
@@ -101,9 +101,11 @@ export function NetlifyForm() {
 					required
 				/>
 			</p>
-			<Button type='submit' className='max-w-full'>
-				送信する
-			</Button>
+			<p className='text-center'>
+				<Button type='submit' className='max-w-full md:max-w-fit'>
+					送信する
+				</Button>
+			</p>
 		</form>
 	)
 }
