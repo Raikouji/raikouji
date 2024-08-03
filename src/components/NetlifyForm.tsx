@@ -3,7 +3,7 @@
 import type React from 'react'
 
 import { Button } from '@/components/ui/button'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 
 export function NetlifyForm() {
 	const router = useRouter()
