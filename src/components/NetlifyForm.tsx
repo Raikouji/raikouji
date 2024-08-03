@@ -1,15 +1,18 @@
 'use client'
 
 import type React from 'react'
+import { useState } from 'react'
 
 import { Button } from '@/components/ui/button'
-import { useRouter } from 'next/navigation'
 
 export function NetlifyForm() {
-	const router = useRouter()
+	const [mode, setMode] = useState<'input' | 'submitting' | 'send' | 'fail'>(
+		'input',
+	)
 
 	const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault()
+		setMode('submitting')
 
 		const formData = new FormData(event.currentTarget)
 		const searchParams = new URLSearchParams()
@@ -25,16 +28,46 @@ export function NetlifyForm() {
 		})
 			.then((response) => {
 				if (!response.ok) {
+					setMode('fail')
 					throw new Error('ネットワークの応答が良くありません')
 				}
-				router.push('/')
+				setMode('send')
 			})
 			.catch((error) => {
+				setMode('fail')
 				console.error('フェッチ操作で問題が発生しました', error)
-				alert('送信に失敗しました。')
 			})
 	}
 
+	return mode === 'send' ? (
+		<>
+			<p className='my-8 text-center font-bold'>
+				送信が完了しました。
+				<br />
+				確認次第、ご返答差し上げます。
+			</p>
+			<p className='text-center'>
+				<Button type='submit' className='max-w-full md:max-w-fit'>
+					ホームページへ
+				</Button>
+			</p>
+		</>
+	) : mode === 'submitting' ? (
+		<p className='my-8 text-center animate-pulse font-bold'>送信中です...</p>
+	) : mode === 'fail' ? (
+		<p className='my-8 text-center animate-pulse font-bold'>
+			送信に失敗しました。
+			<br />
+			お手数ですが、電話でお問合せください。
+		</p>
+	) : (
+		<FormInput handleFormSubmit={handleFormSubmit} />
+	)
+}
+
+function FormInput({
+	handleFormSubmit,
+}: { handleFormSubmit: (event: React.FormEvent<HTMLFormElement>) => void }) {
 	return (
 		<form
 			onSubmit={handleFormSubmit}
