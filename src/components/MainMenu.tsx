@@ -6,8 +6,7 @@ import MainMenuDesktop from '@/components/MainMenuDesktop'
 import MainMenuMobile from '@/components/MainMenuMobile'
 import { useMediaQuery } from '@/hooks/use-media-query'
 
-import { BREAKPOINTS } from '@/constants'
-import { NAVIGATION_ITEMS } from '@/constants'
+import { BREAKPOINTS, NAVIGATION_ITEMS } from '@/constants'
 
 export default function MainMenu() {
 	const isDesktop = useMediaQuery(`(min-width: ${BREAKPOINTS.TABLET}px)`)
