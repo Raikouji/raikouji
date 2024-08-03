@@ -35,12 +35,11 @@ export function NetlifyForm() {
 		<form
 			onSubmit={handleFormSubmit}
 			className='flex flex-col gap-4 max-w-full'
-			action='/'
 		>
 			<input type='hidden' name='form-name' value='contact' />
 			<input
 				type='hidden'
-				name='message'
+				name='subject'
 				value='頼光寺公式サイトのお問合せフォームから'
 			/>
 			<p>
@@ -91,7 +90,7 @@ export function NetlifyForm() {
 				<br />
 				<textarea
 					className='rounded max-w-full'
-					name='content'
+					name='message'
 					rows={10}
 					cols={50}
 					placeholder='お問合せ内容を入力…'
