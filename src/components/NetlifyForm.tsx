@@ -35,6 +35,7 @@ export function NetlifyForm() {
 		<form
 			onSubmit={handleFormSubmit}
 			className='flex flex-col gap-4 max-w-full'
+			action='/'
 		>
 			<input type='hidden' name='form-name' value='contact' />
 			<input
