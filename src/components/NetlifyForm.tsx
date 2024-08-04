@@ -102,7 +102,7 @@ function FormInput({
 				<input
 					className='rounded max-w-full'
 					name='email'
-					type='text'
+					type='email'
 					placeholder='Emailを入力…'
 					size={50}
 					required
@@ -116,9 +116,9 @@ function FormInput({
 				<input
 					className='rounded max-w-full'
 					name='tel'
-					type='text'
+					type='tel'
 					size={50}
-					placeholder='電話番号を入力… (任意)'
+					placeholder='000-0000-0000… (任意)'
 				/>
 			</p>
 			<p>
