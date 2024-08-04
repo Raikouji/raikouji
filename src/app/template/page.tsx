@@ -237,7 +237,7 @@ export default function Page() {
 				<h3 className='mt-4'>flex w-fit items-center gap-4</h3>
 				<div className='mt-4 flex w-fit items-center gap-4 rounded border p-2'>
 					<img
-						src='/images/lorem.jpg'
+						src='/images/lotus.jpg'
 						className='h-12 w-12 rounded-full'
 						alt=''
 					/>
