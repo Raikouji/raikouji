@@ -41,20 +41,15 @@ export default function Home() {
 						>
 							<div className='relative'>
 								<div className='md:w-4/5 lg:w-3/4'>
-									<Fadein
-										tag='div'
-										className='aspect-h-4 aspect-w-3 md:aspect-h-3 md:aspect-w-4 lg:aspect-h-9 lg:aspect-w-16'
-									>
-										<Image
-											src='/images/ajisai.jpg'
-											alt='あじさい寺'
-											width={2100}
-											height={1400}
-											sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-											style={{ objectFit: 'cover' }}
-											priority
-										/>
-									</Fadein>
+									<Image
+										src='/images/ajisai.jpg'
+										alt='あじさい寺'
+										width={2100}
+										height={1400}
+										sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+										style={{ objectFit: 'cover' }}
+										priority
+									/>
 								</div>
 								<div className='relative z-10 -mt-40 md:mt-10 lg:mt-0 mx-8 md:mx-0 md:absolute md:-bottom-24 lg:-bottom-8 md:w-full'>
 									<div className='mx-auto max-w-screen-xl'>
