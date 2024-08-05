@@ -46,18 +46,33 @@ export default function Breadcrumbs({
 						<FaHome className='inline-block' />
 					</Link>
 				</li>
-				{pathNames.map((name: string, index: number) => {
-					const path = `/${pathNames.slice(0, index + 1).join('/')}`
-					const item = items.find((item) => item.path === path)
+				{(() => {
+					const breadcrumbs = []
+					let isNews = false
 
-					return (
-						<li key={path}>
-							<Link href={path} className='underline hover:text-primary'>
-								{item ? item.name : name}
-							</Link>
-						</li>
-					)
-				})}
+					for (let index = 0; index < pathNames.length; index++) {
+						const name = pathNames[index]
+						const path = `/${pathNames.slice(0, index + 1).join('/')}`
+						const item = items.find((item) => item.path === path)
+
+						if (isNews) {
+							breadcrumbs.push(<li key={path}>この記事</li>)
+						} else {
+							breadcrumbs.push(
+								<li key={path}>
+									<Link href={path} className='underline hover:text-primary'>
+										{item ? item.name : name}
+									</Link>
+								</li>,
+							)
+						}
+
+						if (name === 'news') {
+							isNews = true
+						}
+					}
+					return breadcrumbs
+				})()}
 			</ul>
 		</div>
 	)
