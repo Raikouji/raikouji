@@ -1,10 +1,11 @@
 // TODO: サイトタイトルをコンポーネントにする (Logo.tsx 途中まで作成)
 import Image from 'next/image'
 import Link from 'next/link'
+import React from 'react'
 
 import MainMenu from '@/components/MainMenu'
 
-export default function Header() {
+function Header() {
 	return (
 		<>
 			<header className='container flex max-w-screen-xl justify-between py-4 lg:items-center'>
@@ -36,3 +37,5 @@ export default function Header() {
 		</>
 	)
 }
+
+export default React.memo(Header)

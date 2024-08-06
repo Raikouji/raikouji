@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import React from 'react'
 
 import Slider from '@/components/Slider'
 import { cn } from '@/lib/cn'
@@ -18,7 +19,7 @@ const sliderImages = [
 	},
 ]
 
-export default function Hero() {
+function Hero() {
 	return (
 		<div
 			className={cn(
@@ -72,3 +73,5 @@ export default function Hero() {
 		</div>
 	)
 }
+
+export default React.memo(Hero)

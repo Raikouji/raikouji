@@ -1,4 +1,4 @@
-import Link from 'next/link'
+// import Link from 'next/link'
 import React from 'react'
 
 import {
@@ -12,7 +12,7 @@ import {
 import { navigationMenuTriggerStyle } from '@/components/ui/navigation-menu'
 import { cn } from '@/lib/cn'
 
-export default function MainMenuDesktop({
+function MainMenuDesktop({
 	items,
 	segment,
 }: {
@@ -83,3 +83,4 @@ const ListItem = React.forwardRef<React.ElementRef<'a'>, ListItemProps>(
 	},
 )
 ListItem.displayName = 'ListItem'
+export default React.memo(MainMenuDesktop)

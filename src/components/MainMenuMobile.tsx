@@ -1,10 +1,11 @@
-import Link from 'next/link'
+// import Link from 'next/link'
+import React from 'react'
 
 import { MobileMenuProvider, useMobileMenu } from '@/context/MobileMenuContext'
 import { cn } from '@/lib/cn'
 import { Menu, X } from 'lucide-react'
 
-export default function MainMenuMobile({
+function MainMenuMobile({
 	items,
 	segment,
 }: {
@@ -132,3 +133,4 @@ function MainMenuMobileContent({
 		</>
 	)
 }
+export default React.memo(MainMenuMobile)

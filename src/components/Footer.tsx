@@ -1,10 +1,11 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import React from 'react'
 
 import { cn } from '@/lib/cn'
 import { FaFacebook, FaSquareInstagram } from 'react-icons/fa6'
 
-export default function Footer() {
+function Footer() {
 	return (
 		<footer>
 			<div
@@ -163,3 +164,5 @@ export default function Footer() {
 		</footer>
 	)
 }
+
+export default React.memo(Footer)

@@ -1,10 +1,10 @@
 // TODO: 未使用。完成後、Header のものと差し替える
 import Link from 'next/link'
-import type React from 'react'
+import React from 'react'
 
 import { cn } from '@/lib/cn'
 
-export default function Logo({
+function Logo({
 	tagline,
 	taglinePosition = 'bottom',
 	className,
@@ -39,3 +39,5 @@ export default function Logo({
 function Tagline({ tagline }: { tagline: string }) {
 	return <p className='text-xs'>{tagline}</p>
 }
+
+export default React.memo(Logo)
