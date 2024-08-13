@@ -1,11 +1,20 @@
 // TODO: ダイナミックコンテンツのサイトマップを生成 (p271)
 
 import { BASE_URL } from '@/constants'
+import { getAllBlogList } from '@/lib/microcms'
 import type { MetadataRoute } from 'next'
 
 const buildUrl = (path = '') => `${BASE_URL}${path}`
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+	const blogContents = await getAllBlogList()
+	const blogUrls: MetadataRoute.Sitemap = blogContents.map((post) => ({
+		url: buildUrl(`/news/${post.id}`),
+		lastModified: post.revisedAt,
+		changeFrequency: 'daily',
+		priority: 0.7,
+	}))
+
 	const now = new Date().toISOString()
 
 	return [
@@ -81,5 +90,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 			changeFrequency: 'weekly',
 			priority: 0.8,
 		},
+		...blogUrls,
 	]
 }
