@@ -3,7 +3,7 @@
  */
 
 export const SITE_TITLE = '頼光寺 (川西市、あじさい寺)'
-export const SITE_URL = 'https://ajisai-raikouji.com'
+export const BASE_URL = 'https://ajisai-raikouji.com'
 
 export const SITE_DESCRIPTION =
 	'兵庫県川西市にある「祥雲山・頼光寺 (賴光寺)」の公式ウェブサイト。' +

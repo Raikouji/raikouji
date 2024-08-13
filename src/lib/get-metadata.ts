@@ -1,4 +1,4 @@
-import { SITE_TITLE, SITE_URL } from '@/constants'
+import { BASE_URL, SITE_TITLE } from '@/constants'
 
 /**
  * Meta タグ
@@ -29,16 +29,16 @@ export const getMetadata = ({ title, description, openGraph }: Metadata) => {
 		openGraph: {
 			title: title,
 			description: description,
-			url: SITE_URL,
+			url: BASE_URL,
 			siteName: SITE_TITLE,
 			images: [
 				{
-					url: `${SITE_URL}/og.png`,
+					url: `${BASE_URL}/og.png`,
 					width: 800,
 					height: 600,
 				},
 				{
-					url: `${SITE_URL}/og-alt.png`,
+					url: `${BASE_URL}/og-alt.png`,
 					width: 1800,
 					height: 1600,
 					alt: `${SITE_TITLE} post image`,
