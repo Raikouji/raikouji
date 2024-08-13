@@ -22,7 +22,7 @@ type Metadata = {
 	}
 }
 
-export const getMetadata = ({ title, description, openGraph }: Metadata) => {
+export const getMetadata = ({ title, description }: Metadata) => {
 	return {
 		title: title,
 		description: description,
