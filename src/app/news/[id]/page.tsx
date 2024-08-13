@@ -3,18 +3,23 @@ import { notFound } from 'next/navigation'
 
 import ArticleWrapper from '@/components/ArticleWrapper'
 import { Button } from '@/components/ui/button'
+import { BASE_URL } from '@/constants'
 import { getBlogDetail, getBlogList } from '@/lib/microcms' // generateMetadata
 import { format, parseISO } from 'date-fns'
 import parse from 'html-react-parser'
+import type { Metadata } from 'next'
 import { IoArrowUndoSharp } from 'react-icons/io5'
 
 const headerImage = '/images/ajisai4.jpg'
 
-// generateMetadata({
-// 	params: { id: 'dummy' },
-// 	searchParams: { dk: 'dummy' },
-// })
+type Props = {
+	params: {
+		id: string
+		searchParams: { dk?: string }
+	}
+}
 
+// TODO: 動作しない
 export async function generateStaticParams() {
 	const { contents } = await getBlogList()
 
@@ -27,10 +32,34 @@ export async function generateStaticParams() {
 	return [...paths]
 }
 
-type Props = {
-	params: {
-		id: string
-		// searchParams: { dk?: string }
+export async function generateMetadata({
+	params: { id, searchParams },
+}: Props): Promise<Metadata> {
+	const post = await getBlogDetail(id, {
+		draftKey: searchParams.dk ?? undefined,
+	})
+
+	!post && notFound()
+
+	return {
+		title: post.title,
+		description: post?.description ?? '',
+		openGraph: {
+			type: 'website',
+			locale: 'ja_JP',
+			url: `${BASE_URL}/news/${post.id}`,
+			siteName: '頼光寺',
+			title: post.title,
+			description: post?.description ?? '頼光寺からのお知らせ',
+			images: [
+				{
+					url: post?.eyecatch?.url ?? '/og.jpg',
+					width: 1200,
+					height: 630,
+					alt: post.title,
+				},
+			],
+		},
 	}
 }
 
