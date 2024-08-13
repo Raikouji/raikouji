@@ -1,8 +1,9 @@
 // TODO: ダイナミックコンテンツのサイトマップを生成 (p271)
 
+import { BASE_URL } from '@/constants'
 import type { MetadataRoute } from 'next'
 
-const buildUrl = (path?: string) => `https://ajisai-raikouji.com${path ?? ''}`
+const buildUrl = (path = '') => `${BASE_URL}${path}`
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 	const now = new Date().toISOString()

@@ -8,9 +8,10 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
 import { getMetadata } from '@/lib/get-metadata'
-// import { getMetadata } from '@/lib/get-metadata'
 import type { Blog, Gallery } from '@/types/post'
 import { type MicroCMSQueries, createClient } from 'microcms-js-sdk'
+
+import { BASE_URL } from '@/constants'
 
 if (!process.env.MICROCMS_SERVICE_DOMAIN) {
 	throw new Error('MICROCMS_SERVICE_DOMAIN is required')
@@ -84,7 +85,7 @@ export const generateMetadata = async ({
 			openGraph: {
 				type: 'website',
 				locale: 'ja_JP',
-				url: `https://ajisai-raikouji.com/news/${post.id}`,
+				url: `${BASE_URL}/news/${post.id}`,
 				siteName: '頼光寺',
 				title: post.title,
 				description: post?.description ?? '頼光寺からのお知らせ',

@@ -7,11 +7,11 @@ import Header from '../components/Header'
 import GetScrollBarWidth from '@/components/GetScrollBarWidth'
 import ScrollToTopButton from '@/components/ScrollToTopButton'
 
-import { SITE_DESCRIPTION, SITE_TITLE } from '@/constants'
+import { BASE_URL, SITE_DESCRIPTION, SITE_TITLE } from '@/constants'
 import './globals.css'
 
 export const metadata: Metadata = {
-	metadataBase: new URL('https://ajisai-raikouji.com'),
+	metadataBase: new URL(BASE_URL),
 	title: {
 		template: `%s | ${SITE_TITLE}`,
 		default: SITE_TITLE,
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 	openGraph: {
 		type: 'website',
 		locale: 'ja_JP',
-		url: 'https://ajisai-raikouji.com',
+		url: BASE_URL,
 		title: SITE_TITLE,
 		description: SITE_DESCRIPTION,
 		images: [
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 		],
 	},
 	alternates: {
-		canonical: 'https://ajisai-raikouji.com',
+		canonical: BASE_URL,
 	},
 }
 
