@@ -41,10 +41,18 @@ export const getBasicInformation = async () => {
  * 新着情報 (リスト)
  */
 
-// 一覧を取得
+// 一覧を取得 (最大100件)
 export const getBlogList = async (queries?: MicroCMSQueries) => {
 	// await new Promise((resolve) => setTimeout(resolve, 3000)) // 確認用の遅延処理
 	return await client.getList<Blog>({
+		endpoint: 'blog',
+		queries,
+	})
+}
+
+// 一覧を取得 (全て)
+export const getAllBlogList = async (queries?: MicroCMSQueries) => {
+	return await client.getAllContents<Blog>({
 		endpoint: 'blog',
 		queries,
 	})
