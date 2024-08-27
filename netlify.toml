@@ -1,7 +1,0 @@
-[functions]
-
-  [functions.___netlify-handler]
-  included_files = [
-    "app/**/page{.ts,.tsx,.mdx}",
-    "!app/**/[id]/page{.ts,.tsx,.mdx}"
-  ]
